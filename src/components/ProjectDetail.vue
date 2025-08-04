@@ -676,7 +676,7 @@ const projects: Project[] = [
       { value: '+35%', metric: 'Tasa de Conversión de Leads' },
       { value: '-15%', metric: 'Tasa de rebote' },
     ],
-    liveUrl: 'https://www.amazonbb.com/',
+    liveUrl: 'https://lpsv.netlify.app/',
   },
   {
     id: 5,
