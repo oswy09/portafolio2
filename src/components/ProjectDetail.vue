@@ -738,7 +738,7 @@ const projects: Project[] = [
       { value: '24/7', metric: 'Mayor Alcance y Disponibilidad' },
       { value: '+30%', metric: 'Productividad en gestión de consultas' },
     ],
-    liveUrl: 'https://www.amazonbb.com/',
+    liveUrl: 'https://bestyle.store/',
   },
   {
     id: 6,
