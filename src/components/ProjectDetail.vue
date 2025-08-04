@@ -602,7 +602,7 @@ const projects: Project[] = [
       { value: '+25%', metric: 'Incremento en Consultas Directas a Tiendas' },
       { value: '+Impacto', metric: 'Facilidad de Gestión de Contenido para el área de marketing' },
     ],
-    liveUrl: 'https://www.amazonbb.com/',
+    liveUrl: 'https://ccmicentro.com/',
   },
   {
     id: 4,
