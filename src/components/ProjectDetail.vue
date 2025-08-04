@@ -443,7 +443,7 @@ const projects: Project[] = [
       { value: 'Feedback', metric: 'Recepción de comentarios positivos sobre la facilidad de uso' },
       { value: 'Reducción de Tiempo', metric: ' La centralización y digitalización del contenido del quizz en la plataforma redujo el tiempo promedio que los empleados dedican a buscar y acceder a materiales de estudio' },
     ],
-    liveUrl: 'https://example.com/ecommerce',
+    liveUrl: 'https://6891409fbacfbdbd6cc30e24--demoquizz.netlify.app/',
   },
   {
     id: 2,
