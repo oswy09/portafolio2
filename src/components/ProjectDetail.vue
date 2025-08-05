@@ -995,12 +995,11 @@ const projects: Project[] = [
           { name: 'Open sans', usage: 'Texto y contenido' },
         ],
         icons: [
-          { type: 'image', value: 'http://betterme.oswal.com.co/wp-content/uploads/2025/05/Amazon-01.png' },
-          { type: 'image', value: 'http://betterme.oswal.com.co/wp-content/uploads/2025/05/paquete5-dia6.png' },
-          { type: 'image', value: 'http://betterme.oswal.com.co/wp-content/uploads/2025/05/paquete5-dia1.png' },
-          { type: 'image', value: 'http://betterme.oswal.com.co/wp-content/uploads/2025/05/paquete4-dia4.png' },
-          { type: 'image', value: 'http://betterme.oswal.com.co/wp-content/uploads/2025/05/paquete4-dia3.png' },
-          { type: 'image', value: 'http://betterme.oswal.com.co/wp-content/uploads/2025/05/Package1-dia2-.png' }
+          { type: 'image', value: 'https://oswal.com.co/wp-content/uploads/2025/08/Blekning-icon2.png },
+          { type: 'image', value: 'https://oswal.com.co/wp-content/uploads/2025/08/corona-dental-2.png' },
+          { type: 'image', value: 'https://oswal.com.co/wp-content/uploads/2025/08/Snarkskenor-icon2.png' },
+          { type: 'image', value: 'https://oswal.com.co/wp-content/uploads/2025/08/Tandvardsradsla-icon2.png' }
+
         ],
       },
       development: { 
