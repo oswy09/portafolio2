@@ -998,7 +998,7 @@ const projects: Project[] = [
           { type: 'image', value: 'https://oswal.com.co/wp-content/uploads/2025/08/Blekning-icon2.png },
           { type: 'image', value: 'https://oswal.com.co/wp-content/uploads/2025/08/corona-dental-2.png' },
           { type: 'image', value: 'https://oswal.com.co/wp-content/uploads/2025/08/Snarkskenor-icon2.png' },
-          { type: 'image', value: 'https://oswal.com.co/wp-content/uploads/2025/08/Tandvardsradsla-icon2.png' }
+          { type: 'image', value: 'https://oswal.com.co/wp-content/uploads/2025/08/Tandvardsradsla-icon2.png' },
 
         ],
       },
