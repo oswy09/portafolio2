@@ -1032,7 +1032,7 @@ const projects: Project[] = [
     results: [
       { value: '+15%', metric: 'Solicitudes de Cita' },
       { value: '+25%', metric: 'Volumen de consultas directas vía correo y WhatsApp' },
-      { value: '+30%', metric: 'Facilidad de Gestión de Contenido' },
+      { value: '+30%', metric: 'Facilidad de Gestión de Contenidos' },
     ],
     liveUrl: 'https://tandklinikenlschroder.se/',
   },
