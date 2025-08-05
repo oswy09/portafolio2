@@ -967,31 +967,27 @@ const projects: Project[] = [
   },
   {
     id: 9,
-    title: 'Website suecia',
+    title: 'Clínica Odontológica en Suecia - Diseño Web y Presencia Digital',
     image: 'http://www.amazonbb.com/wp-content/uploads/2023/05/boat-forest-river-blue-sky-reflection.jpg',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
-    keyAchievement: 'Revitalizando la presencia online para una experiencia amazónica auténtica y atractiva para el viajero internacional.',
-    client: 'Centro comercial',
-    industry: 'Centro comercial',
-    location: 'Amazonas, Colombia',
+    keyAchievement: 'Diseño Web para una Experiencia Profesional y Confiable',
+    client: 'Tandkliniken L. Schröder',
+    industry: 'Clínica Odontologica',
+    location: 'Estocolmo, Suecia',
     myRole: 'Frontend Developer',
     responsibilities: ['Dashboard Development', 'Data Visualization', 'Performance Optimization'],
-    challenge: 'Amazon B&B, un encantador hotel inmerso en la exuberante selva amazónica, luchaba por conectar con su público objetivo: turistas extranjeros en busca de una experiencia única. Su sitio web existente era pesado, carente de diseño atractivo y con una usabilidad deficiente, lo que dificultaba la reserva y no reflejaba la belleza y autenticidad del lugar.',
+    challenge: 'rear una presencia digital que reflejara la alta calidad y el profesionalismo de una clínica odontológica sueca, adaptándose a las expectativas de un mercado exigente. La meta era diseñar un sitio web que no solo fuera visualmente atractivo y fácil de navegar, sino que también transmitiera confianza a través de la claridad de su información, proyectara la experiencia de los especialistas',
     process: {
       research: [
-        'Análisis de requisitos técnicos',
-        'benchmark de sitios web de hoteles de ecoturismo',
-        'Análisis de Usabilidad del Sitio Web',
-        'User Flow',
-        'Card Sorting',
-        'Arquitectura de la Información y Sitemap',
+,
+        'Creación de Wireframes y Diseño de Mockups',
+        'Arquitectura de la Información y Sitemap'
       ],
       design: {
         activities: [
           'Creación de Wireframes y Diseño de Mockups',
-          'Prototipado de visualizaciones',
-          'Optimización y mejoramiento de UI Kit',
-          'Diseño de Iconografía y Elementos Gráficos',
+          'Diseño de Iconografía y Elementos Gráficos'
+        
         ],
         colors: ['#455D58', '#3B6317', '#9DBC79', '#EC9B30', '#2E3B48'],
         typography: [
