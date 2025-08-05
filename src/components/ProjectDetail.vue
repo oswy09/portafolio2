@@ -107,39 +107,6 @@
         </div>
       </div>
 
-      <!-- Website Gallery Section (Nueva sección) -->
-      <div v-if="!project.gif && project.websiteImages" class="website-gallery">
-        <h2 class="gallery-title">Capturas del Sitio Web</h2>
-        <p class="gallery-subtitle">Explora las diferentes secciones y funcionalidades del proyecto</p>
-        
-        <div class="gallery-grid">
-          <div 
-            v-for="(image, index) in project.websiteImages" 
-            :key="index"
-            class="gallery-item"
-            :class="{ 'featured': image.featured }"
-            @click="openImageModal(image)"
-          >
-            <div class="image-container">
-              <img :src="image.url" :alt="image.title" class="gallery-image" />
-              <div class="image-overlay">
-                <div class="overlay-content">
-                  <h4>{{ image.title }}</h4>
-                  <p>{{ image.description }}</p>
-                  <div class="zoom-icon">
-                    <i class="fas fa-search-plus"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="image-info">
-              <h4 class="image-title">{{ image.title }}</h4>
-              <p class="image-description">{{ image.description }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!-- Project Process -->
       <div class="project-process">
         <h2>Proceso de Desarrollo</h2>
@@ -183,20 +150,6 @@
           <span>Siguiente Proyecto</span>
           <i class="fas fa-arrow-right"></i>
         </button>
-      </div>
-    </div>
-
-    <!-- Image Modal -->
-    <div v-if="selectedImage" class="image-modal" @click="closeImageModal">
-      <div class="modal-content" @click.stop>
-        <button @click="closeImageModal" class="modal-close">
-          <i class="fas fa-times"></i>
-        </button>
-        <img :src="selectedImage.url" :alt="selectedImage.title" class="modal-image" />
-        <div class="modal-info">
-          <h3>{{ selectedImage.title }}</h3>
-          <p>{{ selectedImage.description }}</p>
-        </div>
       </div>
     </div>
 
@@ -275,44 +228,6 @@ const projects = [
     technologies: ["WordPress", "PHP", "JavaScript", "MySQL"],
     tags: ["Hospitality", "Booking", "Responsive", "CMS"],
     heroImage: "https://oswal.com.co/wp-content/uploads/2025/04/p6.jpg",
-    websiteImages: [
-      {
-        url: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070",
-        title: "Página Principal",
-        description: "Hero section con booking widget integrado",
-        featured: true
-      },
-      {
-        url: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=2080",
-        title: "Habitaciones",
-        description: "Galería de habitaciones con filtros avanzados",
-        featured: false
-      },
-      {
-        url: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=2070",
-        title: "Servicios",
-        description: "Sección de amenidades y servicios del hotel",
-        featured: false
-      },
-      {
-        url: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070",
-        title: "Reservas",
-        description: "Sistema de reservas con calendario interactivo",
-        featured: true
-      },
-      {
-        url: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=2070",
-        title: "Contacto",
-        description: "Página de contacto con mapa interactivo",
-        featured: false
-      },
-      {
-        url: "https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=2074",
-        title: "Galería",
-        description: "Galería de imágenes del hotel y alrededores",
-        featured: false
-      }
-    ],
     websiteImages: [
       {
         url: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070",
@@ -931,10 +846,6 @@ onMounted(() => {
   
   .project-title {
     font-size: 2.5rem;
-  }
-  
-  .gallery-grid {
-    grid-template-columns: 1fr;
   }
   
   .gallery-grid {
