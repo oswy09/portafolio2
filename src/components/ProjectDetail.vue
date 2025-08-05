@@ -968,7 +968,7 @@ const projects: Project[] = [
   {
     id: 9,
     title: 'Clínica Odontológica en Suecia - Diseño Web y Presencia Digital',
-    image: 'http://www.amazonbb.com/wp-content/uploads/2023/05/boat-forest-river-blue-sky-reflection.jpg',
+    image: 'https://oswal.com.co/wp-content/uploads/2025/08/Clinica-en-suecia.jpg',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
     keyAchievement: 'Diseño Web para una Experiencia Profesional y Confiable',
     client: 'Tandkliniken L. Schröder',
@@ -989,10 +989,10 @@ const projects: Project[] = [
           'Diseño de Iconografía y Elementos Gráficos'
         
         ],
-        colors: ['#455D58', '#3B6317', '#9DBC79', '#EC9B30', '#2E3B48'],
+        colors: ['#2C2C96', '#99A833', '#F3F2FA'],
         typography: [
-          { name: 'EB Garamond', usage: 'Títulos y encabezados' },
-          { name: 'Montserrat', usage: 'Texto y contenido' },
+          { name: 'Cormorant Garamond', usage: 'Títulos y encabezados' },
+          { name: 'Open sans', usage: 'Texto y contenido' },
         ],
         icons: [
           { type: 'image', value: 'http://betterme.oswal.com.co/wp-content/uploads/2025/05/Amazon-01.png' },
