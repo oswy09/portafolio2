@@ -813,7 +813,7 @@ const projects: Project[] = [
       { value: '+25%', metric: 'Volumen de consultas directas vía correo y WhatsApp' },
       { value: '+40%', metric: 'Facilidad de Gestión de Contenido' },
     ],
-    liveUrl: 'https://www.amazonbb.com/',
+    liveUrl: 'https://betterme.oswal.com.co/',
   },
   {
     id: 7,
@@ -890,7 +890,7 @@ const projects: Project[] = [
       { value: '45%', metric: 'Nivel de Interacción con Reproductores' },
       { value: '70%', metric: 'Reducción del Tiempo de Procesamiento de Pedidos' },
     ],
-    liveUrl: 'https://www.amazonbb.com/',
+    liveUrl: 'https://dedicandote.com/',
   },
   {
     id: 8,
@@ -963,7 +963,7 @@ const projects: Project[] = [
       { value: '+25%', metric: 'Volumen de consultas directas vía correo y WhatsApp' },
       { value: '+40%', metric: 'Facilidad de Gestión de Contenido' },
     ],
-    liveUrl: 'https://www.amazonbb.com/',
+    liveUrl: 'https://www.axacolpatria.co/es/home',
   },
   {
     id: 9,
@@ -1041,7 +1041,7 @@ const projects: Project[] = [
       { value: '+25%', metric: 'Volumen de consultas directas vía correo y WhatsApp' },
       { value: '+40%', metric: 'Facilidad de Gestión de Contenido' },
     ],
-    liveUrl: 'https://www.amazonbb.com/',
+    liveUrl: 'https://tandklinikenlschroder.se/',
   },
   {
     id: 10,
@@ -1119,7 +1119,7 @@ const projects: Project[] = [
       { value: '+25%', metric: 'Volumen de consultas directas vía correo y WhatsApp' },
       { value: '+40%', metric: 'Facilidad de Gestión de Contenido' },
     ],
-    liveUrl: 'https://www.amazonbb.com/',
+    liveUrl: 'https://cafecumbrereal.com/',
   }
 ];
 </script>
