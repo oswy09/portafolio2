@@ -1004,26 +1004,24 @@ const projects: Project[] = [
       },
       development: { 
         activities: [
-          'Evaluación de Accesibilidad Web',
-          'Migración a hosting',
-          'Construcción de Layouts y Diseño a Medida con Constructor Visual',
+          'Configuración hosting',
+         'Implementación website en Wordpress',
           'Performance Optimization',
           'Mantenimiento y Actualizaciones Wordpress',
           'Desarrollo de Funcionalidades Personalizadas',
-          'Implementación de Seguridad Web',
         ],  
         stack: [
           { name: 'Wordpress', icon: 'fa-brands fa-wordpress' },
           { name: 'HTML', icon: 'fa-brands fa-html5' },
           { name: 'CSS', icon: 'fa-brands fa-css3' },
           { name: 'JS', icon: 'fa-brands fa-js' },
-          { name: 'PHP', icon: 'fa-brands fa-php' },
+          { name: 'PHP', icon: 'fa-brands fa-php' }
         ],
       },
       marketing: [
-        'Test A/B (A/B Testing)',
+       
         'Optimización para Motores de Búsqueda (SEO)',
-        'Análisis de Experiencia Digital',
+        'Análisis de Experiencia Digital'
       ],
     },
     solution: {
@@ -1032,9 +1030,9 @@ const projects: Project[] = [
         'Se rediseñó un sitio web moderno y responsivo para el Hotel Amazon B&B, construyendo la experiencia desde cero tras eliminar la plantilla original. La solución optimiza la interfaz de usuario para turistas extranjeros, integra funcionalidades clave de reservas y se accede de manera fácil al contenido y tours.',
     },
     results: [
-      { value: '+20%', metric: 'Tasa de Conversión de Reservas' },
+      { value: '+15%', metric: 'Solicitudes de Cita' },
       { value: '+25%', metric: 'Volumen de consultas directas vía correo y WhatsApp' },
-      { value: '+40%', metric: 'Facilidad de Gestión de Contenido' },
+      { value: '+30%', metric: 'Facilidad de Gestión de Contenido' },
     ],
     liveUrl: 'https://tandklinikenlschroder.se/',
   },
@@ -1111,7 +1109,7 @@ const projects: Project[] = [
     },
     results: [
       { value: '+20%', metric: 'Tasa de Conversión de Reservas' },
-      { value: '+25%', metric: 'Volumen de consultas directas vía correo y WhatsApp' },
+      { value: '+', metric: 'Posicionamiento de Marca y Profesionalismo' },
       { value: '+40%', metric: 'Facilidad de Gestión de Contenido' },
     ],
     liveUrl: 'https://cafecumbrereal.com/',
