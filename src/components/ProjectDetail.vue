@@ -223,7 +223,6 @@ import { useRoute, useRouter } from 'vue-router'
 const route = useRoute()
 const router = useRouter()
 const selectedImage = ref(null)
-const selectedImage = ref(null)
 
 // Datos de ejemplo de proyectos
 const projects = [
