@@ -979,7 +979,7 @@ const projects: Project[] = [
     challenge: 'rear una presencia digital que reflejara la alta calidad y el profesionalismo de una clínica odontológica sueca, adaptándose a las expectativas de un mercado exigente. La meta era diseñar un sitio web que no solo fuera visualmente atractivo y fácil de navegar, sino que también transmitiera confianza a través de la claridad de su información, proyectara la experiencia de los especialistas',
     process: {
       research: [
-,
+
         'Creación de Wireframes y Diseño de Mockups',
         'Arquitectura de la Información y Sitemap'
       ],
