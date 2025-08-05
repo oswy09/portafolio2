@@ -390,14 +390,6 @@ const closeImageModal = () => {
   selectedImage.value = null
 }
 
-const openImageModal = (image: any) => {
-  selectedImage.value = image
-}
-
-const closeImageModal = () => {
-  selectedImage.value = null
-}
-
 const goToPreviousProject = () => {
   const currentId = project.value.id
   const prevId = currentId > 1 ? currentId - 1 : projects.length
