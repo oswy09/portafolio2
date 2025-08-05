@@ -946,6 +946,10 @@ onMounted(() => {
     grid-template-columns: 1fr;
   }
   
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  
   .project-meta {
     flex-direction: column;
     gap: 0.5rem;
