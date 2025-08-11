@@ -1696,7 +1696,7 @@ box-sizing: border-box;
 }
 
 .project-icon {
-  font-size: 3rem;
+  font-size: 5rem;
   transition: all 0.3s ease;
 }
 
