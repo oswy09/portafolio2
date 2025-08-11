@@ -515,7 +515,7 @@ const projects: Project[] = [
       { value: 'Reducción de Tiempo', metric: ' La centralización y digitalización del contenido del quizz en la plataforma redujo el tiempo promedio que los empleados dedican a buscar y acceder a materiales de estudio' },
     ],
     liveUrl: 'https://example.com/ecommerce',
-    // Aquí se añaden las imágenes de la galería con la propiedad 'tag'
+   
     imageGallery: [
       {
         url: "https://www.elegantthemes.com/layouts/wp-content/uploads/2020/07/coding-school_home.jpg",
