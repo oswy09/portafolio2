@@ -227,14 +227,10 @@
       </div>
     </section>
 
-    <!-- Solution Section - Now includes Image Gallery -->
-    <section 
-      class="section solution-section" 
-      v-if="(project?.solution?.gif || project?.solution?.description) || project?.imageGallery?.length"
-    >
+    <!-- Solution Section -->
+    <section class="section solution-section" v-if="project?.solution?.gif || project?.solution?.description">
       <h2 class="section-title">La Solución</h2>
-      
-      <div class="solution-content" v-if="project?.solution?.gif || project?.solution?.description">
+      <div class="solution-content">
         <div class="solution-demo" v-if="project?.solution.gif">
           <img
             :src="project?.solution.gif"
@@ -244,9 +240,12 @@
         </div>
         <p class="solution-description" v-if="project?.solution.description">{{ project?.solution.description }}</p>
       </div>
+    </section>
 
-      <!-- Image Gallery - now part of the Solution section -->
-      <div class="image-grid" v-if="project?.imageGallery?.length">
+    <!-- New Image Gallery Section -->
+    <section class="section image-gallery-section" v-if="project?.imageGallery?.length">
+      <h2 class="section-title"></h2>
+      <div class="image-grid">
         <div
           v-for="(image, index) in project?.imageGallery"
           :key="index"
