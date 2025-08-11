@@ -374,11 +374,12 @@ interface Solution {
   description: string
 }
 
-// ¡Nueva interfaz para las imágenes de la galería!
+// ¡Nueva interfaz para las imágenes de la galería, incluyendo la propiedad 'tag'!
 interface ImageGalleryItem {
   url: string;
   alt: string;
   caption?: string; // Propiedad opcional para una descripción de la imagen
+  tag?: 'antes' | 'después' | 'resultado'; // ¡Nueva propiedad 'tag'!
 }
 
 // Interfaz principal para la estructura de un proyecto
@@ -399,7 +400,7 @@ interface Project {
   results: Result[]
   testimonial?: string
   liveUrl?: string
-  imageGallery?: ImageGalleryItem[]; // ¡Aquí se añade la nueva propiedad a la interfaz Project!
+  imageGallery?: ImageGalleryItem[]; // La propiedad imageGallery usa la interfaz actualizada
 }
 
 // Datos de los proyectos
@@ -472,17 +473,25 @@ const projects: Project[] = [
       { value: 'Reducción de Tiempo', metric: ' La centralización y digitalización del contenido del quizz en la plataforma redujo el tiempo promedio que los empleados dedican a buscar y acceder a materiales de estudio' },
     ],
     liveUrl: 'https://example.com/ecommerce',
-    // ¡Aquí se añaden las nuevas imágenes de la galería!
+    // Aquí se añaden las nuevas imágenes de la galería con la propiedad 'tag'
     imageGallery: [
       {
         url: "https://www.elegantthemes.com/layouts/wp-content/uploads/2020/07/coding-school_home.jpg",
         alt: "Estudiantes en un aula de programación",
-        caption: "Ambiente de aprendizaje moderno con enfoque en la práctica."
+        caption: "Ambiente de aprendizaje moderno con enfoque en la práctica.",
+        tag: "antes" // Ejemplo de tag "antes"
       },
       {
         url: "https://www.elegantthemes.com/layouts/wp-content/uploads/2020/07/coding-school_home.jpg",
-        alt: "Detalle de código en un monitor",
-        caption: "Código limpio y eficiente en acción."
+        alt: "Interfaz de desarrollo de código",
+        caption: "Código limpio y eficiente en acción.",
+        tag: "después" // Ejemplo de tag "después"
+      },
+      {
+        url: "https://placehold.co/600x400/FF0000/FFFFFF?text=Imagen+Resultado",
+        alt: "Imagen de resultado",
+        caption: "Esta es una imagen de resultado para un proyecto desde cero.",
+        tag: "resultado" // Ejemplo de tag "resultado"
       }
     ]
   },
