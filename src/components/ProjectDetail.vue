@@ -244,7 +244,7 @@
 
     <!-- New Image Gallery Section -->
     <section class="section image-gallery-section" v-if="project?.imageGallery?.length">
-      <h2 class="section-title">Galería de Imágenes</h2>
+      <h2 class="section-title"></h2>
       <div class="image-grid">
         <div
           v-for="(image, index) in project?.imageGallery"
