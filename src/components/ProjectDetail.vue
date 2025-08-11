@@ -1686,7 +1686,7 @@ box-sizing: border-box;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  border: 12px solid #e9ecef;
+  border: 12px solid #ff00ff;
 }
 
 .icon-container-large:hover {
