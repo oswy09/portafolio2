@@ -2061,4 +2061,85 @@ box-sizing: border-box;
     min-width: auto;
   }
 }
+  /* Estilos para la sección de la galería de imágenes */
+.image-gallery-section {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  margin-top: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Centrar el título de la sección */
+}
+
+.image-gallery-section .section-title {
+  color: #333;
+  font-size: 2.2em;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block; /* Para que la línea inferior se ajuste al texto */
+}
+
+.image-gallery-section .section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #6a0dad; /* Un color morado, puedes ajustarlo a tu paleta */
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Una columna por defecto */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas y grandes */
+  }
+}
+
+.gallery-image-wrapper {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 15px; /* Espacio para la descripción */
+}
+
+.gallery-image-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 250px; /* Altura fija para las imágenes */
+  object-fit: cover; /* Recorta la imagen para que llene el contenedor sin distorsionarse */
+  border-bottom: 1px solid #eee; /* Separador sutil entre imagen y descripción */
+}
+
+.gallery-image-caption {
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 15px;
+  padding: 0 15px; /* Espaciado interno para el texto */
+  line-height: 1.5;
+}
+
+/* Puedes ajustar los márgenes y paddings de las secciones generales si es necesario */
+.section {
+  margin-bottom: 60px; /* Un poco más de espacio entre secciones */
+}
+
 </style>
