@@ -611,6 +611,22 @@ const projects: Project[] = [
       { value: '+40%', metric: 'Facilidad de Gestión de Contenido' },
     ],
     liveUrl: 'https://www.amazonbb.com/',
+     imageGallery: [
+      {
+        url: "https://www.elegantthemes.com/layouts/wp-content/uploads/2020/07/coding-school_home.jpg",
+        alt: "Estudiantes en un aula de programación",
+        caption: "Ambiente de aprendizaje moderno con enfoque en la práctica.",
+        tag: "Resultado" // Ejemplo de tag "antes"
+      },
+      {
+        url: "https://www.elegantthemes.com/layouts/wp-content/uploads/2020/07/coding-school_home.jpg",
+        alt: "Interfaz de desarrollo de código",
+        caption: "Código limpio y eficiente en acción.",
+        tag: "Resultado" // Ejemplo de tag "después"
+      }
+     
+    ]
+  
   },
   {
     id: 3,
