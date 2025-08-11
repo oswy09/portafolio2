@@ -1686,7 +1686,7 @@ box-sizing: border-box;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  border: 12px solid #ff00ff;
+  border: 2px solid #e9ecef;
 }
 
 .icon-container-large:hover {
@@ -1705,6 +1705,12 @@ box-sizing: border-box;
   color: #3a2aa0;
 }
 
+.icon-image{
+  width: 4rem;
+  height: 4rem;
+  box-shadow: none;
+}
+  
 .solution-section {
   text-align: center;
 }
