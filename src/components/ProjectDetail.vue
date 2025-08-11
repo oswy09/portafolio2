@@ -601,7 +601,7 @@ const projects: Project[] = [
       ],
     },
     solution: {
-      gif: 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzE3MmZiNjM5ZTBmZjM4ZjBiZjM4ZjJiZjM4ZjJiZjM4ZjJiZjM4Zg/3oKIPnAiaMCws8nOsE/giphy.gif',
+      gif: '',
       description:
         'Se rediseñó un sitio web moderno y responsivo para el Hotel Amazon B&B, construyendo la experiencia desde cero tras eliminar la plantilla original. La solución optimiza la interfaz de usuario para turistas extranjeros, integra funcionalidades clave de reservas y se accede de manera fácil al contenido y tours.',
     },
