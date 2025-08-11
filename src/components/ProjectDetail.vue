@@ -2061,7 +2061,7 @@ box-sizing: border-box;
     min-width: auto;
   }
 }
-  /* Estilos para la sección de la galería de imágenes */
+/* Estilos para la sección de la galería de imágenes */
 .image-gallery-section {
   padding: 40px 20px;
   background-color: #f9f9f9;
@@ -2124,8 +2124,10 @@ box-sizing: border-box;
 
 .gallery-image {
   width: 100%;
-  height: 250px; /* Altura fija para las imágenes */
-  object-fit: cover; /* Recorta la imagen para que llene el contenedor sin distorsionarse */
+  height: auto; /* ¡Ajusta la altura automáticamente para mantener el aspecto original! */
+  min-height: 200px; /* Altura mínima para asegurar que siempre tengan un tamaño visible */
+  max-height: 400px; /* Altura máxima para evitar que imágenes muy largas ocupen demasiado espacio */
+  object-fit: cover; /* Sigue recortando la imagen para que llene el contenedor sin distorsionarse */
   border-bottom: 1px solid #eee; /* Separador sutil entre imagen y descripción */
 }
 
@@ -2141,5 +2143,6 @@ box-sizing: border-box;
 .section {
   margin-bottom: 60px; /* Un poco más de espacio entre secciones */
 }
+
 
 </style>
