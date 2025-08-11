@@ -53,27 +53,17 @@
     </section>
 
     <!-- Challenge Section -->
-    <section class="section challenge-section" v-if="project?.challenge">
+    <section class="section challenge-section">
       <h2 class="section-title">El Reto</h2>
       <p class="section-text">{{ project?.challenge }}</p>
     </section>
 
     <!-- Process Section -->
-    <section 
-      class="section process-section" 
-      v-if="project?.process.research?.length || 
-            project?.process.design?.activities?.length || 
-            project?.process.design?.colors?.length || 
-            project?.process.design?.typography?.length || 
-            project?.process.design?.icons?.length || 
-            project?.process.development?.activities?.length || 
-            project?.process.development?.stack?.length || 
-            project?.process.marketing?.length"
-    >
+    <section class="section process-section">
       <h2 class="section-title">El Proceso</h2>
 
       <!-- UX Research -->
-      <div class="process-stage" v-if="project?.process.research?.length">
+      <div class="process-stage">
         <h3 class="stage-title">
           <i class="fas fa-search"></i>
           Investigación / UX
@@ -88,19 +78,13 @@
       </div>
 
       <!-- Design -->
-      <div 
-        class="process-stage" 
-        v-if="project?.process.design?.activities?.length || 
-              project?.process.design?.colors?.length || 
-              project?.process.design?.typography?.length || 
-              project?.process.design?.icons?.length"
-      >
+      <div class="process-stage">
         <h3 class="stage-title">
           <i class="fas fa-paint-brush"></i>
           Diseño / UI
         </h3>
         <div class="stage-content">
-          <ul class="activity-list design-activities" v-if="project?.process.design.activities?.length">
+          <ul class="activity-list design-activities">
             <li
               v-for="activity in project?.process.design.activities"
               :key="activity"
@@ -109,7 +93,7 @@
             </li>
           </ul>
           <div class="design-elements">
-            <div class="design-card color-palette" v-if="project?.process.design.colors?.length">
+            <div class="design-card color-palette">
               <div class="card-header">
                 <i class="fas fa-palette"></i>
                 <h4>Paleta de Colores</h4>
@@ -127,7 +111,7 @@
               </div>
             </div>
 
-            <div class="design-card typography" v-if="project?.process.design.typography?.length">
+            <div class="design-card typography">
               <div class="card-header">
                 <i class="fas fa-font"></i>
                 <h4>Tipografía</h4>
@@ -152,7 +136,7 @@
               </div>
             </div>
 
-            <div class="design-card iconography" v-if="project?.process.design.icons?.length">
+            <div class="design-card iconography">
               <div class="card-header">
                 <i class="fas fa-icons"></i>
                 <h4>Iconografía</h4>
@@ -177,17 +161,13 @@
       </div>
 
       <!-- Development -->
-      <div 
-        class="process-stage" 
-        v-if="project?.process.development?.activities?.length || 
-              project?.process.development?.stack?.length"
-      >
+      <div class="process-stage">
         <h3 class="stage-title">
           <i class="fas fa-code"></i>
           Desarrollo/Implementación
         </h3>
         <div class="stage-content">
-          <ul class="activity-list" v-if="project?.process.development.activities?.length">
+          <ul class="activity-list">
             <li
               v-for="activity in project?.process.development.activities"
               :key="activity"
@@ -197,7 +177,7 @@
           </ul>
           <div v-if="project.technologies && project.technologies.length > 0" class="detail-section">
             <h4>Tecnologías Utilizadas</h4>
-            <div class="tech-icons" v-if="project?.process.development.stack?.length">
+            <div class="tech-icons">
               <div
                 v-for="tech in project?.process.development.stack"
                 :key="tech.name"
@@ -212,7 +192,7 @@
       </div>
 
       <!-- Marketing -->
-      <div class="process-stage" v-if="project?.process.marketing?.length">
+      <div class="process-stage">
         <h3 class="stage-title">
           <i class="fas fa-bullhorn"></i>
           Marketing
@@ -228,23 +208,23 @@
     </section>
 
     <!-- Solution Section -->
-    <section class="section solution-section" v-if="project?.solution?.gif || project?.solution?.description">
+    <section class="section solution-section">
       <h2 class="section-title">La Solución</h2>
       <div class="solution-content">
-        <div class="solution-demo" v-if="project?.solution.gif">
+        <div class="solution-demo">
           <img
             :src="project?.solution.gif"
             :alt="project?.title"
             class="solution-gif"
           />
         </div>
-        <p class="solution-description" v-if="project?.solution.description">{{ project?.solution.description }}</p>
+        <p class="solution-description">{{ project?.solution.description }}</p>
       </div>
     </section>
 
     <!-- New Image Gallery Section -->
-    <section class="section image-gallery-section" v-if="project?.imageGallery?.length">
-      <h2 class="section-title"></h2>
+    <section class="section image-gallery-section">
+      <h2 class="section-title">Galería de Imágenes</h2>
       <div class="image-grid">
         <div
           v-for="(image, index) in project?.imageGallery"
@@ -260,7 +240,7 @@
     </section>
 
     <!-- Results Section -->
-    <section class="section results-section" v-if="project?.results?.length">
+    <section class="section results-section">
       <h2 class="section-title">Resultados</h2>
       <div class="results-grid">
         <div
@@ -317,7 +297,6 @@
     </div>
   </div>
 </template>
-
 
 <script setup lang="ts">
 import { computed } from 'vue'
@@ -465,7 +444,10 @@ const projects: Project[] = [
           { name: 'Inter', usage: 'Texto y contenido' },
         ],
         icons: [
-       
+          { type: 'fa', value: 'fas fa-shopping-cart' },
+          { type: 'image', value: '/images/heart.png' },
+          { type: 'fa', value: 'fas fa-user' },
+          { type: 'image', value: '/images/search.png' },
         ],
       },
       development: {
@@ -487,7 +469,7 @@ const projects: Project[] = [
       ],
     },
     solution: {
-      gif: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1754408304/Proyecto_oswal_web_design_Quiz_y1nutn.gif',
+      gif: 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDd6Y2E4OWF1NXgyczB1OWF4MWs4NnBnOWF4ZDV0Y2xxbzF1dWR6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIPnAiaMCws8nOsE/giphy.gif',
       description:
         'Se entregó una aplicación web interactiva de quizz construida desde cero con Vue.js Esta interfaz no solo facilita el estudio personalizado por temas y la autoevaluación para los concursos de ascenso, sino que también ofrece un panel administrativo intuitivo para la gestión total de usuarios y contenido por parte del Acueducto de Bogotá.',
     },
@@ -2091,18 +2073,17 @@ box-sizing: border-box;
     min-width: auto;
   }
 }
-/* Estilos generales para las secciones */
-.section {
-  padding: 40px 20px; /* Asegura que todas las secciones tengan padding */
+/* Estilos para la sección de la galería de imágenes */
+.image-gallery-section {
+  padding: 40px 20px;
   background-color: #f9f9f9;
   border-radius: 10px;
   margin-top: 40px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center; /* Centrar el título de la sección */
-  margin-bottom: 60px; /* Un poco más de espacio entre secciones */
 }
 
-.section-title {
+.image-gallery-section .section-title {
   color: #333;
   font-size: 2.2em;
   margin-bottom: 30px;
@@ -2110,7 +2091,7 @@ box-sizing: border-box;
   display: inline-block; /* Para que la línea inferior se ajuste al texto */
 }
 
-.section-title::after {
+.image-gallery-section .section-title::after {
   content: '';
   display: block;
   width: 80px;
@@ -2120,14 +2101,12 @@ box-sizing: border-box;
   border-radius: 2px;
 }
 
-/* Estilos específicos para la rejilla de imágenes, ahora dentro de la sección de Solución */
 .image-grid {
   display: grid;
   grid-template-columns: 1fr; /* Una columna por defecto */
   gap: 20px;
   max-width: 1200px;
-  margin: 30px auto 0; /* Margen superior para separarlo del contenido de la solución */
-  padding-top: 20px; /* Espacio superior dentro de la rejilla */
+  margin: 0 auto;
 }
 
 @media (min-width: 768px) {
@@ -2201,6 +2180,11 @@ box-sizing: border-box;
   margin-top: 15px;
   padding: 0 15px; /* Espaciado interno para el texto */
   line-height: 1.5;
+}
+
+/* Puedes ajustar los márgenes y paddings de las secciones generales si es necesario */
+.section {
+  margin-bottom: 60px; /* Un poco más de espacio entre secciones */
 }
 
 </style>
