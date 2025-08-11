@@ -1612,7 +1612,7 @@ box-sizing: border-box;
 }
 
 .icon-item i {
-  font-size: 1.8rem;
+  font-size: 2.8rem;
   color: #CCF381;
   transition: all 0.3s ease;
 }
