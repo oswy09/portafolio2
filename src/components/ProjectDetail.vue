@@ -1605,7 +1605,7 @@ box-sizing: border-box;
   flex-direction: column;
   align-items: center;
   gap: 0.8rem;
-  padding: 0.6rem;
+  padding: 1.1rem;
   background: #F4F9FC;
   border-radius: 0.8rem;
   transition: all 0.3s ease;
