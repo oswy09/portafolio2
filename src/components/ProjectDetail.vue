@@ -223,36 +223,6 @@
       </div>
     </section>
 
-    <!-- Final Website Images Section -->
-    <div class="project-section">
-      <h3 class="section-title">
-        <i class="fas fa-globe"></i>
-        Resultado Final
-      </h3>
-      <div class="website-images-grid">
-        <div class="website-image-container">
-          <div class="website-frame">
-            <img 
-              src="https://www.elegantthemes.com/layouts/wp-content/uploads/2020/07/coding-school_home.jpg" 
-              alt="Página Principal" 
-              class="website-image"
-            />
-          </div>
-          <div class="image-label">Página Principal</div>
-        </div>
-        <div class="website-image-container">
-          <div class="website-frame">
-            <img 
-              src="https://www.elegantthemes.com/layouts/wp-content/uploads/2020/07/coding-school_pricing.jpg" 
-              alt="Página de Precios" 
-              class="website-image"
-            />
-          </div>
-          <div class="image-label">Página de Precios</div>
-        </div>
-      </div>
-    </div>
-
     <!-- Results Section -->
     <section class="section results-section">
       <h2 class="section-title">Resultados</h2>
@@ -1242,6 +1212,58 @@ const projects: Project[] = [
   filter: brightness(0.8);
 }
 
+/* Website Images Section */
+.website-images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.website-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.website-frame {
+  background: white;
+  padding: 8px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.website-frame:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(72, 49, 212, 0.2);
+}
+
+.website-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.website-frame:hover .website-image {
+  transform: scale(1.02);
+}
+
+.image-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4831D4;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  background: rgba(72, 49, 212, 0.1);
+  border-radius: 20px;
+  border: 1px solid rgba(72, 49, 212, 0.2);
+}
+
 .hero-content {
   position: absolute;
   bottom: 0;
@@ -1874,49 +1896,6 @@ box-sizing: border-box;
   transform: translateX(-3px);
 }
 
-.website-images-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.website-image-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.website-frame {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1rem;
-  border-radius: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-}
-
-.website-frame:hover {
-  transform: translateY(-5px);
-  border-color: #CCF381;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.website-image {
-  width: 100%;
-  height: auto;
-  border-radius: 0.5rem;
-  transition: all 0.3s ease;
-}
-
-.image-label {
-  font-size: 1rem;
-  color: #CCF381;
-  font-weight: 500;
-  text-align: center;
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -1948,21 +1927,10 @@ box-sizing: border-box;
   }
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
-  .website-images-container {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  .website-image-wrapper {
-    max-width: 100%;
-    min-width: auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    height: 50vh;
+  .project-detail {
+    padding: 1rem;
   }
 
   .hero h1 {
@@ -2007,6 +1975,49 @@ box-sizing: border-box;
 
   .solution-gif {
     max-width: 100%;
+  }
+
+  .iconography-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+  
+  .website-images-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .achievement {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .iconography-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+  
+  .website-images-grid {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .website-images-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .website-image-wrapper {
+    max-width: 100%;
+    min-width: auto;
   }
 }
 </style>
