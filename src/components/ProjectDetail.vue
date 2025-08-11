@@ -2221,7 +2221,7 @@ box-sizing: border-box;
   width: 100%;
   height: auto; /* Ajusta la altura automáticamente para mantener el aspecto original */
   min-height: 200px; /* Altura mínima para asegurar que siempre tengan un tamaño visible */
-  max-height: 1200px; /* Altura máxima para evitar que imágenes muy largas ocupen demasiado espacio */
+  max-height: 1400px; /* Altura máxima para evitar que imágenes muy largas ocupen demasiado espacio */
   object-fit: cover; /* Recorta la imagen para que llene el contenedor sin distorsionarse */
   border-bottom: 1px solid #eee; /* Separador sutil entre imagen y descripción */
 }
