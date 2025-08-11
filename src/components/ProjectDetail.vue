@@ -613,7 +613,7 @@ const projects: Project[] = [
     liveUrl: 'https://www.amazonbb.com/',
      imageGallery: [
       {
-        url: "https://oswal.com.co/wp-content/uploads/2025/08/Amazon_mockup01-scaled.jpg",
+        url: "https://oswal.com.co/wp-content/uploads/2025/08/Amazon_mockup02-scaled.jpg",
         alt: "Estudiantes en un aula de programación",
         caption: "Ambiente de aprendizaje moderno con enfoque en la práctica.",
         tag: "Resultado" // Ejemplo de tag "antes"
