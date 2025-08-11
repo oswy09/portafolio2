@@ -1678,8 +1678,8 @@ box-sizing: border-box;
 
 /* Iconografía */
 .icon-container-large {
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
   background: white;
   border-radius: 15px;
   display: flex;
@@ -1692,12 +1692,11 @@ box-sizing: border-box;
 .icon-container-large:hover {
   transform: translateY(-5px);
   border-color: #4831D4;
-  background: #f8f9ff;
+  border: 2px solid #e9ecef;
 }
 
 .project-icon {
   font-size: 3rem;
-  color: #4831D4;
   transition: all 0.3s ease;
 }
 
@@ -1754,11 +1753,12 @@ box-sizing: border-box;
 .result-card:hover {
   transform: translateY(-10px);
   border-color: #CCF381;
-  box-shadow: 0 10px 30px rgba(72, 49, 212, 0.2);
+  border-color: #4831D4;
+  background: rgba(72, 49, 212, 0.05);
 }
 
 .result-card h3 {
-  font-size: 3rem;
+  font-size: 4rem;
   color: #CCF381;
   margin-bottom: 0.5rem;
 }
