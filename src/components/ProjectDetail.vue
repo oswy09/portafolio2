@@ -153,7 +153,7 @@
                   <template v-else-if="icon.type === 'image'">
                     <img :src="icon.value" alt="icon" class="icon-image" />
                   </template>
-                  <span class="icon-name">{{ getIconName(icon) }}</span>
+              
                 </div>
               </div>
             </div>
@@ -1696,7 +1696,7 @@ box-sizing: border-box;
 }
 
 .project-icon {
-  font-size: 5rem;
+  font-size: 3rem;
   transition: all 0.3s ease;
 }
 
