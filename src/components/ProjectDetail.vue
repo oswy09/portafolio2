@@ -2092,17 +2092,18 @@ box-sizing: border-box;
     min-width: auto;
   }
 }
-/* Estilos para la sección de la galería de imágenes */
-.image-gallery-section {
-  padding: 40px 20px;
+/* Estilos generales para las secciones */
+.section {
+  padding: 40px 20px; /* Asegura que todas las secciones tengan padding */
   background-color: #f9f9f9;
   border-radius: 10px;
   margin-top: 40px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center; /* Centrar el título de la sección */
+  margin-bottom: 60px; /* Un poco más de espacio entre secciones */
 }
 
-.image-gallery-section .section-title {
+.section-title {
   color: #333;
   font-size: 2.2em;
   margin-bottom: 30px;
@@ -2110,7 +2111,7 @@ box-sizing: border-box;
   display: inline-block; /* Para que la línea inferior se ajuste al texto */
 }
 
-.image-gallery-section .section-title::after {
+.section-title::after {
   content: '';
   display: block;
   width: 80px;
@@ -2120,12 +2121,14 @@ box-sizing: border-box;
   border-radius: 2px;
 }
 
+/* Estilos específicos para la rejilla de imágenes, ahora dentro de la sección de Solución */
 .image-grid {
   display: grid;
   grid-template-columns: 1fr; /* Una columna por defecto */
   gap: 20px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 30px auto 0; /* Margen superior para separarlo del contenido de la solución */
+  padding-top: 20px; /* Espacio superior dentro de la rejilla */
 }
 
 @media (min-width: 768px) {
@@ -2199,11 +2202,6 @@ box-sizing: border-box;
   margin-top: 15px;
   padding: 0 15px; /* Espaciado interno para el texto */
   line-height: 1.5;
-}
-
-/* Puedes ajustar los márgenes y paddings de las secciones generales si es necesario */
-.section {
-  margin-bottom: 60px; /* Un poco más de espacio entre secciones */
 }
 
 </style>
