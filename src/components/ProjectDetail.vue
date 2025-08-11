@@ -1876,6 +1876,18 @@ box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
+  .website-images-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .website-image-wrapper {
+    max-width: 100%;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 768px) {
   .hero {
     height: 50vh;
   }
