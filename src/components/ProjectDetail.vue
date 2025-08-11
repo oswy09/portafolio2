@@ -153,7 +153,6 @@
                   <template v-else-if="icon.type === 'image'">
                     <img :src="icon.value" alt="icon" class="icon-image" />
                   </template>
-              
                 </div>
               </div>
             </div>
@@ -220,6 +219,17 @@
           />
         </div>
         <p class="solution-description">{{ project?.solution.description }}</p>
+      </div>
+    </section>
+
+    <!-- New Image Gallery Section -->
+    <section class="section image-gallery-section">
+      <h2 class="section-title">Galería de Imágenes</h2>
+      <div class="image-grid">
+        <div v-for="(image, index) in project?.imageGallery" :key="index" class="gallery-image-wrapper">
+          <img :src="image.url" :alt="image.alt" class="gallery-image" />
+          <p v-if="image.caption" class="gallery-image-caption">{{ image.caption }}</p>
+        </div>
       </div>
     </section>
 
