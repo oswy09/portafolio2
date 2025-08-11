@@ -239,6 +239,24 @@
           />
         </div>
         <p class="solution-description" v-if="project?.solution.description">{{ project?.solution.description }}</p>
+        
+        <!-- Galería de Imágenes dentro de La Solución -->
+        <div class="gallery-grid" v-if="project.gallery && project.gallery.length > 0">
+          <div 
+            v-for="(image, index) in project.gallery" 
+            :key="index"
+            class="gallery-item"
+            @click="openLightbox(index)"
+          >
+            <img :src="image" :alt="`Imagen ${index + 1}`" class="gallery-image" />
+            <div class="gallery-overlay">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
