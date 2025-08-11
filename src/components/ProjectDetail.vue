@@ -159,7 +159,7 @@
             </div>
           </div>
         </div>
-      </div>
+          <div v-if="project.technologies && project.technologies.length > 0" class="detail-section">
 
       <!-- Development -->
       <div class="process-stage">
@@ -176,13 +176,13 @@
               {{ activity }}
             </li>
           </ul>
-          <div class="tech-stack">
+          <div v-if="project.features && project.features.length > 0" class="detail-section">
             <h4>Tecnologías Utilizadas</h4>
             <div class="tech-icons">
               <div
                 v-for="tech in project?.process.development.stack"
                 :key="tech.name"
-                class="tech-item"
+                <div class="icon-container-large">
               >
                 <i :class="tech.icon"></i>
                 <span>{{ tech.name }}</span>
@@ -191,7 +191,7 @@
           </div>
         </div>
       </div>
-
+          <div v-if="project.designProcess && project.designProcess.length > 0" class="detail-section">
       <!-- Marketing -->
       <div class="process-stage">
         <h3 class="stage-title">
@@ -209,7 +209,7 @@
     </section>
 
     <!-- Solution Section -->
-    <section class="section solution-section">
+          <div v-if="project.results && project.results.length > 0" class="detail-section">
       <h2 class="section-title">La Solución</h2>
       <div class="solution-content">
         <div class="solution-demo">
