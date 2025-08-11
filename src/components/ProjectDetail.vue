@@ -53,17 +53,27 @@
     </section>
 
     <!-- Challenge Section -->
-    <section class="section challenge-section">
+    <section class="section challenge-section" v-if="project?.challenge">
       <h2 class="section-title">El Reto</h2>
       <p class="section-text">{{ project?.challenge }}</p>
     </section>
 
     <!-- Process Section -->
-    <section class="section process-section">
+    <section 
+      class="section process-section" 
+      v-if="project?.process.research?.length || 
+            project?.process.design?.activities?.length || 
+            project?.process.design?.colors?.length || 
+            project?.process.design?.typography?.length || 
+            project?.process.design?.icons?.length || 
+            project?.process.development?.activities?.length || 
+            project?.process.development?.stack?.length || 
+            project?.process.marketing?.length"
+    >
       <h2 class="section-title">El Proceso</h2>
 
       <!-- UX Research -->
-      <div class="process-stage">
+      <div class="process-stage" v-if="project?.process.research?.length">
         <h3 class="stage-title">
           <i class="fas fa-search"></i>
           Investigación / UX
@@ -78,13 +88,19 @@
       </div>
 
       <!-- Design -->
-      <div class="process-stage">
+      <div 
+        class="process-stage" 
+        v-if="project?.process.design?.activities?.length || 
+              project?.process.design?.colors?.length || 
+              project?.process.design?.typography?.length || 
+              project?.process.design?.icons?.length"
+      >
         <h3 class="stage-title">
           <i class="fas fa-paint-brush"></i>
           Diseño / UI
         </h3>
         <div class="stage-content">
-          <ul class="activity-list design-activities">
+          <ul class="activity-list design-activities" v-if="project?.process.design.activities?.length">
             <li
               v-for="activity in project?.process.design.activities"
               :key="activity"
@@ -93,7 +109,7 @@
             </li>
           </ul>
           <div class="design-elements">
-            <div class="design-card color-palette">
+            <div class="design-card color-palette" v-if="project?.process.design.colors?.length">
               <div class="card-header">
                 <i class="fas fa-palette"></i>
                 <h4>Paleta de Colores</h4>
@@ -111,7 +127,7 @@
               </div>
             </div>
 
-            <div class="design-card typography">
+            <div class="design-card typography" v-if="project?.process.design.typography?.length">
               <div class="card-header">
                 <i class="fas fa-font"></i>
                 <h4>Tipografía</h4>
@@ -136,7 +152,7 @@
               </div>
             </div>
 
-            <div class="design-card iconography">
+            <div class="design-card iconography" v-if="project?.process.design.icons?.length">
               <div class="card-header">
                 <i class="fas fa-icons"></i>
                 <h4>Iconografía</h4>
@@ -161,13 +177,17 @@
       </div>
 
       <!-- Development -->
-      <div class="process-stage">
+      <div 
+        class="process-stage" 
+        v-if="project?.process.development?.activities?.length || 
+              project?.process.development?.stack?.length"
+      >
         <h3 class="stage-title">
           <i class="fas fa-code"></i>
           Desarrollo/Implementación
         </h3>
         <div class="stage-content">
-          <ul class="activity-list">
+          <ul class="activity-list" v-if="project?.process.development.activities?.length">
             <li
               v-for="activity in project?.process.development.activities"
               :key="activity"
@@ -177,7 +197,7 @@
           </ul>
           <div v-if="project.technologies && project.technologies.length > 0" class="detail-section">
             <h4>Tecnologías Utilizadas</h4>
-            <div class="tech-icons">
+            <div class="tech-icons" v-if="project?.process.development.stack?.length">
               <div
                 v-for="tech in project?.process.development.stack"
                 :key="tech.name"
@@ -192,7 +212,7 @@
       </div>
 
       <!-- Marketing -->
-      <div class="process-stage">
+      <div class="process-stage" v-if="project?.process.marketing?.length">
         <h3 class="stage-title">
           <i class="fas fa-bullhorn"></i>
           Marketing
@@ -208,22 +228,22 @@
     </section>
 
     <!-- Solution Section -->
-    <section class="section solution-section">
+    <section class="section solution-section" v-if="project?.solution?.gif || project?.solution?.description">
       <h2 class="section-title">La Solución</h2>
       <div class="solution-content">
-        <div class="solution-demo">
+        <div class="solution-demo" v-if="project?.solution.gif">
           <img
             :src="project?.solution.gif"
             :alt="project?.title"
             class="solution-gif"
           />
         </div>
-        <p class="solution-description">{{ project?.solution.description }}</p>
+        <p class="solution-description" v-if="project?.solution.description">{{ project?.solution.description }}</p>
       </div>
     </section>
 
     <!-- New Image Gallery Section -->
-    <section class="section image-gallery-section">
+    <section class="section image-gallery-section" v-if="project?.imageGallery?.length">
       <h2 class="section-title">Galería de Imágenes</h2>
       <div class="image-grid">
         <div
@@ -240,7 +260,7 @@
     </section>
 
     <!-- Results Section -->
-    <section class="section results-section">
+    <section class="section results-section" v-if="project?.results?.length">
       <h2 class="section-title">Resultados</h2>
       <div class="results-grid">
         <div
@@ -297,6 +317,7 @@
     </div>
   </div>
 </template>
+
 
 <script setup lang="ts">
 import { computed } from 'vue'
