@@ -2124,6 +2124,7 @@ box-sizing: border-box;
   justify-content: center;
   text-align: center;
   padding-bottom: 15px; /* Espacio para la descripción */
+  position: relative; /* Necesario para posicionar el tag */
 }
 
 .gallery-image-wrapper:hover {
@@ -2133,10 +2134,10 @@ box-sizing: border-box;
 
 .gallery-image {
   width: 100%;
-  height: auto; /* ¡Ajusta la altura automáticamente para mantener el aspecto original! */
+  height: auto; /* Ajusta la altura automáticamente para mantener el aspecto original */
   min-height: 200px; /* Altura mínima para asegurar que siempre tengan un tamaño visible */
-  max-height: 800px; /* Altura máxima para evitar que imágenes muy largas ocupen demasiado espacio */
-  object-fit: cover; /* Sigue recortando la imagen para que llene el contenedor sin distorsionarse */
+  max-height: 400px; /* Altura máxima para evitar que imágenes muy largas ocupen demasiado espacio */
+  object-fit: cover; /* Recorta la imagen para que llene el contenedor sin distorsionarse */
   border-bottom: 1px solid #eee; /* Separador sutil entre imagen y descripción */
 }
 
@@ -2148,10 +2149,40 @@ box-sizing: border-box;
   line-height: 1.5;
 }
 
+/* Estilos para el tag de la imagen */
+.gallery-image-tag {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  z-index: 10; /* Asegura que el tag esté por encima de la imagen */
+}
+
+/* Estilos específicos para cada tipo de tag */
+.tag-antes {
+  background-color: #e74c3c; /* Rojo para "antes" */
+}
+
+.tag-después {
+  background-color: #2ecc71; /* Verde para "después" */
+}
+
+.tag-resultado {
+  background-color: #3498db; /* Azul para "resultado" */
+}
+
+
 /* Puedes ajustar los márgenes y paddings de las secciones generales si es necesario */
 .section {
   margin-bottom: 60px; /* Un poco más de espacio entre secciones */
 }
+
 
 
 </style>
