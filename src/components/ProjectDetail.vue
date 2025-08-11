@@ -299,39 +299,48 @@ import { useRoute, useRouter } from 'vue-router'
 const route = useRoute()
 const router = useRouter()
 
+// Obtiene el ID actual del proyecto de los parámetros de la ruta
 const currentId = computed(() => parseInt(route.params.id as string))
+// Busca el proyecto correspondiente al ID actual en el arreglo 'projects'
 const project = computed(() => projects.find((p) => p.id === currentId.value))
 
+// Calcula el ID del proyecto anterior para la navegación
 const prevProjectId = computed(() => {
   const prevId = currentId.value - 1
-  return prevId >= 1 ? prevId : null
+  return prevId >= 1 ? prevId : null // Si es el primer proyecto, no hay anterior
 })
 
+// Calcula el ID del proyecto siguiente para la navegación
 const nextProjectId = computed(() => {
   const nextId = currentId.value + 1
-  return nextId <= projects.length ? nextId : null
+  return nextId <= projects.length ? nextId : null // Si es el último proyecto, no hay siguiente
 })
 
+// Función para navegar a un proyecto específico por su ID
 const navigateToProject = (id: number | null) => {
   if (id) {
     router.push({ name: 'project-detail', params: { id: id.toString() } })
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0, behavior: 'smooth' }) // Desplaza la ventana al inicio suavemente
   }
 }
 
+// Función para volver a la galería de proyectos
 const backToGallery = () => {
   router.push({ name: 'projects' })
 }
 
+// Función auxiliar para obtener el nombre de un icono basado en su tipo
 function getIconName(icon: { type: string; value: string }) {
   if (icon.type === 'fa') {
-    return icon.value.split('fa-')[1]
+    return icon.value.split('fa-')[1] // Para iconos de Font Awesome
   } else if (icon.type === 'image') {
+    // Para imágenes, extrae el nombre del archivo sin extensión y reemplaza guiones por espacios
     return icon.value.split('/').pop()?.split('.')[0].replace(/-/g, ' ') || ''
   }
   return ''
 }
 
+// Interfaz para la estructura del proceso del proyecto
 interface Process {
   research: string[]
   design: {
@@ -353,16 +362,26 @@ interface Process {
   marketing: string[]
 }
 
+// Interfaz para la estructura de los resultados del proyecto
 interface Result {
   value: string
   metric: string
 }
 
+// Interfaz para la estructura de la solución del proyecto
 interface Solution {
   gif: string
   description: string
 }
 
+// ¡Nueva interfaz para las imágenes de la galería!
+interface ImageGalleryItem {
+  url: string;
+  alt: string;
+  caption?: string; // Propiedad opcional para una descripción de la imagen
+}
+
+// Interfaz principal para la estructura de un proyecto
 interface Project {
   id: number
   image: string
@@ -380,8 +399,10 @@ interface Project {
   results: Result[]
   testimonial?: string
   liveUrl?: string
+  imageGallery?: ImageGalleryItem[]; // ¡Aquí se añade la nueva propiedad a la interfaz Project!
 }
 
+// Datos de los proyectos
 const projects: Project[] = [
   {
     id: 1,
@@ -403,14 +424,12 @@ const projects: Project[] = [
         'User Flow',
         'Arquitectura de la Información y Sitemap',
         'Pruebas de Usabilidad'
-       
       ],
       design: {
         activities: [
           'Diseño de Mockups',
           'Adaptación y Aplicación de UI kit',
           'Diseño de elementos gráficos'
-         
         ],
         colors: ['#4831D4', '#CCF381', '#2A2356', '#F4F9FC'],
         typography: [
@@ -430,17 +449,16 @@ const projects: Project[] = [
           'Performance Optimization',
           'Construcción de la interfaz de usuario interactiva y dinámica utilizando Vue.js.',
           'Implementación de Seguridad Web',
-           'Creación de dashboard para gestionar usuarios ',
+          'Creación de dashboard para gestionar usuarios ',
         ],
         stack: [
           { name: 'Vue', icon: 'fa-brands fa-vuejs' },
-           { name: 'HTML', icon: 'fa-brands fa-html5' },
+          { name: 'HTML', icon: 'fa-brands fa-html5' },
           { name: 'CSS', icon: 'fa-brands fa-css3' },
           { name: 'JS', icon: 'fa-brands fa-js' },
         ],
       },
       marketing: [
-       
       ],
     },
     solution: {
@@ -449,11 +467,24 @@ const projects: Project[] = [
         'Se entregó una aplicación web interactiva de quizz construida desde cero con Vue.js Esta interfaz no solo facilita el estudio personalizado por temas y la autoevaluación para los concursos de ascenso, sino que también ofrece un panel administrativo intuitivo para la gestión total de usuarios y contenido por parte del Acueducto de Bogotá.',
     },
     results: [
-      { value: '450', metric: 'empleado se registraron y utilizan la  interfaz' },
+      { value: '450', metric: 'empleado se registraron y utilizan la interfaz' },
       { value: 'Feedback', metric: 'Recepción de comentarios positivos sobre la facilidad de uso' },
       { value: 'Reducción de Tiempo', metric: ' La centralización y digitalización del contenido del quizz en la plataforma redujo el tiempo promedio que los empleados dedican a buscar y acceder a materiales de estudio' },
     ],
     liveUrl: 'https://example.com/ecommerce',
+    // ¡Aquí se añaden las nuevas imágenes de la galería!
+    imageGallery: [
+      {
+        url: "https://www.elegantthemes.com/layouts/wp-content/uploads/2020/07/coding-school_home.jpg",
+        alt: "Estudiantes en un aula de programación",
+        caption: "Ambiente de aprendizaje moderno con enfoque en la práctica."
+      },
+      {
+        url: "https://www.elegantthemes.com/layouts/wp-content/uploads/2020/07/coding-school_home.jpg",
+        alt: "Detalle de código en un monitor",
+        caption: "Código limpio y eficiente en acción."
+      }
+    ]
   },
   {
     id: 2,
