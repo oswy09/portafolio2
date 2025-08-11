@@ -37,7 +37,7 @@
           </div>
         </div>
         <div class="role-info">
-          <h3 class="section-subtitle">Mi Rol</h3>
+          <h3 class="stage-title">Mi Rol</h3>
           <p>{{ project?.myRole }}</p>
           <div class="responsibilities">
             <span
@@ -226,7 +226,13 @@
     <section class="section image-gallery-section">
       <h2 class="section-title">Galería de Imágenes</h2>
       <div class="image-grid">
-        <div v-for="(image, index) in project?.imageGallery" :key="index" class="gallery-image-wrapper">
+        <div
+          v-for="(image, index) in project?.imageGallery"
+          :key="index"
+          class="gallery-image-wrapper"
+          :data-tag="image.tag"
+          :class="{ 'has-tag': image.tag }"
+        >
           <img :src="image.url" :alt="image.alt" class="gallery-image" />
           <p v-if="image.caption" class="gallery-image-caption">{{ image.caption }}</p>
         </div>
