@@ -505,7 +505,7 @@ const projects: Project[] = [
       ],
     },
     solution: {
-      gif: 
+      gif: ',
       description:
         'Se entregó una aplicación web interactiva de quizz construida desde cero con Vue.js Esta interfaz no solo facilita el estudio personalizado por temas y la autoevaluación para los concursos de ascenso, sino que también ofrece un panel administrativo intuitivo para la gestión total de usuarios y contenido por parte del Acueducto de Bogotá.',
     },
