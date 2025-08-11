@@ -2224,6 +2224,7 @@ box-sizing: border-box;
   max-height: 1000px; /* Altura máxima para evitar que imágenes muy largas ocupen demasiado espacio */
   object-fit: cover; /* Recorta la imagen para que llene el contenedor sin distorsionarse */
   border-bottom: 1px solid #eee; /* Separador sutil entre imagen y descripción */
+  object-position: top;
 }
 
 .gallery-image-caption {
