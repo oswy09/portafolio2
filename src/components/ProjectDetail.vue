@@ -1678,7 +1678,7 @@ box-sizing: border-box;
 
 /* Iconografía */
 .icon-container-large {
-  width: 120px;
+  width: 180px;
   height: 120px;
   background: white;
   border-radius: 15px;
