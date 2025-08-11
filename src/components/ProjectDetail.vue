@@ -223,6 +223,36 @@
       </div>
     </section>
 
+    <!-- Final Website Images Section -->
+    <div class="project-section">
+      <h3 class="section-title">
+        <i class="fas fa-globe"></i>
+        Resultado Final
+      </h3>
+      <div class="website-images-grid">
+        <div class="website-image-container">
+          <div class="website-frame">
+            <img 
+              src="https://www.elegantthemes.com/layouts/wp-content/uploads/2020/07/coding-school_home.jpg" 
+              alt="Página Principal" 
+              class="website-image"
+            />
+          </div>
+          <div class="image-label">Página Principal</div>
+        </div>
+        <div class="website-image-container">
+          <div class="website-frame">
+            <img 
+              src="https://www.elegantthemes.com/layouts/wp-content/uploads/2020/07/coding-school_pricing.jpg" 
+              alt="Página de Precios" 
+              class="website-image"
+            />
+          </div>
+          <div class="image-label">Página de Precios</div>
+        </div>
+      </div>
+    </div>
+
     <!-- Results Section -->
     <section class="section results-section">
       <h2 class="section-title">Resultados</h2>
@@ -1842,6 +1872,49 @@ box-sizing: border-box;
 
 .nav-btn:hover .arrow-icon.left {
   transform: translateX(-3px);
+}
+
+.website-images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.website-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.website-frame {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.website-frame:hover {
+  transform: translateY(-5px);
+  border-color: #CCF381;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.website-image {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.image-label {
+  font-size: 1rem;
+  color: #CCF381;
+  font-weight: 500;
+  text-align: center;
 }
 
 @keyframes fadeIn {
