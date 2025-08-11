@@ -465,10 +465,7 @@ const projects: Project[] = [
           { name: 'Inter', usage: 'Texto y contenido' },
         ],
         icons: [
-          { type: 'fa', value: 'fas fa-shopping-cart' },
-          { type: 'image', value: '/images/heart.png' },
-          { type: 'fa', value: 'fas fa-user' },
-          { type: 'image', value: '/images/search.png' },
+        
         ],
       },
       development: {
