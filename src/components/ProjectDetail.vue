@@ -159,7 +159,7 @@
             </div>
           </div>
         </div>
-          <div v-if="project.technologies && project.technologies.length > 0" class="detail-section">
+      </div>
 
       <!-- Development -->
       <div class="process-stage">
@@ -176,13 +176,13 @@
               {{ activity }}
             </li>
           </ul>
-          <div v-if="project.features && project.features.length > 0" class="detail-section">
+          <div v-if="project.technologies && project.technologies.length > 0" class="detail-section">
             <h4>Tecnologías Utilizadas</h4>
             <div class="tech-icons">
               <div
                 v-for="tech in project?.process.development.stack"
                 :key="tech.name"
-                <div class="icon-container-large">
+                class="icon-container-large"
               >
                 <i :class="tech.icon"></i>
                 <span>{{ tech.name }}</span>
@@ -191,7 +191,7 @@
           </div>
         </div>
       </div>
-          <div v-if="project.designProcess && project.designProcess.length > 0" class="detail-section">
+
       <!-- Marketing -->
       <div class="process-stage">
         <h3 class="stage-title">
@@ -209,7 +209,7 @@
     </section>
 
     <!-- Solution Section -->
-          <div v-if="project.results && project.results.length > 0" class="detail-section">
+    <section class="section solution-section">
       <h2 class="section-title">La Solución</h2>
       <div class="solution-content">
         <div class="solution-demo">
@@ -1674,6 +1674,36 @@ box-sizing: border-box;
 
 .tech-item:hover span {
   color: white;
+}
+
+/* Iconografía */
+.icon-container-large {
+  width: 80px;
+  height: 80px;
+  background: white;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border: 2px solid #e9ecef;
+}
+
+.icon-container-large:hover {
+  transform: translateY(-5px);
+  border-color: #4831D4;
+  background: #f8f9ff;
+}
+
+.project-icon {
+  font-size: 3rem;
+  color: #4831D4;
+  transition: all 0.3s ease;
+}
+
+.icon-container-large:hover .project-icon {
+  transform: scale(1.1);
+  color: #3a2aa0;
 }
 
 .solution-section {
