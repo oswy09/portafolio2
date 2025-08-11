@@ -2127,13 +2127,43 @@ box-sizing: border-box;
   justify-content: center;
   text-align: center;
   padding-bottom: 15px; /* Espacio para la descripción */
-  position: relative; /* Necesario para posicionar el tag */
+  position: relative; /* Necesario para posicionar el pseudo-elemento */
 }
 
 .gallery-image-wrapper:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
+
+/* Estilos para el pseudo-elemento ::before que actuará como tag */
+.gallery-image-wrapper.has-tag::before {
+  content: attr(data-tag); /* Obtiene el texto del atributo data-tag */
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  z-index: 10; /* Asegura que el tag esté por encima de la imagen */
+}
+
+/* Estilos específicos para cada tipo de tag usando la clase en el wrapper */
+.gallery-image-wrapper[data-tag="antes"]::before {
+  background-color: #e74c3c; /* Rojo para "antes" */
+}
+
+.gallery-image-wrapper[data-tag="después"]::before {
+  background-color: #2ecc71; /* Verde para "después" */
+}
+
+.gallery-image-wrapper[data-tag="resultado"]::before {
+  background-color: #3498db; /* Azul para "resultado" */
+}
+
 
 .gallery-image {
   width: 100%;
@@ -2152,39 +2182,9 @@ box-sizing: border-box;
   line-height: 1.5;
 }
 
-/* Estilos para el tag de la imagen */
-.gallery-image-tag {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 0.8em;
-  font-weight: bold;
-  text-transform: uppercase;
-  z-index: 10; /* Asegura que el tag esté por encima de la imagen */
-}
-
-/* Estilos específicos para cada tipo de tag */
-.tag-antes {
-  background-color: #e74c3c; /* Rojo para "antes" */
-}
-
-.tag-después {
-  background-color: #2ecc71; /* Verde para "después" */
-}
-
-.tag-resultado {
-  background-color: #3498db; /* Azul para "resultado" */
-}
-
-
 /* Puedes ajustar los márgenes y paddings de las secciones generales si es necesario */
 .section {
   margin-bottom: 60px; /* Un poco más de espacio entre secciones */
 }
-
 
 </style>
