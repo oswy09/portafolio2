@@ -517,18 +517,6 @@ const projects: Project[] = [
     liveUrl: 'https://example.com/ecommerce',
     // Aquí se añaden las imágenes de la galería con la propiedad 'tag'
     imageGallery: [
-      {
-        url: "https://www.elegantthemes.com/layouts/wp-content/uploads/2020/07/coding-school_home.jpg",
-        alt: "Estudiantes en un aula de programación",
-        caption: "Ambiente de aprendizaje moderno con enfoque en la práctica.",
-        tag: "antes" // Ejemplo de tag "antes"
-      },
-      {
-        url: "https://www.elegantthemes.com/layouts/wp-content/uploads/2020/07/coding-school_home.jpg",
-        alt: "Interfaz de desarrollo de código",
-        caption: "Código limpio y eficiente en acción.",
-        tag: "después" // Ejemplo de tag "después"
-      }
      
     ]
   },
