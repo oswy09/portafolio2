@@ -2152,117 +2152,151 @@ box-sizing: border-box;
 }
 /* Estilos para la sección de la galería de imágenes */
 .image-gallery-section {
-  padding: 40px 20px;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  margin-top: 40px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center; /* Centrar el título de la sección */
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin-top: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centrar el título de la sección */
 }
 
 .image-gallery-section .section-title {
-  color: #333;
-  font-size: 2.2em;
-  margin-bottom: 30px;
-  position: relative;
-  display: inline-block; /* Para que la línea inferior se ajuste al texto */
+    color: #333;
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block; /* Para que la línea inferior se ajuste al texto */
 }
 
 .image-gallery-section .section-title::after {
-  content: '';
-  display: block;
-  width: 80px;
-  height: 4px;
-  background-color: #6a0dad; /* Un color morado, puedes ajustarlo a tu paleta */
-  margin: 10px auto 0;
-  border-radius: 2px;
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #6a0dad; /* Un color morado, puedes ajustarlo a tu paleta */
+    margin: 10px auto 0;
+    border-radius: 2px;
 }
 
 .image-grid {
-  display: grid;
-  grid-template-columns: 1fr; /* Una columna por defecto */
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna por defecto */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 @media (min-width: 768px) {
-  .image-grid {
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas y grandes */
-  }
+    .image-grid {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas y grandes */
+    }
 }
 
 .gallery-image-wrapper {
-  background-color: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding-bottom: 15px; /* Espacio para la descripción */
-  position: relative; /* Necesario para posicionar el pseudo-elemento */
+    background-color: #fff;
+    border-radius: 8px;
+    /* Se cambió overflow: hidden; a esta regla para asegurar que las esquinas redondeadas del wrapper contengan el scroll */
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Se cambió justify-content: center; a flex-start para que el contenido se alinee al inicio y el scroll funcione */
+    justify-content: flex-start;
+    text-align: center;
+    /* padding-bottom: 15px; se eliminó de aquí y se movió a gallery-image-caption si es necesario */
+    position: relative; /* Necesario para posicionar el pseudo-elemento */
 }
 
 .gallery-image-wrapper:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Estilos para el pseudo-elemento ::before que actuará como tag */
 .gallery-image-wrapper.has-tag::before {
-  content: attr(data-tag); /* Obtiene el texto del atributo data-tag */
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 0.8em;
-  font-weight: bold;
-  text-transform: uppercase;
-  z-index: 10; /* Asegura que el tag esté por encima de la imagen */
+    content: attr(data-tag); /* Obtiene el texto del atributo data-tag */
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 10; /* Asegura que el tag esté por encima de la imagen */
 }
 
 /* Estilos específicos para cada tipo de tag usando la clase en el wrapper */
 .gallery-image-wrapper[data-tag="antes"]::before {
-  background-color: #e74c3c; /* Rojo para "antes" */
+    background-color: #e74c3c; /* Rojo para "antes" */
 }
 
 .gallery-image-wrapper[data-tag="después"]::before {
-  background-color: #2ecc71; /* Verde para "después" */
+    background-color: #2ecc71; /* Verde para "después" */
 }
 
 .gallery-image-wrapper[data-tag="resultado"]::before {
-  background-color: #3498db; /* Azul para "resultado" */
+    background-color: #3498db; /* Azul para "resultado" */
 }
 
+/* --- NUEVO: Contenedor para la imagen con scroll --- */
+.gallery-image-container {
+    width: 100%;
+    max-height: 400px; /* Altura máxima para el contenedor scrollable */
+    overflow-y: auto; /* Habilita el scroll vertical cuando el contenido excede el max-height */
+    border-bottom: 1px solid #eee; /* Separador sutil */
+    /* Hereda los bordes redondeados superiores del wrapper para una apariencia unificada */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: #f1f1f1; /* Fondo para el área de scroll */
+
+    /* Estilización de la barra de desplazamiento para un look más moderno (Firefox) */
+    scrollbar-width: thin;
+    scrollbar-color: #6a0dad #f1f1f1;
+}
+
+/* Estilización de la barra de desplazamiento para navegadores basados en Webkit (Chrome, Safari, Edge) */
+.gallery-image-container::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento vertical */
+}
+
+.gallery-image-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Fondo de la pista de la barra de desplazamiento */
+    border-radius: 10px; /* Bordes redondeados para la pista */
+}
+
+.gallery-image-container::-webkit-scrollbar-thumb {
+    background: #6a0dad; /* Color del "pulgar" de la barra de desplazamiento */
+    border-radius: 10px; /* Bordes redondeados para el pulgar */
+}
+
+.gallery-image-container::-webkit-scrollbar-thumb:hover {
+    background: #5a099d; /* Color del pulgar al pasar el ratón */
+}
 
 .gallery-image {
-  width: 100%;
-  height: auto; /* Ajusta la altura automáticamente para mantener el aspecto original */
-  min-height: 200px; /* Altura mínima para asegurar que siempre tengan un tamaño visible */
-  max-height: 600px; /* Altura máxima para evitar que imágenes muy largas ocupen demasiado espacio */
-  object-fit: cover; /* Recorta la imagen para que llene el contenedor sin distorsionarse */
-  border-bottom: 1px solid #eee; /* Separador sutil entre imagen y descripción */
- 
+    width: 100%;
+    height: auto; /* Permite que la imagen conserve su altura original */
+    display: block; /* Elimina cualquier espacio extra debajo de la imagen */
+    /* Las propiedades de altura mínima/máxima y object-fit ya no son necesarias aquí, las controla el contenedor con scroll */
+    /* border-bottom: 1px solid #eee; se movió al contenedor gallery-image-container */
 }
 
 .gallery-image-caption {
-  font-size: 0.9em;
-  color: #666;
-  margin-top: 15px;
-  padding: 0 15px; /* Espaciado interno para el texto */
-  line-height: 1.5;
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 15px;
+    /* Ajustado el padding para incluir el padding-bottom que antes estaba en gallery-image-wrapper */
+    padding: 0 15px 15px;
+    line-height: 1.5;
 }
 
 /* Puedes ajustar los márgenes y paddings de las secciones generales si es necesario */
 .section {
-  margin-bottom: 60px; /* Un poco más de espacio entre secciones */
+    margin-bottom: 60px; /* Un poco más de espacio entre secciones */
 }
-
 </style>
