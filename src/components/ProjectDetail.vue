@@ -262,7 +262,7 @@
 
     <!-- New Image Gallery Section -->
     <section class="section image-gallery-section" v-if="project?.imageGallery?.length">
-      <h2 class="section-title"> </h2>
+      <h2 class="section-title">Imágenes del Proyecto</h2>
       <div class="image-grid">
         <div
           v-for="(image, index) in project?.imageGallery"
@@ -271,11 +271,17 @@
           :data-tag="image.tag"
           :class="{ 'has-tag': image.tag }"
         >
-          <img :src="image.url" :alt="image.alt" class="gallery-image" />
+          <!-- Contenedor con scroll para la imagen -->
+          <div class="gallery-image-container">
+            <img :src="image.url" :alt="image.alt" class="gallery-image" />
+          </div>
           <p v-if="image.caption" class="gallery-image-caption">{{ image.caption }}</p>
         </div>
       </div>
     </section>
+  </div>
+
+
 
     <!-- Results Section -->
     <section class="section results-section" v-if="project?.results?.length">
