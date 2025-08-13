@@ -279,9 +279,7 @@
         </div>
       </div>
     </section>
-  
-
-
+  </div>
 
     <!-- Results Section -->
     <section class="section results-section" v-if="project?.results?.length">
