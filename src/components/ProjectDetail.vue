@@ -1306,9 +1306,11 @@ const projects: Project[] = [
 }
 .hero-image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  min-height: 100%;
+  object-fit: contain;
   filter: brightness(0.7);
+  display: block;
   transition: all 0.5s ease;
 }
 
@@ -1332,6 +1334,9 @@ const projects: Project[] = [
   gap: 1rem;
 }
 
+  height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
 .website-frame {
   background: white;
   padding: 8px;
@@ -1344,6 +1349,23 @@ const projects: Project[] = [
 .website-frame:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 35px rgba(72, 49, 212, 0.2);
+}
+.website-image-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.website-image-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.website-image-container::-webkit-scrollbar-thumb {
+  background: #4831D4;
+  border-radius: 3px;
+}
+
+.website-image-container::-webkit-scrollbar-thumb:hover {
+  background: #3a2aa0;
 }
 
 .website-image {
