@@ -2246,7 +2246,7 @@ box-sizing: border-box;
 /* --- NUEVO: Contenedor para la imagen con scroll --- */
 .gallery-image-container {
     width: 100%;
-    max-height: 400px; /* Altura máxima para el contenedor scrollable */
+    max-height: 500px; /* Altura máxima para el contenedor scrollable */
     overflow-y: auto; /* Habilita el scroll vertical cuando el contenido excede el max-height */
     border-bottom: 1px solid #eee; /* Separador sutil */
     /* Hereda los bordes redondeados superiores del wrapper para una apariencia unificada */
@@ -2256,7 +2256,7 @@ box-sizing: border-box;
 
     /* Estilización de la barra de desplazamiento para un look más moderno (Firefox) */
     scrollbar-width: thin;
-    scrollbar-color: #6a0dad #f1f1f1;
+    scrollbar-color: #4730D3 #f1f1f1; /* Color base del pulgar y color de la pista */
 }
 
 /* Estilización de la barra de desplazamiento para navegadores basados en Webkit (Chrome, Safari, Edge) */
@@ -2270,12 +2270,12 @@ box-sizing: border-box;
 }
 
 .gallery-image-container::-webkit-scrollbar-thumb {
-    background: #6a0dad; /* Color del "pulgar" de la barra de desplazamiento */
+    background: #4730D3; /* Color del "pulgar" de la barra de desplazamiento */
     border-radius: 10px; /* Bordes redondeados para el pulgar */
 }
 
 .gallery-image-container::-webkit-scrollbar-thumb:hover {
-    background: #5a099d; /* Color del pulgar al pasar el ratón */
+    background: #3a25a0; /* Color del pulgar al pasar el ratón (un tono más oscuro de #4730D3) */
 }
 
 .gallery-image {
@@ -2299,4 +2299,5 @@ box-sizing: border-box;
 .section {
     margin-bottom: 60px; /* Un poco más de espacio entre secciones */
 }
+
 </style>
