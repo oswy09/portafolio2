@@ -524,7 +524,7 @@ const projects: Project[] = [
         tag: "Resultado" // Ejemplo de tag "antes"
       },
       {
-        url: "https://www.elegantthemes.com/layouts/wp-content/uploads/2020/07/coding-school_home.jpg",
+        url: "https://oswal.com.co/wp-content/uploads/2025/08/Website_amazon_hotel.png",
         alt: "Interfaz de desarrollo de código",
         caption: "Código limpio y eficiente en acción.",
         tag: "Resultado" // Ejemplo de tag "después"
