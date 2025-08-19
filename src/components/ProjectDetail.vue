@@ -310,8 +310,6 @@
           </div>
         </div>
       </div>
-      
-      <!-- Results Images -->
     </div>
 
     <!-- Floating Navigation -->
@@ -2160,6 +2158,28 @@ box-sizing: border-box;
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .project-detail {
+    padding: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .design-elements {
+    grid-template-columns: 1fr;
+  }
+
+  .results-cards {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
   .project-detail {
     padding: 1rem;
