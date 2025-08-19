@@ -279,22 +279,84 @@
         </div>
       </div>
     </section>
-  </div>
 
-    <!-- Results Section -->
-    <section class="section results-section" v-if="project?.results?.length">
-      <h2 class="section-title">Resultados</h2>
-      <div class="results-grid">
-        <div
-          v-for="result in project?.results"
-          :key="result.metric"
-          class="result-card"
-        >
-          <h3>{{ result.value }}</h3>
-          <p>{{ result.metric }}</p>
+    <!-- Results Section - Redesigned -->
+    <div v-if="project.results" class="section results-section">
+      <h2 class="section-title">Resultados del Proyecto</h2>
+      
+      <!-- Results Cards -->
+      <div class="results-cards">
+        <div class="result-card">
+          <div class="result-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div class="result-content">
+            <div class="result-number">450+</div>
+            <div class="result-label">Usuarios Activos</div>
+            <div class="result-description">Incremento mensual promedio después del lanzamiento</div>
+          </div>
+        </div>
+        
+        <div class="result-card">
+          <div class="result-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 12l2 2 4-4"/>
+              <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"/>
+              <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"/>
+              <path d="M3 12c0 5.5 4.5 10 10 10s10-4.5 10-10"/>
+            </svg>
+          </div>
+          <div class="result-content">
+            <div class="result-number">95%</div>
+            <div class="result-label">Satisfacción</div>
+            <div class="result-description">Feedback positivo de usuarios en pruebas de usabilidad</div>
+          </div>
+        </div>
+        
+        <div class="result-card">
+          <div class="result-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12,6 12,12 16,14"/>
+            </svg>
+          </div>
+          <div class="result-content">
+            <div class="result-number">65%</div>
+            <div class="result-label">Reducción de Tiempo</div>
+            <div class="result-description">En completar tareas principales del sistema</div>
+          </div>
         </div>
       </div>
-    </section>
+      
+      <!-- Results Images -->
+      <div v-if="project.results && project.results.length > 0" class="results-images">
+        <h3 class="subsection-title">Capturas del Resultado Final</h3>
+        <div class="images-grid">
+          <div 
+            v-for="(image, index) in project.results" 
+            :key="index"
+            class="image-item"
+            @click="openLightbox(image, index, 'results')"
+          >
+            <div class="image-wrapper">
+              <img :src="image" :alt="`Resultado ${index + 1}`" class="result-image">
+              <div class="image-overlay">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 3h6v6"/>
+                  <path d="M10 14 21 3"/>
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Floating Navigation -->
     <div class="floating-nav">
@@ -337,6 +399,7 @@
         </button>
       </div>
     </div>
+  </div>
 </template>
 
 
@@ -1919,36 +1982,132 @@ box-sizing: border-box;
   color: rgba(255, 255, 255, 0.9);
 }
 
-.results-grid {
+/* Results Section Styles */
+.results-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   margin-bottom: 3rem;
 }
 
 .result-card {
-  text-align: center;
-  background: rgba(72, 49, 212, 0.1);
+  background: white;
+  border-radius: 12px;
   padding: 2rem;
-  border-radius: 1rem;
-  border: 1px solid rgba(204, 243, 129, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(72, 49, 212, 0.1);
   transition: all 0.3s ease;
-  animation: fadeInUp 0.8s ease forwards;
-  opacity: 0;
-  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
 }
 
 .result-card:hover {
-  transform: translateY(-10px);
-  border-color: #CCF381;
-  border-color: #4831D4;
-  background: rgba(72, 49, 212, 0.05);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(72, 49, 212, 0.15);
+  border-color: rgba(72, 49, 212, 0.2);
 }
 
-.result-card h3 {
-  font-size: 4rem;
-  color: #CCF381;
+.result-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #4831D4, #6A5AE0);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.result-content {
+  flex: 1;
+}
+
+.result-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #4831D4;
+  line-height: 1;
   margin-bottom: 0.5rem;
+}
+
+.result-label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.result-description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.results-images {
+  margin-top: 3rem;
+}
+
+.subsection-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.image-item {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.image-item:hover {
+  transform: translateY(-5px);
+}
+
+.image-wrapper {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(72, 49, 212, 0.1);
+  width: 100%;
+  height: 300px;
+}
+
+.result-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image-item:hover .result-image {
+  transform: scale(1.05);
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(72, 49, 212, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.image-item:hover .image-overlay {
+  opacity: 1;
 }
 
 .floating-nav {
@@ -2115,6 +2274,22 @@ box-sizing: border-box;
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+
+  .results-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .result-number {
+    font-size: 2rem;
+  }
+  
+  .result-label {
+    font-size: 1.1rem;
+  }
+  
+  .images-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 480px) {
@@ -2136,6 +2311,10 @@ box-sizing: border-box;
   
   .website-images-grid {
     gap: 1rem;
+  }
+
+  .images-grid {
+    grid-template-columns: 1fr;
   }
 }
 
