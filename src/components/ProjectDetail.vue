@@ -312,28 +312,6 @@
       </div>
       
       <!-- Results Images -->
-      <div v-if="project.results && project.results.length > 0" class="results-images">
-        <h3 class="subsection-title">Capturas del Resultado Final</h3>
-        <div class="images-grid">
-          <div 
-            v-for="(image, index) in project.results" 
-            :key="index"
-            class="image-item"
-            @click="openLightbox(image, index, 'results')"
-          >
-            <div class="image-wrapper">
-              <img :src="image" :alt="`Resultado ${index + 1}`" class="result-image">
-              <div class="image-overlay">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M15 3h6v6"/>
-                  <path d="M10 14 21 3"/>
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
     <!-- Floating Navigation -->
