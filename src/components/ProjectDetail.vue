@@ -731,14 +731,14 @@ const projects: Project[] = [
 
 imageGallery: [
       {
-        url: "https://oswal.com.co/wp-content/uploads/2025/08/Amazon_mockup02-scaled.jpg",
-        alt: "Imagen resultado sitio web_Amazon b&B",
+        url: "https://oswal.com.co/wp-content/uploads/2025/08/Website_micentro_home.png",
+        alt: "Imagen resultado sitio web_micentro",
         caption: "Hotel amazon B&B_portafolio servicios",
         tag: "Resultado" 
       },
       {
-        url: "https://oswal.com.co/wp-content/uploads/2025/08/Amazon_mockup03-scaled.jpg",
-        alt: "Imagen resultado sitio web_Amazon b&B",
+        url: "https://oswal.com.co/wp-content/uploads/2025/08/Website_micentro_shop.png",
+        alt: "Imagen resultado sitio web_micentro",
         caption: "Hotel amazon B&B_portafolio servicios",
         tag: "Resultado" 
       }
