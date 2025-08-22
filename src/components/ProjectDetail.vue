@@ -634,14 +634,14 @@ const projects: Project[] = [
      imageGallery: [
       {
         url: "https://oswal.com.co/wp-content/uploads/2025/08/Amazon_mockup02-scaled.jpg",
-        alt: "Estudiantes en un aula de programación",
-        caption: "Ambiente de aprendizaje moderno con enfoque en la práctica.",
+        alt: "Imagen resultado sitio web_Amazon b&B",
+        caption: "Hotel amazon B&B_portafolio servicios",
         tag: "Resultado" 
       },
       {
         url: "https://oswal.com.co/wp-content/uploads/2025/08/Amazon_mockup03-scaled.jpg",
-        alt: "Interfaz de desarrollo de código",
-        caption: "Código limpio y eficiente en acción.",
+        alt: "Imagen resultado sitio web_Amazon b&B",
+        caption: "Hotel amazon B&B_portafolio servicios",
         tag: "Resultado" 
       }
      
