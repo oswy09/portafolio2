@@ -636,13 +636,13 @@ const projects: Project[] = [
         url: "https://oswal.com.co/wp-content/uploads/2025/08/Amazon_mockup02-scaled.jpg",
         alt: "Estudiantes en un aula de programación",
         caption: "Ambiente de aprendizaje moderno con enfoque en la práctica.",
-        tag: "Resultado" // Ejemplo de tag "antes"
+        tag: "Resultado" 
       },
       {
         url: "https://oswal.com.co/wp-content/uploads/2025/08/Amazon_mockup03-scaled.jpg",
         alt: "Interfaz de desarrollo de código",
         caption: "Código limpio y eficiente en acción.",
-        tag: "Resultado" // Ejemplo de tag "después"
+        tag: "Resultado" 
       }
      
     ]
