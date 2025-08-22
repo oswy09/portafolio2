@@ -541,13 +541,13 @@ const projects: Project[] = [
         url: "https://www.elegantthemes.com/layouts/wp-content/uploads/2020/07/coding-school_home.jpg",
         alt: "Estudiantes en un aula de programación",
         caption: "Ambiente de aprendizaje moderno con enfoque en la práctica.",
-        tag: "Resultado" // Ejemplo de tag "antes"
+        tag: "Resultado" 
       },
       {
         url: "https://oswal.com.co/wp-content/uploads/2025/08/Website_amazon_hotel.png",
         alt: "Interfaz de desarrollo de código",
         caption: "Código limpio y eficiente en acción.",
-        tag: "Resultado" // Ejemplo de tag "después"
+        tag: "Resultado" 
       }
      
     ]
