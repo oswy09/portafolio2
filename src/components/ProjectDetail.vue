@@ -727,7 +727,25 @@ const projects: Project[] = [
       { value: '+25%', metric: 'Incremento en Consultas Directas a Tiendas' },
       { value: '+Impacto', metric: 'Facilidad de Gestión de Contenido para el área de marketing' },
     ],
-    liveUrl: 'https://www.amazonbb.com/',
+    liveUrl: 'https://ccmicentro.com/',
+
+imageGallery: [
+      {
+        url: "https://oswal.com.co/wp-content/uploads/2025/08/Amazon_mockup02-scaled.jpg",
+        alt: "Imagen resultado sitio web_Amazon b&B",
+        caption: "Hotel amazon B&B_portafolio servicios",
+        tag: "Resultado" 
+      },
+      {
+        url: "https://oswal.com.co/wp-content/uploads/2025/08/Amazon_mockup03-scaled.jpg",
+        alt: "Imagen resultado sitio web_Amazon b&B",
+        caption: "Hotel amazon B&B_portafolio servicios",
+        tag: "Resultado" 
+      }
+     
+    ]
+
+    
   },
   {
     id: 4,
