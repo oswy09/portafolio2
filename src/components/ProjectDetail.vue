@@ -195,9 +195,9 @@
               {{ activity }}
             </li>
           </ul>
-          <div v-if="project.technologies && project.technologies.length > 0" class="detail-section">
-            <h4>Tecnologías Utilizadas</h4>
-            <div class="tech-icons" v-if="project?.process.development.stack?.length">
+          <div v-if="project?.process.development.stack?.length" class="detail-section">
+            <h4>Stack Tecnológico</h4>
+            <div class="tech-icons">
               <div
                 v-for="tech in project?.process.development.stack"
                 :key="tech.name"
