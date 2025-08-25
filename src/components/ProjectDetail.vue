@@ -473,7 +473,7 @@ const projects: Project[] = [
   {
     id: 1,
     image:
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop',
+      'https://oswal.com.co/wp-content/uploads/2025/08/plataforma_concursos.jpg',
     title: 'Quizz Interactivo para concursos: Potenciando el Estudio del Acueducto de Bogotá',
     roles: ['UX Research', 'UI Design', 'Frontend Designer'],
     keyAchievement:
