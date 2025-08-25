@@ -482,7 +482,7 @@ const projects: Project[] = [
     industry: 'Servicios públicos',
     location: 'Bogotá, Colombia',
     myRole: 'Frontend Designer',
-    responsibilities: ['UX Research', 'UI Design', 'Frontend Designer'],
+    responsibilities: ['UX Research', 'UI Design', 'Frontend Developer'],
     challenge:
       "El Acueducto de Bogotá buscaba una solución innovadora y accesible para apoyar a sus empleados en la preparación de los concursos de ascenso, más allá de los métodos de estudio tradicionales. El desafío era crear una herramienta digital interactiva que permitiera a los usuarios autoevaluarse en temarios específicos, gestionar su progreso y ofrecer una experiencia de estudio atractiva y efectiva, todo dentro de un entorno seguro y controlado con gestión de usuarios internos.",
     process: {
