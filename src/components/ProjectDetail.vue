@@ -525,7 +525,7 @@ const projects: Project[] = [
       ],
     },
     solution: {
-      gif: '',
+      gif: 'https://oswal.com.co/wp-content/uploads/2025/08/p2.gif',
       description:
         'Se entregó una aplicación web interactiva de quizz construida desde cero con Vue.js Esta interfaz no solo facilita el estudio personalizado por temas y la autoevaluación para los concursos de ascenso, sino que también ofrece un panel administrativo intuitivo para la gestión total de usuarios y contenido por parte del Acueducto de Bogotá.',
     },
@@ -538,16 +538,10 @@ const projects: Project[] = [
    
     imageGallery: [
       {
-        url: "https://www.elegantthemes.com/layouts/wp-content/uploads/2020/07/coding-school_home.jpg",
-        alt: "Estudiantes en un aula de programación",
-        caption: "Ambiente de aprendizaje moderno con enfoque en la práctica.",
-        tag: "Resultado" 
+         
       },
       {
-        url: "https://oswal.com.co/wp-content/uploads/2025/08/Website_amazon_hotel.png",
-        alt: "Interfaz de desarrollo de código",
-        caption: "Código limpio y eficiente en acción.",
-        tag: "Resultado" 
+       
       }
      
     ]
