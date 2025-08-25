@@ -588,13 +588,13 @@ const projects: Project[] = [
         url: "https://oswal.com.co/wp-content/uploads/2025/08/Amazon_mockup02-scaled.jpg",
         alt: "Imagen resultado sitio web_Amazon b&B",
         caption: "Hotel amazon B&B_portafolio servicios",
-        tag: "Resultado"
+        tag: "resultado"
       },
       {
         url: "https://oswal.com.co/wp-content/uploads/2025/08/Amazon_mockup03-scaled.jpg",
         alt: "Imagen resultado sitio web_Amazon b&B",
         caption: "Hotel amazon B&B_portafolio servicios",
-        tag: "Resultado"
+        tag: "resultado"
       }
 
     ],
@@ -724,3 +724,66 @@ const projects: Project[] = [
           'Prototipos',
           'Integración sistema de diseño de la marca',
         ],
+        colors: [],
+        typography: [],
+        icons: [],
+      },
+      development: {
+        activities: [],
+        stack: [],
+      },
+      marketing: [],
+    },
+    solution: {
+      gif: '',
+      description: '',
+    },
+    results: [],
+    imageGallery: []
+  }
+];
+
+// Computed properties
+const project = computed(() => {
+  const id = parseInt(route.params.id as string);
+  return projects.find(p => p.id === id);
+});
+
+const currentProjectIndex = computed(() => {
+  return projects.findIndex(p => p.id === project.value?.id);
+});
+
+const prevProjectId = computed(() => {
+  const prevIndex = currentProjectIndex.value - 1;
+  return prevIndex >= 0 ? projects[prevIndex].id : null;
+});
+
+const nextProjectId = computed(() => {
+  const nextIndex = currentProjectIndex.value + 1;
+  return nextIndex < projects.length ? projects[nextIndex].id : null;
+});
+
+// Methods
+const backToGallery = () => {
+  router.push('/portfolio');
+};
+
+const navigateToProject = (projectId: number | null) => {
+  if (projectId) {
+    router.push(`/project/${projectId}`);
+  }
+};
+
+// Lightbox methods
+const openLightbox = (index: number) => {
+  if (project.value?.gallery) {
+    currentLightboxImage.value = project.value.gallery[index];
+    showLightbox.value = true;
+  }
+};
+
+const closeLightbox = () => {
+  showLightbox.value = false;
+  currentLightboxImage.value = '';
+};
+</script>
