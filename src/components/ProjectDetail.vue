@@ -525,7 +525,7 @@ const projects: Project[] = [
       ],
     },
     solution: {
-      gif: 'https://oswal.com.co/wp-content/uploads/2025/08/p2.gif',
+      gif: 'https://oswal.com.co/wp-content/uploads/2025/08/Proyecto_oswal_web_design_Quiz.gif',
       description:
         'Se entregó una aplicación web interactiva de quizz construida desde cero con Vue.js Esta interfaz no solo facilita el estudio personalizado por temas y la autoevaluación para los concursos de ascenso, sino que también ofrece un panel administrativo intuitivo para la gestión total de usuarios y contenido por parte del Acueducto de Bogotá.',
     },
