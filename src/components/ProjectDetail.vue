@@ -800,3 +800,78 @@ imageGallery: [
     imageGallery: []
   }
 ]
+
+// Función auxiliar para obtener el nombre de un icono basado en su tipo
+function getIconName(icon: { type: string; value: string }) {
+  if (icon.type === 'fa') {
+    return icon.value.split('fa-')[1] // Para iconos de Font Awesome
+  } else if (icon.type === 'image') {
+    // Para imágenes, extrae el nombre del archivo sin extensión y reemplaza guiones por espacios
+    return icon.value.split('/').pop()?.split('.')[0].replace(/-/g, ' ') || ''
+  }
+  return ''
+}
+
+// Interfaz para la estructura del proceso del proyecto
+interface Process {
+  research: string[]
+  design: {
+    activities: string[]
+    colors: string[]
+    typography: Array<{
+      name: string
+      usage: string
+    }>
+    icons: Array<{ type: string; value: string }>
+  }
+  development: {
+    activities: string[]
+    stack: Array<{
+      name: string
+      icon: string
+    }>
+  }
+  marketing: string[]
+}
+
+// Interfaz para la estructura de los resultados del proyecto
+interface Result {
+  value: string
+  metric: string
+}
+
+// Interfaz para la estructura de la solución del proyecto
+interface Solution {
+  gif: string
+  description: string
+}
+
+// ¡Nueva interfaz para las imágenes de la galería, incluyendo la propiedad 'tag'!
+interface ImageGalleryItem {
+  url: string;
+  alt: string;
+  caption?: string; // Propiedad opcional para una descripción de la imagen
+  tag?: 'antes' | 'después' | 'resultado'; // ¡Nueva propiedad 'tag'!
+}
+
+// Interfaz principal para la estructura de un proyecto
+interface Project {
+  id: number
+  image: string
+  title: string
+  roles: string[]
+  keyAchievement: string
+  client: string
+  industry: string
+  location: string
+  myRole: string
+  responsibilities: string[]
+  challenge: string
+  process: Process
+  solution: Solution
+  results: Result[]
+  testimonial?: string
+  liveUrl?: string
+  imageGallery?: ImageGalleryItem[]; 
+}
+]
