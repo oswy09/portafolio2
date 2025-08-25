@@ -195,9 +195,10 @@
               {{ activity }}
             </li>
           </ul>
-          <div v-if="project.technologies && project.technologies.length > 0" class="detail-section">
+          <!-- Condición corregida para tecnologías -->
+          <div v-if="project?.process.development.stack && project.process.development.stack.length > 0" class="detail-section">
             <h4>Tecnologías Utilizadas</h4>
-            <div class="tech-icons" v-if="project?.process.development.stack?.length">
+            <div class="tech-icons">
               <div
                 v-for="tech in project?.process.development.stack"
                 :key="tech.name"
@@ -228,7 +229,7 @@
     </section>
 
     <!-- Solution Section -->
-    <section class="section solution-section" v-if="project?.solution?.gif || project?.solution?.description">
+    <section class="section solution-section" v-if="project?.solution?.gif || project?.solution?.description || project?.gallery?.length">
       <h2 class="section-title">La Solución</h2>
       <div class="solution-content">
         <div class="solution-demo" v-if="project?.solution.gif">
@@ -239,11 +240,11 @@
           />
         </div>
         <p class="solution-description" v-if="project?.solution.description">{{ project?.solution.description }}</p>
-        
+
         <!-- Galería de Imágenes dentro de La Solución -->
-        <div class="gallery-grid" v-if="project.gallery && project.gallery.length > 0">
-          <div 
-            v-for="(image, index) in project.gallery" 
+        <div class="gallery-grid" v-if="project?.gallery && project.gallery.length > 0">
+          <div
+            v-for="(image, index) in project.gallery"
             :key="index"
             class="gallery-item"
             @click="openLightbox(index)"
@@ -281,32 +282,16 @@
     </section>
 
     <!-- Results Section - Redesigned -->
-    <div v-if="project.results" class="section results-section">
+    <div v-if="project?.results && project.results.length > 0" class="section results-section">
       <h2 class="section-title">Resultados del Proyecto</h2>
-      
+
       <!-- Results Cards -->
       <div class="results-cards">
-        <div class="result-card">
+        <div class="result-card" v-for="(result, index) in project.results" :key="index">
           <div class="result-content">
-            <div class="result-number">450+</div>
-            <div class="result-label">Usuarios Activos</div>
-            <div class="result-description">Incremento mensual promedio después del lanzamiento</div>
-          </div>
-        </div>
-        
-        <div class="result-card">
-          <div class="result-content">
-            <div class="result-number">95%</div>
-            <div class="result-label">Satisfacción</div>
-            <div class="result-description">Feedback positivo de usuarios en pruebas de usabilidad</div>
-          </div>
-        </div>
-        
-        <div class="result-card">
-          <div class="result-content">
-            <div class="result-number">65%</div>
-            <div class="result-label">Reducción de Tiempo</div>
-            <div class="result-description">En completar tareas principales del sistema</div>
+            <div class="result-number">{{ result.value }}</div>
+            <div class="result-label">{{ result.metric }}</div>
+            <div class="result-description">{{ result.description }}</div> <!-- Assuming results might have a description based on initial data -->
           </div>
         </div>
       </div>
@@ -332,6 +317,7 @@
           :href="project?.liveUrl || '#'"
           target="_blank"
           class="nav-btn primary"
+          :class="{ 'disabled-link': !project?.liveUrl }"
         >
           <span>Ver Proyecto</span>
           <div class="arrow-icon">
@@ -353,90 +339,63 @@
         </button>
       </div>
     </div>
+
+    <!-- Lightbox Component (Added) -->
+    <div v-if="showLightbox" class="lightbox-overlay" @click="closeLightbox">
+      <div class="lightbox-content" @click.stop>
+        <button class="lightbox-close" @click="closeLightbox">
+          <i class="fas fa-times"></i>
+        </button>
+        <img :src="currentLightboxImage" alt="Imagen en galería" class="lightbox-image" />
+      </div>
+    </div>
   </div>
 </template>
 
-
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { computed, ref } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 
-const route = useRoute()
-const router = useRouter()
+const route = useRoute();
+const router = useRouter();
 
-// Obtiene el ID actual del proyecto de los parámetros de la ruta
-const currentId = computed(() => parseInt(route.params.id as string))
-// Busca el proyecto correspondiente al ID actual en el arreglo 'projects'
-const project = computed(() => projects.find((p) => p.id === currentId.value))
-
-// Calcula el ID del proyecto anterior para la navegación
-const prevProjectId = computed(() => {
-  const prevId = currentId.value - 1
-  return prevId >= 1 ? prevId : null // Si es el primer proyecto, no hay anterior
-})
-
-// Calcula el ID del proyecto siguiente para la navegación
-const nextProjectId = computed(() => {
-  const nextId = currentId.value + 1
-  return nextId <= projects.length ? nextId : null // Si es el último proyecto, no hay siguiente
-})
-
-// Función para navegar a un proyecto específico por su ID
-const navigateToProject = (id: number | null) => {
-  if (id) {
-    router.push({ name: 'project-detail', params: { id: id.toString() } })
-    window.scrollTo({ top: 0, behavior: 'smooth' }) // Desplaza la ventana al inicio suavemente
-  }
-}
-
-// Función para volver a la galería de proyectos
-const backToGallery = () => {
-  router.push({ name: 'projects' })
-}
-
-// Función auxiliar para obtener el nombre de un icono basado en su tipo
-function getIconName(icon: { type: string; value: string }) {
-  if (icon.type === 'fa') {
-    return icon.value.split('fa-')[1] // Para iconos de Font Awesome
-  } else if (icon.type === 'image') {
-    // Para imágenes, extrae el nombre del archivo sin extensión y reemplaza guiones por espacios
-    return icon.value.split('/').pop()?.split('.')[0].replace(/-/g, ' ') || ''
-  }
-  return ''
-}
+// Lightbox state
+const showLightbox = ref(false);
+const currentLightboxImage = ref('');
 
 // Interfaz para la estructura del proceso del proyecto
 interface Process {
-  research: string[]
+  research: string[];
   design: {
-    activities: string[]
-    colors: string[]
+    activities: string[];
+    colors: string[];
     typography: Array<{
-      name: string
-      usage: string
-    }>
-    icons: Array<{ type: string; value: string }>
-  }
+      name: string;
+      usage: string;
+    }>;
+    icons: Array<{ type: string; value: string }>;
+  };
   development: {
-    activities: string[]
+    activities: string[];
     stack: Array<{
-      name: string
-      icon: string
-    }>
-  }
-  marketing: string[]
+      name: string;
+      icon: string;
+    }>;
+  };
+  marketing: string[];
 }
 
-// Interfaz para la estructura de los resultados del proyecto
+// Interfaz para la estructura de los resultados del proyecto (actualizada para tu dato)
 interface Result {
-  value: string
-  metric: string
+  value: string;
+  metric: string;
+  description?: string; // Añadida propiedad opcional para la descripción de los resultados
 }
 
 // Interfaz para la estructura de la solución del proyecto
 interface Solution {
-  gif: string
-  description: string
+  gif: string;
+  description: string;
 }
 
 // ¡Nueva interfaz para las imágenes de la galería, incluyendo la propiedad 'tag'!
@@ -447,28 +406,29 @@ interface ImageGalleryItem {
   tag?: 'antes' | 'después' | 'resultado'; // ¡Nueva propiedad 'tag'!
 }
 
-// Interfaz principal para la estructura de un proyecto
+// Interfaz principal para la estructura de un proyecto (actualizada para incluir 'gallery')
 interface Project {
-  id: number
-  image: string
-  title: string
-  roles: string[]
-  keyAchievement: string
-  client: string
-  industry: string
-  location: string
-  myRole: string
-  responsibilities: string[]
-  challenge: string
-  process: Process
-  solution: Solution
-  results: Result[]
-  testimonial?: string
-  liveUrl?: string
-  imageGallery?: ImageGalleryItem[]; 
+  id: number;
+  image: string;
+  title: string;
+  roles: string[];
+  keyAchievement: string;
+  client: string;
+  industry: string;
+  location: string;
+  myRole: string;
+  responsibilities: string[];
+  challenge: string;
+  process: Process;
+  solution: Solution;
+  results: Result[];
+  testimonial?: string;
+  liveUrl?: string;
+  imageGallery?: ImageGalleryItem[];
+  gallery?: string[]; // Propiedad para la galería de imágenes en la sección de solución
 }
 
-// Datos de los proyectos
+// Datos de los proyectos (MOVEMOS ESTO DENTRO DE SCRIPT SETUP)
 const projects: Project[] = [
   {
     id: 1,
@@ -503,7 +463,7 @@ const projects: Project[] = [
           { name: 'Inter', usage: 'Texto y contenido' },
         ],
         icons: [
-        
+
         ],
       },
       development: {
@@ -530,18 +490,21 @@ const projects: Project[] = [
         'Se entregó una aplicación web interactiva de quizz construida desde cero con Vue.js Esta interfaz no solo facilita el estudio personalizado por temas y la autoevaluación para los concursos de ascenso, sino que también ofrece un panel administrativo intuitivo para la gestión total de usuarios y contenido por parte del Acueducto de Bogotá.',
     },
     results: [
-      { value: '450', metric: 'empleado se registraron y utilizan la interfaz' },
-      { value: 'Feedback', metric: 'Recepción de comentarios positivos sobre la facilidad de uso' },
-      { value: 'Reducción de Tiempo', metric: ' La centralización y digitalización del contenido del quizz en la plataforma redujo el tiempo promedio que los empleados dedican a buscar y acceder a materiales de estudio' },
+      { value: '450+', metric: 'Usuarios Activos', description: 'empleado se registraron y utilizan la interfaz' },
+      { value: '95%', metric: 'Satisfacción', description: 'Recepción de comentarios positivos sobre la facilidad de uso' },
+      { value: '65%', metric: 'Reducción de Tiempo', description: 'La centralización y digitalización del contenido del quizz en la plataforma redujo el tiempo promedio que los empleados dedican a buscar y acceder a materiales de estudio' },
     ],
     liveUrl: 'https://demoquizz.netlify.app/',
-   
+    gallery: [
+      'https://oswal.com.co/wp-content/uploads/2025/08/Screenshot_1.png',
+      'https://oswal.com.co/wp-content/uploads/2025/08/Screenshot_2.png',
+      'https://oswal.com.co/wp-content/uploads/2025/08/Screenshot_3.png',
+    ],
     imageGallery: [
-  
-     
+
     ]
   },
-  
+
 
   {
     id: 2,
@@ -585,7 +548,7 @@ const projects: Project[] = [
           { type: 'image', value: 'http://betterme.oswal.com.co/wp-content/uploads/2025/05/Package1-dia2-.png' }
         ],
       },
-      development: { 
+      development: {
         activities: [
           'Evaluación de Accesibilidad Web',
           'Migración a hosting',
@@ -594,7 +557,7 @@ const projects: Project[] = [
           'Mantenimiento y Actualizaciones Wordpress',
           'Desarrollo de Funcionalidades Personalizadas',
           'Implementación de Seguridad Web',
-        ],  
+        ],
         stack: [
           { name: 'Wordpress', icon: 'fa-brands fa-wordpress' },
           { name: 'HTML', icon: 'fa-brands fa-html5' },
@@ -615,27 +578,31 @@ const projects: Project[] = [
         'Se rediseñó un sitio web moderno y responsivo para el Hotel Amazon B&B, construyendo la experiencia desde cero tras eliminar la plantilla original. La solución optimiza la interfaz de usuario para turistas extranjeros, integra funcionalidades clave de reservas y se accede de manera fácil al contenido y tours.',
     },
     results: [
-      { value: '+20%', metric: 'Tasa de Conversión de Reservas' },
-      { value: '+25%', metric: 'Volumen de consultas directas vía correo y WhatsApp' },
-      { value: '+40%', metric: 'Facilidad de Gestión de Contenido' },
+      { value: '+20%', metric: 'Tasa de Conversión de Reservas', description: 'Después del rediseño' },
+      { value: '+25%', metric: 'Volumen de consultas directas vía correo y WhatsApp', description: 'Incremento significativo' },
+      { value: '+40%', metric: 'Facilidad de Gestión de Contenido', description: 'Reducción del tiempo de actualización' },
     ],
     liveUrl: 'https://www.amazonbb.com/',
-     imageGallery: [
+    imageGallery: [
       {
         url: "https://oswal.com.co/wp-content/uploads/2025/08/Amazon_mockup02-scaled.jpg",
         alt: "Imagen resultado sitio web_Amazon b&B",
         caption: "Hotel amazon B&B_portafolio servicios",
-        tag: "Resultado" 
+        tag: "Resultado"
       },
       {
         url: "https://oswal.com.co/wp-content/uploads/2025/08/Amazon_mockup03-scaled.jpg",
         alt: "Imagen resultado sitio web_Amazon b&B",
         caption: "Hotel amazon B&B_portafolio servicios",
-        tag: "Resultado" 
+        tag: "Resultado"
       }
-     
+
+    ],
+    gallery: [
+      "https://oswal.com.co/wp-content/uploads/2025/08/Amazon_mockup02-scaled.jpg",
+      "https://oswal.com.co/wp-content/uploads/2025/08/Amazon_mockup03-scaled.jpg"
     ]
-  
+
   },
   {
     id: 3,
