@@ -763,3 +763,40 @@ imageGallery: [
            
         ],
         colors: ['#5C5CB7', '#3D3DAA', '#00008F', '#DD7358', '#D75D3D','#D24723
+        ],
+        typography: [
+          { name: 'Montserrat', usage: 'Títulos y encabezados' },
+          { name: 'Open Sans', usage: 'Texto y contenido' },
+        ],
+        icons: [],
+      },
+      development: {
+        activities: [
+          'Desarrollo de Landing Page Responsiva',
+          'Integración con CRM',
+          'Optimización de Conversión',
+        ],
+        stack: [
+          { name: 'HTML', icon: 'fa-brands fa-html5' },
+          { name: 'CSS', icon: 'fa-brands fa-css3' },
+          { name: 'JS', icon: 'fa-brands fa-js' },
+        ],
+      },
+      marketing: [
+        'Optimización SEO',
+        'Análisis de Conversión',
+      ],
+    },
+    solution: {
+      gif: '',
+      description: 'Se desarrolló una landing page altamente optimizada para la conversión, con un diseño corporativo que transmite confianza y profesionalismo, facilitando la captación de leads cualificados para el Seguro de Vida Deudor.',
+    },
+    results: [
+      { value: '+65%', metric: 'Incremento en Leads Cualificados' },
+      { value: '+30%', metric: 'Mejora en Tasa de Conversión' },
+      { value: '+Automatización', metric: 'Integración CRM Exitosa' },
+    ],
+    liveUrl: '#',
+    imageGallery: []
+  }
+]
