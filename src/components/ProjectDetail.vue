@@ -344,3 +344,115 @@
         <button
           @click="navigateToProject(nextProjectId)"
           class="nav-btn"
+          :disabled="!nextProjectId"
+        >
+          <span>Siguiente</span>
+          <div class="arrow-icon">
+            <i class="fas fa-arrow-right"></i>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div v-if="lightboxOpen" class="lightbox-overlay" @click="closeLightbox">
+      <div class="lightbox-content" @click.stop>
+        <button class="lightbox-close" @click="closeLightbox">
+          <i class="fas fa-times"></i>
+        </button>
+        <img
+          :src="project?.gallery[currentImageIndex]"
+          :alt="`Imagen ${currentImageIndex + 1}`"
+          class="lightbox-image"
+        />
+        <div class="lightbox-nav">
+          <button
+            @click="prevImage"
+            class="lightbox-nav-btn"
+            :disabled="currentImageIndex === 0"
+          >
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <span class="lightbox-counter">
+            {{ currentImageIndex + 1 }} / {{ project?.gallery?.length }}
+          </span>
+          <button
+            @click="nextImage"
+            class="lightbox-nav-btn"
+            :disabled="currentImageIndex === (project?.gallery?.length || 0) - 1"
+          >
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref, computed, onMounted } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+
+// Props and reactive data
+const route = useRoute()
+const router = useRouter()
+
+// Lightbox functionality
+const lightboxOpen = ref(false)
+const currentImageIndex = ref(0)
+
+const openLightbox = (index: number) => {
+  currentImageIndex.value = index
+  lightboxOpen.value = true
+}
+
+const closeLightbox = () => {
+  lightboxOpen.value = false
+}
+
+const nextImage = () => {
+  if (currentImageIndex.value < (project.value?.gallery?.length || 0) - 1) {
+    currentImageIndex.value++
+  }
+}
+
+const prevImage = () => {
+  if (currentImageIndex.value > 0) {
+    currentImageIndex.value--
+  }
+}
+
+// Project data and navigation
+const project = ref(null)
+const projects = ref([])
+
+const currentProjectIndex = computed(() => {
+  return projects.value.findIndex(p => p.id === route.params.id)
+})
+
+const prevProjectId = computed(() => {
+  const prevIndex = currentProjectIndex.value - 1
+  return prevIndex >= 0 ? projects.value[prevIndex]?.id : null
+})
+
+const nextProjectId = computed(() => {
+  const nextIndex = currentProjectIndex.value + 1
+  return nextIndex < projects.value.length ? projects.value[nextIndex]?.id : null
+})
+
+const navigateToProject = (projectId: string) => {
+  if (projectId) {
+    router.push(`/project/${projectId}`)
+  }
+}
+
+const backToGallery = () => {
+  router.push('/')
+}
+
+// Load project data
+onMounted(() => {
+  // Load project data here
+  // This would typically come from a store or API
+})
+</script>
