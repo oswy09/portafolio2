@@ -685,23 +685,20 @@ const projects: Project[] = [
     ],
     liveUrl: 'https://ccmicentro.com/',
 
-imageGallery: [
+    imageGallery: [
       {
         url: "https://oswal.com.co/wp-content/uploads/2025/08/Website_micentro_home.png",
         alt: "Imagen resultado sitio web_micentro",
         caption: "Hotel amazon B&B_portafolio servicios",
-        tag: "Resultado" 
+        tag: "resultado"
       },
       {
         url: "https://oswal.com.co/wp-content/uploads/2025/08/Website_micentro_shop.png",
         alt: "Imagen resultado sitio web_micentro",
         caption: "Hotel amazon B&B_portafolio servicios",
-        tag: "Resultado" 
+        tag: "resultado"
       }
-     
     ]
-
-    
   },
   {
     id: 4,
@@ -720,13 +717,10 @@ imageGallery: [
         'Análisis de Público Objetivo y Competencia',
         'User Flow',
         'Pruebas de Usabilidad',
-         
       ],
       design: {
         activities: [
           'Diseño de Mockups',
           'Prototipos',
           'Integración sistema de diseño de la marca',
-           
         ],
-        colors: ['#5C5CB7', '#3D3DAA', '#00008F', '#DD7358', '#D75D3D','#D24723
