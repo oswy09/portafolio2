@@ -465,7 +465,7 @@ interface Project {
   results: Result[]
   testimonial?: string
   liveUrl?: string
-  imageGallery?: ImageGalleryItem[]; // La propiedad imageGallery usa la interfaz actualizada
+  imageGallery?: ImageGalleryItem[]; 
 }
 
 // Datos de los proyectos
@@ -475,7 +475,7 @@ const projects: Project[] = [
     image:
       'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop',
     title: 'Quizz Interactivo para concursos: Potenciando el Estudio del Acueducto de Bogotá',
-    roles: ['UX Research', 'UI Design', 'Frontend Development'],
+    roles: ['UX Research', 'UI Design', 'Frontend Designer'],
     keyAchievement:
       'Una interfaz para que los empleados del Acueducto de Bogotá estudien y se preparen de forma autónoma para los concursos de ascenso.',
     client: 'Acueducto de Bogotá',
