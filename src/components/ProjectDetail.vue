@@ -356,6 +356,7 @@
   </div>
 </template>
 
+
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
@@ -660,13 +661,13 @@ const projects: Project[] = [
         url: "https://oswal.com.co/wp-content/uploads/2025/08/Amazon_mockup02-scaled.jpg",
         alt: "Imagen resultado sitio web_Amazon b&B",
         caption: "Hotel amazon B&B_portafolio servicios",
-        tag: "resultado" 
+        tag: "Resultado" 
       },
       {
         url: "https://oswal.com.co/wp-content/uploads/2025/08/Amazon_mockup03-scaled.jpg",
         alt: "Imagen resultado sitio web_Amazon b&B",
         caption: "Hotel amazon B&B_portafolio servicios",
-        tag: "resultado" 
+        tag: "Resultado" 
       }
      
     ]
@@ -677,34 +678,4 @@ const projects: Project[] = [
     title: 'MiCentro: Navegando la Experiencia Comercial ',
     image: 'https://oswal.com.co/wp-content/uploads/2025/05/micentro_el_porvenir.jpg',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
-    keyAchievement: 'Diseño y desarrollo de un sitio web moderno para centro comercial',
-    client: 'MiCentro',
-    industry: 'Comercial',
-    location: 'Colombia',
-    myRole: 'Web Designer',
-    responsibilities: ['UX Research', 'UI Design', 'Frontend Development'],
-    challenge: 'Crear una experiencia digital moderna para un centro comercial',
-    process: {
-      research: [],
-      design: {
-        activities: [],
-        colors: [],
-        typography: [],
-        icons: []
-      },
-      development: {
-        activities: [],
-        stack: []
-      },
-      marketing: []
-    },
-    solution: {
-      gif: '',
-      description: 'Sitio web moderno para centro comercial'
-    },
-    results: [],
-    liveUrl: '',
-    imageGallery: []
-  }
-]
-</script>
+    keyAchievement: 'Diseño y desarrollo de un sitio web moderno para centro
