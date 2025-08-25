@@ -537,12 +537,7 @@ const projects: Project[] = [
     liveUrl: 'https://demoquizz.netlify.app/',
    
     imageGallery: [
-      {
-         
-      },
-      {
-       
-      }
+  
      
     ]
   },
