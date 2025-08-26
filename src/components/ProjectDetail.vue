@@ -726,7 +726,7 @@ const projects: Project[] = [
         'Se rediseñó un sitio web moderno y responsivo para el Hotel Amazon B&B, construyendo la experiencia desde cero tras eliminar la plantilla original. La solución optimiza la interfaz de usuario para turistas extranjeros, integra funcionalidades clave de reservas y se accede de manera fácil al contenido y tours.',
     },
     results: [
-      { value: '+20%', metric: 'Tasa de Conversión de Reservas' },
+      { value: '+25%', metric: 'Tasa de Conversión de Reservas' },
       { value: '+25%', metric: 'Volumen de consultas directas vía correo y WhatsApp' },
       { value: '+40%', metric: 'Facilidad de Gestión de Contenido' },
     ],
