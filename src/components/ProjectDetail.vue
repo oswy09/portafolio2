@@ -818,7 +818,7 @@ const projects: Project[] = [
       ],
     },
     solution: {
-      gif: 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzE3MmZiNjM5ZTBmZjM4ZjBiZjM4ZjJiZjM4ZjJiZjM4ZjJiZjM4Zg/3oKIPnAiaMCws8nOsE/giphy.gif',
+      gif: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756241744/Proyecto_oswal_web_design_micentro_jpfodi.gif',
       description:
         'Se entregó un sitio web dinámico y visualmente atractivo para MiCentro, construido desde cero en WordPress, diseñado para ser el punto de referencia digital del centro comercial. Cuenta con un directorio de marcas intuitivo, un calendario de eventos interactivo y un blog, todo gestionable autónomamente gracias a la implementación de campos personalizados. La solución no solo elevó la presencia digital de MiCentro con un diseño moderno y responsivo',
     },
