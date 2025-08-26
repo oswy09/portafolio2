@@ -757,8 +757,8 @@ const projects: Project[] = [
     client: 'Centro comercial Micentro',
     industry: 'Centro comercial',
     location: 'Bogotá, Colombia',
-    myRole: 'Frontend Developer',
-    responsibilities: ['Dashboard Development', 'Data Visualization', 'Performance Optimization'],
+    myRole: 'Web designer',
+    responsibilities: ['UX design', 'UI Design', 'Frontend Developer'],
     challenge: 'MiCentro, un centro comercial en crecimiento, necesitaba establecer una presencia online sólida y atractiva que reflejara su ambiente dinámico y facilitara la conexión entre visitantes y sus diversos negocios. El desafío radicaba en crear un sitio web fácil de gestionar por el cliente, que sirviera como directorio de marcas y eventos, potenciara la visibilidad orgánica y ofreciera una experiencia de usuario que invitara a la interacción, superando la falta de un canal digital unificado y optimizado.',
     process: {
       research: [
