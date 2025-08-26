@@ -1111,7 +1111,7 @@ imageGallery: [
       ],
     },
     solution: {
-      gif: 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzE3MmZiNjM5ZTBmZjM4ZjBiZjM4ZjJiZjM4ZjJiZjM4ZjJiZjM4Zg/3oKIPnAiaMCws8nOsE/giphy.gif',
+      gif: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756249840/Proyectos_oswal_web_design_Dedicandote_f0subc.gif',
       description:
         'Se entregó una landing page promocional y transaccional para "Dedicándote", construida en WordPress, que integra reproductores de música personalizables desarrollados a medida con HTML, CSS y JavaScript. Esta plataforma, con un diseño moderno y centrado en la emoción, permite a los usuarios elegir entre diversos diseños, dedicar canciones, previsualizar su creación y gestionar el pedido con un formulario detallado, notificaciones automáticas por correo',
     },
