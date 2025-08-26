@@ -1450,9 +1450,6 @@ imageGallery: [
   filter: brightness(0.7);
   display: block;
   transition: all 0.5s ease;
-}
-
-.hero:hover .hero-image {
   transform: scale(1.05);
   filter: brightness(0.8);
 }
