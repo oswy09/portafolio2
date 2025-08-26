@@ -1043,7 +1043,7 @@ imageGallery: [
       { value: '+25%', metric: 'Volumen de consultas directas vía correo y WhatsApp' },
       { value: '+40%', metric: 'Facilidad de Gestión de Contenido' },
     ],
-    liveUrl: 'https://www.amazonbb.com/',
+    liveUrl: 'https://betterme.oswal.com.co/',
   },
   {
     id: 7,
