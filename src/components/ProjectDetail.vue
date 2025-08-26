@@ -830,18 +830,6 @@ const projects: Project[] = [
     liveUrl: 'https://ccmicentro.com/',
 
 imageGallery: [
-      {
-        url: "https://oswal.com.co/wp-content/uploads/2025/08/Website_micentro_home.png",
-        alt: "Imagen resultado sitio web_micentro",
-        caption: "Hotel amazon B&B_portafolio servicios",
-        tag: "resultado" 
-      },
-      {
-        url: "https://oswal.com.co/wp-content/uploads/2025/08/Website_micentro_shop.png",
-        alt: "Imagen resultado sitio web_micentro",
-        caption: "Hotel amazon B&B_portafolio servicios",
-        tag: "resultado" 
-      }
      
     ]
 
