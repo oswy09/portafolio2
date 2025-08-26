@@ -844,8 +844,8 @@ imageGallery: [
     client: 'AXA COLPATRIA',
     industry: 'Aseguradora',
     location: 'Colombia',
-    myRole: 'Frontend Developer',
-    responsibilities: ['Dashboard Development', 'Data Visualization', 'Performance Optimization'],
+    myRole: 'Web designer',
+    responsibilities: ['UX design', 'UI Design', 'Frontend Developer'],
     challenge: 'AXA Colpatria necesitaba una landing page específica y altamente efectiva para promocionar su Seguro de Vida Deudor. El desafío era diseñar y desarrollar una página que no solo comunicara de forma clara los beneficios y requisitos del seguro, sino que también inspirara confianza, guiara al usuario intuitivamente, y que se pudiera integrar facilmente a un CRM.',
     process: {
       research: [
