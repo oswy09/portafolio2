@@ -1442,7 +1442,7 @@ imageGallery: [
   margin-bottom: 2rem;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
-.hero-image {
+  background-size: cover;
   width: 100%;
   height: auto;
   min-height: 100%;
@@ -1526,13 +1526,14 @@ imageGallery: [
   padding: 0.5rem 1rem;
   background: rgba(72, 49, 212, 0.1);
   border-radius: 20px;
+  background-attachment: fixed;
   border: 1px solid rgba(72, 49, 212, 0.2);
 }
 
 .hero-content {
   position: absolute;
   bottom: 0;
-  left: 0;
+  background: rgba(0, 0, 0, 0.5);
   right: 0;
   padding: 0.5rem 1rem;
   background: linear-gradient(to top, rgba(26, 26, 46, 0.95), transparent);
