@@ -867,12 +867,12 @@ imageGallery: [
           { name: 'Source Sans Pro', usage: 'Texto y contenido' },
         ],
         icons: [
-          { type: 'image', value: 'http://betterme.oswal.com.co/wp-content/uploads/2025/05/Amazon-01.png' },
-          { type: 'image', value: 'http://betterme.oswal.com.co/wp-content/uploads/2025/05/paquete5-dia6.png' },
-          { type: 'image', value: 'http://betterme.oswal.com.co/wp-content/uploads/2025/05/paquete5-dia1.png' },
-          { type: 'image', value: 'http://betterme.oswal.com.co/wp-content/uploads/2025/05/paquete4-dia4.png' },
-          { type: 'image', value: 'http://betterme.oswal.com.co/wp-content/uploads/2025/05/paquete4-dia3.png' },
-          { type: 'image', value: 'http://betterme.oswal.com.co/wp-content/uploads/2025/05/Package1-dia2-.png' }
+          { type: 'image', value: 'https://oswal.com.co/wp-content/uploads/2025/07/ilu016-1.png' },
+          { type: 'image', value: 'https://oswal.com.co/wp-content/uploads/2025/07/ilu028-1.png' },
+          { type: 'image', value: 'https://oswal.com.co/wp-content/uploads/2025/07/ilu048-1.png' },
+          { type: 'image', value: 'https://oswal.com.co/wp-content/uploads/2025/07/ilu078-1.png' },
+          { type: 'image', value: 'https://oswal.com.co/wp-content/uploads/2025/07/ilu113-1.png' },
+          { type: 'image', value: 'https://oswal.com.co/wp-content/uploads/2025/07/ilu134-1.png' }
         ],
       },
       development: { 
@@ -969,7 +969,7 @@ imageGallery: [
       { value: '24/7', metric: 'Mayor Alcance y Disponibilidad' },
       { value: '+30%', metric: 'Productividad en gestión de consultas' },
     ],
-    liveUrl: 'https://www.amazonbb.com/',
+    liveUrl: 'https://lpsv.netlify.app',
   },
   {
     id: 6,
