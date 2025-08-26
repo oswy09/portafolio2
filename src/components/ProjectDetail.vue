@@ -917,9 +917,8 @@ imageGallery: [
     keyAchievement: 'Diseño y desarrollo de una solución de catálogo digital ágil y moderna, permitiendo a Bestyle vender sus prendas online de forma rápida y directa a través de WhatsApp y enlaces de pago.',
     client: 'Bestyle',
     industry: 'Ropa y moda',
-    location: 'Bogotá, Colombia',
-    myRole: 'Frontend Developer',
-    responsibilities: ['Dashboard Development', 'Data Visualization', 'Performance Optimization'],
+     myRole: 'Web designer',
+    responsibilities: ['Web designer', 'Frontend Developer'],
     challenge: 'Bestyle, una marca de moda con fuerte presencia en redes sociales, necesitaba trascender la venta por mensaje directo y establecer una presencia online funcional y expedita para su catálogo de prendas. El principal desafío era crear una solución digital rápida y fácil de usar que permitiera a los clientes explorar las prendas, calcular el total de su compra y finalizar el pedido de manera fluida vía WhatsApp o mediante un enlace de pago, todo ello sin la complejidad de un e-commerce tradicional.',
     process: {
       research: [
@@ -980,8 +979,8 @@ imageGallery: [
     client: 'Betterme',
     industry: 'Estética y Belleza', 
     location: 'Miami, Medellín',
-    myRole: 'Frontend Developer',
-    responsibilities: ['Dashboard Development', 'Data Visualization', 'Performance Optimization'],
+    myRole: 'Web designer',
+    responsibilities: ['Web designer', 'Frontend Developer'],
     challenge: '"Dedicándote" buscaba lanzar un servicio innovador: dedicatorias musicales con diseños personalizados. El desafío era crear una presencia online atractiva y funcional que promocionara este producto único y, al mismo tiempo, facilitara el proceso de personalización de la dedicatoria, la selección de la canción, la visualización del reproductor y la gestión del pedido',
     process: {
       research: [
