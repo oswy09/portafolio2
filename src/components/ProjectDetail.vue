@@ -961,7 +961,7 @@ imageGallery: [
       ],
     },
     solution: {
-      gif: 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzE3MmZiNjM5ZTBmZjM4ZjBiZjM4ZjJiZjM4ZjJiZjM4ZjJiZjM4Zg/3oKIPnAiaMCws8nOsE/giphy.gif',
+      gif: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756247093/Proyectos_oswal_web_design_bestyle_lh9b7z.gif',
       description: 'Se desarrolló una plataforma de catálogo digital ágil y moderna para Bestyle, permitiendo a la marca realizar ventas online rápidas y directas. permite a los clientes seleccionar prendas, calcular su total y finalizar la compra enviando el pedido por WhatsApp o a través de un link de pago.',
     },
     results: [
@@ -969,7 +969,7 @@ imageGallery: [
       { value: '24/7', metric: 'Mayor Alcance y Disponibilidad' },
       { value: '+30%', metric: 'Productividad en gestión de consultas' },
     ],
-    liveUrl: 'https://lpsv.netlify.app',
+    liveUrl: 'https://bestyle.store/',
   },
   {
     id: 6,
