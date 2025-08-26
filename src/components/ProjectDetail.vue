@@ -736,13 +736,13 @@ const projects: Project[] = [
         url: "https://oswal.com.co/wp-content/uploads/2025/08/Amazon_mockup02-scaled.jpg",
         alt: "Imagen resultado sitio web_Amazon b&B",
         caption: "Hotel amazon B&B_portafolio servicios",
-        tag: "Resultado" 
+        tag: "resultado" 
       },
       {
         url: "https://oswal.com.co/wp-content/uploads/2025/08/Amazon_mockup03-scaled.jpg",
         alt: "Imagen resultado sitio web_Amazon b&B",
         caption: "Hotel amazon B&B_portafolio servicios",
-        tag: "Resultado" 
+        tag: "resultado" 
       }
      
     ]
@@ -834,13 +834,13 @@ imageGallery: [
         url: "https://oswal.com.co/wp-content/uploads/2025/08/Website_micentro_home.png",
         alt: "Imagen resultado sitio web_micentro",
         caption: "Hotel amazon B&B_portafolio servicios",
-        tag: "Resultado" 
+        tag: "resultado" 
       },
       {
         url: "https://oswal.com.co/wp-content/uploads/2025/08/Website_micentro_shop.png",
         alt: "Imagen resultado sitio web_micentro",
         caption: "Hotel amazon B&B_portafolio servicios",
-        tag: "Resultado" 
+        tag: "resultado" 
       }
      
     ]
@@ -1442,6 +1442,8 @@ imageGallery: [
   margin-bottom: 2rem;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
+
+.hero-image {
   background-size: cover;
   width: 100%;
   height: auto;
@@ -1467,11 +1469,11 @@ imageGallery: [
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-}
-
   height: 400px;
   overflow-y: auto;
   overflow-x: hidden;
+}
+
 .website-frame {
   background: white;
   padding: 8px;
@@ -1485,6 +1487,7 @@ imageGallery: [
   transform: translateY(-5px);
   box-shadow: 0 15px 35px rgba(72, 49, 212, 0.2);
 }
+
 .website-image-container::-webkit-scrollbar {
   width: 6px;
 }
@@ -1900,9 +1903,9 @@ imageGallery: [
   border-radius: 0.5rem;
   transition: all 0.3s ease;
   max-width: 100%;
-overflow-wrap: break-word;  
-word-break: break-word;     
-box-sizing: border-box;    
+  overflow-wrap: break-word;  
+  word-break: break-word;     
+  box-sizing: border-box;    
 }
 
 .font-item:hover .font-preview {
