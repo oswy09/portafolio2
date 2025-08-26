@@ -1054,8 +1054,8 @@ imageGallery: [
     client: 'Dedicandote',
     industry: 'Músic', 
     location: 'Bogotá, Colombia',
-    myRole: 'Frontend Developer',
-    responsibilities: ['Dashboard Development', 'Data Visualization', 'Performance Optimization'],
+  myRole: 'Web designer',
+    responsibilities: ['Web designer', 'Frontend Developer','Marketing'],
     challenge: 'Amazon B&B, un encantador hotel inmerso en la exuberante selva amazónica, luchaba por conectar con su público objetivo: turistas extranjeros en busca de una experiencia única. Su sitio web existente era pesado, carente de diseño atractivo y con una usabilidad deficiente, lo que dificultaba la reserva y no reflejaba la belleza y autenticidad del lugar.',
     process: {
       research: [
