@@ -1132,7 +1132,7 @@ imageGallery: [
     industry: 'Aseguradora',
     location: ' Colombia',
     myRole: 'Frontend Developer',
-    responsibilities: ['Dashboard Development', 'Data Visualization', 'Performance Optimization'],
+    responsibilities: ['UX /UI design'],
     challenge: 'AXA Colpatria, líder en el sector asegurador, enfrentaba el desafío de transformar su plataforma web existente en un canal digital que no solo fuera funcional, sino que realmente inspirara confianza, simplificara la compleja información de seguros y ofreciera una experiencia de usuario intuitiva y moderna. El reto era ambicioso: ir más allá de una actualización visual, enfocándose en una arquitectura de información optimizada, flujos de navegación simplificados y un diseño inclusivo',
     process: {
       research: [
