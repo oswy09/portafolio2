@@ -1213,14 +1213,14 @@ imageGallery: [
   {
     id: 9,
     title: 'Clínica Odontológica en Suecia',
-    image: 'https://oswal.com.co/wp-content/uploads/2025/05/dedicandote.jpg',
+    image: 'https://oswal.com.co/wp-content/uploads/2025/08/Clinica-en-suecia.jpg',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
     keyAchievement: 'Diseño Web y UX para una Experiencia Profesional y Confiable',
     client: 'Centro comercial',
     industry: 'Centro comercial',
     location: 'Amazonas, Colombia',
-    myRole: 'Frontend Developer',
-    responsibilities: ['Dashboard Development', 'Data Visualization', 'Performance Optimization'],
+      myRole: 'Web designer',
+    responsibilities: ['Web designer', 'Marketing'],
     challenge: 'Amazon B&B, un encantador hotel inmerso en la exuberante selva amazónica, luchaba por conectar con su público objetivo: turistas extranjeros en busca de una experiencia única. Su sitio web existente era pesado, carente de diseño atractivo y con una usabilidad deficiente, lo que dificultaba la reserva y no reflejaba la belleza y autenticidad del lugar.',
     process: {
       research: [
