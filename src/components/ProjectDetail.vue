@@ -1216,11 +1216,11 @@ imageGallery: [
     image: 'https://oswal.com.co/wp-content/uploads/2025/08/Clinica-en-suecia.jpg',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
     keyAchievement: 'Diseño Web y UX para una Experiencia Profesional y Confiable',
-    client: 'Centro comercial',
-    industry: 'Centro comercial',
-    location: 'Amazonas, Colombia',
+    client: 'kliniken Schröder',
+    industry: 'Clinica dental',
+    location: 'Estocolmo, Suecia',
       myRole: 'Web designer',
-    responsibilities: ['Web designer', 'Marketing'],
+    responsibilities: ['Web designer'],
     challenge: 'Diseño y desarrollo de una plataforma web moderna y profesional para una clínica odontológica en Suecia, con el objetivo de proyectar confianza, facilitar el acceso a información sobre tratamientos.',
     process: {
       research: [
@@ -1269,16 +1269,16 @@ imageGallery: [
       ],
     },
     solution: {
-      gif: 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzE3MmZiNjM5ZTBmZjM4ZjBiZjM4ZjJiZjM4ZjJiZjM4ZjJiZjM4Zg/3oKIPnAiaMCws8nOsE/giphy.gif',
+      gif: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756514195/Proyectos_oswal_web_design_Tandkliniken_schroder_slkyt8.gif',
       description:
-        'Se rediseñó un sitio web moderno y responsivo para el Hotel Amazon B&B, construyendo la experiencia desde cero tras eliminar la plantilla original. La solución optimiza la interfaz de usuario para turistas extranjeros, integra funcionalidades clave de reservas y se accede de manera fácil al contenido y tours.',
+        'Se entregó un sitio web profesional y minimalista para la clínica odontológica en Suecia, diseñado para ser una herramienta clave en la captación y comunicación con los pacientes. La plataforma, con un estilo estético sueco, presenta los servicios y al equipo de manera clara y transparente, estableciendo la confianza digital',
     },
     results: [
       { value: '+20%', metric: 'Tasa de Conversión de Reservas' },
       { value: '+25%', metric: 'Volumen de consultas directas vía correo y WhatsApp' },
       { value: '+40%', metric: 'Facilidad de Gestión de Contenido' },
     ],
-    liveUrl: 'https://www.amazonbb.com/',
+    liveUrl: 'https://tandklinikenlschroder.se/',
   },
   {
     id: 10,
