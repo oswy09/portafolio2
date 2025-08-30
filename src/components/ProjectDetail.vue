@@ -1196,13 +1196,13 @@ imageGallery: [
     liveUrl: 'https://www.amazonbb.com/',
      imageGallery: [
       {
-        url: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756511734/Proyectos_oswal_web_design_AXA_Home_page_p62gsa.jpg",
+        url: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756512408/AXA_Colpatria_antes_website_ecypnb.jpg",
         alt: "Imagen resultado sitio web_AXA_COLPATRIA",
         caption: "Home AXA Colpatria",
-        tag: "resultado" 
+        tag: "Antes" 
       },
       {
-        url: "https://oswal.com.co/wp-content/uploads/2025/08/Amazon_mockup03-scaled.jpg",
+        url: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756511734/Proyectos_oswal_web_design_AXA_Home_page_p62gsa.jpg",
         alt: "Imagen resultado sitio web_Amazon b&B",
         caption: "Hotel amazon B&B_portafolio servicios",
         tag: "resultado" 
