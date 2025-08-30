@@ -1224,24 +1224,21 @@ imageGallery: [
     challenge: 'Diseño y desarrollo de una plataforma web moderna y profesional para una clínica odontológica en Suecia, con el objetivo de proyectar confianza, facilitar el acceso a información sobre tratamientos.',
     process: {
       research: [
-        'Análisis de requisitos técnicos',
-        'benchmark de sitios web de hoteles de ecoturismo',
+        
+        'Análisis de Audiencia Sueca y Estándares de Confianza',
         'Análisis de Usabilidad del Sitio Web',
-        'User Flow',
-        'Card Sorting',
         'Arquitectura de la Información y Sitemap',
       ],
       design: {
         activities: [
           'Creación de Wireframes y Diseño de Mockups',
-          'Prototipado de visualizaciones',
           'Optimización y mejoramiento de UI Kit',
           'Diseño de Iconografía y Elementos Gráficos',
         ],
-        colors: ['#455D58', '#3B6317', '#9DBC79', '#EC9B30', '#2E3B48'],
+        colors: ['#2C2C96', '#99A833'],
         typography: [
-          { name: 'EB Garamond', usage: 'Títulos y encabezados' },
-          { name: 'Montserrat', usage: 'Texto y contenido' },
+          { name: 'Cormorant Garamond', usage: 'Títulos y encabezados' },
+          { name: 'Open sans', usage: 'Texto y contenido' },
         ],
         icons: [
           { type: 'image', value: 'http://betterme.oswal.com.co/wp-content/uploads/2025/05/Amazon-01.png' },
