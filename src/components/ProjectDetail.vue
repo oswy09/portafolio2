@@ -1212,10 +1212,10 @@ imageGallery: [
   },
   {
     id: 9,
-    title: 'Website suecia',
+    title: 'Clínica Odontológica en Suecia',
     image: 'https://oswal.com.co/wp-content/uploads/2025/08/Clinica-en-suecia.jpg',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
-    keyAchievement: 'Revitalizando la presencia online para una experiencia amazónica auténtica y atractiva para el viajero internacional.',
+    keyAchievement: 'Diseño Web y UX para una Experiencia Profesional y Confiable',
     client: 'Centro comercial',
     industry: 'Centro comercial',
     location: 'Amazonas, Colombia',
