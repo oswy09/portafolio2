@@ -1221,7 +1221,7 @@ imageGallery: [
     location: 'Amazonas, Colombia',
       myRole: 'Web designer',
     responsibilities: ['Web designer', 'Marketing'],
-    challenge: 'Amazon B&B, un encantador hotel inmerso en la exuberante selva amazónica, luchaba por conectar con su público objetivo: turistas extranjeros en busca de una experiencia única. Su sitio web existente era pesado, carente de diseño atractivo y con una usabilidad deficiente, lo que dificultaba la reserva y no reflejaba la belleza y autenticidad del lugar.',
+    challenge: 'Diseño y desarrollo de una plataforma web moderna y profesional para una clínica odontológica en Suecia, con el objetivo de proyectar confianza, facilitar el acceso a información sobre tratamientos.',
     process: {
       research: [
         'Análisis de requisitos técnicos',
