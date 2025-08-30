@@ -1265,9 +1265,7 @@ imageGallery: [
         ],
       },
       marketing: [
-        'Test A/B (A/B Testing)',
-        'Optimización para Motores de Búsqueda (SEO)',
-        'Análisis de Experiencia Digital',
+  
       ],
     },
     solution: {
