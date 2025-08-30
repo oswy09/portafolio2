@@ -1193,7 +1193,7 @@ imageGallery: [
       { value: '+25%', metric: 'Volumen de consultas directas vía correo y WhatsApp' },
       { value: '+40%', metric: 'Facilidad de Gestión de Contenido' },
     ],
-    liveUrl: 'https://www.amazonbb.com/',
+    liveUrl: 'https://www.axacolpatria.co/home',
      imageGallery: [
       {
         url: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756512408/AXA_Colpatria_antes_website_ecypnb.jpg",
