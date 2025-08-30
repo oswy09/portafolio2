@@ -1198,13 +1198,13 @@ imageGallery: [
       {
         url: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756512408/AXA_Colpatria_antes_website_ecypnb.jpg",
         alt: "Imagen resultado sitio web_AXA_COLPATRIA",
-        caption: "Home AXA Colpatria",
+        caption: "Home AXA Colpatria_antes",
         tag: "Antes" 
       },
       {
         url: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756511734/Proyectos_oswal_web_design_AXA_Home_page_p62gsa.jpg",
         alt: "Imagen resultado sitio web_Amazon b&B",
-        caption: "Hotel amazon B&B_portafolio servicios",
+        caption: "Home AXA Colpatria_Ahora",
         tag: "resultado" 
       }
      
