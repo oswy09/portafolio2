@@ -1213,7 +1213,7 @@ imageGallery: [
   {
     id: 9,
     title: 'Clínica Odontológica en Suecia',
-    image: 'https://oswal.com.co/wp-content/uploads/2025/08/Clinica-en-suecia.jpg',
+    image: 'https://oswal.com.co/wp-content/uploads/2025/05/dedicandote.jpg',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
     keyAchievement: 'Diseño Web y UX para una Experiencia Profesional y Confiable',
     client: 'Centro comercial',
