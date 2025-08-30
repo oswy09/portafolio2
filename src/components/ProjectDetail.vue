@@ -1213,7 +1213,7 @@ imageGallery: [
   {
     id: 9,
     title: 'Website suecia',
-    image: 'http://www.amazonbb.com/wp-content/uploads/2023/05/boat-forest-river-blue-sky-reflection.jpg',
+    image: 'https://oswal.com.co/wp-content/uploads/2025/08/Clinica-en-suecia.jpg',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
     keyAchievement: 'Revitalizando la presencia online para una experiencia amazónica auténtica y atractiva para el viajero internacional.',
     client: 'Centro comercial',
