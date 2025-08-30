@@ -1249,13 +1249,12 @@ imageGallery: [
       },
       development: { 
         activities: [
-          'Evaluación de Accesibilidad Web',
+         
           'Migración a hosting',
           'Construcción de Layouts y Diseño a Medida con Constructor Visual',
           'Performance Optimization',
           'Mantenimiento y Actualizaciones Wordpress',
-          'Desarrollo de Funcionalidades Personalizadas',
-          'Implementación de Seguridad Web',
+
         ],  
         stack: [
           { name: 'Wordpress', icon: 'fa-brands fa-wordpress' },
