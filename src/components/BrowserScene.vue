@@ -154,6 +154,31 @@ Cuéntame tu idea y hagamos que tu proyecto tenga su propio piso en el universo 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue';
 
+// Define interfaces for type safety
+interface SocialMedia {
+  class: string;
+  icon: string;
+  url: string;
+  name: string;
+  description: string;
+}
+
+interface IconData {
+  element: HTMLElement;
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  landed: boolean;
+  width: number;
+  height: number;
+  class: string;
+  icon: string;
+  url: string;
+  name: string;
+  description: string;
+}
+
 const searchTerm = ref('oswal');
 const isDarkMode = ref(false);
 const toggleDarkMode = () => { isDarkMode.value = !isDarkMode.value; };
@@ -161,21 +186,21 @@ const toggleDarkMode = () => { isDarkMode.value = !isDarkMode.value; };
 const containerRef = ref(null);
 const floorRef = ref(null);
 const iconAreaRef = ref(null);
-const icons = [];
-let animationFrameId = null;
-let iconIntervalId = null;
+const icons: IconData[] = [];
+let animationFrameId: number | null = null;
+let iconIntervalId: number | null = null;
 
 const modalOverlayRef = ref(null);
 const modalContentRef = ref(null);
 const modalEmailCopyBtnRef = ref(null);
 const isModalVisible = ref(false);
 const isEmailMode = ref(false);
-const modalData = ref(null);
+const modalData = ref<SocialMedia | null>(null);
 const currentTime = ref('');
 const currentDate = ref('');
 
 const targetEmail = 'web@oswal.com.co';
-const socialMedia = [
+const socialMedia: SocialMedia[] = [
     { class: 'whatsapp', icon: 'fab fa-whatsapp', url: 'https://wa.me/573001234567', name: 'WhatsApp', description: 'Chat conmigo directamente en WhatsApp!' },
     { class: 'email', icon: 'fas fa-envelope', url: `mailto:${targetEmail}`, name: 'Email', description: 'Envíame un email para consultas.' },
     { class: 'linkedin', icon: 'fab fa-linkedin', url: 'https://www.linkedin.com/in/oswaldo-jaimes/', name: 'LinkedIn', description: 'Conecta conmigo en LinkedIn.' },
@@ -209,7 +234,7 @@ const updateDateTime = () => {
   });
 };
 
-const openModal = (type) => {
+const openModal = (type: string) => {
   const social = socialMedia.find(s => s.class === type);
   if (social) {
     modalData.value = social;
@@ -219,6 +244,91 @@ const openModal = (type) => {
       showStandardModal();
     }
   }
+};
+
+const handleEmailCopy = () => {
+    const copyBtn = modalEmailCopyBtnRef.value as HTMLElement | null;
+    if (!copyBtn) return;
+    const textSpan = copyBtn.querySelector('.copy-text') as HTMLElement | null;
+
+    // Try modern clipboard API first
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(targetEmail).then(() => {
+            if (textSpan) textSpan.textContent = 'Copied!';
+            copyBtn.style.backgroundColor = '#c8e6c9';
+            setTimeout(() => {
+                if (textSpan) textSpan.textContent = 'Copy';
+                copyBtn.style.backgroundColor = '#eee';
+            }, 1500);
+        }).catch(err => {
+            console.error('Failed to copy email: ', err);
+            fallbackCopyTextToClipboard();
+        });
+    } else {
+        // Fallback for older browsers
+        fallbackCopyTextToClipboard();
+    }
+    
+    function fallbackCopyTextToClipboard() {
+        const textArea = document.createElement("textarea");
+        textArea.value = targetEmail;
+        textArea.style.top = "0";
+        textArea.style.left = "0";
+        textArea.style.position = "fixed";
+        textArea.style.opacity = "0";
+        
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        
+        try {
+            const successful = document.execCommand('copy');
+            if (successful) {
+                if (textSpan) textSpan.textContent = 'Copied!';
+                copyBtn.style.backgroundColor = '#c8e6c9';
+                setTimeout(() => {
+                    if (textSpan) textSpan.textContent = 'Copy';
+                    copyBtn.style.backgroundColor = '#eee';
+                }, 1500);
+            } else {
+                if (textSpan) textSpan.textContent = 'Error';
+                setTimeout(() => {
+                    if (textSpan) textSpan.textContent = 'Copy';
+                }, 1500);
+            }
+        } catch (err) {
+            console.error('Fallback: Oops, unable to copy', err);
+            if (textSpan) textSpan.textContent = 'Error';
+            setTimeout(() => {
+                if (textSpan) textSpan.textContent = 'Copy';
+            }, 1500);
+        }
+        
+        document.body.removeChild(textArea);
+    }
+};
+
+const showStandardModal = () => {
+    isEmailMode.value = false;
+    isModalVisible.value = true;
+};
+
+const showEmailModal = () => {
+    isEmailMode.value = true;
+    isModalVisible.value = true;
+    // Reset button state when modal opens
+    setTimeout(() => {
+        const copyBtn = modalEmailCopyBtnRef.value as HTMLElement | null;
+        if (copyBtn) {
+            const textSpan = copyBtn.querySelector('.copy-text') as HTMLElement | null;
+            if (textSpan) textSpan.textContent = 'Copy';
+            copyBtn.style.backgroundColor = '#eee';
+        }
+    }, 100);
+};
+
+const hideModal = () => {
+    isModalVisible.value = false;
 };
 
 onMounted(() => {
@@ -274,8 +384,8 @@ onMounted(() => {
         };
 
         iconElement.addEventListener('click', () => {
-            modalData.value = currentIconData;
-            if (currentIconData.name === 'Email') {
+            openModal(currentIconData.class);
+            if (currentIconData.class === 'email') {
                 showEmailModal();
             } else {
                 showStandardModal();
@@ -484,99 +594,6 @@ onMounted(() => {
         animationFrameId = requestAnimationFrame(animate);
     }
 
-    const openModal = (type) => {
-        const social = socialMedia.find(s => s.class === type);
-        if (social) {
-            modalData.value = social;
-            if (type === 'email') {
-                showEmailModal();
-            } else {
-                showStandardModal();
-            }
-        }
-    };
-
-    function showStandardModal() {
-        isEmailMode.value = false;
-        isModalVisible.value = true;
-    }
-
-    function showEmailModal() {
-        isEmailMode.value = true;
-        isModalVisible.value = true;
-        // Reset button state when modal opens
-        setTimeout(() => {
-            const copyBtn = modalEmailCopyBtnRef.value;
-            if (copyBtn) {
-                const textSpan = copyBtn.querySelector('.copy-text');
-                if (textSpan) textSpan.textContent = 'Copy';
-                copyBtn.style.backgroundColor = '#eee';
-            }
-        }, 100);
-    }
-
-    const handleEmailCopy = () => {
-        const copyBtn = modalEmailCopyBtnRef.value;
-        if (!copyBtn) return;
-        const textSpan = copyBtn.querySelector('.copy-text');
-
-        // Try modern clipboard API first
-        if (navigator.clipboard && window.isSecureContext) {
-            navigator.clipboard.writeText(targetEmail).then(() => {
-                if (textSpan) textSpan.textContent = 'Copied!';
-                copyBtn.style.backgroundColor = '#c8e6c9';
-                setTimeout(() => {
-                    if (textSpan) textSpan.textContent = 'Copy';
-                    copyBtn.style.backgroundColor = '#eee';
-                }, 1500);
-            }).catch(err => {
-                console.error('Failed to copy email: ', err);
-                fallbackCopyTextToClipboard();
-            });
-        } else {
-            // Fallback for older browsers
-            fallbackCopyTextToClipboard();
-        }
-        
-        function fallbackCopyTextToClipboard() {
-            const textArea = document.createElement("textarea");
-            textArea.value = targetEmail;
-            textArea.style.top = "0";
-            textArea.style.left = "0";
-            textArea.style.position = "fixed";
-            textArea.style.opacity = "0";
-            
-            document.body.appendChild(textArea);
-            textArea.focus();
-            textArea.select();
-            
-            try {
-                const successful = document.execCommand('copy');
-                if (successful) {
-                    if (textSpan) textSpan.textContent = 'Copied!';
-                    copyBtn.style.backgroundColor = '#c8e6c9';
-                    setTimeout(() => {
-                        if (textSpan) textSpan.textContent = 'Copy';
-                        copyBtn.style.backgroundColor = '#eee';
-                    }, 1500);
-                } else {
-                    if (textSpan) textSpan.textContent = 'Error';
-                    setTimeout(() => {
-                        if (textSpan) textSpan.textContent = 'Copy';
-                    }, 1500);
-                }
-            } catch (err) {
-                console.error('Fallback: Oops, unable to copy', err);
-                if (textSpan) textSpan.textContent = 'Error';
-                setTimeout(() => {
-                    if (textSpan) textSpan.textContent = 'Copy';
-                }, 1500);
-            }
-            
-            document.body.removeChild(textArea);
-        }
-    };
-
     function startIconGeneration() {
         for (let i = 0; i < 6; i++) {
             setTimeout(createIcon, i * 400);
@@ -586,9 +603,6 @@ onMounted(() => {
 
     animate();
     startIconGeneration();
-    
-    // Expose handleEmailCopy to template
-    window.handleEmailCopy = handleEmailCopy;
 });
 
 onUnmounted(() => {
@@ -610,16 +624,7 @@ onUnmounted(() => {
         email: 0,
         linkedin: 0
     };
-    // Clean up global function
-    if (window.handleEmailCopy) {
-        delete window.handleEmailCopy;
-    }
 });
-
-const hideModal = () => {
-    isModalVisible.value = false;
-};
-
 </script>
 
 <style>

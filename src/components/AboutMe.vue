@@ -308,8 +308,9 @@ const currentFloor = ref(1)
 const currentTab = ref(0)
 let tabInterval: number | null = null
 
-// Define the title for the component
-const title = ref('Sobre Mí')
+// Define variables for the code demo
+const title = ref('Mi App')
+const count = ref(0)
 
 const skills = [
   {
