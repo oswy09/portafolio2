@@ -281,7 +281,7 @@
     </section>
 
     <!-- Results Section - Redesigned -->
-    <div v-if="project.results" class="section results-section">
+  <div v-if="project && project.results" class="section results-section">
       <h2 class="section-title">Resultados del Proyecto</h2>
       
       <!-- Results Cards -->
@@ -394,16 +394,6 @@ const backToGallery = () => {
   router.push({ name: 'projects' })
 }
 
-// Función auxiliar para obtener el nombre de un icono basado en su tipo
-function getIconName(icon: { type: string; value: string }) {
-  if (icon.type === 'fa') {
-    return icon.value.split('fa-')[1] // Para iconos de Font Awesome
-  } else if (icon.type === 'image') {
-    // Para imágenes, extrae el nombre del archivo sin extensión y reemplaza guiones por espacios
-    return icon.value.split('/').pop()?.split('.')[0].replace(/-/g, ' ') || ''
-  }
-  return ''
-}
 
 // Interfaz para la estructura del proceso del proyecto
 interface Process {
@@ -465,118 +455,17 @@ interface Project {
   results: Result[]
   testimonial?: string
   liveUrl?: string
-  imageGallery?: ImageGalleryItem[]; 
+  imageGallery?: ImageGalleryItem[];
+  technologies?: string[];
+  gallery?: string[];
 }
 
-const projectsData = {
-  1: {
-    title: "Quizz Interactivo",
-    category: "Aplicación Web Interactiva",
-    description: "Una aplicación de quiz interactiva desarrollada con Vue.js que permite a los usuarios responder preguntas de manera dinámica con retroalimentación inmediata.",
-    challenge: "Crear una experiencia de quiz atractiva y educativa que mantenga a los usuarios comprometidos mientras aprenden. El desafío principal era diseñar una interfaz intuitiva que funcionara bien en todos los dispositivos y proporcionara retroalimentación inmediata.",
-    solution: "Desarrollé una aplicación Vue.js con un sistema de puntuación en tiempo real, animaciones suaves entre preguntas, y un diseño responsive. Implementé un sistema de retroalimentación que muestra explicaciones detalladas después de cada respuesta.",
-    technologies: ["Vue.js", "CSS3", "JavaScript", "Responsive Design"],
-    images: [
-      "https://oswal.com.co/wp-content/uploads/2025/04/Proyect01.jpg",
-      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
-    ],
-    results: [
-      { metric: "2,500+", label: "Quizzes Completados" },
-      { metric: "89%", label: "Tasa de Finalización" },
-      { metric: "4.7/5", label: "Calificación Promedio" }
-    ]
-  },
-  2: {
-    title: "Website Hotel",
-    category: "Sitio Web Corporativo",
-    description: "Sitio web completo para un hotel boutique con sistema de reservas integrado, galería de habitaciones y información de servicios.",
-    challenge: "Desarrollar un sitio web que transmitiera la elegancia del hotel mientras proporcionaba una experiencia de reserva fluida. Era crucial mostrar las habitaciones de manera atractiva y facilitar el proceso de reserva.",
-    solution: "Creé un sitio web responsive con una galería interactiva de habitaciones, sistema de reservas integrado, y diseño elegante que refleja la marca del hotel. Implementé optimizaciones SEO para mejorar la visibilidad online.",
-    technologies: ["WordPress", "PHP", "MySQL", "CSS3", "JavaScript"],
-    images: [
-      "https://oswal.com.co/wp-content/uploads/2025/04/p6.jpg",
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=2069&auto=format&fit=crop"
-    ],
-    results: [
-      { metric: "180%", label: "Aumento en Reservas" },
-      { metric: "92%", label: "Satisfacción Cliente" },
-      { metric: "45%", label: "Reducción Tiempo Reserva" }
-    ]
-  },
-  3: {
-    title: "Website Centro Comercial",
-    category: "Portal E-commerce",
-    description: "Portal web para centro comercial con directorio de tiendas, promociones, eventos y sistema de navegación interactivo.",
-    challenge: "Crear un portal que sirviera como hub central para todas las tiendas del centro comercial, facilitando la navegación de los visitantes y promoviendo las ofertas y eventos.",
-    solution: "Desarrollé un portal con mapa interactivo del centro comercial, directorio searchable de tiendas, sistema de promociones y calendario de eventos. Incluí funcionalidades de geolocalización para ayudar a los visitantes.",
-    technologies: ["React", "Node.js", "MongoDB", "Google Maps API"],
-    images: [
-      "https://oswal.com.co/wp-content/uploads/2025/04/p4.jpg",
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2340&auto=format&fit=crop"
-    ],
-    results: [
-      { metric: "15,000+", label: "Visitantes Mensuales" },
-      { metric: "78%", label: "Uso del Directorio" },
-      { metric: "35%", label: "Aumento Tráfico Tiendas" }
-    ]
-  },
-  4: {
-    title: "Landing Page Seguros",
-    category: "Landing Page Corporativa",
-    description: "Landing page optimizada para conversión para una compañía de seguros, enfocada en la generación de leads y cotizaciones online.",
-    challenge: "Crear una landing page que convirtiera visitantes en leads calificados para la compañía de seguros, comunicando confianza y profesionalismo mientras simplificaba el proceso de cotización.",
-    solution: "Diseñé una landing page con formulario de cotización optimizado, testimonios de clientes, y elementos de confianza. Implementé A/B testing y optimizaciones de conversión basadas en analytics.",
-    technologies: ["HTML5", "CSS3", "JavaScript", "PHP", "Google Analytics"],
-    images: [
-      "https://oswal.com.co/wp-content/uploads/2025/05/axa.jpg",
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2070&auto=format&fit=crop"
-    ],
-    results: [
-      { metric: "24%", label: "Tasa de Conversión" },
-      { metric: "1,200+", label: "Leads Generados" },
-      { metric: "68%", label: "Reducción Costo Lead" }
-    ]
-  },
-  5: {
-    title: "Catálogo Online",
-    category: "E-commerce",
-    description: "Catálogo digital interactivo con sistema de búsqueda avanzada, filtros por categoría y funcionalidad de wishlist.",
-    challenge: "Desarrollar un catálogo que permitiera a los usuarios encontrar productos fácilmente entre miles de artículos, con una experiencia de navegación intuitiva y rápida.",
-    solution: "Creé un catálogo con búsqueda inteligente, filtros múltiples, comparador de productos y sistema de recomendaciones. Optimicé la carga de imágenes y implementé lazy loading para mejorar el rendimiento.",
-    technologies: ["Vue.js", "Elasticsearch", "AWS", "Progressive Web App"],
-    images: [
-      "https://oswal.com.co/wp-content/uploads/2025/04/P3.jpg",
-      "https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2340&auto=format&fit=crop"
-    ],
-    results: [
-      { metric: "8,500+", label: "Productos Catalogados" },
-      { metric: "85%", label: "Uso de Filtros" },
-      { metric: "42%", label: "Aumento Tiempo Sesión" }
-    ]
-  },
-  6: {
-    title: "Dashboard Corporativo",
-    category: "Aplicación Web",
-    description: "Dashboard ejecutivo con visualización de datos en tiempo real, reportes automatizados y métricas de rendimiento empresarial.",
-    challenge: "Crear un dashboard que presentara datos complejos de manera clara y actionable para ejecutivos, con actualizaciones en tiempo real y capacidades de drill-down.",
-    solution: "Desarrollé un dashboard con gráficos interactivos, alertas automáticas, y reportes personalizables. Implementé WebSockets para actualizaciones en tiempo real y un sistema de permisos granular.",
-    technologies: ["React", "D3.js", "Node.js", "PostgreSQL", "WebSockets"],
-    images: [
-      "https://oswal.com.co/wp-content/uploads/2025/05/Dashboard.jpg",
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
-    ],
-    results: [
-      { metric: "95%", label: "Adopción Usuarios" },
-      { metric: "60%", label: "Reducción Tiempo Reportes" },
-      { metric: "4.8/5", label: "Satisfacción Ejecutivos" }
-    ]
-  }
+// ...existing code...
+function openLightbox(index: number) {
+  // Implementación básica para evitar error de referencia
+  // Aquí podrías abrir un modal/lightbox con la imagen
+  // Por ahora solo log para evitar error
+  console.log('Abrir lightbox en index', index)
 }
 
 // Datos de los proyectos
@@ -917,7 +806,8 @@ imageGallery: [
     keyAchievement: 'Diseño y desarrollo de una solución de catálogo digital ágil y moderna, permitiendo a Bestyle vender sus prendas online de forma rápida y directa a través de WhatsApp y enlaces de pago.',
     client: 'Bestyle',
     industry: 'Ropa y moda',
-     myRole: 'Web designer',
+    location: 'Colombia',
+    myRole: 'Web designer',
     responsibilities: ['Web designer', 'Frontend Developer'],
     challenge: 'Bestyle, una marca de moda con fuerte presencia en redes sociales, necesitaba trascender la venta por mensaje directo y establecer una presencia online funcional y expedita para su catálogo de prendas. El principal desafío era crear una solución digital rápida y fácil de usar que permitiera a los clientes explorar las prendas, calcular el total de su compra y finalizar el pedido de manera fluida vía WhatsApp o mediante un enlace de pago, todo ello sin la complejidad de un e-commerce tradicional.',
     process: {
@@ -1199,7 +1089,7 @@ imageGallery: [
         url: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756512408/AXA_Colpatria_antes_website_ecypnb.jpg",
         alt: "Imagen resultado sitio web_AXA_COLPATRIA",
         caption: "Home AXA Colpatria_antes",
-        tag: "Antes" 
+        tag: "antes" 
       },
       {
         url: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756511734/Proyectos_oswal_web_design_AXA_Home_page_p62gsa.jpg",
@@ -1540,6 +1430,7 @@ imageGallery: [
   margin-bottom: 1rem;
   background: linear-gradient(45deg, #fff, #CCF381);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: titleReveal 0.8s ease forwards;
 }

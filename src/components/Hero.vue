@@ -259,7 +259,7 @@ const startElevatorDemo = () => {
 
 const goToAbout = () => {
   if (isDemo.value) {
-    clearInterval(demoInterval.value)
+  clearInterval(demoInterval.value as number)
     isDemo.value = false
   }
   router.push('/about').catch(err => {
@@ -292,7 +292,7 @@ onMounted(() => {
 
 onUnmounted(() => {
   if (demoInterval.value) {
-    clearInterval(demoInterval.value)
+    clearInterval(demoInterval.value as number)
   }
 })
 </script>
@@ -400,11 +400,10 @@ body {
 
 /* Estilo para el texto con contorno "Hola, " */
 .text-outline {
-    color: transparent;
-    -webkit-text-stroke: 2px #3A27A0; /* Contorno sutil en violeta oscuro */
-    text-stroke: 2px #3A27A0; /* Para compatibilidad */
-    font-weight: 900;
-    position: relative;
+  color: transparent;
+  -webkit-text-stroke: 2px #3A27A0; /* Contorno sutil en violeta oscuro */
+  font-weight: 900;
+  position: relative;
 }
 
 /* Subtítulo general */

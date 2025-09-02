@@ -305,14 +305,6 @@ const filteredProjects = computed(() => {
   return projects.filter(project => activeCategories.includes(project.category))
 })
 
-const toggleFilter = (filterId: string) => {
-  const filter = activeFilters.value.find(f => f.id === filterId)
-  if (filter) {
-    filter.active = !filter.active
-  }
-  currentTranslate.value = 0 // Reset scroll position when filtering
-  updateProgressBar()
-}
 
 const handleWheel = (e: WheelEvent) => {
   e.preventDefault()
