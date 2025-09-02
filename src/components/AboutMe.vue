@@ -306,7 +306,11 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 const currentFloor = ref(1)
 const currentTab = ref(0)
+
+const title = 'App de ejemplo'
 let tabInterval: number | null = null
+
+const count = ref(0)
 
 const skills = [
   {

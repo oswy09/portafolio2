@@ -24,14 +24,12 @@
       </svg>
     </router-link>
 
-    <BrowserScene />
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import BrowserScene from './BrowserScene.vue'
 
 const router = useRouter()
 const currentFloor = ref(4)

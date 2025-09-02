@@ -241,7 +241,7 @@
         <p class="solution-description" v-if="project?.solution.description">{{ project?.solution.description }}</p>
         
         <!-- Galería de Imágenes dentro de La Solución -->
-        <div class="gallery-grid" v-if="project.gallery && project.gallery.length > 0">
+  <div class="gallery-grid" v-if="project?.gallery && project.gallery.length > 0">
           <div 
             v-for="(image, index) in project.gallery" 
             :key="index"
@@ -281,7 +281,7 @@
     </section>
 
     <!-- Results Section - Redesigned -->
-    <div v-if="project.results" class="section results-section">
+  <div v-if="project?.results" class="section results-section">
       <h2 class="section-title">Resultados del Proyecto</h2>
       
       <!-- Results Cards -->
@@ -358,6 +358,16 @@
 
 
 <script setup lang="ts">
+import { ref } from 'vue'
+
+// Estado para el lightbox
+const lightboxIndex = ref<number|null>(null)
+
+// Función para abrir el lightbox en la imagen seleccionada
+function openLightbox(index: number) {
+  lightboxIndex.value = index
+  // Aquí puedes agregar lógica para mostrar el lightbox/modal
+}
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
@@ -395,15 +405,6 @@ const backToGallery = () => {
 }
 
 // Función auxiliar para obtener el nombre de un icono basado en su tipo
-function getIconName(icon: { type: string; value: string }) {
-  if (icon.type === 'fa') {
-    return icon.value.split('fa-')[1] // Para iconos de Font Awesome
-  } else if (icon.type === 'image') {
-    // Para imágenes, extrae el nombre del archivo sin extensión y reemplaza guiones por espacios
-    return icon.value.split('/').pop()?.split('.')[0].replace(/-/g, ' ') || ''
-  }
-  return ''
-}
 
 // Interfaz para la estructura del proceso del proyecto
 interface Process {
@@ -465,118 +466,10 @@ interface Project {
   results: Result[]
   testimonial?: string
   liveUrl?: string
-  imageGallery?: ImageGalleryItem[]; 
-}
+  imageGallery?: ImageGalleryItem[];
+  technologies?: string[];
+  gallery?: string[];
 
-const projectsData = {
-  1: {
-    title: "Quizz Interactivo",
-    category: "Aplicación Web Interactiva",
-    description: "Una aplicación de quiz interactiva desarrollada con Vue.js que permite a los usuarios responder preguntas de manera dinámica con retroalimentación inmediata.",
-    challenge: "Crear una experiencia de quiz atractiva y educativa que mantenga a los usuarios comprometidos mientras aprenden. El desafío principal era diseñar una interfaz intuitiva que funcionara bien en todos los dispositivos y proporcionara retroalimentación inmediata.",
-    solution: "Desarrollé una aplicación Vue.js con un sistema de puntuación en tiempo real, animaciones suaves entre preguntas, y un diseño responsive. Implementé un sistema de retroalimentación que muestra explicaciones detalladas después de cada respuesta.",
-    technologies: ["Vue.js", "CSS3", "JavaScript", "Responsive Design"],
-    images: [
-      "https://oswal.com.co/wp-content/uploads/2025/04/Proyect01.jpg",
-      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
-    ],
-    results: [
-      { metric: "2,500+", label: "Quizzes Completados" },
-      { metric: "89%", label: "Tasa de Finalización" },
-      { metric: "4.7/5", label: "Calificación Promedio" }
-    ]
-  },
-  2: {
-    title: "Website Hotel",
-    category: "Sitio Web Corporativo",
-    description: "Sitio web completo para un hotel boutique con sistema de reservas integrado, galería de habitaciones y información de servicios.",
-    challenge: "Desarrollar un sitio web que transmitiera la elegancia del hotel mientras proporcionaba una experiencia de reserva fluida. Era crucial mostrar las habitaciones de manera atractiva y facilitar el proceso de reserva.",
-    solution: "Creé un sitio web responsive con una galería interactiva de habitaciones, sistema de reservas integrado, y diseño elegante que refleja la marca del hotel. Implementé optimizaciones SEO para mejorar la visibilidad online.",
-    technologies: ["WordPress", "PHP", "MySQL", "CSS3", "JavaScript"],
-    images: [
-      "https://oswal.com.co/wp-content/uploads/2025/04/p6.jpg",
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?q=80&w=2069&auto=format&fit=crop"
-    ],
-    results: [
-      { metric: "180%", label: "Aumento en Reservas" },
-      { metric: "92%", label: "Satisfacción Cliente" },
-      { metric: "45%", label: "Reducción Tiempo Reserva" }
-    ]
-  },
-  3: {
-    title: "Website Centro Comercial",
-    category: "Portal E-commerce",
-    description: "Portal web para centro comercial con directorio de tiendas, promociones, eventos y sistema de navegación interactivo.",
-    challenge: "Crear un portal que sirviera como hub central para todas las tiendas del centro comercial, facilitando la navegación de los visitantes y promoviendo las ofertas y eventos.",
-    solution: "Desarrollé un portal con mapa interactivo del centro comercial, directorio searchable de tiendas, sistema de promociones y calendario de eventos. Incluí funcionalidades de geolocalización para ayudar a los visitantes.",
-    technologies: ["React", "Node.js", "MongoDB", "Google Maps API"],
-    images: [
-      "https://oswal.com.co/wp-content/uploads/2025/04/p4.jpg",
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2340&auto=format&fit=crop"
-    ],
-    results: [
-      { metric: "15,000+", label: "Visitantes Mensuales" },
-      { metric: "78%", label: "Uso del Directorio" },
-      { metric: "35%", label: "Aumento Tráfico Tiendas" }
-    ]
-  },
-  4: {
-    title: "Landing Page Seguros",
-    category: "Landing Page Corporativa",
-    description: "Landing page optimizada para conversión para una compañía de seguros, enfocada en la generación de leads y cotizaciones online.",
-    challenge: "Crear una landing page que convirtiera visitantes en leads calificados para la compañía de seguros, comunicando confianza y profesionalismo mientras simplificaba el proceso de cotización.",
-    solution: "Diseñé una landing page con formulario de cotización optimizado, testimonios de clientes, y elementos de confianza. Implementé A/B testing y optimizaciones de conversión basadas en analytics.",
-    technologies: ["HTML5", "CSS3", "JavaScript", "PHP", "Google Analytics"],
-    images: [
-      "https://oswal.com.co/wp-content/uploads/2025/05/axa.jpg",
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2070&auto=format&fit=crop"
-    ],
-    results: [
-      { metric: "24%", label: "Tasa de Conversión" },
-      { metric: "1,200+", label: "Leads Generados" },
-      { metric: "68%", label: "Reducción Costo Lead" }
-    ]
-  },
-  5: {
-    title: "Catálogo Online",
-    category: "E-commerce",
-    description: "Catálogo digital interactivo con sistema de búsqueda avanzada, filtros por categoría y funcionalidad de wishlist.",
-    challenge: "Desarrollar un catálogo que permitiera a los usuarios encontrar productos fácilmente entre miles de artículos, con una experiencia de navegación intuitiva y rápida.",
-    solution: "Creé un catálogo con búsqueda inteligente, filtros múltiples, comparador de productos y sistema de recomendaciones. Optimicé la carga de imágenes y implementé lazy loading para mejorar el rendimiento.",
-    technologies: ["Vue.js", "Elasticsearch", "AWS", "Progressive Web App"],
-    images: [
-      "https://oswal.com.co/wp-content/uploads/2025/04/P3.jpg",
-      "https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2340&auto=format&fit=crop"
-    ],
-    results: [
-      { metric: "8,500+", label: "Productos Catalogados" },
-      { metric: "85%", label: "Uso de Filtros" },
-      { metric: "42%", label: "Aumento Tiempo Sesión" }
-    ]
-  },
-  6: {
-    title: "Dashboard Corporativo",
-    category: "Aplicación Web",
-    description: "Dashboard ejecutivo con visualización de datos en tiempo real, reportes automatizados y métricas de rendimiento empresarial.",
-    challenge: "Crear un dashboard que presentara datos complejos de manera clara y actionable para ejecutivos, con actualizaciones en tiempo real y capacidades de drill-down.",
-    solution: "Desarrollé un dashboard con gráficos interactivos, alertas automáticas, y reportes personalizables. Implementé WebSockets para actualizaciones en tiempo real y un sistema de permisos granular.",
-    technologies: ["React", "D3.js", "Node.js", "PostgreSQL", "WebSockets"],
-    images: [
-      "https://oswal.com.co/wp-content/uploads/2025/05/Dashboard.jpg",
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
-    ],
-    results: [
-      { metric: "95%", label: "Adopción Usuarios" },
-      { metric: "60%", label: "Reducción Tiempo Reportes" },
-      { metric: "4.8/5", label: "Satisfacción Ejecutivos" }
-    ]
-  }
 }
 
 // Datos de los proyectos
@@ -823,224 +716,6 @@ const projects: Project[] = [
         'Se entregó un sitio web dinámico y visualmente atractivo para MiCentro, construido desde cero en WordPress, diseñado para ser el punto de referencia digital del centro comercial. Cuenta con un directorio de marcas intuitivo, un calendario de eventos interactivo y un blog, todo gestionable autónomamente gracias a la implementación de campos personalizados. La solución no solo elevó la presencia digital de MiCentro con un diseño moderno y responsivo',
     },
     results: [
-      { value: '+30%', metric: 'Aumento en la Visibilidad Orgánica' },
-      { value: '+25%', metric: 'Incremento en Consultas Directas a Tiendas' },
-      { value: '+Impacto', metric: 'Facilidad de Gestión de Contenido para el área de marketing' },
-    ],
-    liveUrl: 'https://ccmicentro.com/',
-
-imageGallery: [
-     
-    ]
-
-    
-  },
-  {
-    id: 4,
-    title: 'AXA Colpatria - Landing Page "Seguro de Vida Deudor"',
-    image: 'https://oswal.com.co/wp-content/uploads/2025/05/Landing_AX-COL.jpg',
-    roles: ['UX Research', 'UI Design', 'Frontend Development'],
-    keyAchievement: 'Creación de una landing page corporativa de alto impacto visual y optimizada para la conversión, enfocada en la captación de leads para el Seguro de Vida Deudor de AXA Colpatria.',
-    client: 'AXA COLPATRIA',
-    industry: 'Aseguradora',
-    location: 'Colombia',
-    myRole: 'Web designer',
-    responsibilities: ['UX design', 'UI Design', 'Frontend Developer'],
-    challenge: 'AXA Colpatria necesitaba una landing page específica y altamente efectiva para promocionar su Seguro de Vida Deudor. El desafío era diseñar y desarrollar una página que no solo comunicara de forma clara los beneficios y requisitos del seguro, sino que también inspirara confianza, guiara al usuario intuitivamente, y que se pudiera integrar facilmente a un CRM.',
-    process: {
-      research: [
-        'Análisis de Público Objetivo y Competencia',
-        'User Flow',
-        'Pruebas de Usabilidad',
-         
-      ],
-      design: {
-        activities: [
-          'Diseño de Mockups',
-          'Prototipos',
-          'Integración sistema de diseño de la marca',
-           
-        ],
-        colors: ['#5C5CB7', '#3D3DAA', '#00008F', '#DD7358', '#D75D3D','#D24723','#7698CB','#41949F','#E196AA'],
-        typography: [
-          { name: 'Publico Headline Web', usage: 'Títulos y encabezados' },
-          { name: 'Source Sans Pro', usage: 'Texto y contenido' },
-        ],
-        icons: [
-          { type: 'image', value: 'https://oswal.com.co/wp-content/uploads/2025/07/ilu016-1.png' },
-          { type: 'image', value: 'https://oswal.com.co/wp-content/uploads/2025/07/ilu028-1.png' },
-          { type: 'image', value: 'https://oswal.com.co/wp-content/uploads/2025/07/ilu048-1.png' },
-          { type: 'image', value: 'https://oswal.com.co/wp-content/uploads/2025/07/ilu078-1.png' },
-          { type: 'image', value: 'https://oswal.com.co/wp-content/uploads/2025/07/ilu113-1.png' },
-          { type: 'image', value: 'https://oswal.com.co/wp-content/uploads/2025/07/ilu134-1.png' }
-        ],
-      },
-      development: { 
-        activities: [
-          'Evaluación de Accesibilidad Web',
-          'Implementación en html, css y Javascript',
-          'Desarrollo de Funcionalidades Personalizadas',
-          'Diseño y configuración de iconos fuente',
-          'Creación y envío de formulario',
-          
-        ],  
-        stack: [
-         
-          { name: 'HTML', icon: 'fa-brands fa-html5' },
-          { name: 'CSS', icon: 'fa-brands fa-css3' },
-          { name: 'JS', icon: 'fa-brands fa-js' },
-       
-        ],
-      },
-      marketing: [
-    
-        'Optimización para Motores de Búsqueda (SEO)',
-       
-      ],
-    },
-    solution: {
-      gif: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756246659/Proyectos_oswal_web_design_AXA_landing_vida_hlubht.gif',
-      description:
-        'Se entregó una landing page clave para AXA Colpatria, concebida en Figma y desarrollada con código HTML, CSS y JavaScript. Esta página es totalmente responsiva y fue construida para cumplir con objetivos de negocio y marketing claros. Su diseño presenta los beneficios del Seguro de Vida Deudor de forma directa y su función principal es captar leads calificados eficientemente a través de un formulario optimizado.',
-    },
-    results: [
-      { value: '+35%', metric: 'Tasa de Conversión de Leads' },
-      { value: '-15%', metric: 'Tasa de rebote' },
-    ],
-    liveUrl: 'https://www.amazonbb.com/',
-  },
-  {
-    id: 5,
-    title: 'Bestyle - Catálogo Digital Interactivo y Venta Express',
-    image: 'https://oswal.com.co/wp-content/uploads/2025/05/bestyle2.jpg',
-    roles: ['UX Research', 'UI Design', 'Frontend Development'],
-    keyAchievement: 'Diseño y desarrollo de una solución de catálogo digital ágil y moderna, permitiendo a Bestyle vender sus prendas online de forma rápida y directa a través de WhatsApp y enlaces de pago.',
-    client: 'Bestyle',
-    industry: 'Ropa y moda',
-     myRole: 'Web designer',
-    responsibilities: ['Web designer', 'Frontend Developer'],
-    challenge: 'Bestyle, una marca de moda con fuerte presencia en redes sociales, necesitaba trascender la venta por mensaje directo y establecer una presencia online funcional y expedita para su catálogo de prendas. El principal desafío era crear una solución digital rápida y fácil de usar que permitiera a los clientes explorar las prendas, calcular el total de su compra y finalizar el pedido de manera fluida vía WhatsApp o mediante un enlace de pago, todo ello sin la complejidad de un e-commerce tradicional.',
-    process: {
-      research: [
-       
-      ],
-      design: {
-        activities: [
-          'Diseño de Mockups',
-          'Diseño Responsivo y Adaptativo',
-          'Adaptación de Componentes de Diseño e Iconografía Genérica',
-           
-        ],
-        colors: [ ],
-        typography: [
-           
-        ],
-        icons: [
-           
-        ],
-      },
-      development: { 
-        activities: [
-           'Implementación de Funcionalidades Personalizadas',
-          'Implementación de Generación de Pedido vía WhatsApp y link de pago',
-          'Sistema de Búsqueda y Filtrado Dinámico (Categorías y Subcategorías)',
-        ],  
-        stack: [
-         
-          { name: 'HTML', icon: 'fa-brands fa-html5' },
-          { name: 'CSS', icon: 'fa-brands fa-css3' },
-          { name: 'JS', icon: 'fa-brands fa-js' },
-          
-        ],
-      },
-      marketing: [
-       
-        'Optimización para Motores de Búsqueda (SEO)',
-        'Análisis de Experiencia Digital',
-      ],
-    },
-    solution: {
-      gif: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756247093/Proyectos_oswal_web_design_bestyle_lh9b7z.gif',
-      description: 'Se desarrolló una plataforma de catálogo digital ágil y moderna para Bestyle, permitiendo a la marca realizar ventas online rápidas y directas. permite a los clientes seleccionar prendas, calcular su total y finalizar la compra enviando el pedido por WhatsApp o a través de un link de pago.',
-    },
-    results: [
-      { value: '+20%', metric: ' Ventas Directas Online' },
-      { value: '24/7', metric: 'Mayor Alcance y Disponibilidad' },
-      { value: '+30%', metric: 'Productividad en gestión de consultas' },
-    ],
-    liveUrl: 'https://bestyle.store/',
-  },
-  {
-    id: 6,
-    title: 'BetterMe - Tu Transformación Estética en Colombia',
-    image: 'https://oswal.com.co/wp-content/uploads/2025/05/Betterme_Ver2.jpg',
-    roles: ['UX Research', 'UI Design', 'Frontend Development'],
-    keyAchievement: 'Web moderna y sencilla para BetterMe, facilitando a extranjeros el acceso a servicios de cirugía y procedimientos estéticos en Colombia',
-    client: 'Betterme',
-    industry: 'Estética y Belleza', 
-    location: 'Miami, Medellín',
-    myRole: 'Web designer',
-    responsibilities: ['Web designer', 'Frontend Developer'],
-    challenge: 'El desafío principal era construir un sitio web que no solo mostrara la gama de servicios y el equipo de especialistas, sino que también transmitiera confianza, seguridad y la propuesta de valor integral (logística, recuperación). Además, era crucial que la plataforma fuera fácilmente actualizable por el equipo de BetterMe para mantener la información de servicios y especialistas al día.',
-    process: {
-      research: [
-        
-      ],
-      design: {
-        activities: [
-
-
-
-        'Diseño de Mockups',
-          'Prototipado',
-          'Optimización y mejoramiento de UI Kit',
-          'Diseño de Iconografía y Elementos Gráficos',
-        ],
-        colors: ['#3a4183',  '#F1918C', '#E6E6F2'],
-        typography: [ 
-        { name: 'Manrope', usage: 'Títulos y texto contenido' },
-        ],
-        icons: [
-          { type: 'image', value: 'http://betterme.oswal.com.co/wp-content/uploads/2025/02/quienes-somos.png' },
-          { type: 'image', value: 'http://betterme.oswal.com.co/wp-content/uploads/2025/02/quienes-somos-betterme.png' },
-          { type: 'image', value: 'http://betterme.oswal.com.co/wp-content/uploads/2025/02/facial.png' },
-          { type: 'image', value: 'http://betterme.oswal.com.co/wp-content/uploads/2025/02/aparatologia.png' },
-          { type: 'image', value: 'http://betterme.oswal.com.co/wp-content/uploads/2025/02/ciudades.png' },
-          { type: 'image', value: 'http://betterme.oswal.com.co/wp-content/uploads/2025/02/medicina-estetica.png' }
-        ],
-      },
-      development: { 
-        activities: [
-          'Evaluación de Accesibilidad Web',
-          'Migración a hosting',
-          'Construcción de Layouts y Diseño a Medida con Constructor Visual',
-          'Performance Optimization',
-          'Mantenimiento y Actualizaciones Wordpress',
-          'Desarrollo de Funcionalidades Personalizadas',
-          'Implementación de Seguridad Web',
-        ],  
-        stack: [
-          { name: 'Wordpress', icon: 'fa-brands fa-wordpress' },
-          { name: 'HTML', icon: 'fa-brands fa-html5' },
-          { name: 'CSS', icon: 'fa-brands fa-css3' },
-          { name: 'JS', icon: 'fa-brands fa-js' },
-          { name: 'PHP', icon: 'fa-brands fa-php' },
-        ],
-      },
-      marketing: [
-        'Test A/B (A/B Testing)',
-        'Optimización para Motores de Búsqueda (SEO)',
-        'Análisis de Experiencia Digital',
-      ],
-    },
-    solution: {
-      gif: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756249634/Proyectos_oswal_web_design_Betterme_hx48fj.gif',
-      description:
-        'Se rediseñó un sitio web moderno y responsivo para el Hotel Amazon B&B, construyendo la experiencia desde cero tras eliminar la plantilla original. La solución optimiza la interfaz de usuario para turistas extranjeros, integra funcionalidades clave de reservas y se accede de manera fácil al contenido y tours.',
-    },
-    results: [
-      { value: '+20%', metric: 'Tasa de Conversión de Reservas' },
-      { value: '+25%', metric: 'Volumen de consultas directas vía correo y WhatsApp' },
       { value: '+40%', metric: 'Facilidad de Gestión de Contenido' },
     ],
     liveUrl: 'https://betterme.oswal.com.co/',
@@ -1199,7 +874,7 @@ imageGallery: [
         url: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756512408/AXA_Colpatria_antes_website_ecypnb.jpg",
         alt: "Imagen resultado sitio web_AXA_COLPATRIA",
         caption: "Home AXA Colpatria_antes",
-        tag: "Antes" 
+  tag: "antes"
       },
       {
         url: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756511734/Proyectos_oswal_web_design_AXA_Home_page_p62gsa.jpg",
@@ -1540,6 +1215,7 @@ imageGallery: [
   margin-bottom: 1rem;
   background: linear-gradient(45deg, #fff, #CCF381);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: titleReveal 0.8s ease forwards;
 }

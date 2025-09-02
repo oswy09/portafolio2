@@ -248,7 +248,7 @@ const startElevatorDemo = () => {
 
   // Detener el demo después de 2 ciclos completos (8 pisos * 3 segundos = 24 segundos)
   setTimeout(() => {
-    if (demoInterval.value) {
+    if (demoInterval.value !== null) {
       clearInterval(demoInterval.value)
       demoInterval.value = null
     }
@@ -259,7 +259,9 @@ const startElevatorDemo = () => {
 
 const goToAbout = () => {
   if (isDemo.value) {
-    clearInterval(demoInterval.value)
+    if (demoInterval.value !== null) {
+      clearInterval(demoInterval.value)
+    }
     isDemo.value = false
   }
   router.push('/about').catch(err => {
@@ -291,9 +293,9 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
-  if (demoInterval.value) {
-    clearInterval(demoInterval.value)
-  }
+  if (demoInterval.value !== null) {
+  clearInterval(demoInterval.value)
+}
 })
 </script>
 

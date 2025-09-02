@@ -105,7 +105,7 @@
         <!-- Navigation Dots -->
         <div class="navigation-dots">
           <div 
-            v-for="(dot, index) in Math.ceil(filteredProjects.length / 4)" 
+            v-for="index in Math.ceil(filteredProjects.length / 4)"
             :key="index"
             :class="['nav-dot', { active: index === 0 }]"
           ></div>
