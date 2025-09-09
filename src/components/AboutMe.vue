@@ -34,7 +34,7 @@
           <div class="profile-container">
             <div class="profile-border"></div>
             <img 
-              src="https://oswal.com.co/wp-content/uploads/2025/07/Oswal22.jpg" 
+              src="https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757288490/Oswal_perfil_Webdesign.jpg"
               alt="Oswal Profile" 
               class="profile-image"
             />
@@ -302,6 +302,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
+// import perfilImg from '@/assets/imagenes/Perfil_Oswal_jaimes_Web_Design.jpg';
 
 const router = useRouter()
 const currentFloor = ref(1)

@@ -45,7 +45,6 @@
           <!-- Service Image -->
           <div class="service-image-container">
             <img :src="service.image" :alt="service.title" class="service-image" />
-            <div class="image-overlay"></div>
           </div>
 
           <!-- Service Content -->
@@ -138,7 +137,7 @@ const services = [
   {
     id: 1,
     title: 'Exploración',
-    image: 'https://oswal.com.co/wp-content/uploads/2025/07/design-full.jpg',
+    image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757340906/Oswal_UX_services.png',
     description: 'Antes de diseñar, se entiende y se planea. Esta fase se basa en descubrir insights clave del usuario y del negocio, combinando herramientas de UX Research con fundamentos de marketing estratégico y construcción de marca. Aquí se define la esencia del proyecto digital, alineando propósito, posicionamiento y experiencia deseada.',
     features: [
       'Investigación de usuarios y contexto',
@@ -154,7 +153,7 @@ const services = [
   {
     id: 2,
     title: 'Diseño con Propósito',
-    image: 'https://oswal.com.co/wp-content/uploads/2025/04/web-D.jpg',
+    image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757342033/Oswal_webdesign_services.png',
     description: 'Donde la estrategia toma forma visual. Creación de interfaces intuitivas, atractivas y alineadas con la marca, siempre pensando en la experiencia del usuario y la conversión.',
     features: [
       'Creación de Wireframes ',
@@ -170,7 +169,7 @@ const services = [
   {
     id: 3,
     title: 'Manos a la Web ',
-    image: 'https://oswal.com.co/wp-content/uploads/2025/06/22-may-2025-15_50_45.png',
+    image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757340906/oswal_front_services.png',
     description: 'Del prototipo a la realidad. Desarrollo web enfocado en rendimiento, accesibilidad, velocidad y usabilidad. Lo visual se convierte en funcional.',
     features: [
       'Maquetación con HTML-CSS',
@@ -186,7 +185,7 @@ const services = [
   {
     id: 4,
     title: 'Crecimiento',
-    image: 'https://oswal.com.co/wp-content/uploads/2025/07/happyf.jpg',
+    image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757342033/oswal_marketing_services.png',
     description: 'La web ya está viva. Ahora toca atraer, convertir y crecer. Estrategias de marketing digital, automatización, que potencien la visibilidad optimizan el rendimiento y convierten',
     features: [
       'Analítica Web y Herramientas de Monitoreo',
@@ -518,24 +517,27 @@ onUnmounted(() => {
 
 /* Service Image */
 .service-image-container {
-  position: relative;
-  width: 300px;
-  height: 250px;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 15px 35px rgba(72, 49, 212, 0.3);
+  width: 320px;
+  max-width: 100%;
+  height: 220px;
+  border-radius: 0;
+  overflow: visible;
+  box-shadow: none;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
 }
 
 .service-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.service-item:hover .service-image {
-  transform: scale(1.05);
+  max-width: 320px;
+  max-height: 220px;
+  object-fit: contain;
+  transition: none;
+  display: block;
 }
 
 /* Service Content */
@@ -797,15 +799,15 @@ onUnmounted(() => {
     text-align: center;
     gap: 2rem;
   }
-  
   .service-image-container {
     width: 100%;
     max-width: 400px;
-    height: 250px;
+    height: 200px;
+    margin: 0 auto;
   }
-  
-  .floor-buttons {
-    right: 1rem;
+  .service-image {
+    max-width: 100%;
+    max-height: 200px;
   }
 }
 

@@ -28,6 +28,7 @@ onUnmounted(() => {
 </script>
 
 <style>
+
 .cursor {
   width: 8px;
   height: 8px;
@@ -38,6 +39,7 @@ onUnmounted(() => {
   pointer-events: none;
   z-index: 9999;
   transition: width 0.2s, height 0.2s;
+  mix-blend-mode: normal;
 }
 
 .cursor-follower {
@@ -51,6 +53,18 @@ onUnmounted(() => {
   pointer-events: none;
   z-index: 9998;
   transition: transform 0.3s ease, width 0.2s, height 0.2s;
+  mix-blend-mode: normal;
+}
+
+body {
+  cursor: none !important;
+}
+
+a, button, [role="button"], 
+input[type="submit"], 
+input[type="button"], 
+input[type="reset"] {
+  cursor: none !important;
 }
 
 /* Global cursor styles */

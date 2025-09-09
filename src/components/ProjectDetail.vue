@@ -195,16 +195,18 @@
               {{ activity }}
             </li>
           </ul>
-          <div v-if="project.technologies && project.technologies.length > 0" class="detail-section">
+          <div class="detail-section" v-if="project?.process.development.stack?.length">
             <h4>Tecnologías Utilizadas</h4>
-            <div class="tech-icons" v-if="project?.process.development.stack?.length">
+            <div class="tech-icons improved-tech-icons">
               <div
                 v-for="tech in project?.process.development.stack"
                 :key="tech.name"
-                class="icon-container-large"
+                class="improved-tech-item"
               >
-                <i :class="tech.icon"></i>
-                <span>{{ tech.name }}</span>
+                <div class="improved-tech-icon-bg">
+                  <i :class="tech.icon" style="font-size:2.2rem;"></i>
+                </div>
+                <span class="improved-tech-name">{{ tech.name }}</span>
               </div>
             </div>
           </div>
@@ -286,27 +288,11 @@
       
       <!-- Results Cards -->
       <div class="results-cards">
-        <div class="result-card">
+        <div class="result-card" v-for="(result, idx) in project.results" :key="idx">
           <div class="result-content">
-            <div class="result-number">450+</div>
-            <div class="result-label">Usuarios Activos</div>
-            <div class="result-description">Incremento mensual promedio después del lanzamiento</div>
-          </div>
-        </div>
-        
-        <div class="result-card">
-          <div class="result-content">
-            <div class="result-number">95%</div>
-            <div class="result-label">Satisfacción</div>
-            <div class="result-description">Feedback positivo de usuarios en pruebas de usabilidad</div>
-          </div>
-        </div>
-        
-        <div class="result-card">
-          <div class="result-content">
-            <div class="result-number">65%</div>
-            <div class="result-label">Reducción de Tiempo</div>
-            <div class="result-description">En completar tareas principales del sistema</div>
+            <div class="result-number">{{ result.value || result.metric }}</div>
+            <div class="result-label">{{ result.metric || result.label }}</div>
+            <div class="result-description" v-if="result.description">{{ result.description }}</div>
           </div>
         </div>
       </div>
@@ -473,7 +459,7 @@ const projects: Project[] = [
   {
     id: 1,
     image:
-      'https://oswal.com.co/wp-content/uploads/2025/08/plataforma_concursos.jpg',
+      'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757289000/plataforma_concursos.jpg',
     title: 'Quizz Interactivo para concursos: Potenciando el Estudio del Acueducto de Bogotá',
     roles: ['UX Research', 'UI Design', 'Frontend Designer'],
     keyAchievement:
@@ -640,7 +626,7 @@ const projects: Project[] = [
   {
     id: 3,
     title: 'MiCentro: Navegando la Experiencia Comercial ',
-    image: 'https://oswal.com.co/wp-content/uploads/2025/05/micentro_el_porvenir.jpg',
+    image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757288825/micentro_el_porvenir_xef2ft.jpg',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
     keyAchievement: 'Diseño y desarrollo de un sitio web moderno para centro comercial MiCentro, transformándolo en el punto de encuentro digital para visitantes y negocios.',
     client: 'Centro comercial Micentro',
@@ -727,7 +713,7 @@ imageGallery: [
   {
     id: 4,
     title: 'AXA Colpatria - Landing Page "Seguro de Vida Deudor"',
-    image: 'https://oswal.com.co/wp-content/uploads/2025/05/Landing_AX-COL.jpg',
+    image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757288825/Landing_AX-COL_.jpg',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
     keyAchievement: 'Creación de una landing page corporativa de alto impacto visual y optimizada para la conversión, enfocada en la captación de leads para el Seguro de Vida Deudor de AXA Colpatria.',
     client: 'AXA COLPATRIA',
@@ -801,7 +787,7 @@ imageGallery: [
   {
     id: 5,
     title: 'Bestyle - Catálogo Digital Interactivo y Venta Express',
-    image: 'https://oswal.com.co/wp-content/uploads/2025/05/bestyle2.jpg',
+    image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757289224/bestyle_Web_design.jpg',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
     keyAchievement: 'Diseño y desarrollo de una solución de catálogo digital ágil y moderna, permitiendo a Bestyle vender sus prendas online de forma rápida y directa a través de WhatsApp y enlaces de pago.',
     client: 'Bestyle',
@@ -863,7 +849,7 @@ imageGallery: [
   {
     id: 6,
     title: 'BetterMe - Tu Transformación Estética en Colombia',
-    image: 'https://oswal.com.co/wp-content/uploads/2025/05/Betterme_Ver2.jpg',
+    image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757288824/Betterme_Ver2_bo15xy.jpg',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
     keyAchievement: 'Web moderna y sencilla para BetterMe, facilitando a extranjeros el acceso a servicios de cirugía y procedimientos estéticos en Colombia',
     client: 'Betterme',
@@ -1840,6 +1826,50 @@ imageGallery: [
   flex-wrap: wrap;
   gap: 1.5rem;
   margin-top: 1rem;
+}
+
+.improved-tech-icons {
+  gap: 2rem;
+  justify-content: flex-start;
+}
+
+.improved-tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1.2rem;
+  box-shadow: none;
+  padding: 1.2rem 1.6rem 1rem 1.6rem;
+  min-width: 90px;
+  transition: transform 0.18s;
+  background: none;
+}
+.improved-tech-item:hover {
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 4px 16px rgba(72,49,212,0.13);
+}
+.improved-tech-icon-bg {
+  background: none;
+  border-radius: 50%;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  box-shadow: none;
+}
+.improved-tech-icon-bg i {
+  color: #CCF381;
+  filter: drop-shadow(0 0 2px #CCF381);
+}
+.improved-tech-name {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 0.2rem;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 4px #2a235622;
 }
 
 .tech-item {

@@ -26,7 +26,7 @@
                   class="switch-input"
                 />
                 <span class="switch-slider"></span>
-                <span class="switch-text">{{ filter.name }}</span>
+                <span class="switch-text" :data-type="filter.name">{{ filter.name }}</span>
               </label>
             </div>
           </div>
@@ -83,21 +83,13 @@
                     <span>{{ project.title }}</span>
                   </div>
                   <div class="artwork-content">
-                    <img :src="project.image" :alt="project.title" class="project-image">
-                    
-                    <!-- Tags overlay on hover -->
-                    <div class="tags-overlay">
-                      <div class="tags-container">
-                        <span 
-                          v-for="tag in project.tags" 
-                          :key="tag" 
-                          class="project-tag"
-                        >
-                          {{ tag }}
-                        </span>
+                    <div class="image-client-container" style="position:relative; display:flex; flex-direction:column; justify-content:flex-end; align-items:center;">
+                      <img :src="project.image" :alt="project.title" class="project-image" style="display:block; width:100%; height:200px; object-fit:cover;">
+                      <div class="client-name" style="position:absolute; left:0; right:0; bottom:0; background:rgba(255,255,255,0.92); text-align:center; font-weight:600; color:#4831D4; padding:7px 0 5px 0; font-size:1rem;">
+                        {{ project.client || 'Cliente' }}
                       </div>
                     </div>
-                  </div>
+                </div>
                 </div>
               </div>
               <!-- Progress Indicator -->
@@ -189,78 +181,89 @@ const projects = [
   { 
     id: 1, 
     title: "Quizz interactivo", 
-    image: "https://oswal.com.co/wp-content/uploads/2025/04/Proyect01.jpg", 
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757370425/Quizz_website_proyectos_Oswal.png", 
     category: "interfaz",
+    client: "Acueducto Bogotá",
     tags: ["Vue.js", "Interactive", "Gaming", "UX/UI"]
   },
   { 
     id: 2, 
     title: "Website Hotel", 
-    image: "https://oswal.com.co/wp-content/uploads/2025/04/p6.jpg", 
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757359521/Hotel_Amazon_proyecto_oswal.png", 
     category: "website",
+    client: "Hotel Amazon",
     tags: ["Hospitality", "Booking", "Responsive", "CMS"]
   },
   { 
     id: 3, 
     title: "Website Centro Comercial", 
-    image: "https://oswal.com.co/wp-content/uploads/2025/04/p4.jpg", 
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757371575/Micentro_website_proyecto_oswal.png ", 
     category: "ecommerce",
+    client: "Micentro Comercial",
     tags: ["Shopping", "Directory", "Catalog", "Payment"]
   },
   { 
     id: 4, 
-    title: "Landing page seguros", 
-    image: "https://oswal.com.co/wp-content/uploads/2025/05/axa.jpg", 
+    title: "Landing page", 
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757359522/Landing_Pages_seguros.png", 
     category: "landing",
+    client: "AXA Colpatria",
     tags: ["Insurance", "Corporate", "Lead Gen", "Forms"]
   },
   { 
     id: 5, 
     title: "Catálogo Online", 
-    image: "https://oswal.com.co/wp-content/uploads/2025/04/P3.jpg", 
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757371705/Bestyle_website_proyectos_Oswal.png", 
     category: "ecommerce",
+    client: "Bestyle",
     tags: ["Catalog", "Products", "Search", "Filter"]
   },
   { 
     id: 6, 
-    title: "Dashboard Corporativo", 
-    image: "https://oswal.com.co/wp-content/uploads/2025/05/Dashboard.jpg", 
+    title: "Web Clinica", 
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757375618/Clinica_Betterme_proyecto_web_oswal.png", 
     category: "interfaz",
+    client: "Betterme",
     tags: ["Dashboard", "Analytics", "Data Viz", "Admin"]
   },
   { 
     id: 7, 
-    title: "Landing page Emprendimiento", 
-    image: "https://oswal.com.co/wp-content/uploads/2025/05/p09.jpg", 
+    title: "Landing page", 
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757372516/Dedicandote_proyecto_oswal_music.png", 
     category: "landing",
+    client: "Dedicandote",
     tags: ["Startup", "Business", "CTA", "Modern"]
   },
   { 
     id: 8, 
-    title: "Website AXA Portal", 
-    image: "https://oswal.com.co/wp-content/uploads/2025/05/AXA-portal.jpg", 
+    title: "Re diseño web", 
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757361622/Redise%C3%B1o_web_Proyecto_oswal.png", 
     category: "website",
+    client: "AXA Colpatria",
     tags: ["Portal", "Corporate", "Multi-page", "Professional"]
   },
   { 
     id: 9, 
-    title: "Website Clínica Odontológica", 
-    image: "https://oswal.com.co/wp-content/uploads/2025/05/clinica-suecia.jpg", 
+    title: "Website Odontológica", 
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757362220/Clinica_odontologica_proyecto_web_oswal.png", 
     category: "website",
+    client: "kliniken Schröder",
     tags: ["Healthcare", "Medical", "Appointments", "Services"]
   },
   { 
     id: 10, 
-    title: "Website Venta Café", 
-    image: "https://oswal.com.co/wp-content/uploads/2025/05/cafe-cumbre.jpg", 
+    title: "Website Café", 
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757373361/Website_cafe_proyecto_oswal_col.png", 
     category: "ecommerce",
+    client: "Café cumbre",
     tags: ["Coffee", "Retail", "Online Store", "Products"]
   },
   { 
     id: 11, 
-    title: "Landing page Dental", 
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop", 
+    title: "Landing page ", 
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757373349/Landing_Pages_inter_oswal.png", 
     category: "landing",
+    client: "AXA Colpatria",
     tags: ["Healthcare", "Dental", "Conversion", "Contact"]
   },
   { 
@@ -268,6 +271,7 @@ const projects = [
     title: "Mapa Interactivo Amazon", 
     image: "https://oswal.com.co/wp-content/uploads/2025/05/mapa-amazon.jpg", 
     category: "interfaz",
+    client: "Cliente L",
     tags: ["Interactive", "Maps", "Environmental", "Data"]
   },
   { 
@@ -275,6 +279,7 @@ const projects = [
     title: "Rediseño APP AXA", 
     image: "https://oswal.com.co/wp-content/uploads/2025/05/App-axa.jpg", 
     category: "interfaz",
+    client: "Cliente M",
     tags: ["Mobile App", "Redesign", "UX/UI", "Insurance"]
   },
   { 
@@ -282,6 +287,7 @@ const projects = [
     title: "Website Cirugía Plástica", 
     image: "https://oswal.com.co/wp-content/uploads/2025/05/betterme.jpg", 
     category: "website",
+    client: "Betterme",
     tags: ["Medical", "Aesthetic", "Gallery", "Consultation"]
   },
   { 
@@ -289,6 +295,7 @@ const projects = [
     title: "Tienda Online Moda", 
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop", 
     category: "ecommerce",
+    client: "Cliente O",
     tags: ["Fashion", "E-commerce", "Cart", "Checkout"]
   }
 ]
@@ -388,26 +395,27 @@ onMounted(() => {
 }
 
 .filter-container {
-  background: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 25px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+  box-shadow: 0 4px 18px rgba(72,49,212,0.08);
   display: flex;
   align-items: center;
-  gap: 1rem;
-  border: 1px solid rgba(72, 49, 212, 0.1);
+  gap: 1.2rem;
+  border: none;
 }
 
 .filter-label {
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 0.95rem;
+  font-weight: 700;
   color: #4831D4;
-  white-space: nowrap;
+  letter-spacing: 0.02em;
+  margin-right: 0.8rem;
 }
 
 .filter-buttons {
   display: flex;
-  gap: 0.4rem;
+  gap: 0.7rem;
   flex-wrap: wrap;
   align-items: center;
 }
@@ -415,17 +423,26 @@ onMounted(() => {
 .filter-switch {
   display: flex;
   align-items: center;
+  background: #f4f4fa;
+  border-radius: 1.5rem;
+  padding: 0.2rem 0.9rem 0.2rem 0.5rem;
+  box-shadow: 0 2px 8px rgba(72,49,212,0.04);
+  transition: background 0.2s;
+}
+.filter-switch:has(.switch-input:checked) {
+  background: #edeaff;
+  box-shadow: 0 2px 12px rgba(72,49,212,0.10);
 }
 
 .switch-label {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   cursor: pointer;
   user-select: none;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-weight: 500;
-  color: #666;
+  color: #4831D4;
 }
 
 .switch-input {
@@ -434,53 +451,69 @@ onMounted(() => {
 
 .switch-slider {
   position: relative;
-  width: 40px;
-  height: 20px;
-  background: #e9ecef;
-  border-radius: 20px;
-  transition: all 0.3s ease;
-  cursor: pointer;
+  width: 32px;
+  height: 18px;
+  background: #d1d5db;
+  border-radius: 18px;
+  transition: background 0.3s;
+  margin-right: 0.3rem;
 }
-
 .switch-slider::before {
   content: '';
   position: absolute;
   top: 2px;
   left: 2px;
-  width: 16px;
-  height: 16px;
-  background: white;
+  width: 14px;
+  height: 14px;
+  background: #fff;
   border-radius: 50%;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+  box-shadow: 0 1px 3px rgba(72,49,212,0.10);
 }
-
 .switch-input:checked + .switch-slider {
   background: #4831D4;
 }
-
 .switch-input:checked + .switch-slider::before {
-  transform: translateX(20px);
+  transform: translateX(14px);
 }
-
 .switch-label:hover .switch-slider {
-  background: #d1d5db;
+  background: #bdb7f6;
 }
-
 .switch-input:checked + .switch-slider:hover {
-  background: #3a2aa0;
+  background: #6a5ae0;
 }
-
-.switch-label:hover .switch-text {
-  color: #4831D4;
-}
-
-.switch-input:checked ~ .switch-text {
+.switch-text {
   color: #4831D4;
   font-weight: 600;
+  font-size: 0.97rem;
+  letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
 }
 
-/* Close Button Styles */
+/* Optional: Add icons for each filter type */
+.switch-text[data-type="Website"]::before {
+  content: '\1F310'; /* 🌐 */
+  font-size: 1.1em;
+  margin-right: 0.2em;
+}
+.switch-text[data-type="Landing"]::before {
+  content: '\1F3E0'; /* 🏠 */
+  font-size: 1.1em;
+  margin-right: 0.2em;
+}
+.switch-text[data-type="Interfaz"]::before {
+  content: '\1F5A5'; /* 🖥 */
+  font-size: 1.1em;
+  margin-right: 0.2em;
+}
+.switch-text[data-type="E-commerce"]::before {
+  content: '\1F6D2'; /* 🛒 */
+  font-size: 1.1em;
+  margin-right: 0.2em;
+}
+
 .close-button {
   position: fixed;
   top: 2rem;
@@ -788,26 +821,35 @@ onMounted(() => {
 
 .plaque {
   width: 100%;
-  height: 35px;
-  background: white;
+  height: 48px;
+  background: linear-gradient(90deg, #edeaff 0%, #fff 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 0.8rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0 1.2rem;
+  border-bottom: 2.5px solid #4831D4;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 2px 8px rgba(72,49,212,0.07);
+  position: relative;
+  z-index: 2;
 }
 
 .plaque span {
-  color: #373737;
-  font-weight: 600;
-  font-size: 0.8rem;
+  color: #4831D4;
+  font-weight: 800;
+  font-size: 1.08rem;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 0 #fff, 0 2px 6px rgba(72,49,212,0.08);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding: 0.1em 0.5em;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.7);
+  box-shadow: 0 1px 2px rgba(72,49,212,0.03);
 }
 
 .artwork-content {
-  flex: 1;
   position: relative;
 }
 
@@ -822,49 +864,30 @@ onMounted(() => {
   transform: scale(1.05);
 }
 
-/* Tags overlay */
-.tags-overlay {
+/* Cliente overlay */
+.client-overlay {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.8) 100%
-  );
-  display: flex;
-  align-items: flex-end;
-  padding: 1rem;
-  opacity: 0;
-  transition: all 0.3s ease;
-}
-
-.artwork:hover .tags-overlay {
-  opacity: 1;
-}
-
-.tags-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  width: 100%;
-}
-
-.project-tag {
-  padding: 0.3rem 0.6rem;
-  background: rgba(72, 49, 212, 0.9);
-  color: white;
-  border-radius: 12px;
-  font-size: 0.7rem;
-  font-weight: 500;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-}
-
-.project-tag:hover {
-  background: rgba(204, 243, 129, 0.9);
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 16px);
+  background: rgba(72,49,212,0.08);
   color: #4831D4;
-  transform: translateY(-2px);
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.5em 0;
+  border-radius: 0 0 12px 12px;
+  z-index: 3;
+  box-shadow: 0 2px 8px rgba(72,49,212,0.07);
+  pointer-events: none;
+}
+
+.client-name {
+  background: rgba(255,255,255,0.8);
+  padding: 0.2em 0.8em;
+  border-radius: 6px;
+  display: inline-block;
 }
 
 /* Progress Indicator */
