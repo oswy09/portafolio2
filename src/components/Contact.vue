@@ -147,7 +147,7 @@
                 </div>
 
                 <!-- Contact Card -->
-                <div class="contact-card">
+                <div class="contact-card-browser">
                   <div class="contact-header">
                     <div class="contact-avatar">
                       <img src="https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757288490/Oswal_perfil_Webdesign.jpg" alt="Oswal" />
@@ -211,6 +211,69 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- Contact Card External -->
+      <div class="contact-card-external">
+        <div class="contact-header">
+          <div class="contact-avatar">
+            <img src="https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757288490/Oswal_perfil_Webdesign.jpg" alt="Oswal" />
+          </div>
+          <div class="contact-info">
+            <h3>Oswal Jaimes</h3>
+            <p>Diseñador Web & UX/UI</p>
+          </div>
+        </div>
+        
+        <div class="contact-methods">
+          <a href="mailto:contacto@oswal.com" class="contact-method email">
+            <div class="method-icon">📧</div>
+            <div class="method-info">
+              <span class="method-label">Email</span>
+              <span class="method-value">contacto@oswal.com</span>
+            </div>
+          </a>
+
+          <a href="https://wa.me/573001234567" class="contact-method whatsapp" target="_blank">
+            <div class="method-icon">💬</div>
+            <div class="method-info">
+              <span class="method-label">WhatsApp</span>
+              <span class="method-value">+57 300 123 4567</span>
+            </div>
+          </a>
+
+          <a href="https://linkedin.com/in/oswal" class="contact-method linkedin" target="_blank">
+            <div class="method-icon">💼</div>
+            <div class="method-info">
+              <span class="method-label">LinkedIn</span>
+              <span class="method-value">linkedin.com/in/oswal</span>
+            </div>
+          </a>
+
+          <a href="https://github.com/oswal" class="contact-method github" target="_blank">
+            <div class="method-icon">🐙</div>
+            <div class="method-info">
+              <span class="method-label">GitHub</span>
+              <span class="method-value">github.com/oswal</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="contact-cta">
+          <button class="cta-button primary" @click="openWhatsApp">
+            <span>Iniciar Conversación</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17L17 7M17 7H7M17 7V17"/>
+            </svg>
+          </button>
+          <button class="cta-button secondary" @click="copyEmail">
+            <span>Copiar Email</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+            </svg>
+          </button>
         </div>
       </div>
 
@@ -597,6 +660,136 @@ onMounted(() => {
 
 .result-link:hover {
   text-decoration: underline;
+}
+
+/* Contact Card Browser - Inside browser */
+.contact-card-browser {
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card-browser .contact-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.contact-card-browser .contact-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #e9ecef;
+}
+
+.contact-card-browser .contact-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact-card-browser .contact-info h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 3px;
+}
+
+.contact-card-browser .contact-info p {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.contact-card-browser .contact-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.contact-card-browser .contact-method {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+}
+
+.contact-card-browser .contact-method:hover {
+  background: #e9ecef;
+  transform: translateY(-1px);
+}
+
+.contact-card-browser .method-icon {
+  font-size: 16px;
+}
+
+.contact-card-browser .method-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-card-browser .method-label {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 1px;
+}
+
+.contact-card-browser .method-value {
+  font-size: 12px;
+  font-weight: 500;
+  color: #333;
+}
+
+.contact-card-browser .contact-cta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.contact-card-browser .cta-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 13px;
+}
+
+.contact-card-browser .cta-button.primary {
+  background: #4831D4;
+  color: white;
+}
+
+.contact-card-browser .cta-button.primary:hover {
+  background: #3a2aa0;
+  transform: translateY(-1px);
+}
+
+.contact-card-browser .cta-button.secondary {
+  background: #f8f9fa;
+  color: #4831D4;
+  border: 1px solid #e9ecef;
+}
+
+.contact-card-browser .cta-button.secondary:hover {
+  background: #e9ecef;
+  transform: translateY(-1px);
 }
 
 /* Contact Card External - Moved outside browser */
