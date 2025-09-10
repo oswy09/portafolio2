@@ -292,17 +292,23 @@ onMounted(() => {
 .main-content {
   position: relative;
   z-index: 1;
-  padding: 2rem 2rem 6rem;
+  padding: 2rem;
   max-width: 1400px;
   margin: 0 auto;
-  min-height: calc(100vh + 400px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  justify-content: flex-start;
+  gap: 3rem;
 }
 
 /* Header Section */
 .header-section {
   text-align: center;
-  margin-bottom: 3rem;
-  padding-top: 2rem;
+  padding-top: 4rem;
+  width: 100%;
+  max-width: 800px;
 }
 
 .main-title {
@@ -316,17 +322,15 @@ onMounted(() => {
 .subtitle {
   font-size: 1.3rem;
   color: #666;
-  max-width: 600px;
-  margin: 0 auto;
+  margin: 0;
   line-height: 1.6;
 }
 
 /* Browser Container */
 .browser-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 4rem;
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 2rem;
 }
 
 .mac-browser {
