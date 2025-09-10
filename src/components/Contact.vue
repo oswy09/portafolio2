@@ -104,48 +104,6 @@
                   Aproximadamente 2,340,000 resultados (0.45 segundos)
                 </div>
 
-                <!-- Result Items -->
-                <div class="result-item featured">
-                  <div class="result-header">
-                    <div class="result-favicon">🎨</div>
-                    <div class="result-url">oswal.com.co</div>
-                  </div>
-                  <h3 class="result-title">Oswal - Diseño Web Profesional | UX/UI Designer</h3>
-                  <p class="result-description">
-                    Especialista en diseño web, UX/UI y desarrollo frontend. Creo experiencias digitales 
-                    únicas que conectan con tu audiencia. ✨ Portafolio, proyectos y servicios de diseño web.
-                  </p>
-                  <div class="result-links">
-                    <a href="#" class="result-link">Portafolio</a>
-                    <a href="#" class="result-link">Servicios</a>
-                    <a href="#" class="result-link">Contacto</a>
-                  </div>
-                </div>
-
-                <div class="result-item">
-                  <div class="result-header">
-                    <div class="result-favicon">💼</div>
-                    <div class="result-url">linkedin.com/in/oswal-designer</div>
-                  </div>
-                  <h3 class="result-title">Oswal Jaimes - Diseñador Web | LinkedIn</h3>
-                  <p class="result-description">
-                    Diseñador web con experiencia en UX/UI, desarrollo frontend y marketing digital. 
-                    Especializado en crear interfaces intuitivas y experiencias memorables.
-                  </p>
-                </div>
-
-                <div class="result-item">
-                  <div class="result-header">
-                    <div class="result-favicon">📱</div>
-                    <div class="result-url">behance.net/oswal-webdesign</div>
-                  </div>
-                  <h3 class="result-title">Proyectos de Diseño Web - Oswal | Behance</h3>
-                  <p class="result-description">
-                    Explora mi colección de proyectos de diseño web, interfaces de usuario y 
-                    experiencias digitales. Desde landing pages hasta aplicaciones completas.
-                  </p>
-                </div>
-
                 <!-- Contact Card -->
                 <div class="contact-card-browser">
                   <div class="contact-header">
@@ -167,11 +125,11 @@
                       </div>
                     </a>
 
-                    <a href="https://wa.me/573001234567" class="contact-method whatsapp" target="_blank">
+                    <a href="https://wa.me/573057502790" class="contact-method whatsapp" target="_blank">
                       <div class="method-icon">💬</div>
                       <div class="method-info">
                         <span class="method-label">WhatsApp</span>
-                        <span class="method-value">+57 300 123 4567</span>
+                        <span class="method-value">+57 305 750 2790</span>
                       </div>
                     </a>
 
@@ -183,11 +141,35 @@
                       </div>
                     </a>
 
-                    <a href="https://github.com/oswal" class="contact-method github" target="_blank">
-                      <div class="method-icon">🐙</div>
+                    <a href="https://instagram.com/oswal" class="contact-method instagram" target="_blank">
+                      <div class="method-icon">📷</div>
                       <div class="method-info">
-                        <span class="method-label">GitHub</span>
-                        <span class="method-value">github.com/oswal</span>
+                        <span class="method-label">Instagram</span>
+                        <span class="method-value">instagram.com/oswal</span>
+                      </div>
+                    </a>
+
+                    <a href="https://tiktok.com/@oswal" class="contact-method tiktok" target="_blank">
+                      <div class="method-icon">🎵</div>
+                      <div class="method-info">
+                        <span class="method-label">TikTok</span>
+                        <span class="method-value">tiktok.com/@oswal</span>
+                      </div>
+                    </a>
+
+                    <a href="https://dribbble.com/oswal" class="contact-method dribbble" target="_blank">
+                      <div class="method-icon">🏀</div>
+                      <div class="method-info">
+                        <span class="method-label">Dribbble</span>
+                        <span class="method-value">dribbble.com/oswal</span>
+                      </div>
+                    </a>
+
+                    <a href="https://codepen.io/oswal" class="contact-method codepen" target="_blank">
+                      <div class="method-icon">💻</div>
+                      <div class="method-info">
+                        <span class="method-label">CodePen</span>
+                        <span class="method-value">codepen.io/oswal</span>
                       </div>
                     </a>
                   </div>
@@ -249,7 +231,7 @@ const updateSearch = (event: Event) => {
 }
 
 const openWhatsApp = () => {
-  window.open('https://wa.me/573001234567?text=Hola! Me interesa conocer más sobre tus servicios de diseño web.', '_blank')
+  window.open('https://wa.me/573057502790?text=Hola! Me interesa conocer más sobre tus servicios de diseño web.', '_blank')
 }
 
 const copyEmail = async () => {
@@ -625,7 +607,7 @@ onMounted(() => {
 
 .contact-card-browser .contact-methods {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 15px;
   margin-bottom: 25px;
 }
