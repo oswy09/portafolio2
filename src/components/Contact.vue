@@ -307,6 +307,7 @@ onMounted(() => {
   position: relative;
   background: #F4F9FC;
   overflow-y: auto;
+  height: 100vh;
 }
 
 /* Vertical Lines Background */
@@ -329,9 +330,10 @@ onMounted(() => {
 .main-content {
   position: relative;
   z-index: 1;
-  padding: 2rem;
+  padding: 2rem 2rem 6rem;
   max-width: 1400px;
   margin: 0 auto;
+  min-height: calc(100vh + 400px);
 }
 
 /* Header Section */
