@@ -201,12 +201,15 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
 const currentFloor = ref(4)
 const searchQuery = ref('diseño web')
+const fallingIcons = ref<any[]>([])
+let animationId: number | null = null
+let spawnInterval: number | null = null
 
 interface Section {
   floor: number
@@ -220,6 +223,233 @@ const sections: Section[] = [
   { floor: 3, name: 'Proyectos', route: '/projects' },
   { floor: 4, name: 'Contacto', route: '/contact' }
 ]
+
+// Social networks data
+const socialNetworks = [
+  { name: 'Email', icon: '📧', color: '#EA4335', url: 'mailto:contacto@oswal.com' },
+  { name: 'WhatsApp', icon: '💬', color: '#25D366', url: 'https://wa.me/573057502790' },
+  { name: 'LinkedIn', icon: '💼', color: '#0077B5', url: 'https://linkedin.com/in/oswal' },
+  { name: 'Instagram', icon: '📷', color: '#E4405F', url: 'https://instagram.com/oswal' },
+  { name: 'TikTok', icon: '🎵', color: '#000000', url: 'https://tiktok.com/@oswal' },
+  { name: 'Dribbble', icon: '🏀', color: '#EA4C89', url: 'https://dribbble.com/oswal' },
+  { name: 'CodePen', icon: '💻', color: '#000000', url: 'https://codepen.io/oswal' }
+]
+
+// Physics constants
+const GRAVITY = 0.5
+const BOUNCE_DAMPING = 0.7
+const FRICTION = 0.99
+const MIN_VELOCITY = 0.1
+
+class FallingIcon {
+  x: number
+  y: number
+  vx: number
+  vy: number
+  rotation: number
+  rotationSpeed: number
+  size: number
+  network: any
+  element: HTMLElement | null = null
+  id: string
+
+  constructor(network: any) {
+    this.network = network
+    this.x = Math.random() * (window.innerWidth - 60)
+    this.y = -60
+    this.vx = (Math.random() - 0.5) * 4
+    this.vy = Math.random() * 2 + 1
+    this.rotation = 0
+    this.rotationSpeed = (Math.random() - 0.5) * 10
+    this.size = 50
+    this.id = `icon-${Date.now()}-${Math.random()}`
+  }
+
+  update() {
+    // Apply gravity
+    this.vy += GRAVITY
+    
+    // Update position
+    this.x += this.vx
+    this.y += this.vy
+    
+    // Update rotation
+    this.rotation += this.rotationSpeed
+    
+    // Bounce off walls
+    if (this.x <= 0 || this.x >= window.innerWidth - this.size) {
+      this.vx *= -BOUNCE_DAMPING
+      this.x = Math.max(0, Math.min(window.innerWidth - this.size, this.x))
+    }
+    
+    // Bounce off floor
+    if (this.y >= window.innerHeight - this.size) {
+      this.vy *= -BOUNCE_DAMPING
+      this.y = window.innerHeight - this.size
+      this.vx *= FRICTION
+    }
+    
+    // Apply friction
+    this.vx *= FRICTION
+    this.vy *= FRICTION
+    
+    // Update DOM element
+    if (this.element) {
+      this.element.style.transform = `translate3d(${this.x}px, ${this.y}px, 0) rotate(${this.rotation}deg)`
+    }
+  }
+
+  isAtRest(): boolean {
+    return Math.abs(this.vx) < MIN_VELOCITY && Math.abs(this.vy) < MIN_VELOCITY && this.y >= window.innerHeight - this.size - 5
+  }
+
+  checkCollision(other: FallingIcon): boolean {
+    const dx = this.x - other.x
+    const dy = this.y - other.y
+    const distance = Math.sqrt(dx * dx + dy * dy)
+    return distance < this.size
+  }
+
+  resolveCollision(other: FallingIcon) {
+    const dx = other.x - this.x
+    const dy = other.y - this.y
+    const distance = Math.sqrt(dx * dx + dy * dy)
+    
+    if (distance < this.size) {
+      // Normalize collision vector
+      const nx = dx / distance
+      const ny = dy / distance
+      
+      // Relative velocity
+      const dvx = other.vx - this.vx
+      const dvy = other.vy - this.vy
+      
+      // Relative velocity in collision normal direction
+      const dvn = dvx * nx + dvy * ny
+      
+      // Do not resolve if velocities are separating
+      if (dvn > 0) return
+      
+      // Collision impulse
+      const impulse = 2 * dvn / 2 // Assuming equal mass
+      
+      // Update velocities
+      this.vx -= impulse * nx * BOUNCE_DAMPING
+      this.vy -= impulse * ny * BOUNCE_DAMPING
+      other.vx += impulse * nx * BOUNCE_DAMPING
+      other.vy += impulse * ny * BOUNCE_DAMPING
+      
+      // Separate icons
+      const overlap = this.size - distance
+      const separationX = nx * overlap * 0.5
+      const separationY = ny * overlap * 0.5
+      
+      this.x -= separationX
+      this.y -= separationY
+      other.x += separationX
+      other.y += separationY
+    }
+  }
+}
+
+const createFallingIcon = () => {
+  // Count icons per network
+  const iconCounts: { [key: string]: number } = {}
+  fallingIcons.value.forEach(icon => {
+    iconCounts[icon.network.name] = (iconCounts[icon.network.name] || 0) + 1
+  })
+  
+  // Filter networks that have less than 3 icons
+  const availableNetworks = socialNetworks.filter(network => 
+    (iconCounts[network.name] || 0) < 3
+  )
+  
+  if (availableNetworks.length === 0) return
+  
+  const randomNetwork = availableNetworks[Math.floor(Math.random() * availableNetworks.length)]
+  const icon = new FallingIcon(randomNetwork)
+  
+  fallingIcons.value.push(icon)
+  
+  // Create DOM element
+  const element = document.createElement('div')
+  element.className = 'falling-icon'
+  element.style.backgroundColor = icon.network.color
+  element.style.transform = `translate3d(${icon.x}px, ${icon.y}px, 0) rotate(${icon.rotation}deg)`
+  element.innerHTML = icon.network.icon
+  element.id = icon.id
+  
+  // Add click handler
+  element.addEventListener('click', () => {
+    window.open(icon.network.url, '_blank')
+  })
+  
+  icon.element = element
+  document.querySelector('.falling-icons-container')?.appendChild(element)
+}
+
+const updateIcons = () => {
+  fallingIcons.value.forEach((icon, index) => {
+    icon.update()
+    
+    // Check collisions with other icons
+    for (let i = index + 1; i < fallingIcons.value.length; i++) {
+      const other = fallingIcons.value[i]
+      if (icon.checkCollision(other)) {
+        icon.resolveCollision(other)
+      }
+    }
+  })
+  
+  // Remove icons that are at rest for too long
+  fallingIcons.value = fallingIcons.value.filter((icon, index) => {
+    if (icon.isAtRest()) {
+      if (!icon.restTime) icon.restTime = Date.now()
+      if (Date.now() - icon.restTime > 3000) {
+        icon.element?.remove()
+        return false
+      }
+    } else {
+      icon.restTime = null
+    }
+    return true
+  })
+  
+  animationId = requestAnimationFrame(updateIcons)
+}
+
+const startFallingIcons = () => {
+  // Create container
+  const container = document.createElement('div')
+  container.className = 'falling-icons-container'
+  document.body.appendChild(container)
+  
+  // Start animation loop
+  updateIcons()
+  
+  // Spawn icons periodically
+  spawnInterval = setInterval(() => {
+    if (Math.random() < 0.7) { // 70% chance to spawn
+      createFallingIcon()
+    }
+  }, 1500)
+}
+
+const stopFallingIcons = () => {
+  if (animationId) {
+    cancelAnimationFrame(animationId)
+    animationId = null
+  }
+  
+  if (spawnInterval) {
+    clearInterval(spawnInterval)
+    spawnInterval = null
+  }
+  
+  // Clean up DOM
+  document.querySelector('.falling-icons-container')?.remove()
+  fallingIcons.value = []
+}
 
 const goToFloor = (section: Section) => {
   router.push(section.route)
@@ -259,6 +489,13 @@ onMounted(() => {
   }
   
   setTimeout(typeWriter, 1000)
+  
+  // Start falling icons animation
+  setTimeout(startFallingIcons, 2000)
+})
+
+onUnmounted(() => {
+  stopFallingIcons()
 })
 </script>
 
@@ -938,6 +1175,9 @@ onMounted(() => {
   transition: transform 0.1s ease;
   user-select: none;
   border: 3px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  font-weight: bold;
+  will-change: transform;
 }
 
 .falling-icon:hover {
