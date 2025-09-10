@@ -214,89 +214,6 @@
         </div>
       </div>
 
-      <!-- Contact Card External -->
-      <div class="contact-card-external">
-        <div class="contact-header">
-          <div class="contact-avatar">
-            <img src="https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757288490/Oswal_perfil_Webdesign.jpg" alt="Oswal" />
-          </div>
-          <div class="contact-info">
-            <h3>Oswal Jaimes</h3>
-            <p>Diseñador Web & UX/UI</p>
-          </div>
-        </div>
-        
-        <div class="contact-methods">
-          <a href="mailto:contacto@oswal.com" class="contact-method email">
-            <div class="method-icon">📧</div>
-            <div class="method-info">
-              <span class="method-label">Email</span>
-              <span class="method-value">contacto@oswal.com</span>
-            </div>
-          </a>
-
-          <a href="https://wa.me/573001234567" class="contact-method whatsapp" target="_blank">
-            <div class="method-icon">💬</div>
-            <div class="method-info">
-              <span class="method-label">WhatsApp</span>
-              <span class="method-value">+57 300 123 4567</span>
-            </div>
-          </a>
-
-          <a href="https://linkedin.com/in/oswal" class="contact-method linkedin" target="_blank">
-            <div class="method-icon">💼</div>
-            <div class="method-info">
-              <span class="method-label">LinkedIn</span>
-              <span class="method-value">linkedin.com/in/oswal</span>
-            </div>
-          </a>
-
-          <a href="https://github.com/oswal" class="contact-method github" target="_blank">
-            <div class="method-icon">🐙</div>
-            <div class="method-info">
-              <span class="method-label">GitHub</span>
-              <span class="method-value">github.com/oswal</span>
-            </div>
-          </a>
-        </div>
-
-        <div class="contact-cta">
-          <button class="cta-button primary" @click="openWhatsApp">
-            <span>Iniciar Conversación</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M7 17L17 7M17 7H7M17 7V17"/>
-            </svg>
-          </button>
-          <button class="cta-button secondary" @click="copyEmail">
-            <span>Copiar Email</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      <!-- Additional Info -->
-      <div class="additional-info">
-        <div class="info-grid">
-          <div class="info-card">
-            <div class="info-icon">⚡</div>
-            <h3>Respuesta Rápida</h3>
-            <p>Respondo en menos de 24 horas</p>
-          </div>
-          <div class="info-card">
-            <div class="info-icon">🌍</div>
-            <h3>Trabajo Remoto</h3>
-            <p>Colaboro con clientes globalmente</p>
-          </div>
-          <div class="info-card">
-            <div class="info-icon">🎯</div>
-            <h3>Enfoque Personalizado</h3>
-            <p>Cada proyecto es único y especial</p>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </template>
@@ -426,17 +343,19 @@ onMounted(() => {
 .browser-container {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-bottom: 4rem;
 }
 
 .mac-browser {
   width: 100%;
-  max-width: 1000px;
+  max-width: 900px;
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   border: 1px solid #e1e5e9;
+  margin: 0 auto;
 }
 
 /* Browser Header */
@@ -662,29 +581,29 @@ onMounted(() => {
   text-decoration: underline;
 }
 
-/* Contact Card Browser - Inside browser */
+/* Contact Card Browser - Styled like external card */
 .contact-card-browser {
-  background: white;
-  border: 1px solid #e9ecef;
-  border-radius: 12px;
-  padding: 20px;
+  background: linear-gradient(135deg, #4831D4, #6A5AE0);
+  color: white;
+  padding: 30px;
+  border-radius: 16px;
   margin: 20px 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(72, 49, 212, 0.3);
 }
 
 .contact-card-browser .contact-header {
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
+  gap: 20px;
+  margin-bottom: 25px;
 }
 
 .contact-card-browser .contact-avatar {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   overflow: hidden;
-  border: 2px solid #e9ecef;
+  border: 3px solid rgba(255, 255, 255, 0.3);
 }
 
 .contact-card-browser .contact-avatar img {
@@ -694,45 +613,42 @@ onMounted(() => {
 }
 
 .contact-card-browser .contact-info h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 3px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 5px;
 }
 
 .contact-card-browser .contact-info p {
-  color: #666;
-  font-size: 0.9rem;
-  margin: 0;
+  opacity: 0.9;
+  font-size: 1rem;
 }
 
 .contact-card-browser .contact-methods {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 10px;
-  margin-bottom: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
 }
 
 .contact-card-browser .contact-method {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 12px;
-  background: #f8f9fa;
-  border-radius: 6px;
+  gap: 12px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
   text-decoration: none;
-  color: #333;
+  color: white;
   transition: all 0.3s ease;
-  border: 1px solid #e9ecef;
 }
 
 .contact-card-browser .contact-method:hover {
-  background: #e9ecef;
-  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
 }
 
 .contact-card-browser .method-icon {
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .contact-card-browser .method-info {
@@ -741,66 +657,54 @@ onMounted(() => {
 }
 
 .contact-card-browser .method-label {
-  font-size: 11px;
-  color: #666;
-  margin-bottom: 1px;
+  font-size: 12px;
+  opacity: 0.8;
+  margin-bottom: 2px;
 }
 
 .contact-card-browser .method-value {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
-  color: #333;
 }
 
 .contact-card-browser .contact-cta {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   flex-wrap: wrap;
 }
 
 .contact-card-browser .cta-button {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-weight: 500;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   border: none;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .contact-card-browser .cta-button.primary {
-  background: #4831D4;
-  color: white;
+  background: #CCF381;
+  color: #4831D4;
 }
 
 .contact-card-browser .cta-button.primary:hover {
-  background: #3a2aa0;
-  transform: translateY(-1px);
+  background: #b8e86d;
+  transform: translateY(-2px);
 }
 
 .contact-card-browser .cta-button.secondary {
-  background: #f8f9fa;
-  color: #4831D4;
-  border: 1px solid #e9ecef;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .contact-card-browser .cta-button.secondary:hover {
-  background: #e9ecef;
-  transform: translateY(-1px);
-}
-
-/* Contact Card External - Moved outside browser */
-.contact-card-external {
-  background: linear-gradient(135deg, #4831D4, #6A5AE0);
-  color: white;
-  padding: 30px;
-  border-radius: 16px;
-  margin: 2rem auto;
-  max-width: 800px;
-  box-shadow: 0 10px 30px rgba(72, 49, 212, 0.3);
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
 }
 
 .contact-header {
