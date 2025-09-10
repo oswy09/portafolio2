@@ -1,5 +1,15 @@
 <template>
   <div class="contact-container">
+    <!-- Vertical Lines Background -->
+    <div class="vertical-lines">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+
     <!-- Floor Buttons -->
     <div class="floor-buttons">
       <div class="button-panel">
@@ -24,16 +34,217 @@
       </svg>
     </router-link>
 
-    
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Header Section -->
+      <div class="header-section">
+        <h1 class="main-title">Contacto</h1>
+        <p class="subtitle">¿Listo para crear algo increíble juntos? Conectemos y hagamos realidad tu proyecto digital.</p>
+      </div>
+
+      <!-- Browser Container -->
+      <div class="browser-container">
+        <!-- Mac Browser Window -->
+        <div class="mac-browser">
+          <!-- Browser Header -->
+          <div class="browser-header">
+            <!-- Traffic Lights -->
+            <div class="traffic-lights">
+              <div class="traffic-light close"></div>
+              <div class="traffic-light minimize"></div>
+              <div class="traffic-light maximize"></div>
+            </div>
+            
+            <!-- Address Bar -->
+            <div class="address-bar">
+              <div class="url-container">
+                <div class="secure-icon">🔒</div>
+                <input 
+                  type="text" 
+                  class="url-input" 
+                  :value="searchQuery"
+                  @input="updateSearch"
+                  placeholder="Buscar..."
+                  readonly
+                />
+                <div class="search-icon">🔍</div>
+              </div>
+            </div>
+
+            <!-- Browser Controls -->
+            <div class="browser-controls">
+              <button class="control-btn">⟲</button>
+              <button class="control-btn">⟳</button>
+            </div>
+          </div>
+
+          <!-- Browser Content -->
+          <div class="browser-content">
+            <!-- Search Results Page -->
+            <div class="search-results">
+              <!-- Search Header -->
+              <div class="search-header">
+                <div class="search-logo">
+                  <span class="logo-text">Buscar</span>
+                </div>
+                <div class="search-bar-main">
+                  <input 
+                    type="text" 
+                    class="main-search-input" 
+                    :value="searchQuery"
+                    readonly
+                  />
+                  <button class="search-btn">🔍</button>
+                </div>
+              </div>
+
+              <!-- Search Results -->
+              <div class="results-container">
+                <div class="results-info">
+                  Aproximadamente 2,340,000 resultados (0.45 segundos)
+                </div>
+
+                <!-- Result Items -->
+                <div class="result-item featured">
+                  <div class="result-header">
+                    <div class="result-favicon">🎨</div>
+                    <div class="result-url">oswal.com.co</div>
+                  </div>
+                  <h3 class="result-title">Oswal - Diseño Web Profesional | UX/UI Designer</h3>
+                  <p class="result-description">
+                    Especialista en diseño web, UX/UI y desarrollo frontend. Creo experiencias digitales 
+                    únicas que conectan con tu audiencia. ✨ Portafolio, proyectos y servicios de diseño web.
+                  </p>
+                  <div class="result-links">
+                    <a href="#" class="result-link">Portafolio</a>
+                    <a href="#" class="result-link">Servicios</a>
+                    <a href="#" class="result-link">Contacto</a>
+                  </div>
+                </div>
+
+                <div class="result-item">
+                  <div class="result-header">
+                    <div class="result-favicon">💼</div>
+                    <div class="result-url">linkedin.com/in/oswal-designer</div>
+                  </div>
+                  <h3 class="result-title">Oswal Jaimes - Diseñador Web | LinkedIn</h3>
+                  <p class="result-description">
+                    Diseñador web con experiencia en UX/UI, desarrollo frontend y marketing digital. 
+                    Especializado en crear interfaces intuitivas y experiencias memorables.
+                  </p>
+                </div>
+
+                <div class="result-item">
+                  <div class="result-header">
+                    <div class="result-favicon">📱</div>
+                    <div class="result-url">behance.net/oswal-webdesign</div>
+                  </div>
+                  <h3 class="result-title">Proyectos de Diseño Web - Oswal | Behance</h3>
+                  <p class="result-description">
+                    Explora mi colección de proyectos de diseño web, interfaces de usuario y 
+                    experiencias digitales. Desde landing pages hasta aplicaciones completas.
+                  </p>
+                </div>
+
+                <!-- Contact Card -->
+                <div class="contact-card">
+                  <div class="contact-header">
+                    <div class="contact-avatar">
+                      <img src="https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757288490/Oswal_perfil_Webdesign.jpg" alt="Oswal" />
+                    </div>
+                    <div class="contact-info">
+                      <h3>Oswal Jaimes</h3>
+                      <p>Diseñador Web & UX/UI</p>
+                    </div>
+                  </div>
+                  
+                  <div class="contact-methods">
+                    <a href="mailto:contacto@oswal.com" class="contact-method email">
+                      <div class="method-icon">📧</div>
+                      <div class="method-info">
+                        <span class="method-label">Email</span>
+                        <span class="method-value">contacto@oswal.com</span>
+                      </div>
+                    </a>
+
+                    <a href="https://wa.me/573001234567" class="contact-method whatsapp" target="_blank">
+                      <div class="method-icon">💬</div>
+                      <div class="method-info">
+                        <span class="method-label">WhatsApp</span>
+                        <span class="method-value">+57 300 123 4567</span>
+                      </div>
+                    </a>
+
+                    <a href="https://linkedin.com/in/oswal" class="contact-method linkedin" target="_blank">
+                      <div class="method-icon">💼</div>
+                      <div class="method-info">
+                        <span class="method-label">LinkedIn</span>
+                        <span class="method-value">linkedin.com/in/oswal</span>
+                      </div>
+                    </a>
+
+                    <a href="https://github.com/oswal" class="contact-method github" target="_blank">
+                      <div class="method-icon">🐙</div>
+                      <div class="method-info">
+                        <span class="method-label">GitHub</span>
+                        <span class="method-value">github.com/oswal</span>
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="contact-cta">
+                    <button class="cta-button primary" @click="openWhatsApp">
+                      <span>Iniciar Conversación</span>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                      </svg>
+                    </button>
+                    <button class="cta-button secondary" @click="copyEmail">
+                      <span>Copiar Email</span>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Info -->
+      <div class="additional-info">
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-icon">⚡</div>
+            <h3>Respuesta Rápida</h3>
+            <p>Respondo en menos de 24 horas</p>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">🌍</div>
+            <h3>Trabajo Remoto</h3>
+            <p>Colaboro con clientes globalmente</p>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">🎯</div>
+            <h3>Enfoque Personalizado</h3>
+            <p>Cada proyecto es único y especial</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
 const currentFloor = ref(4)
+const searchQuery = ref('diseño web')
 
 interface Section {
   floor: number
@@ -51,6 +262,42 @@ const sections: Section[] = [
 const goToFloor = (section: Section) => {
   router.push(section.route)
 }
+
+const updateSearch = (event: Event) => {
+  const target = event.target as HTMLInputElement
+  searchQuery.value = target.value
+}
+
+const openWhatsApp = () => {
+  window.open('https://wa.me/573001234567?text=Hola! Me interesa conocer más sobre tus servicios de diseño web.', '_blank')
+}
+
+const copyEmail = async () => {
+  try {
+    await navigator.clipboard.writeText('contacto@oswal.com')
+    // Aquí podrías agregar una notificación de éxito
+    alert('Email copiado al portapapeles!')
+  } catch (err) {
+    console.error('Error al copiar email:', err)
+  }
+}
+
+// Animación de escritura para la búsqueda
+onMounted(() => {
+  const text = 'diseño web'
+  let index = 0
+  searchQuery.value = ''
+  
+  const typeWriter = () => {
+    if (index < text.length) {
+      searchQuery.value += text.charAt(index)
+      index++
+      setTimeout(typeWriter, 150)
+    }
+  }
+  
+  setTimeout(typeWriter, 1000)
+})
 </script>
 
 <style scoped>
@@ -58,8 +305,466 @@ const goToFloor = (section: Section) => {
   min-height: 100vh;
   width: 100%;
   position: relative;
+  background: #F4F9FC;
+  overflow-y: auto;
 }
 
+/* Vertical Lines Background */
+.vertical-lines {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: space-around;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.line {
+  width: 1px;
+  height: 100%;
+  background-color: rgba(72, 49, 212, 0.1);
+}
+
+/* Main Content */
+.main-content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header Section */
+.header-section {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-top: 2rem;
+}
+
+.main-title {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #4831D4;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Browser Container */
+.browser-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+.mac-browser {
+  width: 100%;
+  max-width: 1000px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  border: 1px solid #e1e5e9;
+}
+
+/* Browser Header */
+.browser-header {
+  background: #f6f8fa;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid #e1e5e9;
+}
+
+.traffic-lights {
+  display: flex;
+  gap: 8px;
+}
+
+.traffic-light {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.traffic-light.close {
+  background: #ff5f57;
+}
+
+.traffic-light.minimize {
+  background: #ffbd2e;
+}
+
+.traffic-light.maximize {
+  background: #28ca42;
+}
+
+.address-bar {
+  flex: 1;
+  max-width: 600px;
+}
+
+.url-container {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 8px 12px;
+  gap: 8px;
+}
+
+.secure-icon {
+  color: #28a745;
+  font-size: 14px;
+}
+
+.url-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #24292f;
+  background: transparent;
+}
+
+.search-icon {
+  color: #656d76;
+  font-size: 14px;
+}
+
+.browser-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.control-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #656d76;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.control-btn:hover {
+  background: #f3f4f6;
+}
+
+/* Browser Content */
+.browser-content {
+  background: #ffffff;
+  min-height: 600px;
+  padding: 0;
+}
+
+/* Search Results */
+.search-results {
+  padding: 20px;
+}
+
+.search-header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.search-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4831D4;
+}
+
+.search-bar-main {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 24px;
+  padding: 8px 16px;
+  gap: 10px;
+}
+
+.main-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  color: #333;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #4831D4;
+  cursor: pointer;
+}
+
+/* Results Container */
+.results-container {
+  max-width: 800px;
+}
+
+.results-info {
+  color: #70757a;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Result Items */
+.result-item {
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.result-item:hover {
+  background: #f8f9fa;
+}
+
+.result-item.featured {
+  background: linear-gradient(135deg, #f8f4ff, #fff);
+  border: 1px solid #e8e0ff;
+}
+
+.result-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.result-favicon {
+  font-size: 16px;
+}
+
+.result-url {
+  color: #1a73e8;
+  font-size: 14px;
+}
+
+.result-title {
+  color: #1a0dab;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 8px;
+  cursor: pointer;
+  line-height: 1.3;
+}
+
+.result-title:hover {
+  text-decoration: underline;
+}
+
+.result-description {
+  color: #4d5156;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.result-links {
+  display: flex;
+  gap: 15px;
+}
+
+.result-link {
+  color: #1a73e8;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.result-link:hover {
+  text-decoration: underline;
+}
+
+/* Contact Card */
+.contact-card {
+  background: linear-gradient(135deg, #4831D4, #6A5AE0);
+  color: white;
+  padding: 30px;
+  border-radius: 16px;
+  margin-top: 30px;
+  box-shadow: 0 10px 30px rgba(72, 49, 212, 0.3);
+}
+
+.contact-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.contact-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.contact-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact-info h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.contact-info p {
+  opacity: 0.9;
+  font-size: 1rem;
+}
+
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.contact-method:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.method-icon {
+  font-size: 20px;
+}
+
+.method-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.method-label {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-bottom: 2px;
+}
+
+.method-value {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.contact-cta {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 14px;
+}
+
+.cta-button.primary {
+  background: #CCF381;
+  color: #4831D4;
+}
+
+.cta-button.primary:hover {
+  background: #b8e86d;
+  transform: translateY(-2px);
+}
+
+.cta-button.secondary {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cta-button.secondary:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Additional Info */
+.additional-info {
+  margin-top: 4rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.info-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.info-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.info-card h3 {
+  color: #4831D4;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.info-card p {
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Floor Buttons */
 .floor-buttons {
   position: fixed;
   right: 2rem;
@@ -137,6 +842,7 @@ const goToFloor = (section: Section) => {
   opacity: 0.8;
 }
 
+/* Close Button */
 .close-button {
   position: fixed;
   top: 2rem;
@@ -160,9 +866,78 @@ const goToFloor = (section: Section) => {
   transform: rotate(90deg);
 }
 
+/* Responsive Design */
 @media (max-width: 1024px) {
+  .main-title {
+    font-size: 3rem;
+  }
+  
+  .contact-methods {
+    grid-template-columns: 1fr;
+  }
+  
   .floor-buttons {
     right: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+  
+  .main-title {
+    font-size: 2.5rem;
+  }
+  
+  .browser-header {
+    padding: 8px 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .address-bar {
+    order: 3;
+    width: 100%;
+  }
+  
+  .search-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .contact-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .contact-cta {
+    justify-content: center;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 2rem;
+  }
+  
+  .mac-browser {
+    margin: 0 -1rem;
+    border-radius: 0;
+  }
+  
+  .browser-content {
+    min-height: 500px;
+  }
+  
+  .contact-card {
+    margin: 0 -1rem;
+    border-radius: 0;
   }
 }
 </style>
