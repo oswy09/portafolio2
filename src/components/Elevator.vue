@@ -729,12 +729,12 @@ onMounted(() => {
   .floor-buttons {
     right: 1rem;
   }
-  
+
   .cat-container {
     bottom: 1rem;
     left: 1rem;
   }
-  
+
   .cat-animation {
     width: 100px;
     height: 100px;

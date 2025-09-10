@@ -325,8 +325,13 @@ onUnmounted(() => {
 .subtitle {
   font-size: 1.3rem;
   color: #666;
-  margin: 0;
+  margin: 0 auto 1.5rem auto;
   line-height: 1.6;
+  width: 100%;
+  text-align: center;
+  display: block;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Browser Container */
@@ -588,8 +593,8 @@ onUnmounted(() => {
 }
 
 .contact-card-browser .contact-avatar {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   overflow: hidden;
   border: 3px solid rgba(255, 255, 255, 0.3);
@@ -604,11 +609,13 @@ onUnmounted(() => {
 .contact-card-browser .contact-info h3 {
   font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
+  line-height: 10px;
 }
 
 .contact-card-browser .contact-info p {
   opacity: 0.9;
+  line-height: 10px;
   font-size: 1rem;
 }
 
