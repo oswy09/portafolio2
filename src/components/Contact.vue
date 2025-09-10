@@ -911,6 +911,44 @@ onMounted(() => {
   transform: rotate(90deg);
 }
 
+/* Falling Social Icons */
+.falling-icons-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.falling-icon {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  pointer-events: auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s ease;
+  user-select: none;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.falling-icon:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.falling-icon:active {
+  transform: scale(0.95) !important;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .main-title {
