@@ -255,8 +255,8 @@ class FallingIcon {
 
   constructor(network: any) {
     this.network = network
-    this.x = Math.random() * (window.innerWidth - 60)
-    this.y = -60
+    this.x = Math.random() * (window.innerWidth - 50)
+    this.y = -50
     this.vx = (Math.random() - 0.5) * 4
     this.vy = Math.random() * 2 + 1
     this.rotation = 0
@@ -374,6 +374,15 @@ const createFallingIcon = () => {
   // Create DOM element
   const element = document.createElement('div')
   element.className = 'falling-icon'
+  element.style.width = '50px'
+  element.style.height = '50px'
+  element.style.borderRadius = '50%'
+  element.style.display = 'flex'
+  element.style.alignItems = 'center'
+  element.style.justifyContent = 'center'
+  element.style.fontSize = '24px'
+  element.style.position = 'absolute'
+  element.style.zIndex = '10'
   element.style.backgroundColor = icon.network.color
   element.style.transform = `translate3d(${icon.x}px, ${icon.y}px, 0) rotate(${icon.rotation}deg)`
   element.innerHTML = icon.network.icon
@@ -1178,6 +1187,8 @@ onUnmounted(() => {
   color: white;
   font-weight: bold;
   will-change: transform;
+  z-index: 10;
+  overflow: hidden;
 }
 
 .falling-icon:hover {
