@@ -599,13 +599,14 @@ onMounted(() => {
   text-decoration: underline;
 }
 
-/* Contact Card */
-.contact-card {
+/* Contact Card External - Moved outside browser */
+.contact-card-external {
   background: linear-gradient(135deg, #4831D4, #6A5AE0);
   color: white;
   padding: 30px;
   border-radius: 16px;
-  margin-top: 30px;
+  margin: 2rem auto;
+  max-width: 800px;
   box-shadow: 0 10px 30px rgba(72, 49, 212, 0.3);
 }
 
@@ -723,47 +724,6 @@ onMounted(() => {
 .cta-button.secondary:hover {
   background: rgba(255, 255, 255, 0.3);
   transform: translateY(-2px);
-}
-
-/* Additional Info */
-.additional-info {
-  margin-top: 4rem;
-}
-
-.info-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.info-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.info-card:hover {
-  transform: translateY(-5px);
-}
-
-.info-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.info-card h3 {
-  color: #4831D4;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.info-card p {
-  color: #666;
-  line-height: 1.5;
 }
 
 /* Floor Buttons */
