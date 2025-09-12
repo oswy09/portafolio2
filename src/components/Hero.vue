@@ -24,7 +24,7 @@
           <p class="subtitle">
             <span class="accent-text">Bienvenido al elevador</span> <span class="regular-text">que te llevará por cada piso de mi trabajo. Aquí no solo diseño interfaces, también construyo experiencias digitales que conectan, convierten y sorprenden.</span><br><br>
             
-            <span class="regular-text">Cada proyecto es una oportunidad de transformar ideas en</span> <span class="accent-text">experiencias memorables</span><span class="regular-text">.</span>
+            <span class="regular-text">Cada proyecto es una oportunidad de transformar ideas en experiencias memorables</span>
           </p>
 
           <!-- Portfolio Button -->
@@ -46,7 +46,7 @@
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                 <polyline points="22,6 12,13 2,6"/>
               </svg>
-              contact@oswal.com
+              web@oswal.com.co
             </a>
             <div class="social-links">
               <a href="#" class="social-link">
@@ -81,7 +81,7 @@
           <!-- Floor Display -->
           <div class="floor-display">
             <div class="display-screen">
-              <span class="floor-number">0</span>
+              <span class="floor-number"></span>
               <span class="floor-name">Inicio</span>
             </div>
           </div>
@@ -691,7 +691,7 @@ onUnmounted(() => {
 
 .demo-floor-number.centered {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
