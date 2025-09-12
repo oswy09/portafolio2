@@ -123,7 +123,7 @@
                   <div class="elevator-preview">
                     <div class="preview-content">
                       <div class="preview-icon">
-                        <div class="demo-floor-number">{{ currentDemoFloor }}</div>
+                        <div class="demo-floor-number centered">{{ currentDemoFloor }}</div>
                       </div>
                       <div class="demo-content">
                         <h3>{{ demoFloors[currentDemoFloor - 1]?.name }}</h3>
@@ -137,7 +137,7 @@
           </div>
 
           <!-- Elevator Controls -->
-          <div class="elevator-controls">
+          <div class="elevator-controls hidden-desktop">
             <div class="control-panel">
               <button 
                 v-for="floor in demoFloors" 
@@ -605,6 +605,11 @@ onUnmounted(() => {
   opacity: 0.8;
 }
 
+/* Ocultar controles del elevador en desktop */
+.hidden-desktop {
+  display: none;
+}
+
 .elevator-controls {
   position: absolute;
   bottom: -3rem;
@@ -681,6 +686,15 @@ onUnmounted(() => {
   align-items: center;
   justify-content: center;
   border: 2px solid #CCF381;
+  margin: 0 auto;
+}
+
+.demo-floor-number.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
 }
 
 .demo-content h3 {
@@ -748,6 +762,10 @@ onUnmounted(() => {
 
 /* Media Queries */
 @media (max-width: 1024px) {
+  .hidden-desktop {
+    display: block;
+  }
+  
   .main-content {
     flex-direction: column;
     text-align: center;
