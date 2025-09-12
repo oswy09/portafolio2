@@ -104,21 +104,19 @@
       </div>
     </section>
 
+
     <!-- Results Section - Redesigned -->
-  <div v-if="project && project.results" class="section results-section">
+    <div v-if="project && project.results" class="section results-section">
       <h2 class="section-title">Resultados del Proyecto</h2>
-      
       <!-- Results Cards -->
       <div class="results-cards">
         <div class="result-card" v-for="(result, idx) in project.results" :key="idx">
           <div class="result-content">
             <div class="result-number">{{ result.value || result.metric }}</div>
             <div class="result-label">{{ result.metric }}</div>
->>>>>>> d999f85 (fix: cambios locales antes de pull)
           </div>
         </div>
       </div>
-
       <!-- Navigation -->
       <div class="project-navigation">
         <button @click="goBack" class="nav-button secondary">
@@ -127,7 +125,6 @@
           </svg>
           Volver a Proyectos
         </button>
-        
         <button @click="nextProject" class="nav-button primary">
           Siguiente Proyecto
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -137,6 +134,8 @@
       </div>
     </div>
   </div>
+
+</div>
 </template>
 
 <script setup lang="ts">
@@ -306,7 +305,7 @@ const results: Result[] = [
   
      
     ]
->>>>>>> d999f85 (fix: cambios locales antes de pull)
+
   },
   {
     id: 2,
@@ -401,7 +400,7 @@ const results: Result[] = [
      
     ]
   
->>>>>>> d999f85 (fix: cambios locales antes de pull)
+
   },
   {
     id: 3,
@@ -923,7 +922,7 @@ const results: Result[] = [
       { value: '+15%', metric: 'Volumen de consultas por WhatsApp' },
     ],
     liveUrl: 'https://cafecumbrereal.com/',
->>>>>>> d999f85 (fix: cambios locales antes de pull)
+
   }
 ]
 
@@ -1006,7 +1005,7 @@ onMounted(() => {
 /* Project Header */
 .project-header {
   text-align: center;
-=======
+
   padding: 0.5rem 1rem;
   background: rgba(72, 49, 212, 0.1);
   border-radius: 20px;
@@ -1099,7 +1098,6 @@ onMounted(() => {
 }
 
 .client-section {
->>>>>>> d999f85 (fix: cambios locales antes de pull)
   margin-bottom: 4rem;
 }
 
