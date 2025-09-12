@@ -1,4 +1,3 @@
-  
 }
 
 /* Texto con acento (Bienvenido al elevador...) */
@@ -500,19 +499,6 @@
 }
 
 @media (max-width: 768px) {
-  .elevator-container {
-    display: none;
-  }
-  
-  .profile-section-mobile {
-    display: flex;
-  }
-  
-  .profile-section-mobile .profile-container {
-    width: 220px;
-    height: 220px;
-  }
-
     .title {
         font-size: 3rem;
     }
@@ -565,6 +551,11 @@
 
     .elevator-container {
         width: 220px;
+    }
+    
+    .profile-section-mobile .profile-container {
+        width: 200px;
+        height: 200px;
     }
 
     .elevator-frame {
