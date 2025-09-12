@@ -145,6 +145,13 @@ import { useRouter, useRoute } from 'vue-router'
 const router = useRouter()
 const route = useRoute()
 
+interface ImageGalleryItem {
+  url: string
+  alt: string
+  caption?: string
+  tag?: string
+}
+
 interface Project {
   id: number
   title: string
@@ -157,6 +164,8 @@ interface Project {
   duration?: string
   role?: string
   tools?: string
+  imageGallery?: ImageGalleryItem[]
+  results?: Array<{ value: string; metric: string }>
 }
 
 interface ProcessStep {
