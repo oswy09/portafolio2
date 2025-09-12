@@ -474,46 +474,6 @@
     }
 }
 
-/* Profile Section Mobile */
-.profile-section-mobile {
-  display: none;
-  justify-content: center;
-  align-items: center;
-}
-
-.profile-section-mobile .profile-container {
-  width: 280px;
-  height: 280px;
-  position: relative;
-}
-
-.profile-section-mobile .profile-border {
-  position: absolute;
-  inset: -15px;
-  border-radius: 50%;
-  background: linear-gradient(45deg, #4831D4, #CCF381);
-  animation: rotate 4s linear infinite;
-}
-
-.profile-section-mobile .profile-image {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 15px solid #F4F9FC;
-  z-index: 1;
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 /* Media Queries para Responsividad */
 @media (max-width: 1024px) {
     .main-content {
@@ -540,6 +500,19 @@
 }
 
 @media (max-width: 768px) {
+  .elevator-container {
+    display: none;
+  }
+  
+  .profile-section-mobile {
+    display: flex;
+  }
+  
+  .profile-section-mobile .profile-container {
+    width: 220px;
+    height: 220px;
+  }
+
     .title {
         font-size: 3rem;
     }
