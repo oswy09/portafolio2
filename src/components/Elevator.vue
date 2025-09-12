@@ -718,16 +718,41 @@ onMounted(() => {
 }
 
 @media (max-width: 768px) {
+  .floor-buttons {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    right: auto;
+    top: auto;
+    transform: translateX(-50%);
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+  }
+
+  .button-panel {
+    flex-direction: row;
+    gap: 0.8rem;
+  }
+
+  .floor-button {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .floor-number {
+    font-size: 1rem;
+  }
+
+  .floor-name {
+    font-size: 0.6rem;
+  }
+
   .elevator {
     width: 280px;
   }
 
   .floor-title h1 {
     font-size: 2rem;
-  }
-
-  .floor-buttons {
-    right: 1rem;
   }
 
   .cat-container {
@@ -738,6 +763,26 @@ onMounted(() => {
   .cat-animation {
     width: 100px;
     height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .floor-buttons {
+    bottom: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .floor-button {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .floor-number {
+    font-size: 0.9rem;
+  }
+
+  .floor-name {
+    font-size: 0.55rem;
   }
 }
 </style>

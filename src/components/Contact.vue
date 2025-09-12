@@ -930,13 +930,38 @@ onUnmounted(() => {
   .contact-methods {
     grid-template-columns: 1fr;
   }
-  
-  .floor-buttons {
-    right: 1rem;
-  }
 }
 
 @media (max-width: 768px) {
+  .floor-buttons {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    right: auto;
+    top: auto;
+    transform: translateX(-50%);
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+  }
+
+  .button-panel {
+    flex-direction: row;
+    gap: 0.8rem;
+  }
+
+  .floor-button {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .floor-number {
+    font-size: 1rem;
+  }
+
+  .floor-name {
+    font-size: 0.6rem;
+  }
+
   .main-content {
     padding: 1rem;
   }
@@ -977,6 +1002,24 @@ onUnmounted(() => {
 }
 
 @media (max-width: 480px) {
+  .floor-buttons {
+    bottom: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .floor-button {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .floor-number {
+    font-size: 0.9rem;
+  }
+
+  .floor-name {
+    font-size: 0.55rem;
+  }
+
   .main-title {
     font-size: 2rem;
   }
