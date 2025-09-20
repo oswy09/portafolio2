@@ -221,11 +221,11 @@ interface Project {
   id: number
   title: string
   image: string
-  category: string
+  category?: string
   client: string
-  tags: string[]
-  year: string
-  description: string
+  tags?: string[]
+  year?: string
+  description?: string
   duration?: string
   role?: string
   myRole?: string
@@ -236,6 +236,20 @@ interface Project {
   solution?: any
   results?: any[]
   imageGallery?: any[]
+  liveUrl?: string
+  type?: string
+  percentage?: string
+  improvement?: string
+  impact?: string
+  content?: string
+  roles?: string[]
+  industry?: string
+  location?: string
+  responsibilities?: string[]
+  methodology?: any
+  technologies?: string[]
+  finalResult?: any
+  achievements?: any[]
 }
 
 const currentProject = ref<Project | null>(null)
