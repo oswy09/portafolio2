@@ -212,7 +212,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, computed, watch } from 'vue'
+import { ref, onMounted, computed, watch, nextTick } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 
 const router = useRouter()
@@ -936,6 +936,10 @@ const previousProject = () => {
   const prevIndex = currentIndex > 0 ? currentIndex - 1 : results.length - 1
   const prevId = results[prevIndex].id
   router.push(`/project/${prevId}`)
+  // Scroll to top after navigation
+  nextTick(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  })
 }
 
 const nextProject = () => {
@@ -943,6 +947,10 @@ const nextProject = () => {
   const nextIndex = (currentIndex + 1) % results.length
   const nextId = results[nextIndex].id
   router.push(`/project/${nextId}`)
+  // Scroll to top after navigation
+  nextTick(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  })
 }
 
 const viewProject = () => {
