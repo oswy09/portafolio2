@@ -2,6 +2,7 @@
   <div class="project-detail">
     <!-- Close Button -->
     <!-- Top Navigation Button -->
+    <!-- Updated: September 22, 2025 -->
     <div class="top-navigation-static">
       <button @click="goBack" class="back-to-gallery-btn">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -859,7 +860,7 @@ const results = [
   },
   {
     id: 10,
-    title: 'Café Cumbre Real: Diseño Web de Marca de Café de Origen',
+    title: 'Café Cumbre Real: Diseño Web, Marca de Café de Origen',
     image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757454819/Web_cafe_cumbre_Proyectos_Oswal.png',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
     keyAchievement: 'Diseño web para la marca de café molido y tostado "Café Cumbre Real", con el objetivo de establecer una presencia digital que celebre la calidad del producto y facilite su venta online.',
