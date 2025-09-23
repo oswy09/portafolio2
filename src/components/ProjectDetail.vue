@@ -259,7 +259,7 @@ const results = [
   {
     id: 1,
     image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757289000/plataforma_concursos.jpg',
-    title: 'Quizz Interactivo para concursos: Potenciando el Estudio del Acueducto de Bogotá',
+    title: 'Quizz Interactivo para concursos: Potenciando el Estudio en Acueducto de Bogotá',
     roles: ['UX Research', 'UI Design', 'Frontend Designer'],
     keyAchievement: 'Una interfaz para que los empleados del Acueducto de Bogotá estudien y se preparen de forma autónoma para los concursos de ascenso.',
     client: 'Acueducto de Bogotá',
@@ -453,7 +453,7 @@ const results = [
       { value: '+35%', metric: 'Tasa de Conversión de Leads' },
       { value: '-15%', metric: 'Tasa de rebote' },
     ],
-    liveUrl: 'https://www.amazonbb.com/',
+    liveUrl: 'https://lpsv.netlify.app/',
   },
   {
     id: 4,
