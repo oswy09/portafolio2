@@ -716,14 +716,48 @@ const goBack = () => {
     font-size: 2rem;
   }
 
+  .filter-section {
+    margin-bottom: 3rem;
+  }
+
   .filter-container {
+    background: transparent;
+    box-shadow: none;
     flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
+    gap: 1.5rem;
+    padding: 0;
+  }
+
+  .filter-label {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
   }
 
   .filter-buttons {
     justify-content: center;
+    gap: 0.8rem;
+  }
+
+  .filter-btn {
+    padding: 1rem 1.8rem;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: 2px solid #e9ecef;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    min-width: 120px;
+  }
+
+  .filter-btn:hover,
+  .filter-btn.active {
+    background: #4831D4;
+    border-color: #4831D4;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(72, 49, 212, 0.3);
   }
 
   .gallery-grid {
@@ -778,9 +812,34 @@ const goBack = () => {
     font-size: 0.75rem;
   }
 
+  .main-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .filter-container {
+    padding: 0 1rem;
+  }
+
+  .filter-buttons {
+    gap: 0.6rem;
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
   .filter-btn {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
+    padding: 1.2rem 2rem;
+    font-size: 1rem;
+    width: 100%;
+    min-width: auto;
+    border-radius: 20px;
+  }
+
+  .filter-label {
+    font-size: 1rem;
+    margin-bottom: 1rem;
   }
 }
 </style>

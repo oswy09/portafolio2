@@ -507,7 +507,7 @@ onUnmounted(() => {
   justify-content: center;
   align-items: center;
   perspective: 1000px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .pc-setup {
@@ -1355,7 +1355,7 @@ onUnmounted(() => {
   }
   
   .pc-setup {
-    transform: scale(0.8);
+    transform: scale(0.8) rotateY(-15deg) rotateX(5deg);
   }
   
   .hero-title-section .main-title {
@@ -1374,7 +1374,7 @@ onUnmounted(() => {
     max-width: 100vw;
     box-sizing: border-box;
     height: 300px;
-    overflow: visible;
+    overflow: hidden;
   }
 }
 
@@ -1413,7 +1413,8 @@ onUnmounted(() => {
   }
   
   .pc-setup {
-    transform: scale(0.7) rotateY(-15deg) rotateX(5deg);
+    transform: scale(0.6) rotateY(-15deg) rotateX(5deg);
+    max-width: 100%;
   }
   
   .contact-buttons {
@@ -1428,15 +1429,21 @@ onUnmounted(() => {
   
   .pc-container {
     margin-bottom: 4rem;
-    padding: 0 0.5rem;
+    padding: 0 1rem;
     width: 100%;
     max-width: 100vw;
-    overflow: visible;
+    overflow: hidden;
     touch-action: none;
-    height: 350px;
+    height: 320px;
     display: flex;
-    align-items: flex-start;
-    padding-top: 2rem;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+  }
+  
+  .pc-setup {
+    transform: scale(0.6) rotateY(-15deg) rotateX(5deg);
+    max-width: 100%;
   }
   
   .content-sections {
@@ -1494,15 +1501,21 @@ onUnmounted(() => {
   
   .pc-container {
     margin-bottom: 5rem;
-    padding: 0;
+    padding: 0 0.5rem;
     width: 100%;
     max-width: 100vw;
-    overflow: visible;
+    overflow: hidden;
     touch-action: none;
-    height: 400px;
+    height: 350px;
     display: flex;
-    align-items: flex-start;
-    padding-top: 3rem;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem;
+  }
+  
+  .pc-setup {
+    transform: scale(0.5) rotateY(-15deg) rotateX(5deg);
+    max-width: 100%;
   }
   
   .content-sections h2 {

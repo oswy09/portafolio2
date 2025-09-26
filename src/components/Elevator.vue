@@ -744,8 +744,16 @@ onMounted(() => {
     font-size: 1rem;
   }
 
-  .floor-name {
-    font-size: 0.6rem;
+  .display-screen .floor-name {
+    font-size: 0.75rem;
+    color: #CCF381;
+    font-weight: 600;
+  }
+
+  .display-screen {
+    padding: 0.8rem 2rem;
+    font-size: 1.6rem;
+    gap: 0.8rem;
   }
 
   .elevator {
@@ -783,8 +791,16 @@ onMounted(() => {
     font-size: 0.9rem;
   }
 
-  .floor-name {
-    font-size: 0.55rem;
+  .display-screen .floor-name {
+    font-size: 0.7rem;
+    color: #CCF381;
+    font-weight: 600;
+  }
+
+  .display-screen {
+    padding: 0.8rem 2.2rem;
+    font-size: 1.5rem;
+    gap: 0.7rem;
   }
 
   .cat-container {

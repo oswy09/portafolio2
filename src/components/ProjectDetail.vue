@@ -991,54 +991,62 @@ watch(() => route.params.id, (newId) => {
 .back-to-gallery-btn {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0px;
   padding: 0px;
   background: #4831D4;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 25px rgba(72, 49, 212, 0.3);
   position: relative;
   overflow: hidden;
+  min-height: 56px;
 }
 
 .back-to-gallery-btn span {
   padding: 1rem 1.5rem;
   display: block;
   flex-grow: 1;
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
 .back-to-gallery-btn .arrow-icon {
   background: #CCF381;
-  padding: 0.8rem;
+  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
+  transition: all 0.3s ease;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  min-width: 56px;
+  min-height: 56px;
 }
 
 .back-to-gallery-btn .arrow-icon svg {
   width: 20px;
   height: 20px;
   color: #4831D4;
+  transition: transform 0.3s ease;
 }
 
 .back-to-gallery-btn:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(72, 49, 212, 0.4);
 }
 
 .back-to-gallery-btn:hover .arrow-icon {
-  background: #c0e872;
+  background: #B8E85C;
+  transform: scale(1.05);
 }
 
 .back-to-gallery-btn:hover .arrow-icon svg {
-  transform: rotate(45deg);
+  transform: translateX(-2px);
 }
 
 /* Close Button X */

@@ -1,12 +1,5 @@
 <template>
   <div class="scene">
-    <!-- Close Button -->
-    <router-link to="/" class="close-button">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M18 6L6 18M6 6l12 12"/>
-      </svg>
-    </router-link>
-
     <!-- Header Section with Filters -->
     <div class="header-section">
       <!-- Filter Section -->
@@ -14,21 +7,14 @@
         <div class="filter-container">
           <span class="filter-label">Tipo de Proyecto</span>
           <div class="filter-buttons">
-            <div 
+            <button 
               v-for="filter in activeFilters" 
               :key="filter.id"
-              class="filter-switch"
+              @click="filter.active = !filter.active"
+              :class="['filter-btn', { active: filter.active }]"
             >
-              <label class="switch-label">
-                <input 
-                  type="checkbox" 
-                  v-model="filter.active"
-                  class="switch-input"
-                />
-                <span class="switch-slider"></span>
-                <span class="switch-text" :data-type="filter.name">{{ filter.name }}</span>
-              </label>
-            </div>
+              {{ filter.name }}
+            </button>
           </div>
         </div>
       </div>
@@ -54,17 +40,6 @@
       
       <!-- Gallery with horizontal scrolling -->
       <div class="gallery-section">
-        <!-- Message with Arrow -->
-        <div class="gallery-message">
-          <div class="message-arrow">
-            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="50" viewBox="0 0 120 60" fill="none">
-              <path d="M15 30 Q40 10, 70 30 Q90 50, 105 30" stroke="#4831D4" stroke-width="3" fill="none"/>
-              <path d="M100 25 L105 30 L100 35" stroke="#4831D4" stroke-width="3" fill="none"/>
-            </svg>
-          </div>
-          <p class="message-text">desliza para ver contenido</p>
-        </div>
-
         <div class="gallery-container" id="galleryContainer" @wheel="handleWheel">
           <div class="gallery-track" id="galleryTrack" 
                :style="{ transform: `translateX(${currentTranslate}px)` }">
@@ -103,16 +78,6 @@
           <div class="progress-bar" :style="{ width: progressWidth + '%' }"></div>
         </div>
       </div>
-    </div>
-
-    <!-- Button to Projects2 -->
-    <div class="projects2-button-container">
-      <button @click="goToProjects2" class="projects2-button">
-        <span>Ver Galería Completa</span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M7 17L17 7M17 7H7M17 7V17"/>
-        </svg>
-      </button>
     </div>
 
     <!-- Add Floor Buttons -->
@@ -168,9 +133,7 @@ const goToFloor = (section: Section) => {
   router.push(section.route)
 }
 
-const goToProjects2 = () => {
-  router.push('/projects2')
-}
+
 
 const currentTranslate = ref(0)
 const progressWidth = ref(0)
@@ -184,7 +147,8 @@ const projects = [
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757370425/Quizz_website_proyectos_Oswal.png", 
     category: "interfaz",
     client: "Acueducto Bogotá",
-    tags: ["Vue.js", "Interactive", "Gaming", "UX/UI"]
+    tags: ["Vue.js", "Interactive", "Gaming", "UX/UI"],
+    order: 2
   },
   { 
     id: 2, 
@@ -192,7 +156,8 @@ const projects = [
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757359521/Hotel_Amazon_proyecto_oswal.png", 
     category: "website",
     client: "Hotel Amazon",
-    tags: ["Hospitality", "Booking", "Responsive", "CMS"]
+    tags: ["Hospitality", "Booking", "Responsive", "CMS"],
+    order: 3
   },
   { 
     id: 3, 
@@ -200,7 +165,8 @@ const projects = [
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757371575/Micentro_website_proyecto_oswal.png ", 
     category: "ecommerce",
     client: "Micentro Comercial",
-    tags: ["Shopping", "Directory", "Catalog", "Payment"]
+    tags: ["Shopping", "Directory", "Catalog", "Payment"],
+    order: 4
   },
   { 
     id: 4, 
@@ -208,7 +174,8 @@ const projects = [
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757359522/Landing_Pages_seguros.png", 
     category: "landing",
     client: "AXA Colpatria",
-    tags: ["Insurance", "Corporate", "Lead Gen", "Forms"]
+    tags: ["Insurance", "Corporate", "Lead Gen", "Forms"],
+    order: 1
   },
   { 
     id: 5, 
@@ -216,7 +183,8 @@ const projects = [
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757371705/Bestyle_website_proyectos_Oswal.png", 
     category: "ecommerce",
     client: "Bestyle",
-    tags: ["Catalog", "Products", "Search", "Filter"]
+    tags: ["Catalog", "Products", "Search", "Filter"],
+    order: 5
   },
   { 
     id: 6, 
@@ -224,7 +192,8 @@ const projects = [
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757375618/Clinica_Betterme_proyecto_web_oswal.png", 
     category: "interfaz",
     client: "Betterme",
-    tags: ["Dashboard", "Analytics", "Data Viz", "Admin"]
+    tags: ["Dashboard", "Analytics", "Data Viz", "Admin"],
+    order: 6
   },
   { 
     id: 7, 
@@ -232,7 +201,8 @@ const projects = [
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757372516/Dedicandote_proyecto_oswal_music.png", 
     category: "landing",
     client: "Dedicandote",
-    tags: ["Startup", "Business", "CTA", "Modern"]
+    tags: ["Startup", "Business", "CTA", "Modern"],
+    order: 7
   },
   { 
     id: 8, 
@@ -240,7 +210,8 @@ const projects = [
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757361622/Redise%C3%B1o_web_Proyecto_oswal.png", 
     category: "website",
     client: "AXA Colpatria",
-    tags: ["Portal", "Corporate", "Multi-page", "Professional"]
+    tags: ["Portal", "Corporate", "Multi-page", "Professional"],
+    order: 8
   },
   { 
     id: 9, 
@@ -309,14 +280,21 @@ const filteredProjects = computed(() => {
     return []
   }
   
-  return projects.filter(project => activeCategories.includes(project.category))
+  // Filtrar y luego ordenar por la propiedad 'order'
+  return projects
+    .filter(project => activeCategories.includes(project.category))
+    .sort((a, b) => (a.order || 0) - (b.order || 0))
 })
 
 
 const handleWheel = (e: WheelEvent) => {
-  e.preventDefault()
-  const scrollAmount = e.deltaY * 2
-  setTransform(currentTranslate.value - scrollAmount)
+  // Only handle horizontal scroll on desktop (width > 768px)
+  if (window.innerWidth > 768) {
+    e.preventDefault()
+    const scrollAmount = e.deltaY * 2
+    setTransform(currentTranslate.value - scrollAmount)
+  }
+  // On mobile, let the default vertical scroll behavior work
 }
 
 const setTransform = (translate: number) => {
@@ -415,89 +393,41 @@ onMounted(() => {
 
 .filter-buttons {
   display: flex;
-  gap: 0.7rem;
+  gap: 0.5rem;
   flex-wrap: wrap;
   align-items: center;
 }
 
-.filter-switch {
-  display: flex;
-  align-items: center;
-  background: #f4f4fa;
-  border-radius: 1.5rem;
-  padding: 0.2rem 0.9rem 0.2rem 0.5rem;
-  box-shadow: 0 2px 8px rgba(72,49,212,0.04);
-  transition: background 0.2s;
-}
-.filter-switch:has(.switch-input:checked) {
-  background: #edeaff;
-  box-shadow: 0 2px 12px rgba(72,49,212,0.10);
-}
-
-.switch-label {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  cursor: pointer;
-  user-select: none;
-  font-size: 0.95rem;
+.filter-btn {
+  padding: 0.4rem 1rem;
+  border: 1.5px solid #e9ecef;
+  border-radius: 16px;
+  background: white;
+  color: #666;
   font-weight: 500;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.filter-btn:hover {
+  border-color: #4831D4;
   color: #4831D4;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(72, 49, 212, 0.15);
 }
 
-.switch-input {
-  display: none;
-}
-
-.switch-slider {
-  position: relative;
-  width: 32px;
-  height: 18px;
-  background: #d1d5db;
-  border-radius: 18px;
-  transition: background 0.3s;
-  margin-right: 0.3rem;
-}
-.switch-slider::before {
-  content: '';
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 14px;
-  height: 14px;
-  background: #fff;
-  border-radius: 50%;
-  transition: transform 0.3s;
-  box-shadow: 0 1px 3px rgba(72,49,212,0.10);
-}
-.switch-input:checked + .switch-slider {
+.filter-btn.active {
   background: #4831D4;
-}
-.switch-input:checked + .switch-slider::before {
-  transform: translateX(14px);
-}
-.switch-label:hover .switch-slider {
-  background: #bdb7f6;
-}
-.switch-input:checked + .switch-slider:hover {
-  background: #6a5ae0;
-}
-.switch-text {
-  color: #4831D4;
-  font-weight: 600;
-  font-size: 0.97rem;
-  letter-spacing: 0.01em;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
+  border-color: #4831D4;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(72, 49, 212, 0.25);
 }
 
-/* Optional: Add icons for each filter type */
-.switch-text[data-type="Website"]::before {
-  content: '\1F310'; /* 🌐 */
-  font-size: 1.1em;
-  margin-right: 0.2em;
-}
+/* Filter button animations */
 .switch-text[data-type="Landing"]::before {
   content: '\1F3E0'; /* 🏠 */
   font-size: 1.1em;
@@ -514,33 +444,7 @@ onMounted(() => {
   margin-right: 0.2em;
 }
 
-.close-button {
-  position: fixed;
-  top: 2rem;
-  right: 2rem;
-  background: rgba(72, 49, 212, 0.1);
-  border: none;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #4831D4;
-  z-index: 100;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
 
-.close-button:hover {
-  background: rgba(72, 49, 212, 0.2);
-  transform: rotate(90deg);
-}
-
-.close-button svg {
-  width: 1.5rem;
-  height: 1.5rem;
-}
 
 .floor {
   position: absolute;
@@ -679,26 +583,7 @@ onMounted(() => {
   padding: 4rem 0 2rem;
 }
 
-/* Message with Arrow */
-.gallery-message {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  padding-left: 2rem;
-  align-self: flex-start;
-}
 
-.message-arrow {
-  flex-shrink: 0;
-}
-
-.message-text {
-  font-size: 1rem;
-  color: #666;
-  font-style: italic;
-  margin: 0;
-}
 
 .gallery-container {
   position: relative;
@@ -1003,44 +888,7 @@ onMounted(() => {
   opacity: 0.8;
 }
 
-/* Projects2 Button */
-.projects2-button-container {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-}
 
-.projects2-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 2rem;
-  background: #4831D4;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(72, 49, 212, 0.3);
-}
-
-.projects2-button:hover {
-  background: #3a2aa0;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(72, 49, 212, 0.4);
-}
-
-.projects2-button svg {
-  transition: transform 0.3s ease;
-}
-
-.projects2-button:hover svg {
-  transform: rotate(45deg);
-}
 
 @media (max-width: 768px) {
   .floor-buttons {
@@ -1076,14 +924,41 @@ onMounted(() => {
     font-size: 2rem;
   }
 
+  .header-section {
+    padding: 1rem 1rem;
+  }
+
+  /* FILTRO TEMPORALMENTE OCULTO EN MOBILE - COLOCAR DESPUÉS */
+  .filter-section {
+    display: none;
+    /* margin-bottom: 1rem; */
+  }
+
   .filter-container {
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
     flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
+    gap: 0.8rem;
+    padding: 1.5rem 1rem;
+    margin: 0 1rem;
+  }
+
+  .filter-label {
+    font-size: 0.9rem;
+    text-align: center;
   }
 
   .filter-buttons {
     justify-content: center;
+    gap: 0.4rem;
+  }
+
+  .filter-btn {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+    border-radius: 14px;
+    min-width: 70px;
   }
 
   .artwork {
@@ -1091,22 +966,56 @@ onMounted(() => {
     height: 230px;
   }
 
-  .artwork-unit {
-    margin: 0 1.5rem;
+  .gallery-container {
+    height: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 60vh;
   }
 
   .gallery-track {
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: static;
+    gap: 3rem;
+    padding: 2rem 1rem;
+    transform: none !important;
   }
 
+  .artwork-unit {
+    margin: 0;
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+  }
 
   .gallery-section {
-    padding: 6rem 0 2rem;
+    padding: 2rem 0 2rem;
   }
 
-  .gallery-message {
-    padding-left: 1rem;
-    margin-bottom: 1.5rem;
+  /* Hide progress bar on mobile since we use vertical scroll */
+  .progress-container {
+    display: none;
+  }
+
+  /* Style the scrollbar */
+  .gallery-container::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .gallery-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+  }
+
+  .gallery-container::-webkit-scrollbar-thumb {
+    background: #4831D4;
+    border-radius: 2px;
+  }
+
+  .gallery-container::-webkit-scrollbar-thumb:hover {
+    background: #6a5ae0;
   }
 }
 
@@ -1134,9 +1043,43 @@ onMounted(() => {
     height: 210px;
   }
 
+  .gallery-container {
+    max-height: 55vh;
+  }
+
+  .gallery-track {
+    gap: 2.5rem;
+    padding: 1.5rem 0.5rem;
+  }
+
+  .artwork-unit {
+    max-width: 200px;
+  }
+
+  .header-section {
+    padding: 1rem 1rem;
+  }
+
+  /* FILTRO OCULTO EN MOBILE PEQUEÑO TAMBIÉN */
+  .filter-container {
+    padding: 1.2rem 0.8rem;
+    margin: 0 0.5rem;
+    border-radius: 16px;
+  }
+
+  .filter-label {
+    font-size: 0.85rem;
+  }
+
+  .filter-buttons {
+    gap: 0.3rem;
+  }
+
   .filter-btn {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.8rem;
+    padding: 0.4rem 0.7rem;
+    font-size: 0.75rem;
+    border-radius: 12px;
+    min-width: 60px;
   }
 
   .main-title {

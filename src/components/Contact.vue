@@ -338,7 +338,9 @@ onUnmounted(() => {
 .browser-container {
   width: 100%;
   max-width: 1000px;
-  margin-bottom: 2rem;
+  margin: 0 auto 2rem auto;
+  display: flex;
+  justify-content: center;
 }
 
 .mac-browser {
@@ -610,7 +612,7 @@ onUnmounted(() => {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 0px;
-  line-height: 10px;
+  line-height: 32px;
 }
 
 .contact-card-browser .contact-info p {
@@ -966,6 +968,11 @@ onUnmounted(() => {
     padding: 1rem;
   }
   
+  .browser-container {
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+  
   .main-title {
     font-size: 2.5rem;
   }
@@ -998,6 +1005,16 @@ onUnmounted(() => {
   
   .info-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .contact-info h3 {
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+  
+  .contact-info p {
+    line-height: 1.4;
+    margin-bottom: 0.8rem;
   }
 }
 
@@ -1036,6 +1053,18 @@ onUnmounted(() => {
   .contact-card {
     margin: 0 -1rem;
     border-radius: 0;
+  }
+  
+  .contact-info h3 {
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+    font-size: 1.4rem;
+  }
+  
+  .contact-info p {
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
   }
 }
 </style>
