@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Hero from './components/Hero.vue'
 import Elevator from './components/Elevator.vue'
-import ProjectDetail from './components/ProjectDetail.vue'
 
 const routes = [
   {
@@ -41,7 +40,7 @@ const routes = [
   {
     path: '/project/:id',
     name: 'project-detail',
-    component: ProjectDetail
+    component: () => import('./components/ProjectDetail.vue')
   }
 ]
 
