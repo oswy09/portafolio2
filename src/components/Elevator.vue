@@ -663,8 +663,8 @@ onMounted(() => {
 /* Animated Cat Styles */
 .cat-container {
   position: fixed;
-  bottom: 2rem;
-  left: 2rem;
+  bottom: 1.5rem;
+  left: 1.5rem;
   z-index: 10;
   pointer-events: none;
 }

@@ -1376,7 +1376,7 @@ onUnmounted(() => {
   }
   
   .pc-setup {
-    transform: scale(0.6);
+    transform: scale(0.7);
   }
   
   .contact-buttons {
@@ -1387,6 +1387,14 @@ onUnmounted(() => {
   .profile-container {
     width: 200px;
     height: 200px;
+  }
+  
+  .hero-section {
+    min-height: 50vh;
+  }
+  
+  .content-wrapper {
+    gap: 2rem;
   }
 }
 
@@ -1400,7 +1408,7 @@ onUnmounted(() => {
   }
   
   .pc-setup {
-    transform: scale(0.5);
+    transform: scale(0.6);
   }
   
   .content-sections {
@@ -1414,6 +1422,10 @@ onUnmounted(() => {
   .profile-container {
     width: 180px;
     height: 180px;
+  }
+  
+  .hero-section {
+    min-height: 40vh;
   }
 }
 </style>
