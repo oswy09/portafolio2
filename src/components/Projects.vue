@@ -142,7 +142,7 @@ const hoveredProject = ref<number | null>(null)
 
 const projects = [
   { 
-    id: 1, 
+    id: 1,
     title: "Website Hotel", 
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757359521/Hotel_Amazon_proyecto_oswal.png", 
     category: "website",
@@ -151,7 +151,7 @@ const projects = [
     order: 1
   },
   { 
-    id: 2, 
+    id: 2,
     title: "Landing Page AXA", 
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757359522/Landing_Pages_seguros.png", 
     category: "landing",
@@ -160,7 +160,7 @@ const projects = [
     order: 2
   },
   { 
-    id: 3, 
+    id: 3,
     title: "Quizz Interactivo", 
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757370425/Quizz_website_proyectos_Oswal.png", 
     category: "interfaz",
@@ -169,7 +169,7 @@ const projects = [
     order: 3
   },
   { 
-    id: 4, 
+    id: 4,
     title: "Web Centro Comercial", 
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757371575/Micentro_website_proyecto_oswal.png ", 
     category: "ecommerce",
@@ -178,7 +178,7 @@ const projects = [
     order: 4
   },
   { 
-    id: 5, 
+    id: 5,
     title: "Catálogo Online", 
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757371705/Bestyle_website_proyectos_Oswal.png", 
     category: "ecommerce",
@@ -187,7 +187,7 @@ const projects = [
     order: 5
   },
   { 
-    id: 6, 
+    id: 6,
     title: "Dedicador Canciones", 
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757372516/Dedicandote_proyecto_oswal_music.png", 
     category: "landing",
@@ -196,7 +196,7 @@ const projects = [
     order: 6
   },
   { 
-    id: 7, 
+    id: 7,
     title: "Website Portal", 
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757361622/Redise%C3%B1o_web_Proyecto_oswal.png", 
     category: "website",
@@ -205,7 +205,7 @@ const projects = [
     order: 7
   },
   { 
-    id: 8, 
+    id: 8,
     title: "Clínica Cirugías Betterme", 
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757375618/Clinica_Betterme_proyecto_web_oswal.png", 
     category: "interfaz",
@@ -214,7 +214,7 @@ const projects = [
     order: 8
   },
   { 
-    id: 9, 
+    id: 9,
     title: "Website Clínica Dental", 
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757362220/Clinica_odontologica_proyecto_web_oswal.png", 
     category: "website",
@@ -223,7 +223,7 @@ const projects = [
     order: 9
   },
   { 
-    id: 10, 
+    id: 10,
     title: "Website Venta Café", 
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757373361/Website_cafe_proyecto_oswal_col.png", 
     category: "ecommerce",
