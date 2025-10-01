@@ -211,65 +211,8 @@ const router = useRouter()
 const projects = [
   {
     id: 1,
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757289000/plataforma_concursos.jpg",
-    title: "Quizz Interactivo para concursos: Potenciando el Estudio en Acueducto de Bogotá",
-    roles: ["UX Research", "UI Design", "Frontend Designer"],
-    keyAchievement: "Una interfaz para que los empleados del Acueducto de Bogotá estudien y se preparen de forma autónoma para los concursos de ascenso.",
-    client: "Acueducto de Bogotá",
-    industry: "Servicios públicos",
-    location: "Bogotá, Colombia",
-    myRole: "Frontend Designer",
-    responsibilities: ["UX Research", "UI Design", "Frontend Developer"],
-    challenge: "El Acueducto de Bogotá buscaba una solución innovadora y accesible para apoyar a sus empleados en la preparación de los concursos de ascenso, más allá de los métodos de estudio tradicionales. El desafío era crear una herramienta digital interactiva que permitiera a los usuarios autoevaluarse en temarios específicos, gestionar su progreso y ofrecer una experiencia de estudio atractiva y efectiva, todo dentro de un entorno seguro y controlado con gestión de usuarios internos.",
-    process: {
-      research: [
-        "User Flow",
-        "Arquitectura de la Información y Sitemap",
-        "Pruebas de Usabilidad"
-      ],
-      design: {
-        activities: [
-          "Diseño de Mockups",
-          "Adaptación y Aplicación de UI kit",
-          "Diseño de elementos gráficos"
-        ],
-        colors: ["#4831D4", "#CCF381", "#2A2356", "#F4F9FC"],
-        typography: [
-          { name: "Montserrat", usage: "Títulos y encabezados" },
-          { name: "Inter", usage: "Texto y contenido" }
-        ]
-      },
-      development: {
-        activities: [
-          "Diseño de Microinteracciones y Animaciones JS/CSS",
-          "Performance Optimization",
-          "Construcción de la interfaz de usuario interactiva y dinámica utilizando Vue.js.",
-          "Implementación de Seguridad Web",
-          "Creación de dashboard para gestionar usuarios"
-        ],
-        stack: [
-          { name: "Vue", icon: "fa-brands fa-vuejs" },
-          { name: "HTML", icon: "fa-brands fa-html5" },
-          { name: "CSS", icon: "fa-brands fa-css3" },
-          { name: "JS", icon: "fa-brands fa-js" }
-        ]
-      }
-    },
-    solution: {
-      gif: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1754408304/Proyecto_oswal_web_design_Quiz_y1nutn.gif",
-      description: "Se entregó una aplicación web interactiva de quizz construida desde cero con Vue.js Esta interfaz no solo facilita el estudio personalizado por temas y la autoevaluación para los concursos de ascenso, sino que también ofrece un panel administrativo intuitivo para la gestión total de usuarios y contenido por parte del Acueducto de Bogotá."
-    },
-    results: [
-      { value: "450", metric: "empleado se registraron y utilizan la interfaz" },
-      { value: "Feedback", metric: "Recepción de comentarios positivos sobre la facilidad de uso" },
-      { value: "Reducción de Tiempo", metric: " Se redujo el tiempo que los empleados dedicaban a buscar materiales de estudio." }
-    ],
-    liveUrl: "https://demoquizz.netlify.app/"
-  },
-  {
-    id: 2,
-    title: "Hotel Amazon B&B - Un Refugio en el Corazón del Amazonas",
     image: "http://www.amazonbb.com/wp-content/uploads/2023/05/boat-forest-river-blue-sky-reflection.jpg",
+    title: "Hotel Amazon B&B - Un Refugio en el Corazón del Amazonas",
     roles: ["UX Research", "UI Design", "Frontend Development"],
     keyAchievement: "Revitalizando la presencia online para una experiencia amazónica auténtica y atractiva para el viajero internacional.",
     client: "Hotel Amazon B&B",
@@ -344,7 +287,7 @@ const projects = [
     liveUrl: "https://www.amazonbb.com/"
   },
   {
-    id: 3,
+    id: 2,
     title: 'AXA Colpatria - Landing Page "Seguro de Vida Deudor"',
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757288825/Landing_AX-COL_.jpg",
     roles: ["UX Research", "UI Design", "Frontend Development"],
@@ -399,7 +342,107 @@ const projects = [
     liveUrl: "https://lpsv.netlify.app/"
   },
   {
+    id: 3,
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757289000/plataforma_concursos.jpg",
+    title: "Quizz Interactivo para concursos: Potenciando el Estudio en Acueducto de Bogotá",
+    roles: ["UX Research", "UI Design", "Frontend Designer"],
+    keyAchievement: "Una interfaz para que los empleados del Acueducto de Bogotá estudien y se preparen de forma autónoma para los concursos de ascenso.",
+    client: "Acueducto de Bogotá",
+    industry: "Servicios públicos",
+    location: "Bogotá, Colombia",
+    myRole: "Frontend Designer",
+    responsibilities: ["UX Research", "UI Design", "Frontend Developer"],
+    challenge: "El Acueducto de Bogotá buscaba una solución innovadora y accesible para apoyar a sus empleados en la preparación de los concursos de ascenso, más allá de los métodos de estudio tradicionales. El desafío era crear una herramienta digital interactiva que permitiera a los usuarios autoevaluarse en temarios específicos, gestionar su progreso y ofrecer una experiencia de estudio atractiva y efectiva, todo dentro de un entorno seguro y controlado con gestión de usuarios internos.",
+    process: {
+      research: [
+        "User Flow",
+        "Arquitectura de la Información y Sitemap",
+        "Pruebas de Usabilidad"
+      ],
+      design: {
+        activities: [
+          "Diseño de Mockups",
+          "Adaptación y Aplicación de UI kit",
+          "Diseño de elementos gráficos"
+        ],
+        colors: ["#4831D4", "#CCF381", "#2A2356", "#F4F9FC"],
+        typography: [
+          { name: "Montserrat", usage: "Títulos y encabezados" },
+          { name: "Inter", usage: "Texto y contenido" }
+        ]
+      },
+      development: {
+        activities: [
+          "Diseño de Microinteracciones y Animaciones JS/CSS",
+          "Performance Optimization",
+          "Construcción de la interfaz de usuario interactiva y dinámica utilizando Vue.js.",
+          "Implementación de Seguridad Web",
+          "Creación de dashboard para gestionar usuarios"
+        ],
+        stack: [
+          { name: "Vue", icon: "fa-brands fa-vuejs" },
+          { name: "HTML", icon: "fa-brands fa-html5" },
+          { name: "CSS", icon: "fa-brands fa-css3" },
+          { name: "JS", icon: "fa-brands fa-js" }
+        ]
+      }
+    },
+    solution: {
+      gif: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1754408304/Proyecto_oswal_web_design_Quiz_y1nutn.gif",
+      description: "Se entregó una aplicación web interactiva de quizz construida desde cero con Vue.js Esta interfaz no solo facilita el estudio personalizado por temas y la autoevaluación para los concursos de ascenso, sino que también ofrece un panel administrativo intuitivo para la gestión total de usuarios y contenido por parte del Acueducto de Bogotá."
+    },
+    results: [
+      { value: "450", metric: "empleado se registraron y utilizan la interfaz" },
+      { value: "Feedback", metric: "Recepción de comentarios positivos sobre la facilidad de uso" },
+      { value: "Reducción de Tiempo", metric: " Se redujo el tiempo que los empleados dedicaban a buscar materiales de estudio." }
+    ],
+    liveUrl: "https://demoquizz.netlify.app/"
+  },
+  {
     id: 4,
+    title: "Micentro - Website Centro Comercial",
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757371575/Micentro_website_proyecto_oswal.png",
+    roles: ["UX Research", "UI Design", "Frontend Development"],
+    keyAchievement: "Desarrollo de una plataforma web integral para el centro comercial Micentro, facilitando la navegación de visitantes y la gestión de locales comerciales.",
+    client: "Micentro Comercial",
+    industry: "Centro Comercial",
+    location: "Colombia",
+    myRole: "Web designer",
+    responsibilities: ["Web designer", "Frontend Developer"],
+    challenge: "Micentro necesitaba una presencia digital que reflejara la diversidad de su oferta comercial y facilitara a los visitantes encontrar información sobre tiendas, servicios, eventos y promociones de manera intuitiva.",
+    process: {
+      design: {
+        activities: [
+          "Diseño de Mockups",
+          "Diseño Responsivo y Adaptativo",
+          "Adaptación de Componentes de Diseño e Iconografía"
+        ]
+      },
+      development: {
+        activities: [
+          "Implementación de Funcionalidades Personalizadas",
+          "Sistema de Búsqueda y Filtrado de Locales",
+          "Integración de Mapas Interactivos"
+        ],
+        stack: [
+          { name: "HTML", icon: "fa-brands fa-html5" },
+          { name: "CSS", icon: "fa-brands fa-css3" },
+          { name: "JS", icon: "fa-brands fa-js" }
+        ]
+      }
+    },
+    solution: {
+      description: "Se desarrolló una plataforma web completa para Micentro que incluye directorio de tiendas, información de servicios, calendario de eventos y sistema de promociones, todo con una navegación intuitiva y diseño atractivo."
+    },
+    results: [
+      { value: "+30%", metric: "Consultas sobre locales comerciales" },
+      { value: "+20%", metric: "Participación en eventos" },
+      { value: "Mayor", metric: "Visibilidad digital del centro comercial" }
+    ],
+    liveUrl: "https://micentro.com.co/"
+  },
+  {
+    id: 5,
     title: "Bestyle - Catálogo Digital Interactivo y Venta Express",
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757289224/bestyle_Web_design.jpg",
     roles: ["UX Research", "UI Design", "Frontend Development"],
@@ -441,61 +484,6 @@ const projects = [
       { value: "+30%", metric: "Productividad en gestión de consultas" }
     ],
     liveUrl: "https://bestyle.store/"
-  },
-  {
-    id: 5,
-    title: "BetterMe - Tu Transformación Estética en Colombia",
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757288824/Betterme_Ver2_bo15xy.jpg",
-    roles: ["UX Research", "UI Design", "Frontend Development"],
-    keyAchievement: "Web moderna y sencilla para BetterMe, facilitando a extranjeros el acceso a servicios de cirugía y procedimientos estéticos en Colombia",
-    client: "Betterme",
-    industry: "Estética y Belleza",
-    location: "Miami, Medellín",
-    myRole: "Web designer",
-    responsibilities: ["Web designer", "Frontend Developer"],
-    challenge: "El desafío principal era construir un sitio web que no solo mostrara la gama de servicios y el equipo de especialistas, sino que también transmitiera confianza, seguridad y la propuesta de valor integral (logística, recuperación). Además, era crucial que la plataforma fuera fácilmente actualizable por el equipo de BetterMe para mantener la información de servicios y especialistas al día.",
-    process: {
-      design: {
-        activities: [
-          "Diseño de Mockups",
-          "Prototipado",
-          "Optimización y mejoramiento de UI Kit",
-          "Diseño de Iconografía y Elementos Gráficos"
-        ],
-        colors: ["#3a4183", "#F1918C", "#E6E6F2"],
-        typography: [
-          { name: "Manrope", usage: "Títulos y texto contenido" }
-        ]
-      },
-      development: {
-        activities: [
-          "Evaluación de Accesibilidad Web",
-          "Migración a hosting",
-          "Construcción de Layouts y Diseño a Medida con Constructor Visual",
-          "Performance Optimization",
-          "Mantenimiento y Actualizaciones Wordpress",
-          "Desarrollo de Funcionalidades Personalizadas",
-          "Implementación de Seguridad Web"
-        ],
-        stack: [
-          { name: "Wordpress", icon: "fa-brands fa-wordpress" },
-          { name: "HTML", icon: "fa-brands fa-html5" },
-          { name: "CSS", icon: "fa-brands fa-css3" },
-          { name: "JS", icon: "fa-brands fa-js" },
-          { name: "PHP", icon: "fa-brands fa-php" }
-        ]
-      }
-    },
-    solution: {
-      gif: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756249634/Proyectos_oswal_web_design_Betterme_hx48fj.gif",
-      description: "Se rediseñó un sitio web moderno y responsivo para BetterMe, construyendo la experiencia desde cero. La solución optimiza la interfaz de usuario para extranjeros interesados en procedimientos estéticos en Colombia, integra funcionalidades clave de información de servicios y facilita el contacto directo."
-    },
-    results: [
-      { value: "+20%", metric: "Tasa de Conversión de Consultas" },
-      { value: "+25%", metric: "Volumen de consultas directas vía correo y WhatsApp" },
-      { value: "+40%", metric: "Facilidad de Gestión de Contenido" }
-    ],
-    liveUrl: "https://betterme.oswal.com.co/"
   },
   {
     id: 6,
@@ -554,83 +542,6 @@ const projects = [
   },
   {
     id: 7,
-    title: "Hotel Amazon B&B - Un Refugio en el Corazón del Amazonas",
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757288825/Hotel_Amazon_proyecto_oswal.png",
-    roles: ["UX Research", "UI Design", "Frontend Development"],
-    keyAchievement: "Revitalizando la presencia online para una experiencia amazónica auténtica y atractiva para el viajero internacional.",
-    client: "Hotel Amazon B&B",
-    industry: "Hotel",
-    location: "Amazonas, Colombia",
-    myRole: "Web designer",
-    responsibilities: ["UX design", "UI Design", "Frontend Developer"],
-    challenge: "Amazon B&B, un encantador hotel inmerso en la exuberante selva amazónica, luchaba por conectar con su público objetivo: turistas extranjeros en busca de una experiencia única. Su sitio web existente era pesado, carente de diseño atractivo y con una usabilidad deficiente, lo que dificultaba la reserva y no reflejaba la belleza y autenticidad del lugar.",
-    process: {
-      research: [
-        "Análisis de requisitos técnicos",
-        "benchmark de sitios web de hoteles de ecoturismo",
-        "Análisis de Usabilidad del Sitio Web",
-        "User Flow",
-        "Card Sorting",
-        "Arquitectura de la Información y Sitemap"
-      ],
-      design: {
-        activities: [
-          "Creación de Wireframes y Diseño de Mockups",
-          "Prototipado de visualizaciones",
-          "Optimización y mejoramiento de UI Kit",
-          "Diseño de Iconografía y Elementos Gráficos"
-        ],
-        colors: ["#455D58", "#3B6317", "#9DBC79", "#EC9B30", "#2E3B48"],
-        typography: [
-          { name: "EB Garamond", usage: "Títulos y encabezados" },
-          { name: "Montserrat", usage: "Texto y contenido" }
-        ]
-      },
-      development: {
-        activities: [
-          "Evaluación de Accesibilidad Web",
-          "Migración a hosting",
-          "Construcción de Layouts y Diseño a Medida con Constructor Visual",
-          "Performance Optimization",
-          "Mantenimiento y Actualizaciones Wordpress",
-          "Desarrollo de Funcionalidades Personalizadas",
-          "Implementación de Seguridad Web"
-        ],
-        stack: [
-          { name: "Wordpress", icon: "fa-brands fa-wordpress" },
-          { name: "HTML", icon: "fa-brands fa-html5" },
-          { name: "CSS", icon: "fa-brands fa-css3" },
-          { name: "JS", icon: "fa-brands fa-js" },
-          { name: "PHP", icon: "fa-brands fa-php" }
-        ]
-      }
-    },
-    solution: {
-      description: "Se rediseñó un sitio web moderno y responsivo para el Hotel Amazon B&B, construyendo la experiencia desde cero tras eliminar la plantilla original. La solución optimiza la interfaz de usuario para turistas extranjeros, integra funcionalidades clave de reservas y se accede de manera fácil al contenido y tours."
-    },
-    imageGallery: [
-      {
-        url: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757428647/Amazon_Hotel_Proyecto_oswal.jpg",
-        alt: "Imagen resultado sitio web_Amazon b&B",
-        caption: "Hotel amazon B&B Home",
-        tag: "resultado"
-      },
-      {
-        url: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757428648/Amazon_Hotel_Rooms_Proyecto_oswal.png",
-        alt: "Imagen resultado sitio web_Amazon b&B",
-        caption: "Hotel amazon B&B acomodaciones",
-        tag: "resultado"
-      }
-    ],
-    results: [
-      { value: "+25%", metric: "Tasa de Conversión de Reservas" },
-      { value: "+25%", metric: "Volumen de consultas directas vía correo y WhatsApp" },
-      { value: "+40%", metric: "Facilidad de Gestión de Contenido" }
-    ],
-    liveUrl: "https://www.amazonbb.com/"
-  },
-  {
-    id: 8,
     title: "AXA Colpatria - Rediseño Estratégico de portal público",
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757429889/Redise%C3%B1o_AXA_oswal-proyectos.png",
     roles: ["UX Research", "UI Design", "Frontend Development"],
@@ -695,6 +606,61 @@ const projects = [
         tag: "resultado"
       }
     ]
+  },
+  {
+    id: 8,
+    title: "BetterMe - Tu Transformación Estética en Colombia",
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757288824/Betterme_Ver2_bo15xy.jpg",
+    roles: ["UX Research", "UI Design", "Frontend Development"],
+    keyAchievement: "Web moderna y sencilla para BetterMe, facilitando a extranjeros el acceso a servicios de cirugía y procedimientos estéticos en Colombia",
+    client: "Betterme",
+    industry: "Estética y Belleza",
+    location: "Miami, Medellín",
+    myRole: "Web designer",
+    responsibilities: ["Web designer", "Frontend Developer"],
+    challenge: "El desafío principal era construir un sitio web que no solo mostrara la gama de servicios y el equipo de especialistas, sino que también transmitiera confianza, seguridad y la propuesta de valor integral (logística, recuperación). Además, era crucial que la plataforma fuera fácilmente actualizable por el equipo de BetterMe para mantener la información de servicios y especialistas al día.",
+    process: {
+      design: {
+        activities: [
+          "Diseño de Mockups",
+          "Prototipado",
+          "Optimización y mejoramiento de UI Kit",
+          "Diseño de Iconografía y Elementos Gráficos"
+        ],
+        colors: ["#3a4183", "#F1918C", "#E6E6F2"],
+        typography: [
+          { name: "Manrope", usage: "Títulos y texto contenido" }
+        ]
+      },
+      development: {
+        activities: [
+          "Evaluación de Accesibilidad Web",
+          "Migración a hosting",
+          "Construcción de Layouts y Diseño a Medida con Constructor Visual",
+          "Performance Optimization",
+          "Mantenimiento y Actualizaciones Wordpress",
+          "Desarrollo de Funcionalidades Personalizadas",
+          "Implementación de Seguridad Web"
+        ],
+        stack: [
+          { name: "Wordpress", icon: "fa-brands fa-wordpress" },
+          { name: "HTML", icon: "fa-brands fa-html5" },
+          { name: "CSS", icon: "fa-brands fa-css3" },
+          { name: "JS", icon: "fa-brands fa-js" },
+          { name: "PHP", icon: "fa-brands fa-php" }
+        ]
+      }
+    },
+    solution: {
+      gif: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756249634/Proyectos_oswal_web_design_Betterme_hx48fj.gif",
+      description: "Se rediseñó un sitio web moderno y responsivo para BetterMe, construyendo la experiencia desde cero. La solución optimiza la interfaz de usuario para extranjeros interesados en procedimientos estéticos en Colombia, integra funcionalidades clave de información de servicios y facilita el contacto directo."
+    },
+    results: [
+      { value: "+20%", metric: "Tasa de Conversión de Consultas" },
+      { value: "+25%", metric: "Volumen de consultas directas vía correo y WhatsApp" },
+      { value: "+40%", metric: "Facilidad de Gestión de Contenido" }
+    ],
+    liveUrl: "https://betterme.oswal.com.co/"
   },
   {
     id: 9,
@@ -1486,46 +1452,4 @@ watch(() => route.params.id, (newId) => {
   .process-section,
   .solution-section,
   .results-section {
-    margin: 1rem auto;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .results-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .result-value {
-    font-size: 2rem;
-  }
-
-  .nav-btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-  }
-
-  .nav-btn span {
-    display: none;
-  }
-
-  .back-to-gallery-btn > span {
-    display: none;
-  }
-
-  .back-to-gallery-btn {
-    padding: 0;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    justify-content: center;
-  }
-
-  .back-to-gallery-btn .arrow-icon {
-    border-radius: 50%;
-  }
-}
-</style>
+    margin: 1
