@@ -1452,3 +1452,5 @@ watch(() => route.params.id, (newId) => {
   .solution-section,
   .results-section {
     margin: 1
+  }
+}
