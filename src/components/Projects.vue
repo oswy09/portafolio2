@@ -143,17 +143,17 @@ const hoveredProject = ref<number | null>(null)
 const projects = [
   { 
     id: 1,
-    title: "Website Hotel", 
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757359521/Hotel_Amazon_proyecto_oswal.png", 
+    title: "Website Hotel",
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757359521/Hotel_Amazon_proyecto_oswal.png",
     category: "website",
-    client: "Hotel Amazon",
+    client: "Hotel Amazon B&B",
     tags: ["Hospitality", "Booking", "Responsive", "CMS"],
     order: 1
   },
   { 
     id: 2,
-    title: "Landing Page AXA", 
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757359522/Landing_Pages_seguros.png", 
+    title: "Landing Page AXA",
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757359522/Landing_Pages_seguros.png",
     category: "landing",
     client: "AXA Colpatria",
     tags: ["Insurance", "Corporate", "Lead Gen", "Forms"],
@@ -161,26 +161,26 @@ const projects = [
   },
   { 
     id: 3,
-    title: "Quizz Interactivo", 
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757370425/Quizz_website_proyectos_Oswal.png", 
+    title: "Quizz Interactivo",
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757370425/Quizz_website_proyectos_Oswal.png",
     category: "interfaz",
-    client: "Acueducto Bogotá",
+    client: "Acueducto de Bogotá",
     tags: ["Vue.js", "Interactive", "Gaming", "UX/UI"],
     order: 3
   },
   { 
     id: 4,
-    title: "Web Centro Comercial", 
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757371575/Micentro_website_proyecto_oswal.png ", 
+    title: "Web Centro Comercial",
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757371575/Micentro_website_proyecto_oswal.png",
     category: "ecommerce",
-    client: "Micentro Comercial",
+    client: "Micentro",
     tags: ["Shopping", "Directory", "Catalog", "Payment"],
     order: 4
   },
   { 
     id: 5,
-    title: "Catálogo Online", 
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757371705/Bestyle_website_proyectos_Oswal.png", 
+    title: "Catálogo Digital",
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757371705/Bestyle_website_proyectos_Oswal.png",
     category: "ecommerce",
     client: "Bestyle",
     tags: ["Catalog", "Products", "Search", "Filter"],
@@ -188,8 +188,8 @@ const projects = [
   },
   { 
     id: 6,
-    title: "Dedicador Canciones", 
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757372516/Dedicandote_proyecto_oswal_music.png", 
+    title: "Dedicador Canciones",
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757372516/Dedicandote_proyecto_oswal_music.png",
     category: "landing",
     client: "Dedicandote",
     tags: ["Startup", "Business", "CTA", "Modern"],
@@ -197,8 +197,8 @@ const projects = [
   },
   { 
     id: 7,
-    title: "Website Portal", 
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757361622/Redise%C3%B1o_web_Proyecto_oswal.png", 
+    title: "Website Portal",
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757361622/Redise%C3%B1o_web_Proyecto_oswal.png",
     category: "website",
     client: "AXA Colpatria",
     tags: ["Portal", "Corporate", "Multi-page", "Professional"],
@@ -206,28 +206,28 @@ const projects = [
   },
   { 
     id: 8,
-    title: "Clínica Cirugías Betterme", 
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757375618/Clinica_Betterme_proyecto_web_oswal.png", 
-    category: "interfaz",
+    title: "Clínica Cirugías Betterme",
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757375618/Clinica_Betterme_proyecto_web_oswal.png",
+    category: "website",
     client: "Betterme",
-    tags: ["Dashboard", "Analytics", "Data Viz", "Admin"],
+    tags: ["Healthcare", "Medical", "Aesthetic", "Services"],
     order: 8
   },
   { 
     id: 9,
-    title: "Website Clínica Dental", 
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757362220/Clinica_odontologica_proyecto_web_oswal.png", 
+    title: "Website Clínica Dental",
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757362220/Clinica_odontologica_proyecto_web_oswal.png",
     category: "website",
-    client: "kliniken Schröder",
+    client: "Kliniken Schröder",
     tags: ["Healthcare", "Medical", "Appointments", "Services"],
     order: 9
   },
   { 
     id: 10,
-    title: "Website Venta Café", 
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757373361/Website_cafe_proyecto_oswal_col.png", 
+    title: "Website Venta Café",
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757373361/Website_cafe_proyecto_oswal_col.png",
     category: "ecommerce",
-    client: "Café cumbre",
+    client: "Café Cumbre Real",
     tags: ["Coffee", "Retail", "Online Store", "Products"],
     order: 10
   }
