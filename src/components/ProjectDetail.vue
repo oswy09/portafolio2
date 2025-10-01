@@ -196,7 +196,6 @@
           </svg>
         </button>
       </div>
-    </div>
   </div>
 </template>
 
