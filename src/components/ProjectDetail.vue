@@ -257,7 +257,7 @@ const currentProject = ref<Project | null>(null)
 
 const results = [
   {
-    id: 1,
+    id: 4,
     image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757289000/plataforma_concursos.jpg',
     title: 'Quizz Interactivo para concursos: Potenciando el Estudio en Acueducto de Bogotá',
     roles: ['UX Research', 'UI Design', 'Frontend Designer'],
@@ -314,7 +314,7 @@ const results = [
     liveUrl: 'https://quiz-acueducto.gov.co/',
   },
   {
-    id: 2,
+    id: 1,
     title: 'Hotel Amazon B&B - Un Refugio en el Corazón del Amazonas',
     image: 'http://www.amazonbb.com/wp-content/uploads/2023/05/boat-forest-river-blue-sky-reflection.jpg',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
