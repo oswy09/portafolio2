@@ -642,8 +642,8 @@ const results = [
     liveUrl: 'https://dedicandote.com/',
   },
   {
-    id: 1,
-    title: 'Hotel Amazon B&B - Un Refugio en el Corazón del Amazonas',
+    id: 2,
+    title: 'MIcentro: xxx',
     image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757288825/Hotel_Amazon_proyecto_oswal.png',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
     keyAchievement: 'Revitalizando la presencia online para una experiencia amazónica auténtica y atractiva para el viajero internacional.',
