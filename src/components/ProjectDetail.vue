@@ -115,6 +115,70 @@
           </div>
         </div>
 
+        <!-- Elementos Gráficos Section -->
+        <div class="project-section">
+          <h3 class="section-title">Elementos Gráficos</h3>
+          <div class="graphic-elements-grid">
+            <div class="graphic-element-item">
+              <div class="graphic-preview">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="3"/>
+                  <path d="M12 1v6m0 6v6"/>
+                  <path d="m21 12-6-6-6 6-6-6"/>
+                </svg>
+              </div>
+              <div class="graphic-info">
+                <h4>Iconografía Principal</h4>
+                <p>Conjunto de iconos personalizados para el proyecto</p>
+                <a href="#" class="graphic-link">Ver iconos →</a>
+              </div>
+            </div>
+
+            <div class="graphic-element-item">
+              <div class="graphic-preview">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                  <path d="M8 9h8"/>
+                  <path d="M8 13h6"/>
+                </svg>
+              </div>
+              <div class="graphic-info">
+                <h4>Ilustraciones</h4>
+                <p>Elementos gráficos y ilustraciones custom</p>
+                <a href="#" class="graphic-link">Ver ilustraciones →</a>
+              </div>
+            </div>
+
+            <div class="graphic-element-item">
+              <div class="graphic-preview">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <path d="M21 15l-5-5L5 21"/>
+                </svg>
+              </div>
+              <div class="graphic-info">
+                <h4>Elementos UI</h4>
+                <p>Componentes y elementos de interfaz</p>
+                <a href="#" class="graphic-link">Ver elementos →</a>
+              </div>
+            </div>
+
+            <div class="graphic-element-item">
+              <div class="graphic-preview">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                </svg>
+              </div>
+              <div class="graphic-info">
+                <h4>Assets Gráficos</h4>
+                <p>Recursos gráficos y elementos visuales</p>
+                <a href="#" class="graphic-link">Ver assets →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Development -->
         <div class="process-step" v-if="currentProject.process.development">
           <div class="step-header">
@@ -1377,6 +1441,78 @@ watch(() => route.params.id, (newId) => {
   margin-bottom: 1rem;
   color: #CCF381;
 }
+/* Graphic Elements Styles */
+.graphic-elements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.graphic-element-item {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(72, 49, 212, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.graphic-element-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(72, 49, 212, 0.15);
+}
+
+.graphic-preview {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #f8f4ff, #e8e0ff);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4831D4;
+  flex-shrink: 0;
+  border: 2px solid rgba(72, 49, 212, 0.1);
+}
+
+.graphic-info {
+  flex: 1;
+}
+
+.graphic-info h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.graphic-info p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.graphic-link {
+  color: #4831D4;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: all 0.3s ease;
+}
+
+.graphic-link:hover {
+  color: #6A5AE0;
+  transform: translateX(3px);
+}
+
 
 .color-palette {
   display: flex;
