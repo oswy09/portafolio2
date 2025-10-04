@@ -142,94 +142,132 @@ const hoveredProject = ref<number | null>(null)
 
 const projects = [
   { 
-    id: 1,
-    title: "Website Hotel",
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757359521/Hotel_Amazon_proyecto_oswal.png",
-    category: "website",
-    client: "Hotel Amazon B&B",
-    tags: ["Hospitality", "Booking", "Responsive", "CMS"],
-    order: 1
-  },
-  { 
-    id: 2,
-    title: "Landing Page AXA",
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757359522/Landing_Pages_seguros.png",
-    category: "landing",
-    client: "AXA Colpatria",
-    tags: ["Insurance", "Corporate", "Lead Gen", "Forms"],
+    id: 1, 
+    title: "Quizz interactivo", 
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757370425/Quizz_website_proyectos_Oswal.png", 
+    category: "interfaz",
+    client: "Acueducto Bogotá",
+    tags: ["Vue.js", "Interactive", "Gaming", "UX/UI"],
     order: 2
   },
   { 
-    id: 3,
-    title: "Quizz Interactivo",
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757370425/Quizz_website_proyectos_Oswal.png",
-    category: "interfaz",
-    client: "Acueducto de Bogotá",
-    tags: ["Vue.js", "Interactive", "Gaming", "UX/UI"],
+    id: 2, 
+    title: "Website Hotel", 
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757359521/Hotel_Amazon_proyecto_oswal.png", 
+    category: "website",
+    client: "Hotel Amazon",
+    tags: ["Hospitality", "Booking", "Responsive", "CMS"],
     order: 3
   },
   { 
-    id: 4,
-    title: "Web Centro Comercial",
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757371575/Micentro_website_proyecto_oswal.png",
+    id: 3, 
+    title: "Website Centro Comercial", 
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757371575/Micentro_website_proyecto_oswal.png ", 
     category: "ecommerce",
-    client: "Micentro",
+    client: "Micentro Comercial",
     tags: ["Shopping", "Directory", "Catalog", "Payment"],
     order: 4
   },
   { 
-    id: 5,
-    title: "Catálogo Digital",
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757371705/Bestyle_website_proyectos_Oswal.png",
+    id: 4, 
+    title: "Landing page", 
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757359522/Landing_Pages_seguros.png", 
+    category: "landing",
+    client: "AXA Colpatria",
+    tags: ["Insurance", "Corporate", "Lead Gen", "Forms"],
+    order: 1
+  },
+  { 
+    id: 5, 
+    title: "Catálogo Online", 
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757371705/Bestyle_website_proyectos_Oswal.png", 
     category: "ecommerce",
     client: "Bestyle",
     tags: ["Catalog", "Products", "Search", "Filter"],
     order: 5
   },
   { 
-    id: 6,
-    title: "Dedicador Canciones",
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757372516/Dedicandote_proyecto_oswal_music.png",
-    category: "landing",
-    client: "Dedicandote",
-    tags: ["Startup", "Business", "CTA", "Modern"],
+    id: 6, 
+    title: "Web Clinica", 
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757375618/Clinica_Betterme_proyecto_web_oswal.png", 
+    category: "interfaz",
+    client: "Betterme",
+    tags: ["Dashboard", "Analytics", "Data Viz", "Admin"],
     order: 6
   },
   { 
-    id: 7,
-    title: "Website Portal",
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757361622/Redise%C3%B1o_web_Proyecto_oswal.png",
-    category: "website",
-    client: "AXA Colpatria",
-    tags: ["Portal", "Corporate", "Multi-page", "Professional"],
+    id: 7, 
+    title: "Landing page", 
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757372516/Dedicandote_proyecto_oswal_music.png", 
+    category: "landing",
+    client: "Dedicandote",
+    tags: ["Startup", "Business", "CTA", "Modern"],
     order: 7
   },
   { 
-    id: 8,
-    title: "Clínica Cirugías Betterme",
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757375618/Clinica_Betterme_proyecto_web_oswal.png",
+    id: 8, 
+    title: "Re diseño web", 
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757361622/Redise%C3%B1o_web_Proyecto_oswal.png", 
     category: "website",
-    client: "Betterme",
-    tags: ["Healthcare", "Medical", "Aesthetic", "Services"],
+    client: "AXA Colpatria",
+    tags: ["Portal", "Corporate", "Multi-page", "Professional"],
     order: 8
   },
   { 
-    id: 9,
-    title: "Website Clínica Dental",
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757362220/Clinica_odontologica_proyecto_web_oswal.png",
+    id: 9, 
+    title: "Website Odontológica", 
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757362220/Clinica_odontologica_proyecto_web_oswal.png", 
     category: "website",
-    client: "Kliniken Schröder",
-    tags: ["Healthcare", "Medical", "Appointments", "Services"],
-    order: 9
+    client: "kliniken Schröder",
+    tags: ["Healthcare", "Medical", "Appointments", "Services"]
   },
   { 
-    id: 10,
-    title: "Website Venta Café",
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757373361/Website_cafe_proyecto_oswal_col.png",
+    id: 10, 
+    title: "Website Café", 
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757373361/Website_cafe_proyecto_oswal_col.png", 
     category: "ecommerce",
-    client: "Café Cumbre Real",
-    tags: ["Coffee", "Retail", "Online Store", "Products"],
-    order: 10
+    client: "Café cumbre",
+    tags: ["Coffee", "Retail", "Online Store", "Products"]
+  },
+  { 
+    id: 11, 
+    title: "Landing page ", 
+    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757373349/Landing_Pages_inter_oswal.png", 
+    category: "landing",
+    client: "AXA Colpatria",
+    tags: ["Healthcare", "Dental", "Conversion", "Contact"]
+  },
+  { 
+    id: 12, 
+    title: "Mapa Interactivo Amazon", 
+    image: "https://oswal.com.co/wp-content/uploads/2025/05/mapa-amazon.jpg", 
+    category: "interfaz",
+    client: "Cliente L",
+    tags: ["Interactive", "Maps", "Environmental", "Data"]
+  },
+  { 
+    id: 13, 
+    title: "Rediseño APP AXA", 
+    image: "https://oswal.com.co/wp-content/uploads/2025/05/App-axa.jpg", 
+    category: "interfaz",
+    client: "Cliente M",
+    tags: ["Mobile App", "Redesign", "UX/UI", "Insurance"]
+  },
+  { 
+    id: 14, 
+    title: "Website Cirugía Plástica", 
+    image: "https://oswal.com.co/wp-content/uploads/2025/05/betterme.jpg", 
+    category: "website",
+    client: "Betterme",
+    tags: ["Medical", "Aesthetic", "Gallery", "Consultation"]
+  },
+  { 
+    id: 15, 
+    title: "Tienda Online Moda", 
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop", 
+    category: "ecommerce",
+    client: "Cliente O",
+    tags: ["Fashion", "E-commerce", "Cart", "Checkout"]
   }
 ]
 
@@ -271,7 +309,7 @@ const updateProgressBar = () => {
 }
 
 const navigateToProject = (id: number) => {
-  router.push(`/project/${id}`)
+  router.push({ name: 'project-detail', params: { id: id.toString() } })
 }
 
 onMounted(() => {

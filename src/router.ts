@@ -40,8 +40,7 @@ const routes = [
   {
     path: '/project/:id',
     name: 'project-detail',
-    component: () => import('./components/ProjectDetail.vue'),
-    props: true
+    component: () => import('./components/ProjectDetail.vue')
   }
 ]
 
