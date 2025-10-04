@@ -197,9 +197,90 @@
           </div>
         </div>
 
+        <!-- Development Section -->
+        <div class="process-step" v-if="currentProject.process.development && currentProject.process.development.activities && currentProject.process.development.activities.length > 0">
+          <div class="step-header">
+            <div class="step-icon">💻</div>
+            <h3 class="step-title">Desarrollo</h3>
+          </div>
+          <ul class="step-list">
+            <li v-for="activity in currentProject.process.development.activities" :key="activity">{{ activity }}</li>
+          </ul>
+
+          <!-- Tech Stack -->
+          <div class="design-details" v-if="currentProject.process.development.stack && currentProject.process.development.stack.length > 0">
+            <div class="detail-group">
+              <h4 class="detail-title">🛠️ Stack Tecnológico</h4>
+              <div class="tech-stack">
+                <div v-for="tech in currentProject.process.development.stack" :key="tech.name" class="tech-item">
+                  <i :class="tech.icon"></i>
+                  <span>{{ tech.name }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Marketing Section -->
+        <div class="process-step" v-if="currentProject.process.marketing && currentProject.process.marketing.length > 0">
+          <div class="step-header">
+            <div class="step-icon">📢</div>
+            <h3 class="step-title">Marketing</h3>
+          </div>
+          <ul class="step-list">
+            <li v-for="item in currentProject.process.marketing" :key="item">{{ item }}</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Solution Section -->
+      <div class="section solution-section" v-if="currentProject && currentProject.solution">
+        <h2 class="section-title">La Solución</h2>
+        <div v-if="currentProject.solution.gif" class="solution-media">
+          <img :src="currentProject.solution.gif" :alt="currentProject.title" class="solution-gif" />
+        </div>
+        <p class="section-content">{{ currentProject.solution.description }}</p>
+      </div>
+
+      <!-- Results Section -->
+      <div class="section results-section" v-if="currentProject && currentProject.results && currentProject.results.length > 0">
+        <h2 class="section-title">Resultados</h2>
+        <div class="results-grid">
+          <div v-for="result in currentProject.results" :key="result.metric" class="result-card">
+            <div class="result-value">{{ result.value }}</div>
+            <div class="result-metric">{{ result.metric }}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image Gallery Section -->
+      <div class="section gallery-section" v-if="currentProject && currentProject.imageGallery && currentProject.imageGallery.length > 0">
+        <h2 class="section-title">Galería</h2>
+        <div class="image-gallery">
+          <div v-for="image in currentProject.imageGallery" :key="image.url" class="gallery-item">
+            <img :src="image.url" :alt="image.alt" class="gallery-image" />
+            <p class="gallery-caption">{{ image.caption }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Project Link -->
+      <div class="section cta-section" v-if="currentProject && currentProject.liveUrl">
+        <a :href="currentProject.liveUrl" target="_blank" rel="noopener noreferrer" class="cta-button">
+          Ver Proyecto en Vivo
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15 3 21 3 21 9"/>
+            <line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</template>
 
 <script setup lang="ts">
-import { ref, onMounted, computed, watch, nextTick } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 
 const router = useRouter()
@@ -238,34 +319,6 @@ interface Project {
   technologies?: string[]
   finalResult?: any
   achievements?: any[]
-}
-
-/* Graphic Elements */
-.graphic-elements {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.graphic-element {
-  flex: 0 0 auto;
-}
-
-.graphic-image {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  border-radius: 8px;
-  border: 1px solid #e9ecef;
-  padding: 0.5rem;
-  background: white;
-  transition: all 0.3s ease;
-}
-
-.graphic-image:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 const currentProject = ref<Project | null>(null)
@@ -902,10 +955,282 @@ const results = [
     },
   },
 ]
+
+const goBack = () => {
+  router.push('/projects')
+}
+
+onMounted(() => {
+  const projectId = parseInt(route.params.id as string)
+  currentProject.value = results.find(p => p.id === projectId) || null
+})
 </script>
 
 <style scoped>
-/* Graphic Elements */
+.project-detail {
+  min-height: 100vh;
+  background: #f8f9fa;
+  position: relative;
+}
+
+.top-navigation-static {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.back-to-gallery-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.back-to-gallery-btn:hover {
+  background: #34495e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(44, 62, 80, 0.3);
+}
+
+.close-button-x {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 101;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.close-button-x:hover {
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hero-section {
+  position: relative;
+  height: 500px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 3rem;
+  color: white;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 3rem;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.meta-icon {
+  margin-bottom: 0.25rem;
+}
+
+.meta-label {
+  font-size: 0.875rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.meta-value {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.section {
+  background: white;
+  border-radius: 12px;
+  padding: 3rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+.section-content {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #5a6c7d;
+}
+
+.process-step {
+  margin-bottom: 2.5rem;
+}
+
+.process-step:last-child {
+  margin-bottom: 0;
+}
+
+.step-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.step-icon {
+  font-size: 2rem;
+}
+
+.step-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.step-list {
+  list-style: none;
+  padding-left: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.step-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.0625rem;
+  color: #5a6c7d;
+  line-height: 1.6;
+}
+
+.step-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #3498db;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.design-details {
+  margin-top: 2rem;
+  padding-left: 3.5rem;
+}
+
+.detail-group {
+  margin-bottom: 2rem;
+}
+
+.detail-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.color-palette {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.color-swatch {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.color-swatch:hover {
+  transform: scale(1.1);
+}
+
+.typography-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.typography-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.font-name {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.font-usage {
+  color: #5a6c7d;
+}
+
 .graphic-elements {
   display: flex;
   flex-wrap: wrap;
@@ -931,5 +1256,139 @@ const results = [
 .graphic-image:hover {
   transform: scale(1.1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.tech-item i {
+  font-size: 1.5rem;
+}
+
+.solution-media {
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.solution-gif {
+  width: 100%;
+  height: auto;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.result-card {
+  text-align: center;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.result-card:hover {
+  transform: translateY(-4px);
+}
+
+.result-value {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #3498db;
+  margin-bottom: 0.5rem;
+}
+
+.result-metric {
+  font-size: 1rem;
+  color: #5a6c7d;
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.gallery-item {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+}
+
+.gallery-caption {
+  padding: 1rem;
+  background: white;
+  text-align: center;
+  color: #5a6c7d;
+}
+
+.cta-section {
+  text-align: center;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: #3498db;
+  color: white;
+  border-radius: 8px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(52, 152, 219, 0.3);
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-meta {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .section {
+    padding: 2rem 1.5rem;
+  }
+
+  .step-list {
+    padding-left: 1rem;
+  }
+
+  .design-details {
+    padding-left: 1rem;
+  }
 }
 </style>
