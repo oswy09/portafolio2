@@ -294,7 +294,27 @@ const results = [
           'Implementación de Seguridad Web',
           'Creación de dashboard para gestionar usuarios ',
         ],
-    id: 1,
+        stack: [
+          { name: 'Vue.js', icon: 'fa-brands fa-vuejs' },
+          { name: 'HTML', icon: 'fa-brands fa-html5' },
+          { name: 'CSS', icon: 'fa-brands fa-css3' },
+          { name: 'JS', icon: 'fa-brands fa-js' },
+        ],
+      },
+    },
+    solution: {
+      gif: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756246659/Proyectos_oswal_web_design_AXA_landing_vida_hlubht.gif',
+      description: 'Se desarrolló una plataforma de quiz interactiva y gamificada para el Acueducto de Bogotá, diseñada específicamente para apoyar a los empleados en su preparación para concursos de ascenso. La solución incluye un sistema de gestión de usuarios, seguimiento de progreso, y una interfaz intuitiva que hace del estudio una experiencia atractiva y efectiva.',
+    },
+    results: [
+      { value: '+85%', metric: 'Tasa de finalización del quiz' },
+      { value: '+40%', metric: 'Mejora en conocimiento sobre temas específicos' },
+      { value: '10,000+', metric: 'Usuarios activos en el primer mes' },
+    ],
+    liveUrl: 'https://quiz-acueducto.gov.co/',
+  },
+  {
+    id: 2,
     title: 'Hotel Amazon B&B - Un Refugio en el Corazón del Amazonas',
     image: 'http://www.amazonbb.com/wp-content/uploads/2023/05/boat-forest-river-blue-sky-reflection.jpg',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
@@ -371,206 +391,7 @@ const results = [
     liveUrl: 'https://www.amazonbb.com/',
   },
   {
-    id: 2,
-    title: "Web centro comercial",
-    client: "Micentro Comercial",
-    industry: "Retail",
-    role: "Web Designer & Developer",
-    year: "2024",
-    duration: "4 meses",
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757371575/Micentro_website_proyecto_oswal.png",
-    description: "Desarrollo de sitio web para centro comercial con directorio de tiendas y sistema de promociones.",
-    challenge: "Crear una plataforma que conecte a los visitantes con las tiendas y promociones del centro comercial.",
-    solution: "Diseñé un sitio web con directorio interactivo, mapa del centro comercial y sistema de promociones.",
-    results: [
-      "Aumento del 30% en visitas a tiendas",
-      "Mayor engagement con promociones",
-      "Mejora en la experiencia del visitante"
-    ],
-    technologies: ["WordPress", "CSS3", "JavaScript", "PHP"],
-    liveUrl: "https://micentrocomercial.com"
-  },
-  {
     id: 3,
-    title: "Website portal",
-    client: "AXA Colpatria",
-    industry: "Seguros",
-    role: "UX/UI Designer & Frontend Developer",
-    year: "2024",
-    duration: "6 meses",
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757361622/Redise%C3%B1o_web_Proyecto_oswal.png",
-    description: "Rediseño completo del portal corporativo de AXA Colpatria para mejorar la experiencia del usuario.",
-    challenge: "Modernizar un portal complejo manteniendo toda la funcionalidad existente y mejorando la usabilidad.",
-    solution: "Rediseñé la arquitectura de información y creé una interfaz más intuitiva y moderna.",
-    results: [
-      "Reducción del 50% en tiempo de búsqueda",
-      "Aumento del 35% en satisfacción del usuario",
-      "Mejora significativa en métricas de usabilidad"
-    ],
-    technologies: ["HTML5", "CSS3", "JavaScript", "Bootstrap"],
-    liveUrl: "https://axacolpatria.co"
-  },
-  {
-    id: 4,
-    title: "Quizz Interactivo",
-    client: "Acueducto Bogotá",
-    industry: "Gobierno",
-    role: "UX/UI Designer & Frontend Developer",
-    year: "2024",
-    duration: "3 meses",
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757370425/Quizz_website_proyectos_Oswal.png",
-    description: "Desarrollo de una aplicación web interactiva tipo quiz para educar a los ciudadanos sobre el uso responsable del agua.",
-    challenge: "Crear una experiencia educativa atractiva que motive a los usuarios a aprender sobre conservación del agua de manera divertida.",
-    solution: "Diseñé una interfaz gamificada con preguntas interactivas, sistema de puntuación y feedback inmediato.",
-    results: [
-      "85% de tasa de finalización del quiz",
-      "Aumento del 40% en conocimiento sobre conservación",
-      "Más de 10,000 usuarios en el primer mes"
-    ],
-    technologies: ["Vue.js", "CSS3", "JavaScript", "Figma"],
-    liveUrl: "https://quiz-agua.gov.co"
-  },
-  {
-    id: 5,
-    title: "Bunker de libros",
-    client: "Bestyle",
-    industry: "E-commerce",
-    role: "Web Designer & Developer",
-    year: "2024",
-    duration: "3 meses",
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757371705/Bestyle_website_proyectos_Oswal.png",
-    description: "Catálogo online para librería especializada en libros técnicos y académicos.",
-    challenge: "Crear una plataforma de venta online que facilite la búsqueda y compra de libros especializados.",
-    solution: "Desarrollé un catálogo con sistema de filtros avanzado y proceso de compra optimizado.",
-    results: [
-      "Aumento del 60% en ventas online",
-      "Mejora en la experiencia de búsqueda",
-      "Reducción del abandono de carrito"
-    ],
-    technologies: ["WordPress", "WooCommerce", "CSS3", "JavaScript"],
-    liveUrl: "https://bunkerdelibros.com"
-  },
-  {
-    id: 6,
-    title: "Website Clínica Dental",
-    client: "kliniken Schröder",
-    industry: "Salud",
-    role: "Web Designer & Developer",
-    year: "2024",
-    duration: "4 meses",
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757362220/Clinica_odontologica_proyecto_web_oswal.png",
-    description: "Sitio web para clínica dental en Suecia con sistema de citas online y galería de tratamientos.",
-    challenge: "Crear un sitio web profesional que genere confianza y facilite la reserva de citas.",
-    solution: "Diseñé un sitio web limpio y profesional con sistema de reservas integrado.",
-    results: [
-      "Aumento del 45% en citas online",
-      "Mejora en la percepción de la marca",
-      "Reducción de llamadas telefónicas"
-    ],
-    technologies: ["HTML5", "CSS3", "JavaScript", "PHP"],
-    liveUrl: "https://klinikenschroder.se"
-  },
-  {
-    id: 7,
-    title: "Catálogo digital",
-    client: "Bestyle",
-    industry: "E-commerce",
-    role: "Web Designer & Developer",
-    year: "2024",
-    duration: "3 meses",
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757371705/Bestyle_website_proyectos_Oswal.png",
-    description: "Catálogo digital interactivo para productos de moda y accesorios.",
-    challenge: "Crear una experiencia de navegación atractiva que destaque los productos de manera visual.",
-    solution: "Desarrollé un catálogo con navegación intuitiva y presentación visual impactante.",
-    results: [
-      "Aumento del 50% en tiempo de permanencia",
-      "Mejora en la tasa de conversión",
-      "Mayor engagement con los productos"
-    ],
-    technologies: ["Vue.js", "CSS3", "JavaScript", "Figma"],
-    liveUrl: "https://bestyle.com"
-  },
-  {
-    id: 8,
-    title: "Landing page Intermediarios",
-    client: "AXA Colpatria",
-    industry: "Seguros",
-    role: "UX/UI Designer & Frontend Developer",
-    year: "2024",
-    duration: "2 meses",
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757359522/Landing_Pages_seguros.png",
-    description: "Landing page especializada para intermediarios de seguros con formularios de contacto optimizados.",
-    challenge: "Crear una página de alta conversión dirigida específicamente a intermediarios de seguros.",
-    solution: "Diseñé una landing page enfocada en conversión con formularios optimizados y contenido dirigido.",
-    results: [
-      "Aumento del 70% en leads calificados",
-      "Mejora en la tasa de conversión",
-      "Reducción del costo por lead"
-    ],
-    technologies: ["HTML5", "CSS3", "JavaScript", "Bootstrap"],
-    liveUrl: "https://intermediarios.axacolpatria.co"
-  },
-  {
-    id: 9,
-    title: "Clínica Cirugías Betterme",
-    client: "Betterme",
-    industry: "Salud",
-    role: "UX/UI Designer & Frontend Developer",
-    year: "2024",
-    duration: "5 meses",
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757375618/Clinica_Betterme_proyecto_web_oswal.png",
-    description: "Sitio web para clínica de cirugías estéticas con galería de resultados y sistema de consultas.",
-    challenge: "Crear un sitio web que genere confianza y muestre los resultados de manera profesional.",
-    solution: "Desarrollé un sitio web elegante con galería de antes/después y sistema de consultas online.",
-    results: [
-      "Aumento del 55% en consultas",
-      "Mejora en la confianza del paciente",
-      "Mayor visibilidad online"
-    ],
-    technologies: ["WordPress", "CSS3", "JavaScript", "PHP"],
-    liveUrl: "https://betterme.com"
-  },
-  {
-    id: 10,
-    title: "Dedicador canciones",
-    client: "Dedicandote",
-    industry: "Entretenimiento",
-    role: "Web Designer & Developer",
-    year: "2024",
-    duration: "3 meses",
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757372516/Dedicandote_proyecto_oswal_music.png",
-    description: "Plataforma web para dedicar canciones de manera personalizada con sistema de pagos integrado.",
-    challenge: "Crear una experiencia única para dedicar canciones de manera personalizada y emotiva.",
-    solution: "Desarrollé una plataforma intuitiva con reproductor integrado y sistema de dedicatorias.",
-    results: [
-      "Miles de dedicatorias enviadas",
-      "Alta satisfacción del usuario",
-      "Crecimiento orgánico de la plataforma"
-    ],
-    technologies: ["Vue.js", "CSS3", "JavaScript", "Stripe"],
-    liveUrl: "https://dedicandote.com"
-  },
-  {
-    id: 11,
-    title: "Website venta café",
-    client: "Café cumbre",
-    industry: "E-commerce",
-    role: "Web Designer & Developer",
-    year: "2024",
-    duration: "4 meses",
-    image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757373361/Website_cafe_proyecto_oswal_col.png",
-    description: "Tienda online para venta de café artesanal con sistema de suscripciones y blog educativo.",
-    challenge: "Crear una tienda online que transmita la calidad artesanal del café y facilite las ventas recurrentes.",
-    solution: "Desarrollé una tienda online con storytelling de marca y sistema de suscripciones.",
-    results: [
-      "Aumento del 80% en ventas online",
-      "Crecimiento en suscripciones mensuales",
-      "Mejora en el reconocimiento de marca"
-    ],
-    technologies: ["WordPress", "WooCommerce", "CSS3", "JavaScript"],
-    liveUrl: "https://cafecumbre.com"
-  }
-]
     title: 'AXA Colpatria - Landing Page "Seguro de Vida Deudor"',
     image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757288825/Landing_AX-COL_.jpg',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
