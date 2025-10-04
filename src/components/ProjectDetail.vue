@@ -391,7 +391,7 @@ const results = [
     liveUrl: 'https://www.amazonbb.com/',
   },
   {
-    id: 3,
+    id: 8,
     title: 'AXA Colpatria - Landing Page "Seguro de Vida Deudor"',
     image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757288825/Landing_AX-COL_.jpg',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
@@ -456,7 +456,7 @@ const results = [
     liveUrl: 'https://lpsv.netlify.app/',
   },
   {
-    id: 4,
+    id: 7,
     title: 'Bestyle - Catálogo Digital Interactivo y Venta Express',
     image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757289224/bestyle_Web_design.jpg',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
@@ -504,7 +504,7 @@ const results = [
     liveUrl: 'https://bestyle.store/',
   },
   {
-    id: 5,
+    id: 9,
     title: 'BetterMe - Tu Transformación Estética en Colombia',
     image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757288824/Betterme_Ver2_bo15xy.jpg',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
@@ -572,7 +572,7 @@ const results = [
     liveUrl: 'https://betterme.oswal.com.co/',
   },
   {
-    id: 6,
+    id: 10,
     title: 'Dedicándote: Website de Dedicatorias Musicales y Diseño Personalizado',
     image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757429234/dedicandote_proyecto_oswaldo.jpg',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
@@ -642,7 +642,7 @@ const results = [
     liveUrl: 'https://dedicandote.com/',
   },
   {
-    id: 7,
+    id: 1,
     title: 'Hotel Amazon B&B - Un Refugio en el Corazón del Amazonas',
     image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757288825/Hotel_Amazon_proyecto_oswal.png',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
@@ -796,7 +796,7 @@ const results = [
     ]
   },
   {
-    id: 9,
+    id: 6,
     title: 'Clínica Odontológica en Suecia',
     image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757288824/Clinica-en-suecia_olmnmu.jpg',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
@@ -859,7 +859,7 @@ const results = [
     liveUrl: 'https://tandklinikenlschroder.se/',
   },
   {
-    id: 10,
+    id: 11,
     title: 'Café Cumbre Real: Diseño Web, Marca de Café de Origen',
     image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757454819/Web_cafe_cumbre_Proyectos_Oswal.png',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
