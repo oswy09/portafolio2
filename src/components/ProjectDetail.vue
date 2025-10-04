@@ -335,34 +335,6 @@ interface Project {
   achievements?: any[]
 }
 
-/* Graphic Elements */
-.graphic-elements {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.graphic-element {
-  flex: 0 0 auto;
-}
-
-.graphic-image {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  border-radius: 8px;
-  border: 1px solid #e9ecef;
-  padding: 0.5rem;
-  background: white;
-  transition: all 0.3s ease;
-}
-
-.graphic-image:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
 const currentProject = ref<Project | null>(null)
 
 const results = [
@@ -991,4 +963,42 @@ const results = [
           'Diseño de Mockups',
           'Prototipado',
           'Optimización y mejoramiento de UI Kit',
-          'Diseño de
+          'Diseño de Iconografía y Elementos Gráficos',
+        ],
+      },
+    },
+  },
+]
+
+const goBack = () => {
+  router.push('/projects')
+}
+
+const previousProject = () => {
+  const currentIndex = results.findIndex(p => p.id === currentProject.value?.id)
+  const prevIndex = currentIndex > 0 ? currentIndex - 1 : results.length - 1
+  router.push(`/projects/${results[prevIndex].id}`)
+}
+
+const nextProject = () => {
+  const currentIndex = results.findIndex(p => p.id === currentProject.value?.id)
+  const nextIndex = currentIndex < results.length - 1 ? currentIndex + 1 : 0
+  router.push(`/projects/${results[nextIndex].id}`)
+}
+
+const viewProject = () => {
+  if (currentProject.value?.liveUrl) {
+    window.open(currentProject.value.liveUrl, '_blank')
+  }
+}
+
+onMounted(() => {
+  const projectId = parseInt(route.params.id as string)
+  currentProject.value = results.find(p => p.id === projectId) || null
+})
+
+watch(() => route.params.id, (newId) => {
+  const projectId = parseInt(newId as string)
+  currentProject.value = results.find(p => p.id === projectId) || null
+})
+</script>
