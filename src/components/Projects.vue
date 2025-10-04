@@ -182,7 +182,7 @@ const projects = [
     title: "Bunker de libros", 
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757371705/Bestyle_website_proyectos_Oswal.png", 
     category: "ecommerce",
-    client: "Bestyle",
+    client: "Bunker",
     tags: ["Catalog", "Products", "Search", "Filter"],
     order: 5
   },
