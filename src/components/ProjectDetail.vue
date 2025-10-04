@@ -114,6 +114,17 @@
             </div>
           </div>
 
+          <!-- Elementos Gráficos -->
+          <div class="design-details" v-if="currentProject.process.design.icons">
+            <div class="detail-group">
+              <h4 class="detail-title">🎨 Elementos Gráficos</h4>
+              <div class="graphic-elements">
+                <div v-for="icon in currentProject.process.design.icons" :key="icon.value" class="graphic-element">
+                  <img :src="icon.value" :alt="'Elemento gráfico'" class="graphic-image" />
+                </div>
+              </div>
+            </div>
+          </div>
           <!-- Elementos Gráficos Section -->
           <div class="project-section">
             <h3 class="section-title">Elementos Gráficos</h3>
@@ -322,6 +333,34 @@ interface Project {
   technologies?: string[]
   finalResult?: any
   achievements?: any[]
+}
+
+/* Graphic Elements */
+.graphic-elements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.graphic-element {
+  flex: 0 0 auto;
+}
+
+.graphic-image {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  padding: 0.5rem;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.graphic-image:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 const currentProject = ref<Project | null>(null)
