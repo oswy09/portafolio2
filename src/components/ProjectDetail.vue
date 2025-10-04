@@ -347,3 +347,5 @@ const projects = [
     title: "Quizz Interactivo para concursos: Potenciando el Estudio en Acueducto de Bogotá",
     roles: ["UX Research", "UI Design", "Frontend Designer"],
     keyAchievement
+  }
+]
