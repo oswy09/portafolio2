@@ -197,31 +197,6 @@
           </div>
         </div>
 
-        <!-- Elementos Gráficos -->
-        <div class="design-details" v-if="currentProject.process.design.icons">
-          <div class="detail-group">
-            <h4 class="detail-title">🎨 Elementos Gráficos</h4>
-            <div class="graphic-elements">
-              <div v-for="icon in currentProject.process.design.icons" :key="icon.value" class="graphic-element">
-                <img :src="icon.value" :alt="'Elemento gráfico'" class="graphic-image" />
-              </div>
-            </div>
-          </div>
-            <polyline points="15,3 21,3 21,9"/>
-            <line x1="10" y1="14" x2="21" y2="3"/>
-          </svg>
-        </button>
-        
-        <button @click="nextProject" class="nav-btn secondary">
-          <span>Siguiente</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
-</template>
 
 <script setup lang="ts">
 import { ref, onMounted, computed, watch, nextTick } from 'vue'
