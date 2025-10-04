@@ -271,7 +271,7 @@ const updateProgressBar = () => {
 }
 
 const navigateToProject = (id: number) => {
-  router.push({ name: 'project-detail', params: { id: id.toString() } })
+  router.push(`/project/${id}`)
 }
 
 onMounted(() => {
