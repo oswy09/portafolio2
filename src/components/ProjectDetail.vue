@@ -197,86 +197,16 @@
           </div>
         </div>
 
-        <!-- Development -->
-        <div class="process-step" v-if="currentProject.process.development">
-          <div class="step-header">
-            <div class="step-icon">💻</div>
-            <h3 class="step-title">Desarrollo/Implementación</h3>
-          </div>
-          <ul class="step-list">
-            <li v-for="activity in currentProject.process.development.activities" :key="activity">{{ activity }}</li>
-          </ul>
-          
-          <!-- Tech Stack -->
-          <div class="design-details" v-if="currentProject.process.development.stack">
-            <div class="detail-group">
-              <h4 class="detail-title">Tecnologías Utilizadas</h4>
-              <div class="tech-stack">
-                <div v-for="tech in currentProject.process.development.stack" :key="tech.name" class="tech-item">
-                  <i :class="tech.icon"></i>
-                  <span>{{ tech.name }}</span>
-                </div>
+        <!-- Elementos Gráficos -->
+        <div class="design-details" v-if="currentProject.process.design.icons">
+          <div class="detail-group">
+            <h4 class="detail-title">🎨 Elementos Gráficos</h4>
+            <div class="graphic-elements">
+              <div v-for="icon in currentProject.process.design.icons" :key="icon.value" class="graphic-element">
+                <img :src="icon.value" :alt="'Elemento gráfico'" class="graphic-image" />
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <!-- Solution Section -->
-      <div class="section solution-section" v-if="currentProject && currentProject.solution">
-        <h2 class="section-title">La Solución</h2>
-        <div class="solution-content">
-          <!-- GIF Demo (si existe) -->
-          <div class="solution-demo" v-if="currentProject.solution.gif">
-            <img :src="currentProject.solution.gif" :alt="currentProject.title + ' demo'" class="solution-gif" />
-          </div>
-          
-          <!-- Galería de Imágenes (si no hay GIF pero hay imageGallery) -->
-          <div class="solution-gallery" v-else-if="currentProject.imageGallery && currentProject.imageGallery.length > 0">
-            <div class="gallery-grid">
-              <div 
-                v-for="image in currentProject.imageGallery" 
-                :key="image.url"
-                class="gallery-item"
-              >
-                <div class="gallery-image-container">
-                  <img :src="image.url" :alt="image.alt" class="gallery-image" />
-                  <div class="gallery-tag">{{ image.tag }}</div>
-                </div>
-                <div class="gallery-caption">{{ image.caption }}</div>
-              </div>
-            </div>
-          </div>
-          
-          <p class="solution-description">{{ currentProject.solution.description }}</p>
-        </div>
-      </div>
-
-      <!-- Results Section -->
-      <div class="section results-section" v-if="currentProject && currentProject.results && currentProject.results.length > 0">
-        <h2 class="section-title">Resultados del Proyecto</h2>
-        <div class="results-grid">
-          <div v-for="result in currentProject.results" :key="result.metric" class="result-card">
-            <div class="result-value">{{ result.value }}</div>
-            <div class="result-metric">{{ result.metric }}</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Navigation -->
-      <!-- Bottom Fixed Navigation -->
-      <div class="bottom-navigation">
-        <button @click="previousProject" class="nav-btn secondary">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
-          </svg>
-          <span>Anterior</span>
-        </button>
-        
-        <button @click="viewProject" class="nav-btn primary">
-          <span>Ver Proyecto</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
             <polyline points="15,3 21,3 21,9"/>
             <line x1="10" y1="14" x2="21" y2="3"/>
           </svg>
