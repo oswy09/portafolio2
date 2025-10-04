@@ -64,7 +64,7 @@
                         {{ project.client || 'Cliente' }}
                       </div>
                     </div>
-                </div>
+                  </div>
                 </div>
               </div>
               <!-- Progress Indicator -->
@@ -157,7 +157,7 @@ const projects = [
     category: "ecommerce",
     client: "Micentro Comercial",
     tags: ["Shopping", "Directory", "Catalog", "Payment"],
-    order: 2,
+    order: 2
   },
   { 
     id: 3, 
@@ -166,7 +166,7 @@ const projects = [
     category: "website",
     client: "AXA Colpatria",
     tags: ["Portal", "Corporate", "Multi-page", "Professional"],
-    order: 3,
+    order: 3
   },
   { 
     id: 4, 
@@ -175,7 +175,7 @@ const projects = [
     category: "interfaz",
     client: "Acueducto Bogotá",
     tags: ["Vue.js", "Interactive", "Gaming", "UX/UI"],
-    order: 4,
+    order: 4
   },
   { 
     id: 5, 
@@ -184,7 +184,7 @@ const projects = [
     category: "ecommerce",
     client: "Bestyle",
     tags: ["Catalog", "Products", "Search", "Filter"],
-    order: 5,
+    order: 5
   },
   { 
     id: 6, 
@@ -193,7 +193,7 @@ const projects = [
     category: "website",
     client: "kliniken Schröder",
     tags: ["Healthcare", "Medical", "Appointments", "Services"],
-    order: 6,
+    order: 6
   },
   { 
     id: 7, 
@@ -202,7 +202,7 @@ const projects = [
     category: "ecommerce",
     client: "Bestyle",
     tags: ["Catalog", "Products", "Search", "Filter"],
-    order: 7,
+    order: 7
   },
   { 
     id: 8, 
@@ -211,7 +211,7 @@ const projects = [
     category: "landing",
     client: "AXA Colpatria",
     tags: ["Insurance", "Corporate", "Lead Gen", "Forms"],
-    order: 8,
+    order: 8
   },
   { 
     id: 9, 
@@ -220,7 +220,7 @@ const projects = [
     category: "interfaz",
     client: "Betterme",
     tags: ["Dashboard", "Analytics", "Data Viz", "Admin"],
-    order: 9,
+    order: 9
   },
   { 
     id: 10, 
@@ -229,7 +229,7 @@ const projects = [
     category: "landing",
     client: "Dedicandote",
     tags: ["Startup", "Business", "CTA", "Modern"],
-    order: 10,
+    order: 10
   },
   { 
     id: 11, 
@@ -238,9 +238,10 @@ const projects = [
     category: "ecommerce",
     client: "Café cumbre",
     tags: ["Coffee", "Retail", "Online Store", "Products"],
-    order: 11,
-  }
-]
+    order: 11
+  },
+  { 
+    id: 12,
     title: "Website Centro Comercial", 
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757371575/Micentro_website_proyecto_oswal.png ", 
     category: "ecommerce",
@@ -249,7 +250,7 @@ const projects = [
     order: 4
   },
   { 
-    id: 4, 
+    id: 13, 
     title: "Landing page", 
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757359522/Landing_Pages_seguros.png", 
     category: "landing",
@@ -258,7 +259,7 @@ const projects = [
     order: 1
   },
   { 
-    id: 5, 
+    id: 14, 
     title: "Catálogo Online", 
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757371705/Bestyle_website_proyectos_Oswal.png", 
     category: "ecommerce",
@@ -267,7 +268,7 @@ const projects = [
     order: 5
   },
   { 
-    id: 6, 
+    id: 15, 
     title: "Web Clinica", 
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757375618/Clinica_Betterme_proyecto_web_oswal.png", 
     category: "interfaz",
@@ -276,7 +277,7 @@ const projects = [
     order: 6
   },
   { 
-    id: 7, 
+    id: 16, 
     title: "Landing page", 
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757372516/Dedicandote_proyecto_oswal_music.png", 
     category: "landing",
@@ -285,7 +286,7 @@ const projects = [
     order: 7
   },
   { 
-    id: 8, 
+    id: 17, 
     title: "Re diseño web", 
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757361622/Redise%C3%B1o_web_Proyecto_oswal.png", 
     category: "website",
@@ -294,7 +295,7 @@ const projects = [
     order: 8
   },
   { 
-    id: 9, 
+    id: 18, 
     title: "Website Odontológica", 
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757362220/Clinica_odontologica_proyecto_web_oswal.png", 
     category: "website",
@@ -302,7 +303,7 @@ const projects = [
     tags: ["Healthcare", "Medical", "Appointments", "Services"]
   },
   { 
-    id: 10, 
+    id: 19, 
     title: "Website Café", 
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757373361/Website_cafe_proyecto_oswal_col.png", 
     category: "ecommerce",
@@ -310,7 +311,7 @@ const projects = [
     tags: ["Coffee", "Retail", "Online Store", "Products"]
   },
   { 
-    id: 11, 
+    id: 20, 
     title: "Landing page ", 
     image: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757373349/Landing_Pages_inter_oswal.png", 
     category: "landing",
@@ -318,7 +319,7 @@ const projects = [
     tags: ["Healthcare", "Dental", "Conversion", "Contact"]
   },
   { 
-    id: 12, 
+    id: 21, 
     title: "Mapa Interactivo Amazon", 
     image: "https://oswal.com.co/wp-content/uploads/2025/05/mapa-amazon.jpg", 
     category: "interfaz",
@@ -326,7 +327,7 @@ const projects = [
     tags: ["Interactive", "Maps", "Environmental", "Data"]
   },
   { 
-    id: 13, 
+    id: 22, 
     title: "Rediseño APP AXA", 
     image: "https://oswal.com.co/wp-content/uploads/2025/05/App-axa.jpg", 
     category: "interfaz",
@@ -334,7 +335,7 @@ const projects = [
     tags: ["Mobile App", "Redesign", "UX/UI", "Insurance"]
   },
   { 
-    id: 14, 
+    id: 23, 
     title: "Website Cirugía Plástica", 
     image: "https://oswal.com.co/wp-content/uploads/2025/05/betterme.jpg", 
     category: "website",
@@ -342,7 +343,7 @@ const projects = [
     tags: ["Medical", "Aesthetic", "Gallery", "Consultation"]
   },
   { 
-    id: 15, 
+    id: 24, 
     title: "Tienda Online Moda", 
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop", 
     category: "ecommerce",
