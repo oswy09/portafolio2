@@ -34,7 +34,7 @@
           <div class="profile-container">
             <div class="profile-border"></div>
             <img 
-              src="https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757288490/Oswal_perfil_Webdesign.jpg"
+              src="https://res.cloudinary.com/ddqbnr9vo/image/upload/v1759897392/Oswal_jaimes_perfil_ozajmv.jpg"
               alt="Oswal Profile" 
               class="profile-image"
             />

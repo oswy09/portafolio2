@@ -108,7 +108,7 @@
                 <div class="contact-card-browser">
                   <div class="contact-header">
                     <div class="contact-avatar">
-                      <img src="https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757288490/Oswal_perfil_Webdesign.jpg" alt="Oswal" />
+                      <img src="https://res.cloudinary.com/ddqbnr9vo/image/upload/v1759897392/Oswal_jaimes_perfil_ozajmv.jpg" alt="Oswal" />
                     </div>
                     <div class="contact-info">
                       <h3>Oswal Jaimes</h3>

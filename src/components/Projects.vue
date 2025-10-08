@@ -59,7 +59,14 @@
                   </div>
                   <div class="artwork-content">
                     <div class="image-client-container" style="position:relative; display:flex; flex-direction:column; justify-content:flex-end; align-items:center;">
-                      <img :src="project.image" :alt="project.title" class="project-image" style="display:block; width:100%; height:200px; object-fit:cover;">
+                      <img 
+                        :src="project.image" 
+                        :alt="`Proyecto ${project.title} - ${project.category}`" 
+                        class="project-image" 
+                        style="display:block; width:100%; height:200px; object-fit:cover;"
+                        loading="lazy"
+                        decoding="async"
+                      >
                       <div class="client-name" style="position:absolute; left:0; right:0; bottom:0; background:rgba(255,255,255,0.92); text-align:center; font-weight:600; color:#4831D4; padding:7px 0 5px 0; font-size:1rem;">
                         {{ project.client || 'Cliente' }}
                       </div>

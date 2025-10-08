@@ -51,7 +51,7 @@ No solo creo interfaces, diseño experiencias que hacen que las marcas y las per
             </a>
             <div class="social-links">
               <!-- LinkedIn -->
-              <a href="https://www.linkedin.com/in/oswaldo-jaimes/" target="_blank" class="social-link">
+              <a href="https://www.linkedin.com/in/oswaldo-jaimes/" target="_blank" class="social-link" aria-label="LinkedIn de Oswaldo Jaimes">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
                   <rect x="2" y="9" width="4" height="12"/>
@@ -59,13 +59,13 @@ No solo creo interfaces, diseño experiencias que hacen que las marcas y las per
                 </svg>
               </a>
               <!-- WhatsApp -->
-              <a href="https://wa.me/573057502790" target="_blank" class="social-link">
+              <a href="https://wa.me/573057502790" target="_blank" class="social-link" aria-label="Enviar mensaje de WhatsApp a Oswaldo">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
                 </svg>
               </a>
               <!-- Instagram -->
-              <a href="https://www.instagram.com/oswal_jaimes?" target="_blank" class="social-link">
+              <a href="https://www.instagram.com/Oswal_Jaimes/" target="_blank" class="social-link" aria-label="Instagram de Oswaldo Jaimes">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
@@ -128,7 +128,7 @@ No solo creo interfaces, diseño experiencias que hacen que las marcas y las per
                         <div class="demo-floor-number centered">{{ currentDemoFloor }}</div>
                       </div>
                       <div class="demo-content">
-                        <h3>{{ demoFloors[currentDemoFloor - 1]?.name }}</h3>
+                        <h2>{{ demoFloors[currentDemoFloor - 1]?.name }}</h2>
                         <p>{{ demoFloors[currentDemoFloor - 1]?.description }}</p>
                       </div>
                     </div>
@@ -159,9 +159,12 @@ No solo creo interfaces, diseño experiencias que hacen que las marcas y las per
         <div class="profile-container">
           <div class="profile-border"></div>
           <img 
-            src="https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757288490/Oswal_perfil_Webdesign.jpg"
-            alt="Oswal Profile" 
+            src="https://res.cloudinary.com/ddqbnr9vo/image/upload/c_fill,w_400,h_400,f_webp,q_85,q_auto/v1757288490/Oswal_perfil_Webdesign.jpg"
+            alt="Oswal Jaimes - Diseñador UX y Desarrollador Frontend" 
             class="profile-image"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
           />
         </div>
       </div>
@@ -705,7 +708,7 @@ onUnmounted(() => {
   z-index: 10;
 }
 
-.demo-content h3 {
+.demo-content h2 {
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
   color: #CCF381;
