@@ -66,7 +66,7 @@
         <h2 class="section-title">El Proceso</h2>
         
         <!-- Research -->
-        <div class="process-step" v-if="currentProject.process.research">
+        <div class="process-step" v-if="currentProject.process.research && currentProject.process.research.length > 0">
           <div class="step-header">
             <div class="step-icon">🔍</div>
             <h3 class="step-title">Investigación / UX</h3>
@@ -77,7 +77,7 @@
         </div>
 
         <!-- Design -->
-        <div class="process-step" v-if="currentProject.process.design">
+        <div class="process-step" v-if="currentProject.process.design && currentProject.process.design.activities && currentProject.process.design.activities.length > 0">
           <div class="step-header">
             <div class="step-icon">🎨</div>
             <h3 class="step-title">Diseño / UI</h3>
@@ -87,7 +87,7 @@
           </ul>
           
           <!-- Colors -->
-          <div class="design-details" v-if="currentProject.process.design.colors">
+          <div class="design-details" v-if="currentProject.process.design.colors && currentProject.process.design.colors.length > 0">
             <div class="detail-group">
               <h4 class="detail-title">🎨 Paleta de Colores</h4>
               <div class="color-palette">
@@ -102,7 +102,7 @@
           </div>
 
           <!-- Typography -->
-          <div class="design-details" v-if="currentProject.process.design.typography">
+          <div class="design-details" v-if="currentProject.process.design.typography && currentProject.process.design.typography.length > 0">
             <div class="detail-group">
               <h4 class="detail-title">📝 Tipografía</h4>
               <div class="typography-list">
@@ -116,7 +116,7 @@
         </div>
 
         <!-- Development -->
-        <div class="process-step" v-if="currentProject.process.development">
+        <div class="process-step" v-if="currentProject.process.development && currentProject.process.development.activities && currentProject.process.development.activities.length > 0">
           <div class="step-header">
             <div class="step-icon">💻</div>
             <h3 class="step-title">Desarrollo/Implementación</h3>
@@ -126,7 +126,7 @@
           </ul>
           
           <!-- Tech Stack -->
-          <div class="design-details" v-if="currentProject.process.development.stack">
+          <div class="design-details" v-if="currentProject.process.development.stack && currentProject.process.development.stack.length > 0">
             <div class="detail-group">
               <h4 class="detail-title">Tecnologías Utilizadas</h4>
               <div class="tech-stack">
@@ -137,6 +137,17 @@
               </div>
             </div>
           </div>
+        </div>
+
+        <!-- Marketing -->
+        <div class="process-step" v-if="currentProject.marketing && currentProject.marketing.length > 0">
+          <div class="step-header">
+            <div class="step-icon">📈</div>
+            <h3 class="step-title">Marketing</h3>
+          </div>
+          <ul class="step-list">
+            <li v-for="activity in currentProject.marketing" :key="activity">{{ activity }}</li>
+          </ul>
         </div>
       </div>
 
@@ -251,70 +262,15 @@ interface Project {
   technologies?: string[]
   finalResult?: any
   achievements?: any[]
+  marketing?: string[]
 }
 
 const currentProject = ref<Project | null>(null)
 
 const results = [
-  {
+
+{
     id: 1,
-    image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757289000/plataforma_concursos.jpg',
-    title: 'Quizz Interactivo para concursos: Potenciando el Estudio en Acueducto de Bogotá',
-    roles: ['UX Research', 'UI Design', 'Frontend Designer'],
-    keyAchievement: 'Una interfaz para que los empleados del Acueducto de Bogotá estudien y se preparen de forma autónoma para los concursos de ascenso.',
-    client: 'Acueducto de Bogotá',
-    industry: 'Servicios públicos',
-    location: 'Bogotá, Colombia',
-    myRole: 'Frontend Designer',
-    responsibilities: ['UX Research', 'UI Design', 'Frontend Developer'],
-    challenge: "El Acueducto de Bogotá buscaba una solución innovadora y accesible para apoyar a sus empleados en la preparación de los concursos de ascenso, más allá de los métodos de estudio tradicionales. El desafío era crear una herramienta digital interactiva que permitiera a los usuarios autoevaluarse en temarios específicos, gestionar su progreso y ofrecer una experiencia de estudio atractiva y efectiva, todo dentro de un entorno seguro y controlado con gestión de usuarios internos.",
-    process: {
-      research: [
-        'User Flow',
-        'Arquitectura de la Información y Sitemap',
-        'Pruebas de Usabilidad'
-      ],
-      design: {
-        activities: [
-          'Diseño de Mockups',
-          'Adaptación y Aplicación de UI kit',
-          'Diseño de elementos gráficos'
-        ],
-        colors: ['#4831D4', '#CCF381', '#2A2356', '#F4F9FC'],
-        typography: [
-          { name: 'Montserrat', usage: 'Títulos y encabezados' },
-          { name: 'Inter', usage: 'Texto y contenido' },
-        ],
-      },
-      development: {
-        activities: [
-          'Diseño de Microinteracciones y Animaciones JS/CSS',
-          'Performance Optimization',
-          'Construcción de la interfaz de usuario interactiva y dinámica utilizando Vue.js.',
-          'Implementación de Seguridad Web',
-          'Creación de dashboard para gestionar usuarios ',
-        ],
-        stack: [
-          { name: 'Vue', icon: 'fa-brands fa-vuejs' },
-          { name: 'HTML', icon: 'fa-brands fa-html5' },
-          { name: 'CSS', icon: 'fa-brands fa-css3' },
-          { name: 'JS', icon: 'fa-brands fa-js' },
-        ],
-      },
-    },
-    solution: {
-      gif: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1754408304/Proyecto_oswal_web_design_Quiz_y1nutn.gif',
-      description: 'Se entregó una aplicación web interactiva de quizz construida desde cero con Vue.js Esta interfaz no solo facilita el estudio personalizado por temas y la autoevaluación para los concursos de ascenso, sino que también ofrece un panel administrativo intuitivo para la gestión total de usuarios y contenido por parte del Acueducto de Bogotá.',
-    },
-    results: [
-      { value: '450', metric: 'empleado se registraron y utilizan la interfaz' },
-      { value: 'Feedback', metric: 'Recepción de comentarios positivos sobre la facilidad de uso' },
-      { value: 'Reducción de Tiempo', metric: ' Se redujo el tiempo que los empleados dedicaban a buscar materiales de estudio.' },
-    ],
-    liveUrl: 'https://demoquizz.netlify.app/',
-  },
-  {
-    id: 2,
     title: 'Hotel Amazon B&B - Un Refugio en el Corazón del Amazonas',
     image: 'http://www.amazonbb.com/wp-content/uploads/2023/05/boat-forest-river-blue-sky-reflection.jpg',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
@@ -353,6 +309,7 @@ const results = [
           'Migración a hosting',
           'Construcción de Layouts y Diseño a Medida con Constructor Visual',
           'Performance Optimization',
+           'Integración con reservas online',
           'Mantenimiento y Actualizaciones Wordpress',
           'Desarrollo de Funcionalidades Personalizadas',
           'Implementación de Seguridad Web',
@@ -365,6 +322,7 @@ const results = [
           { name: 'PHP', icon: 'fa-brands fa-php' },
         ],
       },
+     
     },
     solution: {
       description: 'Se rediseñó un sitio web moderno y responsivo para el Hotel Amazon B&B, construyendo la experiencia desde cero tras eliminar la plantilla original. La solución optimiza la interfaz de usuario para turistas extranjeros, integra funcionalidades clave de reservas y se accede de manera fácil al contenido y tours.',
@@ -388,10 +346,413 @@ const results = [
       { value: '+25%', metric: 'Volumen de consultas directas vía correo y WhatsApp' },
       { value: '+40%', metric: 'Facilidad de Gestión de Contenido' },
     ],
+    marketing: [
+      'Análisis de mercado turístico amazónico',
+      'Estrategia de posicionamiento para turistas extranjeros',
+      'Integración con redes sociales y plataformas de reservas',
+      'Configuración de Google Analytics'
+    ],
     liveUrl: 'https://www.amazonbb.com/',
   },
-  {
+  
+   {
+    id: 2,
+    title: 'MiCentro: Navegando la Experiencia Comercial',
+    image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757288825/micentro_el_porvenir_xef2ft.jpg',
+    roles: ['UX Research', 'UI Design', 'Frontend Development'],
+    keyAchievement: 'Diseño de sitio web para el centro comercial, fortaleciendo la presencia online',
+    client: 'MiCentro El Porvenir',
+    industry: 'Centro comercial',
+    location: 'Bogotá, Colombia',
+    myRole: 'Web designer',
+    responsibilities: ['UX design', 'UI Design', 'Frontend Developer'],
+    challenge: 'MiCentro El Porvenir, un centro comercial en Bogotá, luchaba por conectar con su público objetivo: compradores en busca de una experiencia única. Su sitio web existente era pesado, carente de diseño atractivo y con una usabilidad deficiente, lo que dificultaba la reserva y no reflejaba la belleza y autenticidad del lugar.',
+    process: {
+      research: [
+       
+        'benchmark de sitios web de hoteles de ecoturismo',
+        'Análisis de Usabilidad del Sitio Web',
+        'User Journey Map',
+        'Card Sorting',
+        'Arquitectura de la Información y Sitemap',
+      ],
+      design: {
+        activities: [
+          'Creación de Wireframes y Diseño de Mockups',
+          'Prototipado de visualizaciones',
+          'Optimización y mejoramiento de UI Kit',
+          'Diseño de Iconografía y Elementos Gráficos',
+        ],
+        colors: ['#ff4364', '#EFA146'],
+        typography: [
+          { name: 'Philosopher', usage: 'Títulos y encabezados' },
+          { name: 'Lato', usage: 'Texto y contenido' },
+        ],
+      },
+      development: { 
+        activities: [
+
+          'Construcción de Layouts y Diseño a Medida con Constructor Visual',
+          'Performance Optimization',
+          'Mantenimiento y Actualizaciones Wordpress',
+          'Desarrollo de Funcionalidades Personalizadas',
+          'Implementación de Seguridad Web',
+        ],  
+        stack: [
+          { name: 'Wordpress', icon: 'fa-brands fa-wordpress' },
+          { name: 'HTML', icon: 'fa-brands fa-html5' },
+          { name: 'CSS', icon: 'fa-brands fa-css3' },
+          { name: 'JS', icon: 'fa-brands fa-js' },
+          { name: 'PHP', icon: 'fa-brands fa-php' },
+        ],
+      },
+    },
+     solution: {
+      gif: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756241744/Proyecto_oswal_web_design_micentro_jpfodi.gif',
+      description: 'Se entregó un sitio web dinámico y visualmente atractivo para MiCentro, construido desde cero en WordPress con un constructor visual avanzado, diseñado para ser el punto de referencia digital del centro comercial. La plataforma cuenta con un directorio de marcas intuitivo, un calendario de eventos interactivo y un blog, todo gestionable autónomamente gracias a la implementación de campos personalizados. La solución  elevó la presencia digital de MiCentro.',
+    },
+    results: [
+      { value: '+30%', metric: 'Aumento en la Visibilidad Orgánica' },
+      { value: '+25%', metric: 'Incremento en Consultas Directas a Tiendas' },
+      { value: '2', metric: 'promedio de páginas que los usuarios visita antes de terminar la sesión' },
+    ],
+
+     marketing: [
+      'Configuración de Google Analytics y Search Console',
+      'Configuración Correos y email-marketing',
+      'Configuración Pixel de Facebook',
+      'SEO Básico'
+
+    ],
+    liveUrl: 'https://ccmicentro.com/',
+  },
+
+{
     id: 3,
+    title: 'AXA Colpatria - Rediseño Estratégico de portal público',
+    image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757429889/Redise%C3%B1o_AXA_oswal-proyectos.png',
+    roles: ['UX Research', 'UI Design', 'Frontend Development'],
+    keyAchievement: 'Rediseño completo de la plataforma web de AXA Colpatria, elevando la experiencia de usuario e interfaz (UX/UI) a estándares de última generación, incorporando nuevas tecnologías y aplicando rigurosos principios de usabilidad y accesibilidad para optimizar la interacción de los clientes con los servicios de seguros.',
+    client: 'AXA COLPATRIA',
+    industry: 'Aseguradora',
+    location: 'Colombia',
+    myRole: 'Ux/ui Designer',
+    responsibilities: ['UX /UI design'],
+    challenge: 'AXA Colpatria, líder en el sector asegurador, enfrentaba el desafío de transformar su plataforma web existente en un canal digital que no solo fuera funcional, sino que realmente inspirara confianza, simplificara la compleja información de seguros y ofreciera una experiencia de usuario intuitiva y moderna. El reto era ambicioso: ir más allá de una actualización visual, enfocándose en una arquitectura de información optimizada, flujos de navegación simplificados y un diseño inclusivo',
+    process: {
+      research: [
+        'Benchmark',
+        'Análisis de Usabilidad del Sitio Web',
+        'User persona',
+        'User Journey Map',
+        'Card Sorting',
+        'Sitemap',
+        'Pruebas de Usabilidad',
+      ],
+      design: {
+        activities: [
+          'Creación de Wireframes y Diseño de Mockups',
+          'Integración sistema de diseño',
+          'Prototipado',
+          'Diseño de Iconografía y Elementos Gráficos',
+          'Diseño de Microinteracciones y Estados de Componentes',
+          'Diseño Responsivo y Adaptativo',
+          'Aplicación de Estándares de Accesibilidad (WCAG 2.1 AA)',
+        ],
+        colors: ['#5C5CB7', '#3D3DAA', '#00008F', '#DD7358', '#D75D3D','#D24723','#7698CB','#41949F','#E196AA'],
+        typography: [
+          { name: 'Public headline', usage: 'Títulos y encabezados' },
+          { name: 'Source sans pro', usage: 'Texto y contenido' },
+        ],
+        icons: [
+          { type: 'image', value: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757428991/ilu028-1_onezxr.png' },
+          { type: 'image', value: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757428991/ilu078-1_xyjys5.png' },
+          { type: 'image', value: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757428991/ilu016-1_idgqse.png' },
+          { type: 'image', value: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757428991/ilu048-1_k4uffx.png' },
+          { type: 'image', value: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757428991/ilu134-1_vlg4pa.png' }
+        ],
+      },
+      development: { 
+        activities: [],  
+        stack: [],
+      },
+      marketing: [
+        'Email-marketing',
+      ],
+    },
+    solution: {
+      description: 'Se entregó un rediseño estratégico de la plataforma web de AXA Colpatria, transformándola en una experiencia digital de seguros moderna, intuitiva e inclusiva.',
+    },
+    results: [
+      { value: '+30%', metric: 'Aumento satisfacción del cliente' },
+      { value: '+25%', metric: 'Aumento tasa conversión productos' },
+      { value: '+40%', metric: 'Redireccionamiento a landing pages' },
+    ],
+
+     marketing: [
+      
+    ],
+    liveUrl: 'https://www.axacolpatria.co/home',
+    imageGallery: [
+      {
+        url: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756512408/AXA_Colpatria_antes_website_ecypnb.jpg",
+        alt: "Imagen resultado sitio web_AXA_COLPATRIA",
+        caption: "Home AXA Colpatria_antes",
+        tag: "antes" 
+      },
+      {
+        url: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756511734/Proyectos_oswal_web_design_AXA_Home_page_p62gsa.jpg",
+        alt: "Imagen resultado sitio web_Amazon b&B",
+        caption: "Home AXA Colpatria_Ahora",
+        tag: "resultado" 
+      }
+    ]
+  },
+  
+  {
+    id: 4,
+    image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757289000/plataforma_concursos.jpg',
+    title: 'Quizz Interactivo para concursos: Potenciando el Estudio en Acueducto de Bogotá',
+    roles: ['UX Research', 'UI Design', 'Frontend Designer'],
+    keyAchievement: 'Una interfaz para que los empleados del Acueducto de Bogotá estudien y se preparen de forma autónoma para los concursos de ascenso.',
+    client: 'Acueducto de Bogotá',
+    industry: 'Servicios públicos',
+    location: 'Bogotá, Colombia',
+    myRole: 'Frontend Designer',
+    responsibilities: ['UX Research', 'UI Design', 'Frontend Developer'],
+    challenge: "El Acueducto de Bogotá buscaba una solución innovadora y accesible para apoyar a sus empleados en la preparación de los concursos de ascenso, más allá de los métodos de estudio tradicionales. El desafío era crear una herramienta digital interactiva que permitiera a los usuarios autoevaluarse en temarios específicos, gestionar su progreso y ofrecer una experiencia de estudio atractiva y efectiva, todo dentro de un entorno seguro y controlado con gestión de usuarios internos.",
+    process: {
+      research: [
+        'User Flow',
+        'Arquitectura de la Información y Sitemap',
+        'Pruebas de Usabilidad'
+      ],
+      design: {
+        activities: [
+          'Diseño de Mockups',
+          'Adaptación y Aplicación de UI kit',
+          'Diseño de elementos gráficos'
+        ],
+        colors: ['#1361C4', '#02FFA6'],
+        typography: [
+          { name: 'Montserrat', usage: 'Títulos y encabezados' },
+          { name: 'Inter', usage: 'Texto y contenido' },
+        ],
+      },
+      development: {
+        activities: [
+          'Diseño de Microinteracciones y Animaciones JS/CSS',
+          'Performance Optimization',
+          'Construcción de la interfaz de usuario interactiva y dinámica utilizando Vue.js.',
+          'Implementación de Seguridad Web',
+          'Creación de dashboard para gestionar usuarios ',
+        ],
+        stack: [
+          { name: 'Vue.js', icon: 'fa-brands fa-vuejs' },
+          { name: 'HTML', icon: 'fa-brands fa-html5' },
+          { name: 'CSS', icon: 'fa-brands fa-css3' },
+          { name: 'JS', icon: 'fa-brands fa-js' },
+        ],
+      },
+    },
+    solution: {
+      gif: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756246659/Proyectos_oswal_web_design_AXA_landing_vida_hlubht.gif',
+      description: 'Se desarrolló una plataforma de quiz interactiva y gamificada para el Acueducto de Bogotá, diseñada específicamente para apoyar a los empleados en su preparación para concursos de ascenso. La solución incluye un sistema de gestión de usuarios, seguimiento de progreso, y una interfaz intuitiva que hace del estudio una experiencia atractiva y efectiva.',
+    },
+    results: [
+      { value: '+85%', metric: 'Tasa de finalización del quiz' },
+      { value: '+40%', metric: 'Mejora en conocimiento sobre temas específicos' },
+      { value: '10,000+', metric: 'Usuarios activos en el primer mes' },
+    ],
+
+     marketing: [
+      
+    ],
+    liveUrl: 'https://demoquizz.netlify.app/',
+  },
+
+
+ {
+    id: 5,
+    title: 'Buker de Libros - Interfaz Digital para Gestión de Pedidos por WhatsApp',
+    image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1759844475/bunker_search_etcshz.png',
+    roles: ['UX Research', 'UI Design', 'Frontend Development'],
+    keyAchievement: 'Creación de una interfaz web simple,permite a los usuarios buscar y seleccionar libros para, posteriormente, enviar su pedido directamente a través de WhatsApp para cerrar la venta, optimizando el proceso de cotización y búsqueda interna.',
+    client: 'Bunker de libros',
+    industry: 'Aseguradora',
+    location: 'Bogota,Colombia',
+    myRole: 'Frontend designer',
+    responsibilities: ['UX design', 'UI Design', 'Frontend Developer'],
+    challenge: 'El principal desafío era digitalizar el proceso de venta de libros que operaba de manera manual,Se necesitaba una interfaz web sencilla que actuara como un buscador y catálogo inteligente, eliminando la necesidad de correos electrónicos o llamadas complejas. El reto fue diseñar una experiencia que fuera intuitiva para el usuario final',
+    process: {
+      research: [
+        
+      ],
+      design: {
+        activities: [
+          'Diseño de Mockups',
+          'Prototipos',
+         
+        ],
+        colors: ['#044366', '#007078'],
+        typography: [
+          { name: 'Poppins', usage: 'Títulos y encabezados' },
+          { name: 'Poppins', usage: 'Texto y contenido' },
+        ],
+        icons: [
+          { type: 'image', value: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757428991/ilu028-1_onezxr.png' },
+          { type: 'image', value: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757428991/ilu078-1_xyjys5.png' },
+          { type: 'image', value: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757428991/ilu016-1_idgqse.png' },
+          { type: 'image', value: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757428991/ilu048-1_k4uffx.png' },
+          { type: 'image', value: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757428991/ilu134-1_vlg4pa.png' }
+        ],
+      },
+      development: { 
+        activities: [
+          'Integración API libros',
+          'Implementación en vue.js',
+          'Desarrollo de Funcionalidades Personalizadas',
+          'Sistema de Búsqueda y Filtrado Dinámico ',
+      
+        ],  
+        stack: [
+            { name: 'Vue.js', icon: 'fa-brands fa-vuejs' },
+          { name: 'HTML', icon: 'fa-brands fa-html5' },
+          { name: 'CSS', icon: 'fa-brands fa-css3' },
+          { name: 'JS', icon: 'fa-brands fa-js' },
+        ],
+      },
+     
+    },
+    solution: {
+      gif: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1759844816/Bunker_libros_buscador_zp0wdr.gif',
+      description: 'Se entregó una interfaz web ligera y focalizada que actúa como un puente eficiente entre el cliente y el emprendedor. La plataforma de "Buker de Libros" permite a los usuarios construir su pedido de forma intuitiva y lo envía al instante a WhatsApp, digitalizando el inicio del embudo de ventas y proporcionando al emprendedor la información de la solicitud de forma organizada y sin errores, optimizando el tiempo dedicado a la búsqueda y cotización.',
+    },
+    results: [
+      { value: '+8.5%', metric: 'asa de Conversión a WhatsApp' },
+      { value: '-40%', metric: 'en el Tiempo de Gestión de Pedidos Inicial' },
+    ],
+
+     marketing: [
+      
+    ],
+    liveUrl: 'https://bunkerdelibros.shop/',
+  },
+
+{
+    id: 6,
+    title: 'Clínica Odontológica en Suecia',
+    image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757288824/Clinica-en-suecia_olmnmu.jpg',
+    roles: ['UX Research', 'UI Design', 'Frontend Development'],
+    keyAchievement: 'Diseño Web y UX para una Experiencia Profesional y Confiable',
+    client: 'kliniken Schröder',
+    industry: 'Clinica dental',
+    location: 'Estocolmo, Suecia',
+    myRole: 'Web designer',
+    responsibilities: ['Web designer'],
+    challenge: 'Diseño y desarrollo de una plataforma web moderna y profesional para una clínica odontológica en Suecia, con el objetivo de proyectar confianza, facilitar el acceso a información sobre tratamientos.',
+    process: {
+      research: [
+        'Análisis de Audiencia Sueca y Estándares de Confianza',
+        'Análisis de Usabilidad del Sitio Web',
+        'Arquitectura de la Información y Sitemap',
+      ],
+      design: {
+        activities: [
+          'Creación de Wireframes y Diseño de Mockups',
+          'Optimización y mejoramiento de UI Kit',
+          'Diseño de Iconografía y Elementos Gráficos',
+        ],
+        colors: ['#2C2C96', '#99A833'],
+        typography: [
+          { name: 'Cormorant Garamond', usage: 'Títulos y encabezados' },
+          { name: 'Open sans', usage: 'Texto y contenido' },
+        ],
+        icons: [
+          { type: 'image', value: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757437831/Blekning-icon2_oivi6k.png' },
+          { type: 'image', value: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757437832/corona-dental-2_iljbtg.png' },
+          { type: 'image', value: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757437832/Snarkskenor-icon2_dvnoj3.png' }
+        ],
+      },
+      development: { 
+        activities: [
+          'Migración a hosting',
+          'Construcción de Layouts y Diseño a Medida con Constructor Visual',
+          'Performance Optimization',
+          'Mantenimiento y Actualizaciones Wordpress',
+        ],  
+        stack: [
+          { name: 'Wordpress', icon: 'fa-brands fa-wordpress' },
+          { name: 'HTML', icon: 'fa-brands fa-html5' },
+          { name: 'CSS', icon: 'fa-brands fa-css3' },
+          { name: 'JS', icon: 'fa-brands fa-js' },
+          { name: 'PHP', icon: 'fa-brands fa-php' },
+        ],
+      },
+     
+    },
+    solution: {
+      gif: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756514195/Proyectos_oswal_web_design_Tandkliniken_schroder_slkyt8.gif',
+      description: 'Se entregó un sitio web profesional y minimalista para la clínica odontológica en Suecia, diseñado para ser una herramienta clave en la captación y comunicación con los pacientes. La plataforma, con un estilo estético sueco, presenta los servicios y al equipo de manera clara y transparente, estableciendo la confianza digital',
+    },
+    results: [
+      { value: '+20%', metric: 'Tasa de Conversión de Reservas' },
+      
+    ],
+    liveUrl: 'https://tandklinikenlschroder.se/',
+  },
+
+  {
+    id: 7,
+    title: 'Bestyle - Catálogo Digital Interactivo y Venta Express',
+    image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757289224/bestyle_Web_design.jpg',
+    roles: ['UX Research', 'UI Design', 'Frontend Development'],
+    keyAchievement: 'Diseño y desarrollo de una solución de catálogo digital ágil y moderna, permitiendo a Bestyle vender sus prendas online de forma rápida y directa a través de WhatsApp y enlaces de pago.',
+    client: 'Bestyle',
+    industry: 'Ropa y moda',
+    location: 'Colombia',
+    myRole: 'Frontend designer',
+    responsibilities: ['Web designer', 'Frontend Developer'],
+    challenge: 'Bestyle, una marca de moda con fuerte presencia en redes sociales, necesitaba trascender la venta por mensaje directo y establecer una presencia online funcional y expedita para su catálogo de prendas. El principal desafío era crear una solución digital rápida y fácil de usar que permitiera a los clientes explorar las prendas, calcular el total de su compra y finalizar el pedido de manera fluida vía WhatsApp o mediante un enlace de pago, todo ello sin la complejidad de un e-commerce tradicional.',
+    process: {
+      design: {
+        activities: [
+          'Diseño de Mockups',
+          'Diseño Responsivo y Adaptativo',
+          'Adaptación de Componentes de Diseño e Iconografía Genérica',
+        ],
+      },
+      development: { 
+        activities: [
+          'Implementación de Funcionalidades Personalizadas',
+          'Implementación de Generación de Pedido vía WhatsApp y link de pago',
+          'Sistema de Búsqueda y Filtrado Dinámico (Categorías y Subcategorías)',
+        ],  
+        stack: [
+          { name: 'HTML', icon: 'fa-brands fa-html5' },
+          { name: 'CSS', icon: 'fa-brands fa-css3' },
+          { name: 'JS', icon: 'fa-brands fa-js' },
+        ],
+      },
+      marketing: [
+        'Optimización para Motores de Búsqueda (SEO)',
+        'Análisis de Experiencia Digital',
+      ],
+    },
+    solution: {
+      gif: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756247093/Proyectos_oswal_web_design_bestyle_lh9b7z.gif',
+      description: 'Se desarrolló una plataforma de catálogo digital ágil y moderna para Bestyle, permitiendo a la marca realizar ventas online rápidas y directas. permite a los clientes seleccionar prendas, calcular su total y finalizar la compra enviando el pedido por WhatsApp o a través de un link de pago.',
+    },
+    results: [
+      { value: '+20%', metric: ' Ventas Directas Online' },
+      { value: '24/7', metric: 'Mayor Alcance y Disponibilidad' },
+      { value: '+30%', metric: 'Productividad en gestión de consultas' },
+    ],
+    liveUrl: 'https://bestyle.store/',
+  },
+  
+  {
+    id: 8,
     title: 'AXA Colpatria - Landing Page "Seguro de Vida Deudor"',
     image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757288825/Landing_AX-COL_.jpg',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
@@ -399,20 +760,22 @@ const results = [
     client: 'AXA COLPATRIA',
     industry: 'Aseguradora',
     location: 'Colombia',
-    myRole: 'Web designer',
+    myRole: 'UX/UI designer',
     responsibilities: ['UX design', 'UI Design', 'Frontend Developer'],
     challenge: 'AXA Colpatria necesitaba una landing page específica y altamente efectiva para promocionar su Seguro de Vida Deudor. El desafío era diseñar y desarrollar una página que no solo comunicara de forma clara los beneficios y requisitos del seguro, sino que también inspirara confianza, guiara al usuario intuitivamente, y que se pudiera integrar facilmente a un CRM.',
     process: {
       research: [
-        'Análisis de Público Objetivo y Competencia',
-        'User Flow',
+        'Benchmark',
+        'Análisis de Usabilidad del Sitio Web',
+      
         'Pruebas de Usabilidad',
       ],
       design: {
         activities: [
-          'Diseño de Mockups',
-          'Prototipos',
-          'Integración sistema de diseño de la marca',
+          'Creación de Wireframes y Diseño de Mockups',
+          'Integración sistema de diseño',
+          'Prototipado',
+
         ],
         colors: ['#5C5CB7', '#3D3DAA', '#00008F', '#DD7358', '#D75D3D','#D24723','#7698CB','#41949F','#E196AA'],
         typography: [
@@ -453,58 +816,18 @@ const results = [
       { value: '+35%', metric: 'Tasa de Conversión de Leads' },
       { value: '-15%', metric: 'Tasa de rebote' },
     ],
+ marketing: [
+      'Integración Google analytics',
+      'Meta etiquetas',
+      'Optimización SEO ',
+       
+    ],
+
     liveUrl: 'https://lpsv.netlify.app/',
   },
+  
   {
-    id: 4,
-    title: 'Bestyle - Catálogo Digital Interactivo y Venta Express',
-    image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757289224/bestyle_Web_design.jpg',
-    roles: ['UX Research', 'UI Design', 'Frontend Development'],
-    keyAchievement: 'Diseño y desarrollo de una solución de catálogo digital ágil y moderna, permitiendo a Bestyle vender sus prendas online de forma rápida y directa a través de WhatsApp y enlaces de pago.',
-    client: 'Bestyle',
-    industry: 'Ropa y moda',
-    location: 'Colombia',
-    myRole: 'Web designer',
-    responsibilities: ['Web designer', 'Frontend Developer'],
-    challenge: 'Bestyle, una marca de moda con fuerte presencia en redes sociales, necesitaba trascender la venta por mensaje directo y establecer una presencia online funcional y expedita para su catálogo de prendas. El principal desafío era crear una solución digital rápida y fácil de usar que permitiera a los clientes explorar las prendas, calcular el total de su compra y finalizar el pedido de manera fluida vía WhatsApp o mediante un enlace de pago, todo ello sin la complejidad de un e-commerce tradicional.',
-    process: {
-      design: {
-        activities: [
-          'Diseño de Mockups',
-          'Diseño Responsivo y Adaptativo',
-          'Adaptación de Componentes de Diseño e Iconografía Genérica',
-        ],
-      },
-      development: { 
-        activities: [
-          'Implementación de Funcionalidades Personalizadas',
-          'Implementación de Generación de Pedido vía WhatsApp y link de pago',
-          'Sistema de Búsqueda y Filtrado Dinámico (Categorías y Subcategorías)',
-        ],  
-        stack: [
-          { name: 'HTML', icon: 'fa-brands fa-html5' },
-          { name: 'CSS', icon: 'fa-brands fa-css3' },
-          { name: 'JS', icon: 'fa-brands fa-js' },
-        ],
-      },
-      marketing: [
-        'Optimización para Motores de Búsqueda (SEO)',
-        'Análisis de Experiencia Digital',
-      ],
-    },
-    solution: {
-      gif: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756247093/Proyectos_oswal_web_design_bestyle_lh9b7z.gif',
-      description: 'Se desarrolló una plataforma de catálogo digital ágil y moderna para Bestyle, permitiendo a la marca realizar ventas online rápidas y directas. permite a los clientes seleccionar prendas, calcular su total y finalizar la compra enviando el pedido por WhatsApp o a través de un link de pago.',
-    },
-    results: [
-      { value: '+20%', metric: ' Ventas Directas Online' },
-      { value: '24/7', metric: 'Mayor Alcance y Disponibilidad' },
-      { value: '+30%', metric: 'Productividad en gestión de consultas' },
-    ],
-    liveUrl: 'https://bestyle.store/',
-  },
-  {
-    id: 5,
+    id: 9,
     title: 'BetterMe - Tu Transformación Estética en Colombia',
     image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757288824/Betterme_Ver2_bo15xy.jpg',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
@@ -572,7 +895,7 @@ const results = [
     liveUrl: 'https://betterme.oswal.com.co/',
   },
   {
-    id: 6,
+    id: 10,
     title: 'Dedicándote: Website de Dedicatorias Musicales y Diseño Personalizado',
     image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757429234/dedicandote_proyecto_oswaldo.jpg',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
@@ -580,7 +903,7 @@ const results = [
     client: 'Dedicandote',
     industry: 'Música', 
     location: 'Bogotá, Colombia',
-    myRole: 'Web designer',
+    myRole: 'Frontend designer',
     responsibilities: ['Web designer', 'Frontend Developer','Marketing'],
     challenge: '"Dedicándote" buscaba lanzar un servicio innovador: dedicatorias musicales con diseños personalizados. El desafío era crear una presencia online atractiva y funcional que promocionara este producto único y, al mismo tiempo, facilitara el proceso de personalización de la dedicatoria, la selección de la canción, la visualización del reproductor y la gestión del pedido',
     process: {
@@ -622,13 +945,7 @@ const results = [
           { name: 'PHP', icon: 'fa-brands fa-php' },
         ],
       },
-      marketing: [
-        'Test A/B (A/B Testing)',
-        'Optimización para Motores de Búsqueda (SEO)',
-        'Configuración Google Analytics y Google Search Console',
-        'Estrategias de Adquisición de Tráfico',
-        'Automatización flujo de venta',
-      ],
+     
     },
     solution: {
       gif: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756249840/Proyectos_oswal_web_design_Dedicandote_f0subc.gif',
@@ -639,227 +956,18 @@ const results = [
       { value: '45%', metric: 'Nivel de Interacción con Reproductores' },
       { value: '70%', metric: 'Reducción del Tiempo de Procesamiento de Pedidos' },
     ],
+    marketing: [
+      'Estrategia de lanzamiento digital',
+      'Estrategia embudo de ventas',
+      'Optimización SEO ',
+       
+    ],
     liveUrl: 'https://dedicandote.com/',
   },
-  {
-    id: 7,
-    title: 'Hotel Amazon B&B - Un Refugio en el Corazón del Amazonas',
-    image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757288825/Hotel_Amazon_proyecto_oswal.png',
-    roles: ['UX Research', 'UI Design', 'Frontend Development'],
-    keyAchievement: 'Revitalizando la presencia online para una experiencia amazónica auténtica y atractiva para el viajero internacional.',
-    client: 'Hotel Amazon B&B',
-    industry: 'Hotel',
-    location: 'Amazonas, Colombia',
-    myRole: 'Web designer',
-    responsibilities: ['UX design', 'UI Design', 'Frontend Developer'],
-    challenge: 'Amazon B&B, un encantador hotel inmerso en la exuberante selva amazónica, luchaba por conectar con su público objetivo: turistas extranjeros en busca de una experiencia única. Su sitio web existente era pesado, carente de diseño atractivo y con una usabilidad deficiente, lo que dificultaba la reserva y no reflejaba la belleza y autenticidad del lugar.',
-    process: {
-      research: [
-        'Análisis de requisitos técnicos',
-        'benchmark de sitios web de hoteles de ecoturismo',
-        'Análisis de Usabilidad del Sitio Web',
-        'User Flow',
-        'Card Sorting',
-        'Arquitectura de la Información y Sitemap',
-      ],
-      design: {
-        activities: [
-          'Creación de Wireframes y Diseño de Mockups',
-          'Prototipado de visualizaciones',
-          'Optimización y mejoramiento de UI Kit',
-          'Diseño de Iconografía y Elementos Gráficos',
-        ],
-        colors: ['#455D58', '#3B6317', '#9DBC79', '#EC9B30', '#2E3B48'],
-        typography: [
-          { name: 'EB Garamond', usage: 'Títulos y encabezados' },
-          { name: 'Montserrat', usage: 'Texto y contenido' },
-        ],
-      },
-      development: { 
-        activities: [
-          'Evaluación de Accesibilidad Web',
-          'Migración a hosting',
-          'Construcción de Layouts y Diseño a Medida con Constructor Visual',
-          'Performance Optimization',
-          'Mantenimiento y Actualizaciones Wordpress',
-          'Desarrollo de Funcionalidades Personalizadas',
-          'Implementación de Seguridad Web',
-        ],  
-        stack: [
-          { name: 'Wordpress', icon: 'fa-brands fa-wordpress' },
-          { name: 'HTML', icon: 'fa-brands fa-html5' },
-          { name: 'CSS', icon: 'fa-brands fa-css3' },
-          { name: 'JS', icon: 'fa-brands fa-js' },
-          { name: 'PHP', icon: 'fa-brands fa-php' },
-        ],
-      },
-    },
-    solution: {
-      description: 'Se rediseñó un sitio web moderno y responsivo para el Hotel Amazon B&B, construyendo la experiencia desde cero tras eliminar la plantilla original. La solución optimiza la interfaz de usuario para turistas extranjeros, integra funcionalidades clave de reservas y se accede de manera fácil al contenido y tours.',
-    },
-    imageGallery: [
-      {
-        url: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757428647/Amazon_Hotel_Proyecto_oswal.jpg",
-        alt: "Imagen resultado sitio web_Amazon b&B",
-        caption: "Hotel amazon B&B Home",
-        tag: "resultado" 
-      },
-      {
-        url: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757428648/Amazon_Hotel_Rooms_Proyecto_oswal.png",
-        alt: "Imagen resultado sitio web_Amazon b&B",
-        caption: "Hotel amazon B&B acomodaciones",
-        tag: "resultado" 
-      }
-    ],
-    results: [
-      { value: '+25%', metric: 'Tasa de Conversión de Reservas' },
-      { value: '+25%', metric: 'Volumen de consultas directas vía correo y WhatsApp' },
-      { value: '+40%', metric: 'Facilidad de Gestión de Contenido' },
-    ],
-    liveUrl: 'https://www.amazonbb.com/',
-  },
-  {
-    id: 8,
-    title: 'AXA Colpatria - Rediseño Estratégico de portal público',
-    image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757429889/Redise%C3%B1o_AXA_oswal-proyectos.png',
-    roles: ['UX Research', 'UI Design', 'Frontend Development'],
-    keyAchievement: 'Rediseño completo de la plataforma web de AXA Colpatria, elevando la experiencia de usuario e interfaz (UX/UI) a estándares de última generación, incorporando nuevas tecnologías y aplicando rigurosos principios de usabilidad y accesibilidad para optimizar la interacción de los clientes con los servicios de seguros.',
-    client: 'AXA COLPATRIA',
-    industry: 'Aseguradora',
-    location: 'Colombia',
-    myRole: 'Frontend Developer',
-    responsibilities: ['UX /UI design'],
-    challenge: 'AXA Colpatria, líder en el sector asegurador, enfrentaba el desafío de transformar su plataforma web existente en un canal digital que no solo fuera funcional, sino que realmente inspirara confianza, simplificara la compleja información de seguros y ofreciera una experiencia de usuario intuitiva y moderna. El reto era ambicioso: ir más allá de una actualización visual, enfocándose en una arquitectura de información optimizada, flujos de navegación simplificados y un diseño inclusivo',
-    process: {
-      research: [
-        'Benchmark',
-        'Análisis de Usabilidad del Sitio Web',
-        'User persona',
-        'User Journey Map',
-        'Card Sorting',
-        'Sitemap',
-        'Pruebas de Usabilidad',
-      ],
-      design: {
-        activities: [
-          'Creación de Wireframes y Diseño de Mockups',
-          'Integración sistema de diseño',
-          'Prototipado',
-          'Diseño de Iconografía y Elementos Gráficos',
-          'Diseño de Microinteracciones y Estados de Componentes',
-          'Diseño Responsivo y Adaptativo',
-          'Aplicación de Estándares de Accesibilidad (WCAG 2.1 AA)',
-        ],
-        colors: ['#5C5CB7', '#3D3DAA', '#00008F', '#DD7358', '#D75D3D','#D24723','#7698CB','#41949F','#E196AA'],
-        typography: [
-          { name: 'Public headline', usage: 'Títulos y encabezados' },
-          { name: 'Source sans pro', usage: 'Texto y contenido' },
-        ],
-        icons: [
-          { type: 'image', value: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757428991/ilu028-1_onezxr.png' },
-          { type: 'image', value: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757428991/ilu078-1_xyjys5.png' },
-          { type: 'image', value: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757428991/ilu016-1_idgqse.png' },
-          { type: 'image', value: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757428991/ilu048-1_k4uffx.png' },
-          { type: 'image', value: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757428991/ilu134-1_vlg4pa.png' }
-        ],
-      },
-      development: { 
-        activities: [],  
-        stack: [],
-      },
-      marketing: [
-        'Email-marketing',
-      ],
-    },
-    solution: {
-      description: 'Se entregó un rediseño estratégico de la plataforma web de AXA Colpatria, transformándola en una experiencia digital de seguros moderna, intuitiva e inclusiva.',
-    },
-    results: [
-      { value: '+30%', metric: 'Aumento satisfacción del cliente' },
-      { value: '+25%', metric: 'Aumento tasa conversión productos' },
-      { value: '+40%', metric: 'Redireccionamiento a landing pages' },
-    ],
-    liveUrl: 'https://www.axacolpatria.co/home',
-    imageGallery: [
-      {
-        url: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756512408/AXA_Colpatria_antes_website_ecypnb.jpg",
-        alt: "Imagen resultado sitio web_AXA_COLPATRIA",
-        caption: "Home AXA Colpatria_antes",
-        tag: "antes" 
-      },
-      {
-        url: "https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756511734/Proyectos_oswal_web_design_AXA_Home_page_p62gsa.jpg",
-        alt: "Imagen resultado sitio web_Amazon b&B",
-        caption: "Home AXA Colpatria_Ahora",
-        tag: "resultado" 
-      }
-    ]
-  },
-  {
-    id: 9,
-    title: 'Clínica Odontológica en Suecia',
-    image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757288824/Clinica-en-suecia_olmnmu.jpg',
-    roles: ['UX Research', 'UI Design', 'Frontend Development'],
-    keyAchievement: 'Diseño Web y UX para una Experiencia Profesional y Confiable',
-    client: 'kliniken Schröder',
-    industry: 'Clinica dental',
-    location: 'Estocolmo, Suecia',
-    myRole: 'Web designer',
-    responsibilities: ['Web designer'],
-    challenge: 'Diseño y desarrollo de una plataforma web moderna y profesional para una clínica odontológica en Suecia, con el objetivo de proyectar confianza, facilitar el acceso a información sobre tratamientos.',
-    process: {
-      research: [
-        'Análisis de Audiencia Sueca y Estándares de Confianza',
-        'Análisis de Usabilidad del Sitio Web',
-        'Arquitectura de la Información y Sitemap',
-      ],
-      design: {
-        activities: [
-          'Creación de Wireframes y Diseño de Mockups',
-          'Optimización y mejoramiento de UI Kit',
-          'Diseño de Iconografía y Elementos Gráficos',
-        ],
-        colors: ['#2C2C96', '#99A833'],
-        typography: [
-          { name: 'Cormorant Garamond', usage: 'Títulos y encabezados' },
-          { name: 'Open sans', usage: 'Texto y contenido' },
-        ],
-        icons: [
-          { type: 'image', value: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757437831/Blekning-icon2_oivi6k.png' },
-          { type: 'image', value: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757437832/corona-dental-2_iljbtg.png' },
-          { type: 'image', value: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757437832/Snarkskenor-icon2_dvnoj3.png' }
-        ],
-      },
-      development: { 
-        activities: [
-          'Migración a hosting',
-          'Construcción de Layouts y Diseño a Medida con Constructor Visual',
-          'Performance Optimization',
-          'Mantenimiento y Actualizaciones Wordpress',
-        ],  
-        stack: [
-          { name: 'Wordpress', icon: 'fa-brands fa-wordpress' },
-          { name: 'HTML', icon: 'fa-brands fa-html5' },
-          { name: 'CSS', icon: 'fa-brands fa-css3' },
-          { name: 'JS', icon: 'fa-brands fa-js' },
-          { name: 'PHP', icon: 'fa-brands fa-php' },
-        ],
-      },
-      marketing: [],
-    },
-    solution: {
-      gif: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1756514195/Proyectos_oswal_web_design_Tandkliniken_schroder_slkyt8.gif',
-      description: 'Se entregó un sitio web profesional y minimalista para la clínica odontológica en Suecia, diseñado para ser una herramienta clave en la captación y comunicación con los pacientes. La plataforma, con un estilo estético sueco, presenta los servicios y al equipo de manera clara y transparente, estableciendo la confianza digital',
-    },
-    results: [
-      { value: '+20%', metric: 'Tasa de Conversión de Reservas' },
-      { value: '+25%', metric: 'Volumen de consultas directas vía correo y WhatsApp' },
-      { value: '+40%', metric: 'Facilidad de Gestión de Contenido' },
-    ],
-    liveUrl: 'https://tandklinikenlschroder.se/',
-  },
-  {
-    id: 10,
+ 
+   {
+  
+    id: 11,
     title: 'Café Cumbre Real: Diseño Web, Marca de Café de Origen',
     image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757454819/Web_cafe_cumbre_Proyectos_Oswal.png',
     roles: ['UX Research', 'UI Design', 'Frontend Development'],
@@ -1359,6 +1467,91 @@ watch(() => route.params.id, (newId) => {
 .tech-item i {
   font-size: 1.2rem;
   color: #CCF381;
+}
+
+/* Estilos para Marketing */
+.marketing-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.channel-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.channel-item:hover {
+  background: rgba(204, 243, 129, 0.1);
+  border-color: rgba(204, 243, 129, 0.3);
+}
+
+.channel-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(204, 243, 129, 0.1);
+  border-radius: 8px;
+}
+
+.channel-icon i {
+  font-size: 1.2rem;
+  color: #CCF381;
+}
+
+.channel-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.channel-name {
+  font-weight: 600;
+  color: #CCF381;
+  font-size: 0.95rem;
+}
+
+.channel-description {
+  opacity: 0.8;
+  font-size: 0.85rem;
+  color: #ffffff;
+}
+
+.marketing-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.marketing-result-item {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: rgba(204, 243, 129, 0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(204, 243, 129, 0.2);
+}
+
+.result-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #CCF381;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.result-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  color: #ffffff;
 }
 
 /* Solution Section */

@@ -22,9 +22,10 @@
             <span class="title-stroke">Hola</span> soy Oswal
           </h1>
           <p class="subtitle">
-            <span class="accent-text">Bienvenido al elevador</span> <span class="regular-text">que te llevará por cada piso de mi trabajo. Aquí no solo diseño interfaces, también construyo experiencias digitales que conectan, convierten y sorprenden.</span><br><br>
+            <span class="accent-text">Este elevador</span> <span class="regular-text">te llevará por cada piso de mi mundo creativo: diseño, UX, frontend y estrategia digital.
+No solo creo interfaces, diseño experiencias que hacen que las marcas y las personas hagan clic.</span><br><br>
             
-            <span class="regular-text">Cada proyecto es una oportunidad de transformar ideas en experiencias memorables</span>
+            <span class="regular-text">Aquí las ideas suben… y tus resultados también...¿Subimos?</span>
           </p>
 
           <!-- Portfolio Button -->
@@ -49,25 +50,26 @@
               web@oswal.com.co
             </a>
             <div class="social-links">
-              <a href="#" class="social-link">
+              <!-- LinkedIn -->
+              <a href="https://www.linkedin.com/in/oswaldo-jaimes/" target="_blank" class="social-link">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
                   <rect x="2" y="9" width="4" height="12"/>
                   <circle cx="4" cy="4" r="2"/>
                 </svg>
               </a>
-              <a href="#" class="social-link">
+              <!-- WhatsApp -->
+              <a href="https://wa.me/573057502790" target="_blank" class="social-link">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
                 </svg>
               </a>
-              <a href="#" class="social-link">
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/oswal_jaimes?" target="_blank" class="social-link">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"/>
-                  <circle cx="12" cy="12" r="4"/>
-                  <line x1="21.17" y1="8" x2="12" y2="8"/>
-                  <line x1="3.95" y1="6.06" x2="8.54" y2="14"/>
-                  <line x1="10.88" y1="21.94" x2="15.46" y2="14"/>
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
                 </svg>
               </a>
             </div>
@@ -306,7 +308,7 @@ onUnmounted(() => {
 .accent-text {
   color: #404040;
   font-weight: 700;
-  font-size: 34px;
+  font-size: 30px;
   position: relative;
   display: inline-block;
 }

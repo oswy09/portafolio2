@@ -32,11 +32,7 @@ const routes = [
     component: Elevator,
     props: { targetFloor: 4 }
   },
-  {
-    path: '/projects2',
-    name: 'projects2',
-    component: () => import('./components/Projects2.vue')
-  },
+
   {
     path: '/project/:id',
     name: 'project-detail',
@@ -47,6 +43,24 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes
+})
+
+// Google Analytics - Rastreo de rutas
+declare global {
+  interface Window {
+    gtag: (...args: any[]) => void;
+  }
+}
+
+router.afterEach((to) => {
+  // Rastrear cambios de página en Google Analytics
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('config', 'G-QCNHFYS3S9', {
+      page_path: to.fullPath,
+      page_title: to.name || to.path,
+      page_location: window.location.origin + to.fullPath
+    });
+  }
 })
 
 export default router

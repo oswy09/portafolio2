@@ -138,7 +138,7 @@ const services = [
     id: 1,
     title: 'Exploración',
     image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757340906/Oswal_UX_services.png',
-    description: 'Antes de diseñar, se entiende y se planea. Esta fase se basa en descubrir insights clave del usuario y del negocio, combinando herramientas de UX Research con fundamentos de marketing estratégico y construcción de marca. Aquí se define la esencia del proyecto digital, alineando propósito, posicionamiento y experiencia deseada.',
+    description: 'Antes de diseñar, hay que entender. Este es el momento de ponerse el sombrero de detective digital y descubrir qué mueve a las personas detrás de la pantalla. Aquí analizamos, investigamos y conectamos los puntos para darle forma a una experiencia con propósito.',
     features: [
       'Investigación de usuarios y contexto',
       'Benchmarking / Analisis mercado',
@@ -170,7 +170,7 @@ const services = [
     id: 3,
     title: 'Manos a la Web ',
     image: 'https://res.cloudinary.com/ddqbnr9vo/image/upload/v1757340906/oswal_front_services.png',
-    description: 'Del prototipo a la realidad. Desarrollo web enfocado en rendimiento, accesibilidad, velocidad y usabilidad. Lo visual se convierte en funcional.',
+    description: 'Del prototipo a la realidad. Aquí el diseño cobra vida y la experiencia se vuelve real.Desarrollo web enfocado en rendimiento, accesibilidad, velocidad y usabilidad. Lo visual se convierte en funcional.',
     features: [
       'Maquetación con HTML-CSS',
       'Integración de frameworks CSS (Tailwind, Bootstrap)',

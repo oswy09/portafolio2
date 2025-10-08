@@ -101,7 +101,7 @@
               <!-- Search Results -->
               <div class="results-container">
                 <div class="results-info">
-                  Aproximadamente 2,340,000 resultados (0.45 segundos)
+                  Aproximadamente 1 resultado: el diseñador web que estás buscando.🤭 (0.45 segundos)
                 </div>
 
                 <!-- Contact Card -->
@@ -121,7 +121,7 @@
                       <div class="method-icon">📧</div>
                       <div class="method-info">
                         <span class="method-label">Email</span>
-                        <span class="method-value">contacto@oswal.com</span>
+                        <span class="method-value">web@oswal.com.co</span>
                       </div>
                     </a>
 
@@ -153,7 +153,7 @@
                       <div class="method-icon">🎵</div>
                       <div class="method-info">
                         <span class="method-label">TikTok</span>
-                        <span class="method-value">tiktok.com/@oswal</span>
+                        <span class="method-value">Próximamente algo cool aquí ⏳</span>
                       </div>
                     </a>
 
@@ -161,7 +161,7 @@
                       <div class="method-icon">🏀</div>
                       <div class="method-info">
                         <span class="method-label">Dribbble</span>
-                        <span class="method-value">dribbble.com/oswal</span>
+                        <span class="method-value">Próximamente algo cool aquí ⏳</span>
                       </div>
                     </a>
 
@@ -169,7 +169,7 @@
                       <div class="method-icon">💻</div>
                       <div class="method-info">
                         <span class="method-label">CodePen</span>
-                        <span class="method-value">codepen.io/oswal</span>
+                        <span class="method-value">Próximamente algo cool aquí ⏳</span>
                       </div>
                     </a>
                   </div>
